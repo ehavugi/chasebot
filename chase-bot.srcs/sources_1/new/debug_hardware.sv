@@ -1,26 +1,12 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 2019/11/12 23:53:33
-// Design Name: 
-// Module Name: debug_hardware
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
 
 
 module debug_hardware(
+                        input clk_100mhz,
+                        input btnc,
+                        input [15:0] sw,
+                        output [7:0] jb
+);
 
-    );
+
 endmodule

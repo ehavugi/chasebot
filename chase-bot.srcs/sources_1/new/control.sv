@@ -52,28 +52,33 @@ logic [8:0] pre_dr;
 
 
 //errors
-logic signed [9:0] e_x;
-logic signed [9:0] e_r;
-logic signed [9:0] e_dx;
-logic signed [9:0] e_dr;
+logic signed [8:0] e_x;
+logic signed [8:0] e_r;
+logic signed [8:0] e_dx;
+logic signed [8:0] e_dr;
 
-assign e_x = x_d - x;
-assign e_r = r_d - r;
+assign e_x = x_d - x;   //abs less than 240
+assign e_r = r_d - r;   
+
+
+//raw speed,turn
+logic signed [11:0] raw_speed;
+logic signed [10:0] raw_turn;
 
 always_comb begin
     case(mode)
         GOALKEEP:begin
-                    speed = Ksp * e_x + Ksd * e_dx;
-                    turn = 0;
+                    raw_speed = Ksp * e_x + Ksd * e_dx;
+                    raw_turn = 0;
 
                 end
         CHASE:  begin
-                    speed = Ksp * e_r + Ksd * e_dr;
-                    turn = Ktp * e_x + Ktp * e_dx;
+                    raw_speed = Ksp * e_r + Ksd * e_dr;
+                    raw_turn = Ktp * e_x + Ktp * e_dx;
                 end
         default:begin
-                    speed = 0;
-                    turn = 0;
+                    raw_speed = 0;
+                    raw_turn = 0;
                 end
     endcase
 end
@@ -90,7 +95,7 @@ always_ff @(posedge clk_in) begin
         pre_dx <= 0;
         pre_dr <= 0;
         end
-        
+
     else begin
         if(ready_in) begin
             x <= cur_pos_x;
