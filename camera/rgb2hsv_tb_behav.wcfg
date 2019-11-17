@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="rgb2hsv_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="rgb2hsv_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="125156445334fs"></ZoomStartTime>
+      <ZoomEndTime time="1125156445335fs"></ZoomEndTime>
+      <Cursor1Time time="299123905000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="127"></NameColumnWidth>
+      <ValueColumnWidth column_width="58"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="8" />
+   <wvobject fp_name="/rgb2hsv_tb/clock" type="logic">
+      <obj_property name="ElementShortName">clock</obj_property>
+      <obj_property name="ObjectShortName">clock</obj_property>
+   </wvobject>
+   <wvobject fp_name="/rgb2hsv_tb/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/rgb2hsv_tb/r" type="array">
+      <obj_property name="ElementShortName">r[7:0]</obj_property>
+      <obj_property name="ObjectShortName">r[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/rgb2hsv_tb/g" type="array">
+      <obj_property name="ElementShortName">g[7:0]</obj_property>
+      <obj_property name="ObjectShortName">g[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/rgb2hsv_tb/b" type="array">
+      <obj_property name="ElementShortName">b[7:0]</obj_property>
+      <obj_property name="ObjectShortName">b[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/rgb2hsv_tb/h" type="array">
+      <obj_property name="ElementShortName">h[7:0]</obj_property>
+      <obj_property name="ObjectShortName">h[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/rgb2hsv_tb/s" type="array">
+      <obj_property name="ElementShortName">s[7:0]</obj_property>
+      <obj_property name="ObjectShortName">s[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/rgb2hsv_tb/v" type="array">
+      <obj_property name="ElementShortName">v[7:0]</obj_property>
+      <obj_property name="ObjectShortName">v[7:0]</obj_property>
+   </wvobject>
+</wave_config>
