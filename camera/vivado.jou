@@ -9,3 +9,6 @@
 # Log file: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/vivado.log
 # Journal file: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera\vivado.jou
 #-----------------------------------------------------------
+start_gui
+open_project C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.xpr
+update_compile_order -fileset sources_1

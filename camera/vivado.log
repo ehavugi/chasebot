@@ -9,3 +9,28 @@
 # Log file: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/vivado.log
 # Journal file: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera\vivado.jou
 #-----------------------------------------------------------
+start_gui
+open_project C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.xpr
+INFO: [Project 1-313] Project file moved from 'C:/Users/Owner/Desktop/chasebot/camera' since last save.
+WARNING: [Project 1-312] File not found as 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/camera_test/clk_wiz_lab3.v'; using path 'C:/Users/Owner/Desktop/camera_test/clk_wiz_lab3.v' instead.
+WARNING: [Project 1-312] File not found as 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/camera_test/camera_read.sv'; using path 'C:/Users/Owner/Desktop/camera_test/camera_read.sv' instead.
+WARNING: [Project 1-312] File not found as 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/camera_test/top_level.sv'; using path 'C:/Users/Owner/Desktop/camera_test/top_level.sv' instead.
+WARNING: [Project 1-312] File not found as 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/camera_test/nexys4ddr.xdc'; using path 'C:/Users/Owner/Desktop/camera_test/nexys4ddr.xdc' instead.
+Scanning sources...
+Finished scanning sources
+WARNING: [Project 1-312] File not found as 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/camera_test/clk_wiz_lab3.v'; using path 'C:/Users/Owner/Desktop/camera_test/clk_wiz_lab3.v' instead.
+WARNING: [Project 1-312] File not found as 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/camera_test/camera_read.sv'; using path 'C:/Users/Owner/Desktop/camera_test/camera_read.sv' instead.
+WARNING: [Project 1-312] File not found as 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/camera_test/top_level.sv'; using path 'C:/Users/Owner/Desktop/camera_test/top_level.sv' instead.
+WARNING: [Project 1-312] File not found as 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/camera_test/nexys4ddr.xdc'; using path 'C:/Users/Owner/Desktop/camera_test/nexys4ddr.xdc' instead.
+WARNING: [Project 1-312] File not found as 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/camera_test/clk_wiz_lab3.v'; using path 'C:/Users/Owner/Desktop/camera_test/clk_wiz_lab3.v' instead.
+WARNING: [Project 1-312] File not found as 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/camera_test/camera_read.sv'; using path 'C:/Users/Owner/Desktop/camera_test/camera_read.sv' instead.
+WARNING: [Project 1-312] File not found as 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/camera_test/top_level.sv'; using path 'C:/Users/Owner/Desktop/camera_test/top_level.sv' instead.
+WARNING: [Project 1-312] File not found as 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/camera_test/nexys4ddr.xdc'; using path 'C:/Users/Owner/Desktop/camera_test/nexys4ddr.xdc' instead.
+INFO: [filemgmt 56-1] Board Part Repository Path: Directory not found as 'C:/Users/Owner/OneDrive/pic/Documents/AppData/Roaming/Xilinx/Vivado/2019.1/xhub/board_store'; using path 'C:/Users/Owner/AppData/Roaming/Xilinx/Vivado/2019.1/xhub/board_store' instead.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
+open_project: Time (s): cpu = 00:00:32 ; elapsed = 00:00:22 . Memory (MB): peak = 879.461 ; gain = 268.750
+update_compile_order -fileset sources_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Sun Nov 17 17:42:37 2019...
