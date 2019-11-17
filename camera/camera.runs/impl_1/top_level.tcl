@@ -66,16 +66,17 @@ set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
   set_param chipscope.maxJobs 2
+  set_param xicom.use_bs_reader 1
   create_project -in_memory -part xc7a100tcsg324-3
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir C:/Users/Owner/Desktop/camera_test/camera/camera.cache/wt [current_project]
-  set_property parent.project_path C:/Users/Owner/Desktop/camera_test/camera/camera.xpr [current_project]
-  set_property ip_output_repo C:/Users/Owner/Desktop/camera_test/camera/camera.cache/ip [current_project]
+  set_property webtalk.parent_dir C:/Users/Owner/Desktop/chasebot/camera/camera.cache/wt [current_project]
+  set_property parent.project_path C:/Users/Owner/Desktop/chasebot/camera/camera.xpr [current_project]
+  set_property ip_output_repo C:/Users/Owner/Desktop/chasebot/camera/camera.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES XPM_MEMORY [current_project]
-  add_files -quiet C:/Users/Owner/Desktop/camera_test/camera/camera.runs/synth_1/top_level.dcp
-  read_ip -quiet c:/Users/Owner/Desktop/camera_test/camera/camera.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci
+  add_files -quiet C:/Users/Owner/Desktop/chasebot/camera/camera.runs/synth_1/top_level.dcp
+  read_ip -quiet C:/Users/Owner/Desktop/chasebot/camera/camera.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci
   read_xdc C:/Users/Owner/Desktop/camera_test/nexys4ddr.xdc
   link_design -top top_level -part xc7a100tcsg324-3
   close_msg_db -file init_design.pb

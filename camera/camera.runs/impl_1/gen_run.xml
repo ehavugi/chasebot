@@ -1,19 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-3" LaunchTime="1573230149">
-  <File Type="ROUTE-PWR" Name="top_level_power_routed.rpt"/>
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-3" LaunchTime="1574020651">
   <File Type="PA-TCL" Name="top_level.tcl"/>
   <File Type="BITSTR-BMM" Name="top_level_bd.bmm"/>
-  <File Type="ROUTE-PWR-SUM" Name="top_level_power_summary_routed.pb"/>
   <File Type="REPORTS-TCL" Name="top_level_reports.tcl"/>
   <File Type="OPT-DCP" Name="top_level_opt.dcp"/>
-  <File Type="OPT-DRC" Name="top_level_drc_opted.rpt"/>
   <File Type="OPT-HWDEF" Name="top_level.hwdef"/>
   <File Type="PWROPT-DCP" Name="top_level_pwropt.dcp"/>
   <File Type="PLACE-DCP" Name="top_level_placed.dcp"/>
-  <File Type="PLACE-IO" Name="top_level_io_placed.rpt"/>
-  <File Type="PLACE-UTIL" Name="top_level_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL-PB" Name="top_level_utilization_placed.pb"/>
-  <File Type="PLACE-CTRL" Name="top_level_control_sets_placed.rpt"/>
   <File Type="PLACE-PRE-SIMILARITY" Name="top_level_incremental_reuse_pre_placed.rpt"/>
   <File Type="BG-BGN" Name="top_level.bgn"/>
   <File Type="POSTPLACE-PWROPT-DCP" Name="top_level_postplace_pwropt.dcp"/>
@@ -23,36 +16,28 @@
   <File Type="ROUTE-ERROR-DCP" Name="top_level_routed_error.dcp"/>
   <File Type="ROUTE-DCP" Name="top_level_routed.dcp"/>
   <File Type="ROUTE-BLACKBOX-DCP" Name="top_level_routed_bb.dcp"/>
-  <File Type="ROUTE-DRC" Name="top_level_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-PB" Name="top_level_drc_routed.pb"/>
-  <File Type="ROUTE-DRC-RPX" Name="top_level_drc_routed.rpx"/>
   <File Type="BITSTR-LTX" Name="top_level.ltx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="top_level_methodology_drc_routed.rpt"/>
   <File Type="BITSTR-MMI" Name="top_level.mmi"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="top_level_methodology_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="top_level_methodology_drc_routed.pb"/>
   <File Type="BITSTR-SYSDEF" Name="top_level.sysdef"/>
-  <File Type="ROUTE-PWR-RPX" Name="top_level_power_routed.rpx"/>
-  <File Type="ROUTE-STATUS" Name="top_level_route_status.rpt"/>
-  <File Type="ROUTE-STATUS-PB" Name="top_level_route_status.pb"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="top_level_timing_summary_routed.rpt"/>
   <File Type="ROUTE-TIMING-PB" Name="top_level_timing_summary_routed.pb"/>
-  <File Type="ROUTE-TIMING-RPX" Name="top_level_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-CLK" Name="top_level_clock_utilization_routed.rpt"/>
-  <File Type="RDI-RDI" Name="top_level.vdi"/>
-  <File Type="ROUTE-BUS-SKEW" Name="top_level_bus_skew_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW-PB" Name="top_level_bus_skew_routed.pb"/>
-  <File Type="ROUTE-BUS-SKEW-RPX" Name="top_level_bus_skew_routed.rpx"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="top_level_postroute_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="top_level_postroute_physopt_bb.dcp"/>
   <File Type="BG-BIT" Name="top_level.bit"/>
   <File Type="BITSTR-RBT" Name="top_level.rbt"/>
   <File Type="BITSTR-NKY" Name="top_level.nky"/>
   <File Type="BG-DRC" Name="top_level.drc"/>
+  <File Type="RDI-RDI" Name="top_level.vdi"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PPRDIR/../../camera_test/clk_wiz_lab3.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/blob.sv">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -66,8 +51,62 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/pong_game.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/xvga.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PPRDIR/../../camera_test/top_level.sv">
       <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/divider.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/rgb2hsv.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/div_gen_0_1/div_gen_0.xci">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/display_8hex.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/debounce.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>

@@ -70,26 +70,50 @@ module rgb2hsv(clock, reset, r, g, b, h, s, v);
 //		.rfd(h_rfd)
 //		);
 logic start;
+parameter m=8;
+reg[3:1] state=0;
 assign start=1'b1;
+reg[5:0] count=0;
 //always @(posedge clock)
+//    if (state==0 &count<2) begin
+//        state<=1'b0;
+//        count<=count+1;
+//        end
+//    else begin 
 
-divider1  hue_div1(
-    .clk(clock),
-    .sign(0),
-    .start(start),
-    .dividend(s_top),
-    .divider(s_buttom),
-    .remainder(s_quotient),
-    .ready(s_rfd));
+div_gen_1 hue1(.aclk(clock),
+    .s_axis_divisor_tvalid(1'b1),
+    .s_axis_divisor_tdata(s_buttom),
+    .s_axis_dividend_tvalid(1'b1),
+    .s_axis_dividend_tdata(s_top),
+    .m_axis_dout_tdata(s_quotient), 
+    .m_axis_dout_tvalid(s_rfd));
+
+div_gen_1 hue2(.aclk(clock),
+    .s_axis_divisor_tvalid(1'b1),
+    .s_axis_divisor_tdata(h_buttom),
+    .s_axis_dividend_tvalid(1'b1),
+    .s_axis_dividend_tdata(h_top),
+    .m_axis_dout_tdata(h_quotient), 
+    .m_axis_dout_tvalid(h_rfd));
     
-divider1  hue_div2(
-    .clk(clock),
-    .sign(0),
-    .start(start),
-    .dividend(h_top),
-    .divider(h_buttom),
-    .remainder(h_quotient),
-    .ready(h_rfd));
+//divider1  hue_div1(
+//    .clk(clock),
+//    .sign(0),
+//    .start(start),
+//    .dividend(s_top),
+//    .divider(s_buttom),
+//    .remainder(s_quotient),
+//    .ready(s_rfd)); 
+    
+//divider1  hue_div2(
+//    .clk(clock),
+//    .sign(0),
+//    .start(start),
+//    .dividend(h_top),
+//    .divider(h_buttom),
+//    .remainder(h_quotient),
+//    .ready(h_rfd));
     
 		always @ (posedge clock) begin
 		

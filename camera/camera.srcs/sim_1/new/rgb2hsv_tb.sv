@@ -12,23 +12,13 @@ module rgb2hsv_tb;
 
      initial begin
         clock = 0;
-        reset = 0;
         #50
         reset = 1;
         #10;
-        reset = 0;
-        r = 8'h00;
-        g=8'h00;
-        b=8'h00;
-        #400;
-        reset = 1;
-        #10;
-        reset = 0;
-        #10;
-        b = 8'hff;
-        g=8'h00;
-        #400;
-        #10;
-        #500;  //as you run it...should see 10101010 show up ont eh data out line
+        r = 8'hff;
+       g=8'h00;
+
+        b = 8'h00;
+        #50;  //as you run it...should see 10101010 show up ont eh data out line
      end
 endmodule
