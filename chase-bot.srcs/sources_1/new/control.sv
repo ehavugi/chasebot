@@ -6,17 +6,17 @@ module control(
                 input rst_in,
                 input ready_in,
                 input [8:0] cur_pos_x,
-                input [8:0] cur_pos_y,
+				input [8:0] cur_pos_y,
                 input [8:0] cur_rad,
-                input [8:0] goal_rad,
+				input [6:0] goal_rad,
                 input [15:0] params,
                 output logic signed [8:0] speed,
                 output logic signed [8:0] turn
 );
 
 //camera size
-parameter HEIGHT = 360;
-parameter WIDTH = 480;
+parameter HEIGHT = 240;
+parameter WIDTH = 320;
 
 //modes
 parameter GOALKEEP = 3;
@@ -34,21 +34,21 @@ assign {Ksp,Ksd,Ktp,Ktd,mode} = params;
 
 //desired x,r
 logic [8:0] x_d;
-logic [8:0] r_d;
+logic [6:0] r_d;
 assign x_d = WIDTH >> 1;
 assign r_d = goal_rad;
 
 //current x,rad,dx,dr
 logic [8:0] x;
-logic [8:0] r;
+logic [6:0] r;
 logic [8:0] dx;
-logic [8:0] dr;
+logic [6:0] dr;
 
 //previous x,rad,dx,dr
 logic [8:0] pre_x;
-logic [8:0] pre_r;
+logic [6:0] pre_r;
 logic [8:0] pre_dx;
-logic [8:0] pre_dr;
+logic [6:0] pre_dr;
 
 
 //errors
@@ -62,8 +62,8 @@ assign e_r = r_d - r;
 
 
 //raw speed,turn
-logic signed [11:0] raw_speed;
-logic signed [10:0] raw_turn;
+logic signed [15:0] raw_speed;
+logic signed [15:0] raw_turn;
 
 always_comb begin
     case(mode)
@@ -105,4 +105,22 @@ always_ff @(posedge clk_in) begin
         end
     end
 end
+endmodule
+
+
+
+module threshold_by_abs(
+	input signed [16:0] signed_in;
+	input [15:0] threshold;
+	outuput signed [16:0] signed_out;
+);
+
+logic sign;
+logic [15:0] abs;
+
+assign sign = signed_in[16];
+assign signed_out[16] = sign;
+
+assign abs = sign?~signed_in[15:0] + 16'h0001:signed_in[15:0];
+assign signed_out[15:0] = (abs <= threshold)? signed_in[15:0]:(sign?~threshold+16'h0001:threshold);
 endmodule
