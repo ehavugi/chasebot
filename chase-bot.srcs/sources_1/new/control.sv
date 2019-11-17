@@ -6,9 +6,9 @@ module control(
                 input rst_in,
                 input ready_in,
                 input [8:0] cur_pos_x,
-				input [8:0] cur_pos_y,
+		input [8:0] cur_pos_y,
                 input [8:0] cur_rad,
-				input [6:0] goal_rad,
+		input [6:0] goal_rad,
                 input [15:0] params,
                 output logic signed [8:0] speed,
                 output logic signed [8:0] turn
