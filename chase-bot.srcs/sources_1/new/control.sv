@@ -62,9 +62,19 @@ assign e_r = r_d - r;
 
 
 //raw speed,turn
-logic signed [15:0] raw_speed;
-logic signed [15:0] raw_turn;
+logic signed [16:0] raw_speed;
+logic signed [16:0] raw_turn;
 
+	
+//threshold the output
+logic [7:0] pass1;
+logic [7:0] pass2;
+
+threshold_by_abs threshold_speed(.signed_in(raw_speed), .threshold(16'h00ff), .signed_out({speed[8],pass1,speed[7:0]}));
+threshold_by_abs threshold_turn(.signed_in(raw_turn), .threshold(16'h00ff), .signed_out({turn[8],pass2,turn[7:0]}));
+
+	
+	
 always_comb begin
     case(mode)
         GOALKEEP:begin
