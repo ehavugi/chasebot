@@ -8,7 +8,7 @@ logic ready;
 logic [8:0] cur_pos_x;
 logic [8:0] cur_pos_y;
 logic [8:0] cur_rad;
-logic [8:0] goal_rad;
+logic [6:0] goal_rad;
 logic [15:0] params;
 logic signed [8:0] speed;
 logic signed [8:0] turn;
@@ -34,9 +34,42 @@ params = 0;
 #10;
 rst = 1;
 #10
-goal_rad = 9'd50;
-cur_pos_x = 9'
-
+params = 16'b0001_001_0001_001_10;
+goal_rad = 7'd25;
+cur_pos_y = 9'd120;
+#10
+//standard
+cur_pos_x = 9'd160;
+cur_rad = 7'd25;
+#100
+cur_pos_x = 9'd180;
+cur_rad = 7'd20;
+#100
+cur_pos_x = 9'd170;
+cur_rad = 7'd23;
+#100
+cur_pos_x = 9'd190;
+cur_rad = 7'd30;
+#100
+cur_pos_x = 9'd140;
+cur_rad = 7'd23;
+#100
+cur_pos_x = 9'd130;
+cur_rad = 7'd28;
+#100
+//check threshold
+cur_pos_x = 9'd300;
+cur_rad = 7'd25;
+#100
+cur_pos_x = 9'd10;
+cur_rad = 7'd25;
+#100
+cur_pos_x = 9'd160;
+cur_rad = 7'd25;
+#100
+$finish;
+end
+endmodule
 
 end
 endmodule
