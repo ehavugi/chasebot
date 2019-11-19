@@ -23,14 +23,17 @@ parameter GOALKEEP = 3;
 parameter CHASE = 2;
 
 //assign params
-logic [3:0] Ksp;
-logic [2:0] Ksd;
-logic [3:0] Ktp;
-logic [2:0] Ktd;
+logic signed [4:0] Ksp;
+logic signed [3:0] Ksd;
+logic signed [4:0] Ktp;
+logic signed [3:0] Ktd;
 logic [1:0] mode;
 
-assign {Ksp,Ksd,Ktp,Ktd,mode} = params;
-
+assign {Ksp[3:0],Ksd[2:0],Ktp[3:0],Ktd[2:0],mode} = params;
+assign Ksp[4] = 0;
+assign Ksd[3] = 0;
+assign Ktp[4] = 0;
+assign Ktd[3] = 0;
 
 //desired x,r
 logic [8:0] x_d;
@@ -78,13 +81,13 @@ threshold_by_abs threshold_turn(.signed_in(raw_turn), .threshold(16'h00ff), .sig
 always_comb begin
     case(mode)
         GOALKEEP:begin
-                    raw_speed = Ksp * e_x + Ksd * e_dx;
+                    raw_speed = (Ksp * e_x) + (Ksd * e_dx);
                     raw_turn = 0;
 
                 end
         CHASE:  begin
-                    raw_speed = Ksp * e_r + Ksd * e_dr;
-                    raw_turn = Ktp * e_x + Ktp * e_dx;
+                    raw_speed = (Ksp * e_r) + (Ksd * e_dr);
+                    raw_turn = (Ktp * e_x) + (Ktd * e_dx);
                 end
         default:begin
                     raw_speed = 0;
@@ -120,9 +123,9 @@ endmodule
 
 
 module threshold_by_abs(
-	input signed [16:0] signed_in;
-	input [15:0] threshold;
-	outuput signed [16:0] signed_out;
+	input signed [16:0] signed_in,
+	input [15:0] threshold,
+	output signed [16:0] signed_out
 );
 
 logic sign;

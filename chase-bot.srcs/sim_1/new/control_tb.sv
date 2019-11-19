@@ -34,7 +34,9 @@ params = 0;
 #10;
 rst = 1;
 #10
-params = 16'b0001_001_0001_001_10;
+rst = 0;
+#10
+params = 16'b0011_001_0011_001_10;
 goal_rad = 7'd25;
 cur_pos_y = 9'd120;
 #10
@@ -68,8 +70,5 @@ cur_pos_x = 9'd160;
 cur_rad = 7'd25;
 #100
 $finish;
-end
-endmodule
-
 end
 endmodule
