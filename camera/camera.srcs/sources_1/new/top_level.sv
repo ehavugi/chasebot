@@ -41,7 +41,7 @@ module top_level(
     assign  dp = 1'b1;  // turn off the period
 
     assign led = sw;                        // turn leds on
-    assign data = {28'h0123456, sw[3:0]};   // display 0123456 + sw[3:0]
+    assign data = {size_, sw[3:0]};   // display 0123456 + sw[3:0]
     assign led16_r = btnl;                  // left button -> red led
     assign led16_g = btnc;                  // center button -> green led
     assign led16_b = btnr;                  // right button -> blue led
@@ -149,12 +149,49 @@ module top_level(
     end
     assign pixel_addr_out = sw[2]?((hcount>>1)+(vcount>>1)*32'd320):hcount+vcount*32'd320;
     assign cam = sw[2]&&((hcount<640) &&  (vcount<480))?frame_buff_out:~sw[2]&&((hcount<320) &&  (vcount<240))?frame_buff_out:12'h000;
-    
-//    ila_0 joes_ila(.clk(clk_65mhz),    .probe0(pixel_in), 
-//                                        .probe1(pclk_in), 
-//                                        .probe2(vsync_in),
-//                                        .probe3(href_in),
-//                                        .probe4(jbclk));
+
+logic [3:0] red,green, blue;
+logic[11:0] thres;
+assign {red,green,blue}=cam;
+logic [27:0] size;
+logic [15:0] size_x;
+logic [15:0] size_;
+logic [15:0] pos_x;
+logic [15:0] pos_y;
+
+logic [26:0] count_f=0;
+always @(posedge clk_65mhz) begin
+    if (count_f<65000000) begin
+        count_f<=count_f+1;
+    end
+    else begin
+        count_f<=0;
+        size_<=size_x;
+    end
+end
+divider #(36) pos_x_d (
+		.clk(clk), 
+		.sign(sign), 
+		.start(start), 
+		.dividend(pos_x), 
+		.divider(size), 
+		.quotient(quotient), 
+		.remainder(remainder), 
+		.ready(ready)
+	);
+
+always @(posedge clk_65mhz) begin
+    if ((red>(green+4))&&(red>(blue+4))) begin
+        thres<=cam;
+        size<=size+1;
+        pos_x<=pos_x+hcount;
+        pos_y<=pos_y+vcount;
+        if (vsync) size_x<=size;
+     end
+    else begin thres=12'b0;
+         end
+
+end
                                         
    camera_read  my_camera(.p_clock_in(pclk_in),
                           .vsync_in(vsync_in),
@@ -198,8 +235,9 @@ module top_level(
          hs <= phsync;
          vs <= pvsync;
          b <= pblank;
-         //rgb <= pixel;
-         rgb <= cam;
+//         rgb <= pixel;
+//         rgb <= cam;
+           rgb<=thres;
       end
     end
 
@@ -338,32 +376,8 @@ module display_8hex(
                   seg_out <= segments[data_in[3:0]];
                   strobe_out <= 8'b1111_1110;
                  end
-
        endcase
       end
-
 endmodule
-
-//////////////////////////////////////////////////////////////////////////////////
-// Update: 8/8/2019 GH 
-// Create Date: 10/02/2015 02:05:19 AM
-// Module Name: xvga
-//
-// xvga: Generate VGA display signals (1024 x 768 @ 60Hz)
-//
-//                              ---- HORIZONTAL -----     ------VERTICAL -----
-//                              Active                    Active
-//                    Freq      Video   FP  Sync   BP      Video   FP  Sync  BP
-//   640x480, 60Hz    25.175    640     16    96   48       480    11   2    31
-//   800x600, 60Hz    40.000    800     40   128   88       600     1   4    23
-//   1024x768, 60Hz   65.000    1024    24   136  160       768     3   6    29
-//   1280x1024, 60Hz  108.00    1280    48   112  248       768     1   3    38
-//   1280x720p 60Hz   75.25     1280    72    80  216       720     3   5    30
-//   1920x1080 60Hz   148.5     1920    88    44  148      1080     4   5    36
-//
-// change the clock frequency, front porches, sync's, and back porches to create 
-// other screen resolutions
-////////////////////////////////////////////////////////////////////////////////
-
 
 
