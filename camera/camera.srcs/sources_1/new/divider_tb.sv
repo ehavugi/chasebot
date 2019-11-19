@@ -11,7 +11,9 @@ module divider_tb;
     .dividend(s_top),
     .divider(s_buttom),
     .remainder(s_quotient),
-    .ready(s_rfd));     always begin
+    .ready(s_rfd));    
+    
+     always begin
         #5;
         clock = !clock;
      end
