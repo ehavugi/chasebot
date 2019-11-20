@@ -166,16 +166,75 @@ module top_level(
                           .frame_done_out(frame_done_out));
    
     // UP and DOWN buttons for pong paddle
-    wire up,down;
+    wire up,down,left,right;
     debounce db2(.reset_in(reset),.clock_in(clk_65mhz),.noisy_in(btnu),.clean_out(up));
     debounce db3(.reset_in(reset),.clock_in(clk_65mhz),.noisy_in(btnd),.clean_out(down));
-
+    debounce db4(.reset_in(reset),.clock_in(clk_65mhz),.noisy_in(btnl),.clean_out(left));
+    debounce db5(.reset_in(reset),.clock_in(clk_65mhz),.noisy_in(btnr),.clean_out(right));
+    
     wire phsync,pvsync,pblank;
 
     wire border = (hcount==0 | hcount==1023 | vcount==0 | vcount==767 |
                    hcount == 512 | vcount == 384);
 
     reg b,hs,vs;
+    
+    
+    //////////////////////////////////////////////////////////////////////////////////////
+    //
+    //TEST THE INITIALIZE
+    //
+    //////////////////////////////////////////////////////////////////////////////////////
+    
+    //camera size
+    parameter WIDTH = 320;
+    parameter HEIGHT = 240;
+    //cursor speed;
+    parameter SPEED = 3;
+    //blob pixels
+    logic [11:0] box,cursor,pad;
+    logic [10:0] cursor_x;
+    logic [9:0] cursor_y;
+    logic [11:0] cursor_pixel;  //selected color
+    
+    assign cursor_pixel = (cursor_x == hcount && cursor_y == vcount)? cam : 0;
+    
+    //control cursor
+     
+    always_ff @(posedge vsync_in) begin
+        if(reset) begin
+            cursor_x = 0;
+            cursor_y = 0;
+        end else begin
+            if (up) begin
+                if(cursor_y < SPEED) cursor_y <= 0;
+                else cursor_y <= cursor_y -  SPEED;
+            end
+            if (down) begin
+                if (cursor_y > HEIGHT - SPEED) cursor_y <= HEIGHT;
+                else cursor_y <= cursor_y + SPEED;
+            end
+            if (right) begin
+                if (cursor_x > WIDTH - SPEED) cursor_x <= WIDTH;
+                else cursor_x <= cursor_x + SPEED;
+            end
+            if (left) begin
+                if (cursor_x < SPEED) cursor_x <= 0;
+                else cursor_x <= cursor_x -  SPEED;
+            end
+        end
+    end
+    
+    //blobs
+    box mybox(.x_in({sw[15:13],4'h0}), .hcount_in(hcount), .y_in({sw[12:10],4'h0}), .vcount_in(vcount), .radius_in({sw[9:7],3'h0}), .pixel_out(box));
+    cursor mycur(.x_in(cursor_x), .hcount_in(hcount), .y_in(cursor_y), .vcount_in(vcount), .pixel_out(cursor));
+    colorpad mypad(.hcount_in(hcount), .vcount_in(vcount), .pixel_in(cursor_pixel), .pixel_out(pad));
+    
+    //debounces
+    
+//    assign rgb = sw[0] ? {12{border}} : pixel ; //{{4{hcount[7]}}, {4{hcount[6]}}, {4{hcount[5]}}};
+
+
     always_ff @(posedge clk_65mhz) begin
       if (sw[1:0] == 2'b01) begin
          // 1 pixel outline of visible area (white)
@@ -196,29 +255,9 @@ module top_level(
          b <= pblank;
          //rgb <= pixel;
          rgb <= cam;
+         //rgb <= (&box | &cursor)? box + cursor:cam + pad;
       end
     end
-    
-    //////////////////////////////////////////////////////////////////////////////////////
-    //
-    //TEST THE INITIALIZE
-    //
-    //////////////////////////////////////////////////////////////////////////////////////
-    
-    logic [11:0] box,cursor,pad;
-    logic [10:0] cursor_x;
-    logic [9:0] cursor_y;
-    logic [11:0] cursor_pixel;  //selected color
-    
-    assign cursor_pixel = (cursor_x == hcount && cursor_y == vcount)? cam : 0;
-    
-    box mybox(.x_in({sw[15:13],4'h0}), .hcount_in(hcount), .y_in({sw[12:10],4'h0}), .vcount_in(vcount), .radius_in({sw[9:7],3'h0}), .pixel_out(box));
-    cursor mycur(.x_in(cursor_x), .hcount_in(hcount), .y_in(cursor_y), .vcount_in(vcount), .pixel_out(cursor));
-    colorpad mypad(.hcount_in(hcount), .vcount_in(vcount), .pixel_in(cursor_pixel), .pixel_out(pad));
-    
-    
-//    assign rgb = sw[0] ? {12{border}} : pixel ; //{{4{hcount[7]}}, {4{hcount[6]}}, {4{hcount[5]}}};
-
     // the following lines are required for the Nexys4 VGA circuit - do not change
     assign vga_r = ~b ? rgb[11:8]: 0;
     assign vga_g = ~b ? rgb[7:4] : 0;
@@ -271,6 +310,5 @@ module debounce (input reset_in, clock_in, noisy_in,
 
 
 endmodule
-
 
 
