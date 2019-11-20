@@ -1,0 +1,58 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Mon Nov 18 14:41:05 2019
+# Process ID: 17740
+# Current directory: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent13412 C:\Users\Owner\OneDrive\pic\Documents\GitHub\chasebot\camera\camera.xpr
+# Log file: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/vivado.log
+# Journal file: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.xpr
+CRITICAL WARNING: [Project 1-19] Could not find the file 'C:/Users/Owner/Desktop/camera_test/clk_wiz_lab3.v'.
+CRITICAL WARNING: [Project 1-19] Could not find the file 'C:/Users/Owner/Desktop/camera_test/camera_read.sv'.
+CRITICAL WARNING: [Project 1-19] Could not find the file 'C:/Users/Owner/Desktop/camera_test/top_level.sv'.
+CRITICAL WARNING: [Project 1-19] Could not find the file 'C:/Users/Owner/Desktop/camera_test/nexys4ddr.xdc'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
+open_project: Time (s): cpu = 00:00:32 ; elapsed = 00:00:29 . Memory (MB): peak = 855.930 ; gain = 231.50update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+opexit
+INFO: [Common 17-206] Exiting Vivado at Mon Nov 18 14:47:19 2019...
+url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2019.1
+  **** Build date : May 24 2019 at 15:13:31
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292645849A
+open_hw_target: Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2038.973 ; gain = 1111.887
+set_property PROGRAM.FILE {C:\Users\Owner\Desktop\ui\cstringdisp_sample.bit} [get_hw_devices xc7a100t_0]
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1435] Device xc7a100t (JTAG device index = 0) is not programmed (DONE status = 0).
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {C:/Users/Owner/Desktop/ui/cstringdisp_sample.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+ERROR: [Labtools 27-3303] Incorrect bitstream assigned to device. Bitfile is incompatible for this device.
+ERROR: [Labtools 27-3165] End of startup status: LOW
+ERROR: [Common 17-39] 'program_hw_devices' failed due to earlier errors.
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {C:/Users/Owner/Desktop/ui/cstringdisp_sample.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+ERROR: [Labtools 27-3303] Incorrect bitstream assigned to device. Bitfile is incompatible for this device.
+ERROR: [Labtools 27-3165] End of startup status: LOW
+ERROR: [Common 17-39] 'program_hw_devices' failed due to earlier errors.
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon Nov 18 14:47:33 2019...

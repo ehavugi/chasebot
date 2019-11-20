@@ -3,121 +3,53 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="rgb2hsv_tb_behav.wdb" id="1">
+      <db_ref path="d_tf_behav.wdb" id="1">
          <top_modules>
+            <top_module name="d_tf" />
             <top_module name="glbl" />
-            <top_module name="rgb2hsv_tb" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="1386462882098fs"></ZoomEndTime>
-      <Cursor1Time time="1000000000000fs"></Cursor1Time>
+      <ZoomStartTime time="200000000fs"></ZoomStartTime>
+      <ZoomEndTime time="244400001fs"></ZoomEndTime>
+      <Cursor1Time time="200000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="176"></NameColumnWidth>
-      <ValueColumnWidth column_width="190"></ValueColumnWidth>
+      <ValueColumnWidth column_width="144"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="25" />
-   <wvobject fp_name="/rgb2hsv_tb/clock" type="logic">
-      <obj_property name="ElementShortName">clock</obj_property>
-      <obj_property name="ObjectShortName">clock</obj_property>
-   </wvobject>
-   <wvobject fp_name="/rgb2hsv_tb/reset" type="logic">
-      <obj_property name="ElementShortName">reset</obj_property>
-      <obj_property name="ObjectShortName">reset</obj_property>
-   </wvobject>
-   <wvobject fp_name="/rgb2hsv_tb/r" type="array">
-      <obj_property name="ElementShortName">r[7:0]</obj_property>
-      <obj_property name="ObjectShortName">r[7:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/rgb2hsv_tb/g" type="array">
-      <obj_property name="ElementShortName">g[7:0]</obj_property>
-      <obj_property name="ObjectShortName">g[7:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/rgb2hsv_tb/b" type="array">
-      <obj_property name="ElementShortName">b[7:0]</obj_property>
-      <obj_property name="ObjectShortName">b[7:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/rgb2hsv_tb/h" type="array">
-      <obj_property name="ElementShortName">h[7:0]</obj_property>
-      <obj_property name="ObjectShortName">h[7:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/rgb2hsv_tb/s" type="array">
-      <obj_property name="ElementShortName">s[7:0]</obj_property>
-      <obj_property name="ObjectShortName">s[7:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/rgb2hsv_tb/v" type="array">
-      <obj_property name="ElementShortName">v[7:0]</obj_property>
-      <obj_property name="ObjectShortName">v[7:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/rgb2hsv_tb/x/hue_div1/clk" type="logic">
+   <WVObjectSize size="8" />
+   <wvobject fp_name="/d_tf/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
    </wvobject>
-   <wvobject fp_name="/rgb2hsv_tb/x/hue_div1/sign" type="logic">
+   <wvobject fp_name="/d_tf/sign" type="logic">
       <obj_property name="ElementShortName">sign</obj_property>
       <obj_property name="ObjectShortName">sign</obj_property>
    </wvobject>
-   <wvobject fp_name="/rgb2hsv_tb/x/hue_div1/start" type="logic">
+   <wvobject fp_name="/d_tf/start" type="logic">
       <obj_property name="ElementShortName">start</obj_property>
       <obj_property name="ObjectShortName">start</obj_property>
    </wvobject>
-   <wvobject fp_name="/rgb2hsv_tb/x/hue_div1/dividend" type="array">
+   <wvobject fp_name="/d_tf/dividend" type="array">
       <obj_property name="ElementShortName">dividend[7:0]</obj_property>
       <obj_property name="ObjectShortName">dividend[7:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/rgb2hsv_tb/x/hue_div1/divider" type="array">
+   <wvobject fp_name="/d_tf/divider" type="array">
       <obj_property name="ElementShortName">divider[7:0]</obj_property>
       <obj_property name="ObjectShortName">divider[7:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/rgb2hsv_tb/x/hue_div1/quotient" type="array">
+   <wvobject fp_name="/d_tf/quotient" type="array">
       <obj_property name="ElementShortName">quotient[7:0]</obj_property>
       <obj_property name="ObjectShortName">quotient[7:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/rgb2hsv_tb/x/hue_div1/remainder" type="array">
+   <wvobject fp_name="/d_tf/remainder" type="array">
       <obj_property name="ElementShortName">remainder[7:0]</obj_property>
       <obj_property name="ObjectShortName">remainder[7:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/rgb2hsv_tb/x/hue_div1/ready" type="logic">
+   <wvobject fp_name="/d_tf/ready" type="logic">
       <obj_property name="ElementShortName">ready</obj_property>
       <obj_property name="ObjectShortName">ready</obj_property>
-   </wvobject>
-   <wvobject fp_name="/rgb2hsv_tb/x/hue_div1/quotient_temp" type="array">
-      <obj_property name="ElementShortName">quotient_temp[7:0]</obj_property>
-      <obj_property name="ObjectShortName">quotient_temp[7:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/rgb2hsv_tb/x/hue_div1/dividend_copy" type="array">
-      <obj_property name="ElementShortName">dividend_copy[15:0]</obj_property>
-      <obj_property name="ObjectShortName">dividend_copy[15:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/rgb2hsv_tb/x/hue_div1/divider_copy" type="array">
-      <obj_property name="ElementShortName">divider_copy[15:0]</obj_property>
-      <obj_property name="ObjectShortName">divider_copy[15:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/rgb2hsv_tb/x/hue_div1/diff" type="array">
-      <obj_property name="ElementShortName">diff[15:0]</obj_property>
-      <obj_property name="ObjectShortName">diff[15:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/rgb2hsv_tb/x/hue_div1/negative_output" type="logic">
-      <obj_property name="ElementShortName">negative_output</obj_property>
-      <obj_property name="ObjectShortName">negative_output</obj_property>
-   </wvobject>
-   <wvobject fp_name="/rgb2hsv_tb/x/hue_div1/bit" type="array">
-      <obj_property name="ElementShortName">bit[5:0]</obj_property>
-      <obj_property name="ObjectShortName">bit[5:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/rgb2hsv_tb/x/hue_div1/del_ready" type="logic">
-      <obj_property name="ElementShortName">del_ready</obj_property>
-      <obj_property name="ObjectShortName">del_ready</obj_property>
-   </wvobject>
-   <wvobject fp_name="/rgb2hsv_tb/x/hue_div1/zeros" type="array">
-      <obj_property name="ElementShortName">zeros[6:0]</obj_property>
-      <obj_property name="ObjectShortName">zeros[6:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/rgb2hsv_tb/x/hue_div1/WIDTH" type="array">
-      <obj_property name="ElementShortName">WIDTH[31:0]</obj_property>
-      <obj_property name="ObjectShortName">WIDTH[31:0]</obj_property>
    </wvobject>
 </wave_config>
