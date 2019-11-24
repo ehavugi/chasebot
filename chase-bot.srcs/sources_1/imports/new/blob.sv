@@ -122,7 +122,7 @@ module speed_bar  //display a bar indicating speed of each motor
 
 
 
-module arrow
+module arrow    //To be continued
     #(parameter WIDTH=50, //length of the bar
             HEIGHT =256, //height of the bar
             X = 800,  //start pos
