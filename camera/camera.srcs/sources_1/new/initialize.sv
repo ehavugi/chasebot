@@ -7,7 +7,7 @@ module initialize(
   input reset,
   input [10:0] hcount,
   input [9:0] vcount,
-  input vsync;
+  input vsync,
   input [3:0] directions, //up,down,left,right
   input confirm,
   input activate,
@@ -17,22 +17,26 @@ module initialize(
   input [8:0] cur_pos_y,
   input [6:0] cur_rad,
   input signed [8:0] speed1,speed2,
-  output pixel_out,
-  output [11:0] goal_pixel,
-  output [6:0] goal_rad
+  output logic pixel_out,
+  output logic [11:0] goal_pixel,
+  output logic [6:0] goal_rad,
+  output logic track,
+  output logic move,
+  output logic [1:0] state //for debug
   );
 
   logic [8:0] height;
   logic [9:0] width;
-  assign height = sw2?9'd480:9'd640;
+  assign height = sw2?9'd480:9'd240;
   assign width = sw2?10'd640:10'd320;
 
   //generate the blobs
-  logic [11:0] box,cursor,pad,speed_bar,selected_pixel;
+  logic [11:0] box,box_confirmed,cursor,pad,speed_bar,selected_pixel;
   logic [10:0] cursor_x;
   logic [9:0] cursor_y;
 
-  box box_gen(.x_in({2'b00,cur_pos_x})), .y_in(1'b0,cur_pos_y), .hcount_in(hcount), .vcount_in(vcount), .radius_in(cur_rad), .pixel_out(box));
+  box box_gen(.x_in({2'b00,cur_pos_x}), .y_in({1'b0,cur_pos_y}), .hcount_in(hcount), .vcount_in(vcount), .radius_in(cur_rad), .pixel_out(box));
+  box #(.COLOR(12'hf00)) confirmed_box_gen (.x_in({2'b00,cur_pos_x}), .y_in({1'b0,cur_pos_y}), .hcount_in(hcount), .vcount_in(vcount), .radius_in(cur_rad), .pixel_out(box_confirmed));
   cursor cursor_gen(.x_in(cursor_x), .y_in(cursor_y), .hcount_in(hcount), .vcount_in(vcount), .sw2(sw2), .pixel_out(cursor));
   colorpad colorpad_gen(.pixel_in(selected_pixel), .hcount_in(hcount), .vcount_in(vcount), .pixel_out(pad));
   speed_bar speed_bar_gen(.speed1(speed1), .speed2(speed2), .hcount_in(hcount), .vcount_in(vcount), .pixel_out(speed_bar));
@@ -55,8 +59,8 @@ module initialize(
 
   debounce db1(.reset_in(reset),.clock_in(clk_65mhz),.noisy_in(directions[3]),.clean_out(up));
   debounce db2(.reset_in(reset),.clock_in(clk_65mhz),.noisy_in(directions[2]),.clean_out(down));
-  debounce db2(.reset_in(reset),.clock_in(clk_65mhz),.noisy_in(directions[1]),.clean_out(left));
-  debounce db3(.reset_in(reset),.clock_in(clk_65mhz),.noisy_in(directions[0]),.clean_out(right));
+  debounce db3(.reset_in(reset),.clock_in(clk_65mhz),.noisy_in(directions[1]),.clean_out(left));
+  debounce db4(.reset_in(reset),.clock_in(clk_65mhz),.noisy_in(directions[0]),.clean_out(right));
 
   always_ff @(posedge clk_65mhz) begin
     if (up) begin
@@ -101,4 +105,18 @@ parameter SELECTED = 1;
 parameter CONFIRMED = 2;
 parameter DEACTIVATE = 0;
 
-logic state[1:0];
+//logic [1:0] state;
+logic [1:0] old_state;
+always_ff @(posedge clk_65mhz) begin
+    old_state <= state;
+    case(state) 
+      INITIALIZE: begin
+        track <= 0;
+        move <= 0;
+        end
+      SELECTED: begin
+                end
+    endcase
+end
+
+endmodule

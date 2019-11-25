@@ -7,7 +7,7 @@ module blob
    #(parameter COLOR = 12'hFFF)  // default color: white
    (input [10:0] x_in,hcount_in,
     input [9:0] y_in,vcount_in,
-    input [7:0] widht,height,
+    input [7:0] width,height,
     output logic [11:0] pixel_out);
 
    always_comb begin
@@ -96,7 +96,7 @@ module speed_bar  //display a bar indicating speed of each motor
                   X = 800,  //start pos
                   Y = 200,  //baseline pos
                   TOTAL = WIDTH*5,
-                  COLOR = COLOR = 12'hF00 // default color: red, the baseline is white
+                  COLOR = 12'hF00 // default color: red, the baseline is white
       )
       (input [10:0] hcount_in,
       input [9:0] vcount_in,
@@ -117,17 +117,17 @@ module speed_bar  //display a bar indicating speed of each motor
 
       assign pixel_out = &bar?bar:motor1 + motor2;
 
-      blob m1 #(.COLOR(COLOR))
-                (.x_in(x1), .y_in(y1), .hcount_in(hcount_in), .vcount_in(vcount_in), .width(WIDTH), .height(abs1), .pixel_out(motor1));
-      blob m2 #(.COLOR(COLOR))
-                (.x_in(x2), .y_in(y2), .hcount_in(hcount_in), .vcount_in(vcount_in), .width(WIDTH), .height(abs2), .pixel_out(motor2));
+      blob #(.COLOR(COLOR))  m1 
+            (.x_in(x1), .y_in(y1), .hcount_in(hcount_in), .vcount_in(vcount_in), .width(WIDTH), .height(abs1), .pixel_out(motor1));
+      blob #(.COLOR(COLOR)) m2
+            (.x_in(x2), .y_in(y2), .hcount_in(hcount_in), .vcount_in(vcount_in), .width(WIDTH), .height(abs2), .pixel_out(motor2));
 
       always_comb begin
           if ((hcount_in >= X && hcount_in < (X+TOTAL)) && (vcount_in >= Y && vcount_in < (Y+1))) bar = 12'hFFF;
           else bar = 0;
       end
 
-
+endmodule
 
 module arrow    //To be continued
     #(parameter WIDTH=50, //length of the bar
@@ -135,9 +135,11 @@ module arrow    //To be continued
             X = 800,  //start pos
             Y = 200,  //baseline pos
             TOTAL = WIDTH*5,
-            COLOR = COLOR = 12'hF00 // default color: red, the baseline is white
+            COLOR = 12'hF00 // default color: red, the baseline is white
             )
       (input [10:0] hcount_in,
       input [9:0] vcount_in,
       input signed [8:0] speed1,speed2,
       output logic [11:0] pixel_out);
+
+endmodule
