@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date             : Mon Nov 18 18:01:47 2019
+| Date             : Mon Nov 25 19:12:18 2019
 | Host             : DESKTOP-5DFT9M2 running 64-bit major release  (build 9200)
 | Command          : report_power -file top_level_power_routed.rpt -pb top_level_power_summary_routed.pb -rpx top_level_power_routed.rpx
 | Design           : top_level
@@ -53,14 +53,14 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.003 |        5 |       --- |             --- |
-| Slice Logic    |    <0.001 |      773 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      314 |     63400 |            0.50 |
+| Slice Logic    |    <0.001 |      742 |       --- |             --- |
+|   LUT as Logic |    <0.001 |      304 |     63400 |            0.48 |
 |   CARRY4       |    <0.001 |       24 |     15850 |            0.15 |
-|   Register     |    <0.001 |      254 |    126800 |            0.20 |
+|   Register     |    <0.001 |      242 |    126800 |            0.19 |
 |   F7/F8 Muxes  |    <0.001 |       10 |     63400 |            0.02 |
 |   BUFG         |    <0.001 |        1 |        32 |            3.13 |
 |   Others       |     0.000 |      107 |       --- |             --- |
-| Signals        |     0.003 |      730 |       --- |             --- |
+| Signals        |     0.003 |      721 |       --- |             --- |
 | Block RAM      |     0.008 |       36 |       135 |           26.67 |
 | MMCM           |     0.122 |        1 |         6 |           16.67 |
 | DSPs           |    <0.001 |        1 |       240 |            0.42 |

@@ -2,30 +2,48 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Mon Nov 18 14:47:37 2019
-# Process ID: 17472
+# Start of session at: Mon Nov 25 19:08:15 2019
+# Process ID: 3820
 # Current directory: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent19260 C:\Users\Owner\OneDrive\pic\Documents\GitHub\chasebot\camera\camera.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent14264 C:\Users\Owner\OneDrive\pic\Documents\GitHub\chasebot\camera\camera.xpr
 # Log file: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/vivado.log
 # Journal file: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera\vivado.jou
 #-----------------------------------------------------------
 start_gui
 open_project C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.xpr
-CRITICAL WARNING: [Project 1-19] Could not find the file 'C:/Users/Owner/Desktop/camera_test/clk_wiz_lab3.v'.
-CRITICAL WARNING: [Project 1-19] Could not find the file 'C:/Users/Owner/Desktop/camera_test/camera_read.sv'.
-CRITICAL WARNING: [Project 1-19] Could not find the file 'C:/Users/Owner/Desktop/camera_test/top_level.sv'.
-CRITICAL WARNING: [Project 1-19] Could not find the file 'C:/Users/Owner/Desktop/camera_test/nexys4ddr.xdc'.
 Scanning sources...
 Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
-open_project: Time (s): cpu = 00:00:32 ; elapsed = 00:00:18 . Memory (MB): peak = 872.488 ; gain = 240.621
-update_compile_order -fileset sources_1
-reset_run impl_1 -prev_step 
-launch_runs impl_1 -to_step write_bitstream -jobs 6
-[Mon Nov 18 14:49:58 2019] Launched impl_1...
+open_project: Time (s): cpu = 00:00:21 ; elapsed = 00:00:11 . Memory (MB): peak = 802.777 ; gain = 140.727
+update_compile_order -fileset sources_1reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Mon Nov 25 19:10:20 2019] Launched synth_1...
+Run output will be captured here: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/synth_1/runme.log
+[Mon Nov 25 19:10:20 2019] Launched impl_1...
 Run output will be captured here: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/impl_1/runme.log
+open_run impl_1
+INFO: [Device 21-403] Loading part xc7a100tcsg324-3
+INFO: [Netlist 29-17] Analyzing 74 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2019.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.163 . Memory (MB): peak = 1707.332 ; gain = 0.000
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.163 . Memory (MB): peak = 1707.332 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1707.332 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run: Time (s): cpu = 00:00:25 ; elapsed = 00:00:20 . Memory (MB): peak = 1850.324 ; gain = 1028.340
 open_hw
 connect_hw_server
 INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
@@ -37,82 +55,15 @@ INFO: [Labtools 27-2221] Launch Output:
     ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 
 
+disconnect_hw_server localhost:3121
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
 open_hw_target
-INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292645849A
-open_hw_target: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2039.371 ; gain = 1114.508
-set_property PROGRAM.FILE {C:\Users\Owner\Desktop\ui\cstringdisp_sample.bit} [get_hw_devices xc7a100t_0]
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292645910A
+set_property PROGRAM.FILE {C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/impl_1/top_level.bit} [get_hw_devices xc7a100t_0]
 current_hw_device [get_hw_devices xc7a100t_0]
 refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
-INFO: [Labtools 27-1435] Device xc7a100t (JTAG device index = 0) is not programmed (DONE status = 0).
-set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
-set_property PROGRAM.FILE {C:/Users/Owner/Desktop/ui/cstringdisp_sample.bit} [get_hw_devices xc7a100t_0]
-program_hw_devices [get_hw_devices xc7a100t_0]
-ERROR: [Labtools 27-3303] Incorrect bitstream assigned to device. Bitfile is incompatible for this device.
-ERROR: [Labtools 27-3165] End of startup status: LOW
-ERROR: [Common 17-39] 'program_hw_devices' failed due to earlier errors.
-reset_run impl_1 -prev_step 
-launch_runs impl_1 -to_step write_bitstream -jobs 6
-[Mon Nov 18 14:52:15 2019] Launched impl_1...
-Run output will be captured here: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/impl_1/runme.log
-set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
-set_property PROGRAM.FILE {C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/impl_1/top_level.bit} [get_hw_devices xc7a100t_0]
-program_hw_devices -disable_eos_check [get_hw_devices xc7a100t_0]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
 INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-launch_simulation
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [USF-XSim-7] Finding pre-compiled libraries...
-INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2019.1/data/xsim/xsim.ini' copied to run dir:'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-54] Inspecting design source files for 'rgb2hsv_tb' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -prj rgb2hsv_tb_vlog.prj"
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module rgb2hsv
-INFO: [VRFC 10-2458] undeclared symbol s_buttom, assumed default net type wire [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv:86]
-INFO: [VRFC 10-2458] undeclared symbol h_buttom, assumed default net type wire [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv:94]
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sim_1/new/rgb2hsv_tb.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module rgb2hsv_tb
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module glbl
-"xvhdl --incr --relax -prj rgb2hsv_tb_vhdl.prj"
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/div_gen_1/sim/div_gen_1.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'div_gen_1'
-INFO: [USF-XSim-69] 'compile' step finished in '5' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.sim/sim_1/behav/xsim'
-"xelab -wto 0ccf8957c4ee434381cc0d15f5574ec9 --incr --debug typical --relax --mt 2 -L xbip_utils_v3_0_10 -L axi_utils_v2_0_6 -L xbip_pipe_v3_0_6 -L xbip_dsp48_wrapper_v3_0_4 -L xbip_dsp48_addsub_v3_0_6 -L xbip_bram18k_v3_0_6 -L mult_gen_v12_0_15 -L floating_point_v7_0_16 -L xbip_dsp48_mult_v3_0_6 -L xbip_dsp48_multadd_v3_0_6 -L div_gen_v5_1_15 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot rgb2hsv_tb_behav xil_defaultlib.rgb2hsv_tb xil_defaultlib.glbl -log elaborate.log"
-Vivado Simulator 2019.1
-Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 0ccf8957c4ee434381cc0d15f5574ec9 --incr --debug typical --relax --mt 2 -L xbip_utils_v3_0_10 -L axi_utils_v2_0_6 -L xbip_pipe_v3_0_6 -L xbip_dsp48_wrapper_v3_0_4 -L xbip_dsp48_addsub_v3_0_6 -L xbip_bram18k_v3_0_6 -L mult_gen_v12_0_15 -L floating_point_v7_0_16 -L xbip_dsp48_mult_v3_0_6 -L xbip_dsp48_multadd_v3_0_6 -L div_gen_v5_1_15 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot rgb2hsv_tb_behav xil_defaultlib.rgb2hsv_tb xil_defaultlib.glbl -log elaborate.log 
-Using 2 slave threads.
-Starting static elaboration
-WARNING: [VRFC 10-3715] size mismatch in mixed language port association, vhdl port 's_axis_divisor_tdata' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv:84]
-WARNING: [VRFC 10-3715] size mismatch in mixed language port association, vhdl port 's_axis_divisor_tdata' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv:92]
-Completed static elaboration
-Starting simulation data flow analysis
-ERROR: [XSIM 43-4430] C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv Line 88. Port width mismatch between VHDL formal port s_axis_dividend_tdata of size 8 and Verilog actual of size 16
-INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
-INFO: [USF-XSim-99] Step results log file:'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.sim/sim_1/behav/xsim/elaborate.log'
-ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.sim/sim_1/behav/xsim/elaborate.log' file for more information.
-ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
-launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:12 . Memory (MB): peak = 2157.980 ; gain = 0.000
-ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
-update_files -from_files C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/clk_wiz_lab3.v -to_files C:/Users/Owner/Desktop/camera_test/clk_wiz_lab3.v -filesets [get_filesets *]
-INFO: [filemgmt 20-762] Replacing file 'C:/Users/Owner/Desktop/camera_test/clk_wiz_lab3.v' with file 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/clk_wiz_lab3.v'.
-update_files -from_files C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/camera_read.sv -to_files C:/Users/Owner/Desktop/camera_test/camera_read.sv -filesets [get_filesets *]
-INFO: [filemgmt 20-762] Replacing file 'C:/Users/Owner/Desktop/camera_test/camera_read.sv' with file 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/camera_read.sv'.
-update_files -from_files C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv -to_files C:/Users/Owner/Desktop/camera_test/top_level.sv -filesets [get_filesets *]
-INFO: [filemgmt 20-762] Replacing file 'C:/Users/Owner/Desktop/camera_test/top_level.sv' with file 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv'.
-update_compile_order -fileset sources_1
-update_files -from_files C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/nexys4ddr.xdc -to_files C:/Users/Owner/Desktop/camera_test/nexys4ddr.xdc -filesets [get_filesets *]
-INFO: [filemgmt 20-762] Replacing file 'C:/Users/Owner/Desktop/camera_test/nexys4ddr.xdc' with file 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/nexys4ddr.xdc'.
 set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
 set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
 set_property PROGRAM.FILE {C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/impl_1/top_level.bit} [get_hw_devices xc7a100t_0]
@@ -120,139 +71,8 @@ program_hw_devices [get_hw_devices xc7a100t_0]
 INFO: [Labtools 27-3164] End of startup status: HIGH
 refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
 INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 6
-[Mon Nov 18 15:04:17 2019] Launched synth_1...
-Run output will be captured here: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/synth_1/runme.log
-[Mon Nov 18 15:04:18 2019] Launched impl_1...
-Run output will be captured here: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/impl_1/runme.log
-set_property -dict [list CONFIG.dividend_and_quotient_width {16} CONFIG.divisor_width {16} CONFIG.fractional_width {16} CONFIG.latency {18}] [get_ips div_gen_1]
-generate_target all [get_files  C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/div_gen_1/div_gen_1.xci]
-INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'div_gen_1'...
-INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'div_gen_1'...
-INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'div_gen_1'...
-CRITICAL WARNING: [IP_Flow 19-157] Failed to copy file from 'c:/Xilinx/Vivado/2019.1/data/ip/xilinx/floating_point_v7_0/hdl/floating_point_v7_0_vh_rfs.vhd' to 'c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/div_gen_1/hdl/floating_point_v7_0_vh_rfs.vhd'.
-ERROR: [IP_Flow 19-167] Failed to deliver one or more file(s).
-ERROR: [IP_Flow 19-3505] IP Generation error: Failed to generate IP 'div_gen_1'. Failed to generate 'VHDL Simulation' outputs: 
-ERROR: [IP_Flow 19-98] Generation of the IP CORE failed.
-Failed to generate IP 'div_gen_1'. Failed to generate 'VHDL Simulation' outputs: 
-generate_target all [get_files  C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/div_gen_1/div_gen_1.xci]
-INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'div_gen_1'...
-INFO: [IP_Flow 19-1686] Generating 'C Simulation' target for IP 'div_gen_1'...
-INFO: [IP_Flow 19-1686] Generating 'Test Bench' target for IP 'div_gen_1'...
-INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'div_gen_1'...
-catch { config_ip_cache -export [get_ips -all div_gen_1] }
-INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP div_gen_1, cache-ID = 0edac56e1b44b141; cache size = 4.271 MB.
-config_ip_cache: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2218.527 ; gain = 0.000
-catch { [ delete_ip_run [get_ips -all div_gen_1] ] }
-INFO: [Project 1-386] Moving file 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/div_gen_1/div_gen_1.xci' from fileset 'div_gen_1' to fileset 'sources_1'.
-export_ip_user_files -of_objects [get_files C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/div_gen_1/div_gen_1.xci] -no_script -sync -force -quiet
-create_ip_run [get_files -of_objects [get_fileset sources_1] C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/div_gen_1/div_gen_1.xci]
-INFO: [Vivado 12-3453] The given sub-design is up-to-date, no action was taken.  If a run is still desired, use the '-force' option for the file:'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/div_gen_1/div_gen_1.xci'
-export_simulation -of_objects [get_files C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/div_gen_1/div_gen_1.xci] -directory C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.ip_user_files -ipstatic_source_dir C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.cache/compile_simlib/modelsim} {questa=C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.cache/compile_simlib/questa} {riviera=C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.cache/compile_simlib/riviera} {activehdl=C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 6
-[Mon Nov 18 15:07:18 2019] Launched synth_1...
-Run output will be captured here: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/synth_1/runme.log
-[Mon Nov 18 15:07:18 2019] Launched impl_1...
-Run output will be captured here: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/impl_1/runme.log
-add_files {C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/camera_read.sv C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/debounce.sv C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/divider.sv C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/divider/divider.xci C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/xvga.sv C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/div_gen_0_1/div_gen_0.xci C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/display_8hex.sv C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/picture_blob.sv C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/divider.v C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/pong_game.sv C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/clk_wiz_lab3.v C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/digits.sv C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/div_gen_1/div_gen_1.xci C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/blob.sv C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/divider_tb.sv C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/div_gen_0/div_gen_0.xci}
-WARNING: [filemgmt 56-12] File 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/camera_read.sv' cannot be added to the project because it already exists in the project, skipping this file
-WARNING: [filemgmt 56-12] File 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/debounce.sv' cannot be added to the project because it already exists in the project, skipping this file
-WARNING: [filemgmt 56-12] File 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/xvga.sv' cannot be added to the project because it already exists in the project, skipping this file
-CRITICAL WARNING: [Vivado 12-1462] The source file is already part of the fileset 'sources_1'. Requested source 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/div_gen_1/div_gen_1.xci' will not be added.
-CRITICAL WARNING: [IP_Flow 19-3389] Failed to import IP file 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci': IP name 'blk_mem_gen_0' is already in use in this project.  Please choose a different name.
-
-CRITICAL WARNING: [Vivado 12-1464] The source file 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci' cannot be added to the fileset 'sources_1'.
-CRITICAL WARNING: [IP_Flow 19-3389] Failed to import IP file 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/div_gen_0/div_gen_0.xci': IP name 'div_gen_0' is already in use in this project.  Please choose a different name.
-
-CRITICAL WARNING: [Vivado 12-1464] The source file 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/div_gen_0/div_gen_0.xci' cannot be added to the fileset 'sources_1'.
-WARNING: [filemgmt 56-12] File 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/display_8hex.sv' cannot be added to the project because it already exists in the project, skipping this file
-WARNING: [filemgmt 56-12] File 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/divider.v' cannot be added to the project because it already exists in the project, skipping this file
-WARNING: [filemgmt 56-12] File 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/pong_game.sv' cannot be added to the project because it already exists in the project, skipping this file
-WARNING: [filemgmt 56-12] File 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv' cannot be added to the project because it already exists in the project, skipping this file
-WARNING: [filemgmt 56-12] File 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv' cannot be added to the project because it already exists in the project, skipping this file
-WARNING: [filemgmt 56-12] File 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/clk_wiz_lab3.v' cannot be added to the project because it already exists in the project, skipping this file
-WARNING: [filemgmt 56-12] File 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/blob.sv' cannot be added to the project because it already exists in the project, skipping this file
-WARNING: [filemgmt 56-12] File 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/divider_tb.sv' cannot be added to the project because it already exists in the project, skipping this file
-export_ip_user_files -of_objects  [get_files  {C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/divider/divider.xci C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/div_gen_0_1/div_gen_0.xci C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/div_gen_1/div_gen_1.xci}] -lib_map_path [list {modelsim=C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.cache/compile_simlib/modelsim} {questa=C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.cache/compile_simlib/questa} {riviera=C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.cache/compile_simlib/riviera} {activehdl=C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.cache/compile_simlib/activehdl}] -force -quiet
-update_compile_order -fileset sources_1
-export_ip_user_files -of_objects  [get_files C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/divider.sv] -no_script -reset -force -quiet
-remove_files  C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/divider.sv
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 6
-[Mon Nov 18 15:10:49 2019] Launched synth_1...
-Run output will be captured here: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/synth_1/runme.log
-[Mon Nov 18 15:10:49 2019] Launched impl_1...
-Run output will be captured here: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/impl_1/runme.log
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 6
-[Mon Nov 18 15:56:46 2019] Launched synth_1...
-Run output will be captured here: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/synth_1/runme.log
-[Mon Nov 18 15:56:46 2019] Launched impl_1...
-Run output will be captured here: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/impl_1/runme.log
-update_compile_order -fileset sources_1
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 6
-[Mon Nov 18 16:03:20 2019] Launched synth_1...
-Run output will be captured here: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/synth_1/runme.log
-[Mon Nov 18 16:03:20 2019] Launched impl_1...
-Run output will be captured here: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/impl_1/runme.log
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 6
-[Mon Nov 18 16:12:52 2019] Launched synth_1...
-Run output will be captured here: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/synth_1/runme.log
-[Mon Nov 18 16:12:52 2019] Launched impl_1...
-Run output will be captured here: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/impl_1/runme.log
-set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
-set_property PROGRAM.FILE {C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/impl_1/top_level.bit} [get_hw_devices xc7a100t_0]
-program_hw_devices [get_hw_devices xc7a100t_0]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
-INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-reset_run impl_1 -prev_step 
-launch_runs impl_1 -to_step write_bitstream -jobs 6
-[Mon Nov 18 16:20:33 2019] Launched impl_1...
-Run output will be captured here: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/impl_1/runme.log
-set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
-set_property PROGRAM.FILE {C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/impl_1/top_level.bit} [get_hw_devices xc7a100t_0]
-program_hw_devices [get_hw_devices xc7a100t_0]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
-INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-reset_run synth_1
-launch_runs synth_1 -jobs 6
-WARNING: [HDL 9-3756] overwriting previous definition of module 'rgb2hsv' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv:22]
-WARNING: [HDL 9-3756] overwriting previous definition of module 'synchronize' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:241]
-WARNING: [HDL 9-3756] overwriting previous definition of module 'debounce' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:259]
-WARNING: [HDL 9-3756] overwriting previous definition of module 'display_8hex' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:292]
-WARNING: [filemgmt 20-1318] Duplicate Design Unit 'rgb2hsv()' found in library 'xil_defaultlib'
-Duplicate found at line 22 of file C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v
-	(Active) Duplicate found at line 22 of file C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv
-WARNING: [filemgmt 20-1318] Duplicate Design Unit 'debounce()' found in library 'xil_defaultlib'
-Duplicate found at line 23 of file C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/debounce.sv
-	(Active) Duplicate found at line 259 of file C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv
-WARNING: [filemgmt 20-1318] Duplicate Design Unit 'display_8hex()' found in library 'xil_defaultlib'
-Duplicate found at line 11 of file C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/display_8hex.sv
-	(Active) Duplicate found at line 292 of file C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv
-WARNING: [filemgmt 20-1318] Duplicate Design Unit 'synchronize()' found in library 'xil_defaultlib'
-Duplicate found at line 43 of file C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/pong_game.sv
-	(Active) Duplicate found at line 241 of file C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv
-[Mon Nov 18 16:33:55 2019] Launched synth_1...
-Run output will be captured here: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/synth_1/runme.log
-reset_run synth_1
-WARNING: [Vivado 12-1017] Problems encountered:
-1. PID not specified
-
-launch_runs impl_1 -to_step write_bitstream -jobs 6
-[Mon Nov 18 16:34:00 2019] Launched synth_1...
-Run output will be captured here: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/synth_1/runme.log
-[Mon Nov 18 16:34:00 2019] Launched impl_1...
-Run output will be captured here: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/impl_1/runme.log
-ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210292645849A
-INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292645849A
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210292645910A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292645910A
 INFO: [Labtools 27-1435] Device xc7a100t (JTAG device index = 0) is not programmed (DONE status = 0).
 WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
 set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
@@ -262,17 +82,30 @@ program_hw_devices [get_hw_devices xc7a100t_0]
 INFO: [Labtools 27-3164] End of startup status: HIGH
 refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
 INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 6
-[Mon Nov 18 17:08:40 2019] Launched synth_1...
-Run output will be captured here: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/synth_1/runme.log
-[Mon Nov 18 17:08:40 2019] Launched impl_1...
-Run output will be captured here: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/impl_1/runme.log
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 6
-[Mon Nov 18 17:14:23 2019] Launched synth_1...
-Run output will be captured here: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/synth_1/runme.log
-[Mon Nov 18 17:14:23 2019] Launched impl_1...
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210292645910A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292645910A
+INFO: [Labtools 27-1435] Device xc7a100t (JTAG device index = 0) is not programmed (DONE status = 0).
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/impl_1/top_level.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210292645910A
+disconnect_hw_server localhost:3121
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292645910A
+ERROR: [Labtools 27-2269] No devices detected on target localhost:3121/xilinx_tcf/Digilent/210292645910A.
+Check cable connectivity and that the target board is powered up then
+use the disconnect_hw_server and connect_hw_server to re-register this hardware target.
+ERROR: [Common 17-39] 'open_hw_target' failed due to earlier errors.
+reset_run impl_1 -prev_step 
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Mon Nov 25 19:29:32 2019] Launched impl_1...
 Run output will be captured here: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/impl_1/runme.log
 set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
 set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
@@ -281,393 +114,3 @@ program_hw_devices [get_hw_devices xc7a100t_0]
 INFO: [Labtools 27-3164] End of startup status: HIGH
 refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
 INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
-set_property PROGRAM.FILE {C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/impl_1/top_level.bit} [get_hw_devices xc7a100t_0]
-program_hw_devices [get_hw_devices xc7a100t_0]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
-INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 6
-[Mon Nov 18 17:20:17 2019] Launched synth_1...
-Run output will be captured here: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/synth_1/runme.log
-[Mon Nov 18 17:20:17 2019] Launched impl_1...
-Run output will be captured here: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/impl_1/runme.log
-export_ip_user_files -of_objects  [get_files C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/div_gen_1/div_gen_1.xci] -no_script -reset -force -quiet
-remove_files  C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/div_gen_1/div_gen_1.xci
-add_files -norecurse C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/divider.v
-WARNING: [filemgmt 56-12] File 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/divider.v' cannot be added to the project because it already exists in the project, skipping this file
-export_ip_user_files -of_objects  [get_files C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/divider/divider.xci] -no_script -reset -force -quiet
-remove_files  C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/divider/divider.xci
-export_ip_user_files -of_objects  [get_files C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/div_gen_0_1/div_gen_0.xci] -no_script -reset -force -quiet
-remove_files  C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/div_gen_0_1/div_gen_0.xci
-set_property SOURCE_SET sources_1 [get_filesets sim_1]
-add_files -fileset sim_1 -norecurse C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/d_tf.v
-update_compile_order -fileset sim_1
-set_property is_enabled false [get_files  C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/divider.v]
-set_property top d_tf [get_filesets sim_1]
-set_property top_lib xil_defaultlib [get_filesets sim_1]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/d_tf.v:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/divider.v:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/divider.sv:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/pong_game.sv:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/d_tf.v:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/divider.v:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/divider.sv:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/pong_game.sv:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/d_tf.v:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/divider.v:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/divider.sv:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/pong_game.sv:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:]
-update_compile_order -fileset sim_1
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 6
-[Mon Nov 18 17:31:20 2019] Launched synth_1...
-Run output will be captured here: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/synth_1/runme.log
-[Mon Nov 18 17:31:20 2019] Launched impl_1...
-Run output will be captured here: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/impl_1/runme.log
-launch_simulation
-INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.sim/sim_1/behav/xsim'
-INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [USF-XSim-7] Finding pre-compiled libraries...
-INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2019.1/data/xsim/xsim.ini' copied to run dir:'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-54] Inspecting design source files for 'd_tf' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -prj d_tf_vlog.prj"
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/d_tf.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module d_tf
-INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.sim/sim_1/behav/xsim'
-"xelab -wto 0ccf8957c4ee434381cc0d15f5574ec9 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot d_tf_behav xil_defaultlib.d_tf xil_defaultlib.glbl -log elaborate.log"
-Vivado Simulator 2019.1
-Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 0ccf8957c4ee434381cc0d15f5574ec9 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot d_tf_behav xil_defaultlib.d_tf xil_defaultlib.glbl -log elaborate.log 
-Using 2 slave threads.
-Starting static elaboration
-ERROR: [VRFC 10-2063] Module <divider> not found while processing module instance <uut> [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/d_tf.v:40]
-ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
-INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
-INFO: [USF-XSim-99] Step results log file:'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.sim/sim_1/behav/xsim/elaborate.log'
-ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.sim/sim_1/behav/xsim/elaborate.log' file for more information.
-ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
-ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
-launch_simulation
-INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.sim/sim_1/behav/xsim'
-INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [USF-XSim-7] Finding pre-compiled libraries...
-INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2019.1/data/xsim/xsim.ini' copied to run dir:'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-54] Inspecting design source files for 'd_tf' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -prj d_tf_vlog.prj"
-INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.sim/sim_1/behav/xsim'
-"xelab -wto 0ccf8957c4ee434381cc0d15f5574ec9 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot d_tf_behav xil_defaultlib.d_tf xil_defaultlib.glbl -log elaborate.log"
-Vivado Simulator 2019.1
-Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 0ccf8957c4ee434381cc0d15f5574ec9 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot d_tf_behav xil_defaultlib.d_tf xil_defaultlib.glbl -log elaborate.log 
-Using 2 slave threads.
-Starting static elaboration
-ERROR: [VRFC 10-2063] Module <divider> not found while processing module instance <uut> [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/d_tf.v:40]
-ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
-INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
-INFO: [USF-XSim-99] Step results log file:'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.sim/sim_1/behav/xsim/elaborate.log'
-ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.sim/sim_1/behav/xsim/elaborate.log' file for more information.
-ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
-launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 2344.895 ; gain = 0.172
-ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
-export_ip_user_files -of_objects  [get_files C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/divider_tb.sv] -no_script -reset -force -quiet
-remove_files  C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/divider_tb.sv
-set_property is_enabled true [get_files  C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/divider.v]
-update_compile_order -fileset sources_1
-launch_simulation
-INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.sim/sim_1/behav/xsim'
-INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [USF-XSim-7] Finding pre-compiled libraries...
-INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2019.1/data/xsim/xsim.ini' copied to run dir:'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-54] Inspecting design source files for 'd_tf' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -prj d_tf_vlog.prj"
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/divider.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module divider
-INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.sim/sim_1/behav/xsim'
-"xelab -wto 0ccf8957c4ee434381cc0d15f5574ec9 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot d_tf_behav xil_defaultlib.d_tf xil_defaultlib.glbl -log elaborate.log"
-Vivado Simulator 2019.1
-Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 0ccf8957c4ee434381cc0d15f5574ec9 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot d_tf_behav xil_defaultlib.d_tf xil_defaultlib.glbl -log elaborate.log 
-Using 2 slave threads.
-Starting static elaboration
-Completed static elaboration
-Starting simulation data flow analysis
-WARNING: [XSIM 43-4099] "C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/divider.v" Line 12. Module divider doesn't have a timescale but at least one module in design has a timescale.
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.divider
-Compiling module xil_defaultlib.d_tf
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot d_tf_behav
-
-****** Webtalk v2019.1 (64-bit)
-  **** SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
-  **** IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
-
-source C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.sim/sim_1/behav/xsim/xsim.dir/d_tf_behav/webtalk/xsim_webtalk.tcl -notrace
-webtalk_transmit: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 109.344 ; gain = 17.805
-INFO: [Common 17-206] Exiting Webtalk at Mon Nov 18 17:34:52 2019...
-run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:11 . Memory (MB): peak = 2358.223 ; gain = 0.000
-INFO: [USF-XSim-69] 'elaborate' step finished in '11' seconds
-INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.sim/sim_1/behav/xsim'
-INFO: [USF-XSim-98] *** Running xsim
-   with args "d_tf_behav -key {Behavioral:sim_1:Functional:d_tf} -tclbatch {d_tf.tcl} -view {C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/rgb2hsv_tb_behav.wcfg} -log {simulate.log}"
-INFO: [USF-XSim-8] Loading simulator feature
-Vivado Simulator 2019.1
-Time resolution is 1 ps
-open_wave_config C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/rgb2hsv_tb_behav.wcfg
-WARNING: Simulation object /rgb2hsv_tb/clock was not found in the design.
-WARNING: Simulation object /rgb2hsv_tb/reset was not found in the design.
-WARNING: Simulation object /rgb2hsv_tb/r was not found in the design.
-WARNING: Simulation object /rgb2hsv_tb/g was not found in the design.
-WARNING: Simulation object /rgb2hsv_tb/b was not found in the design.
-WARNING: Simulation object /rgb2hsv_tb/h was not found in the design.
-WARNING: Simulation object /rgb2hsv_tb/s was not found in the design.
-WARNING: Simulation object /rgb2hsv_tb/v was not found in the design.
-WARNING: Simulation object /rgb2hsv_tb/x/hue_div1/clk was not found in the design.
-WARNING: Simulation object /rgb2hsv_tb/x/hue_div1/sign was not found in the design.
-WARNING: Simulation object /rgb2hsv_tb/x/hue_div1/start was not found in the design.
-WARNING: Simulation object /rgb2hsv_tb/x/hue_div1/dividend was not found in the design.
-WARNING: Simulation object /rgb2hsv_tb/x/hue_div1/divider was not found in the design.
-WARNING: Simulation object /rgb2hsv_tb/x/hue_div1/quotient was not found in the design.
-WARNING: Simulation object /rgb2hsv_tb/x/hue_div1/remainder was not found in the design.
-WARNING: Simulation object /rgb2hsv_tb/x/hue_div1/ready was not found in the design.
-WARNING: Simulation object /rgb2hsv_tb/x/hue_div1/quotient_temp was not found in the design.
-WARNING: Simulation object /rgb2hsv_tb/x/hue_div1/dividend_copy was not found in the design.
-WARNING: Simulation object /rgb2hsv_tb/x/hue_div1/divider_copy was not found in the design.
-WARNING: Simulation object /rgb2hsv_tb/x/hue_div1/diff was not found in the design.
-WARNING: Simulation object /rgb2hsv_tb/x/hue_div1/negative_output was not found in the design.
-WARNING: Simulation object /rgb2hsv_tb/x/hue_div1/bit was not found in the design.
-WARNING: Simulation object /rgb2hsv_tb/x/hue_div1/del_ready was not found in the design.
-WARNING: Simulation object /rgb2hsv_tb/x/hue_div1/zeros was not found in the design.
-WARNING: Simulation object /rgb2hsv_tb/x/hue_div1/WIDTH was not found in the design.
-source d_tf.tcl
-# set curr_wave [current_wave_config]
-# if { [string length $curr_wave] == 0 } {
-#   if { [llength [get_objects]] > 0} {
-#     add_wave /
-#     set_property needs_save false [current_wave_config]
-#   } else {
-#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
-#   }
-# }
-# run 1ms
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'd_tf_behav' loaded.
-INFO: [USF-XSim-97] XSim simulation ran for 1ms
-launch_simulation: Time (s): cpu = 00:00:07 ; elapsed = 00:00:17 . Memory (MB): peak = 2369.410 ; gain = 16.059
-relaunch_sim
-suspend_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 2370.285 ; gain = 0.000
-INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.sim/sim_1/behav/xsim'
-INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [USF-XSim-7] Finding pre-compiled libraries...
-INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2019.1/data/xsim/xsim.ini' copied to run dir:'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-54] Inspecting design source files for 'd_tf' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -prj d_tf_vlog.prj"
-INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
-INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.sim/sim_1/behav/xsim'
-INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.sim/sim_1/behav/xsim'
-"xelab -wto 0ccf8957c4ee434381cc0d15f5574ec9 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot d_tf_behav xil_defaultlib.d_tf xil_defaultlib.glbl -log elaborate.log"
-Vivado Simulator 2019.1
-Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 0ccf8957c4ee434381cc0d15f5574ec9 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot d_tf_behav xil_defaultlib.d_tf xil_defaultlib.glbl -log elaborate.log 
-Using 2 slave threads.
-Starting static elaboration
-Completed static elaboration
-INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
-INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
-Vivado Simulator 2019.1
-Time resolution is 1 ps
-relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 2370.285 ; gain = 0.000
-set_property top rgb2hsv_tb [get_filesets sim_1]
-set_property top_lib xil_defaultlib [get_filesets sim_1]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/d_tf.v:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/divider.v:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/divider.sv:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/pong_game.sv:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/divider_tb.sv:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/d_tf.v:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/divider.v:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/divider.sv:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/pong_game.sv:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/divider_tb.sv:]
-ERROR: [Common 17-180] Spawn failed: No error
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/d_tf.v:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/divider.v:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/divider.sv:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/pong_game.sv:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/divider_tb.sv:]
-ERROR: [Common 17-180] Spawn failed: No error
-update_compile_order -fileset sim_1
-relaunch_sim
-INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.sim/sim_1/behav/xsim'
-INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [USF-XSim-7] Finding pre-compiled libraries...
-INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2019.1/data/xsim/xsim.ini' copied to run dir:'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-54] Inspecting design source files for 'rgb2hsv_tb' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -prj rgb2hsv_tb_vlog.prj"
-INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
-INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.sim/sim_1/behav/xsim'
-INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.sim/sim_1/behav/xsim'
-"xelab -wto 0ccf8957c4ee434381cc0d15f5574ec9 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot rgb2hsv_tb_behav xil_defaultlib.rgb2hsv_tb xil_defaultlib.glbl -log elaborate.log"
-Vivado Simulator 2019.1
-Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 0ccf8957c4ee434381cc0d15f5574ec9 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot rgb2hsv_tb_behav xil_defaultlib.rgb2hsv_tb xil_defaultlib.glbl -log elaborate.log 
-Using 2 slave threads.
-Starting static elaboration
-WARNING: [VRFC 10-3715] size mismatch in mixed language port association, vhdl port 's_axis_divisor_tdata' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv:84]
-WARNING: [VRFC 10-3715] size mismatch in mixed language port association, vhdl port 's_axis_divisor_tdata' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv:92]
-Completed static elaboration
-Starting simulation data flow analysis
-ERROR: [XSIM 43-4430] C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv Line 88. Port width mismatch between VHDL formal port s_axis_dividend_tdata of size 8 and Verilog actual of size 16
-INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
-INFO: [USF-XSim-99] Step results log file:'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.sim/sim_1/behav/xsim/elaborate.log'
-ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.sim/sim_1/behav/xsim/elaborate.log' file for more information.
-ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
-ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
-ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
-
-launch_simulation
-INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.sim/sim_1/behav/xsim'
-INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [USF-XSim-7] Finding pre-compiled libraries...
-INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2019.1/data/xsim/xsim.ini' copied to run dir:'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-54] Inspecting design source files for 'rgb2hsv_tb' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -prj rgb2hsv_tb_vlog.prj"
-INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.sim/sim_1/behav/xsim'
-"xelab -wto 0ccf8957c4ee434381cc0d15f5574ec9 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot rgb2hsv_tb_behav xil_defaultlib.rgb2hsv_tb xil_defaultlib.glbl -log elaborate.log"
-Vivado Simulator 2019.1
-Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 0ccf8957c4ee434381cc0d15f5574ec9 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot rgb2hsv_tb_behav xil_defaultlib.rgb2hsv_tb xil_defaultlib.glbl -log elaborate.log 
-Using 2 slave threads.
-Starting static elaboration
-WARNING: [VRFC 10-3715] size mismatch in mixed language port association, vhdl port 's_axis_divisor_tdata' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv:84]
-WARNING: [VRFC 10-3715] size mismatch in mixed language port association, vhdl port 's_axis_divisor_tdata' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv:92]
-Completed static elaboration
-Starting simulation data flow analysis
-ERROR: [XSIM 43-4430] C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv Line 88. Port width mismatch between VHDL formal port s_axis_dividend_tdata of size 8 and Verilog actual of size 16
-INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
-INFO: [USF-XSim-99] Step results log file:'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.sim/sim_1/behav/xsim/elaborate.log'
-ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.sim/sim_1/behav/xsim/elaborate.log' file for more information.
-ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
-ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
-save_wave_config {C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/rgb2hsv_tb_behav.wcfg}
-close_sim
-INFO: [Simtcl 6-16] Simulation closed
-launch_simulation
-INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.sim/sim_1/behav/xsim'
-INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [USF-XSim-7] Finding pre-compiled libraries...
-INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2019.1/data/xsim/xsim.ini' copied to run dir:'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-54] Inspecting design source files for 'rgb2hsv_tb' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -prj rgb2hsv_tb_vlog.prj"
-INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.sim/sim_1/behav/xsim'
-"xelab -wto 0ccf8957c4ee434381cc0d15f5574ec9 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot rgb2hsv_tb_behav xil_defaultlib.rgb2hsv_tb xil_defaultlib.glbl -log elaborate.log"
-Vivado Simulator 2019.1
-Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 0ccf8957c4ee434381cc0d15f5574ec9 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot rgb2hsv_tb_behav xil_defaultlib.rgb2hsv_tb xil_defaultlib.glbl -log elaborate.log 
-Using 2 slave threads.
-Starting static elaboration
-WARNING: [VRFC 10-3715] size mismatch in mixed language port association, vhdl port 's_axis_divisor_tdata' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv:84]
-WARNING: [VRFC 10-3715] size mismatch in mixed language port association, vhdl port 's_axis_divisor_tdata' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv:92]
-Completed static elaboration
-Starting simulation data flow analysis
-ERROR: [XSIM 43-4430] C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv Line 88. Port width mismatch between VHDL formal port s_axis_dividend_tdata of size 8 and Verilog actual of size 16
-INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
-INFO: [USF-XSim-99] Step results log file:'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.sim/sim_1/behav/xsim/elaborate.log'
-ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.sim/sim_1/behav/xsim/elaborate.log' file for more information.
-ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
-ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 6
-[Mon Nov 18 17:37:44 2019] Launched synth_1...
-Run output will be captured here: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/synth_1/runme.log
-[Mon Nov 18 17:37:44 2019] Launched impl_1...
-Run output will be captured here: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/impl_1/runme.log
-open_hw
-set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
-set_property PROGRAM.FILE {C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/impl_1/top_level.bit} [get_hw_devices xc7a100t_0]
-program_hw_devices [get_hw_devices xc7a100t_0]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
-INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-ERROR: [Vivado 12-106] *** Exception: java.lang.NullPointerException (See C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/vivado_pid17472.debug)
-exit
-INFO: [Common 17-206] Exiting Vivado at Mon Nov 18 17:43:19 2019...

@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Fri Nov 22 11:26:17 2019
+# Process ID: 18056
+# Current directory: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent18528 C:\Users\Owner\OneDrive\pic\Documents\GitHub\chasebot\camera\camera.xpr
+# Log file: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/vivado.log
+# Journal file: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera\vivado.jou
+#-----------------------------------------------------------
+start_guioopen_project C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.xpruupdate_compile_order -fileset sources_1

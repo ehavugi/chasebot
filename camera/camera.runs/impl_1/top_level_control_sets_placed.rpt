@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Mon Nov 18 18:01:07 2019
+| Date         : Mon Nov 25 19:11:43 2019
 | Host         : DESKTOP-5DFT9M2 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file top_level_control_sets_placed.rpt
 | Design       : top_level
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |    18 |
-|    Minimum number of control sets                        |    18 |
+| Total control sets                                       |    17 |
+|    Minimum number of control sets                        |    17 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    58 |
+| Unused register locations in slices containing registers |    54 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,13 +39,13 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |    18 |
+| Total control sets |    17 |
 | >= 0 to < 4        |     3 |
 | >= 4 to < 6        |     4 |
 | >= 6 to < 8        |     0 |
 | >= 8 to < 10       |     3 |
 | >= 10 to < 12      |     1 |
-| >= 12 to < 14      |     1 |
+| >= 12 to < 14      |     0 |
 | >= 14 to < 16      |     0 |
 | >= 16              |     6 |
 +--------------------+-------+
@@ -58,10 +58,10 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              98 |           42 |
+| No           | No                    | No                     |              98 |           48 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              65 |           22 |
-| Yes          | No                    | No                     |              66 |           16 |
+| No           | Yes                   | No                     |              53 |           21 |
+| Yes          | No                    | No                     |              66 |           21 |
 | Yes          | No                    | Yes                    |               0 |            0 |
 | Yes          | Yes                   | No                     |              25 |            9 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
@@ -77,20 +77,19 @@ Table of Contents
 |  clkdivider/clk_out1 |                                      | display/counter_reg[11]       |                2 |              2 |
 |  clkdivider/clk_out1 | xvga1/hreset                         |                               |                1 |              2 |
 |  pclk_in_BUFG        |                                      |                               |                2 |              4 |
-|  clkdivider/clk_out1 |                                      | xvga1/hcount_out_reg[7]_0     |                2 |              4 |
 |  clkdivider/clk_out1 |                                      | xvga1/hcount_out_reg[6]_0     |                2 |              4 |
-|  clkdivider/clk_out1 |                                      | xvga1/hcount_out_reg[8]_0     |                1 |              4 |
+|  clkdivider/clk_out1 |                                      | xvga1/hcount_out_reg[7]_0     |                2 |              4 |
+|  clkdivider/clk_out1 |                                      | xvga1/hcount_out_reg[8]_0     |                2 |              4 |
 |  pclk_in_BUFG        | my_camera/pixel_data_out[7]_i_1_n_0  |                               |                3 |              8 |
-|  pclk_in_BUFG        | my_camera/pixel_data_out[15]_i_1_n_0 |                               |                2 |              8 |
+|  pclk_in_BUFG        | my_camera/pixel_data_out[15]_i_1_n_0 |                               |                4 |              8 |
 |  clkdivider/clk_out1 | xvga1/hreset                         | xvga1/vcount_out0             |                4 |              8 |
 |  clkdivider/clk_out1 |                                      | xvga1/hreset                  |                4 |             11 |
-|  clkdivider/clk_out1 |                                      | xvga1/bbstub_doutb[11]        |                2 |             12 |
-|  clkdivider/clk_out1 | xvga1/thres1                         |                               |                4 |             16 |
-|  clkdivider/clk_out1 | xvga1/E[0]                           |                               |                2 |             16 |
-|  clkdivider/clk_out1 | clear                                |                               |                4 |             16 |
+|  clkdivider/clk_out1 | xvga1/size0                          |                               |                4 |             16 |
+|  clkdivider/clk_out1 | xvga1/E[0]                           |                               |                4 |             16 |
+|  clkdivider/clk_out1 | clear                                |                               |                5 |             16 |
 |  pclk_in_BUFG        | my_camera/valid_pixel                | my_camera/frame_done_out      |                5 |             17 |
 |  clkdivider/clk_out1 |                                      | clear                         |                7 |             26 |
-|  clkdivider/clk_out1 |                                      |                               |               40 |             94 |
+|  clkdivider/clk_out1 |                                      |                               |               46 |             94 |
 +----------------------+--------------------------------------+-------------------------------+------------------+----------------+
 
 

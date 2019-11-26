@@ -237,7 +237,7 @@ end
          b <= pblank;
 //         rgb <= pixel;
 //         rgb <= cam;
-           rgb<=thres;
+           rgb<=cam;
       end
     end
 
