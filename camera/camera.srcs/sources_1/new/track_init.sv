@@ -1,5 +1,21 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 11/26/2019 05:42:29 PM
+// Design Name: 
+// Module Name: track_init
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File `timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
 //
 // Updated 8/10/2019 Lab 3
 // Updated 8/12/2018 V2.lab5c
@@ -9,7 +25,7 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 
-module top_level(
+module track_init(
    input clk_100mhz,
    input[15:0] sw,
    input btnc, btnu, btnl, btnr, btnd,
@@ -58,9 +74,9 @@ module top_level(
           .hsync_out(hsync),.vsync_out(vsync),.blank_out(blank));
 
 
-    // btnc button is user reset
+    // sw[0] button is user reset
     wire reset;
-    debounce db1(.reset_in(reset),.clock_in(clk_65mhz),.noisy_in(btnc),.clean_out(reset));
+    debounce db1(.reset_in(reset),.clock_in(clk_65mhz),.noisy_in(sw[0]),.clean_out(reset));
    
     logic xclk;
     logic[1:0] xclk_count;
@@ -149,30 +165,30 @@ always_ff @(posedge clk_65mhz) begin
         pixel_in <= pixel_buff;
         old_output_pixels <= output_pixels;
         xclk_count <= xclk_count + 2'b01;
-        if (sw[3])begin
-            //processed_pixels <= {red_diff<<2, green_diff<<2, blue_diff<<2};
-            processed_pixels <= output_pixels - old_output_pixels;
-        end else if (sw[4]) begin
-            if ((output_pixels[15:12]>4'b1000)&&(output_pixels[10:7]<4'b1000)&&(output_pixels[4:1]<4'b1000))begin
-                processed_pixels <= 12'hF00;
-            end else begin
-                processed_pixels <= 12'h000;
-            end
-        end else if (sw[5]) begin
-            if ((output_pixels[15:12]<4'b1000)&&(output_pixels[10:7]>4'b1000)&&(output_pixels[4:1]<4'b1000))begin
-                processed_pixels <= 12'h0F0;
-            end else begin
-                processed_pixels <= 12'h000;
-            end
-        end else if (sw[6]) begin
-            if ((output_pixels[15:12]<4'b1000)&&(output_pixels[10:7]<4'b1000)&&(output_pixels[4:1]>4'b1000))begin
-                processed_pixels <= 12'h00F;
-            end else begin
-                processed_pixels <= 12'h000;
-            end
-        end else begin
+//        if (sw[3])begin
+//            //processed_pixels <= {red_diff<<2, green_diff<<2, blue_diff<<2};
+//            processed_pixels <= output_pixels - old_output_pixels;
+//        end else if (sw[4]) begin
+//            if ((output_pixels[15:12]>4'b1000)&&(output_pixels[10:7]<4'b1000)&&(output_pixels[4:1]<4'b1000))begin
+//                processed_pixels <= 12'hF00;
+//            end else begin
+//                processed_pixels <= 12'h000;
+//            end
+//        end else if (sw[5]) begin
+//            if ((output_pixels[15:12]<4'b1000)&&(output_pixels[10:7]>4'b1000)&&(output_pixels[4:1]<4'b1000))begin
+//                processed_pixels <= 12'h0F0;
+//            end else begin
+//                processed_pixels <= 12'h000;
+//            end
+//        end else if (sw[6]) begin
+//            if ((output_pixels[15:12]<4'b1000)&&(output_pixels[10:7]<4'b1000)&&(output_pixels[4:1]>4'b1000))begin
+//                processed_pixels <= 12'h00F;
+//            end else begin
+//                processed_pixels <= 12'h000;
+//            end
+//        end else begin
             processed_pixels = {output_pixels[15:12],output_pixels[10:7],output_pixels[4:1]};
-        end
+//        end
             
     end
     assign pixel_addr_out = sw[2]?((hcount>>1)+(vcount>>1)*32'd320):hcount+vcount*32'd320;
@@ -187,7 +203,7 @@ logic [31:0] pos_y_;
 
 logic [26:0] count_f=0;
 always @(posedge clk_65mhz) begin
-    if (count_f<65000000) begin
+    if (count_f<6500000) begin
         count_f<=count_f+1;
     end
     else begin
@@ -277,9 +293,7 @@ end
    
     // UP and DOWN buttons for pong paddle
     wire up,down;
-    debounce db2(.reset_in(reset),.clock_in(clk_65mhz),.noisy_in(btnu),.clean_out(up));
-    debounce db3(.reset_in(reset),.clock_in(clk_65mhz),.noisy_in(btnd),.clean_out(down));
-
+    
     wire phsync,pvsync,pblank;
     pong_game pg(.vclock_in(clk_65mhz),.reset_in(reset),
                 .up_in(up),.down_in(down),.pspeed_in(sw[15:12]),
@@ -311,11 +325,52 @@ end
          b <= pblank;
 //         rgb <= pixel;
 //         rgb <= cam;
-        if (sw[15]) rgb<=thres;
-        else rgb<=cam;
+//        if (sw[15]) rgb<=thres;
+//        else rgb<=cam;
+        rgb <= pixel_out;
       end
     end
-
+    
+    /////////////INITIALIZE//////////////////
+    logic [11:0] pixel_out,goal_pixel,goal_rad;
+    logic track,mode;
+    logic [3:0] direction;
+    assign direction = {btnu,btnd,btnl,btnr};
+    
+    initialize initializer(
+          .clk_65mhz(clk_65mhz),
+          .reset(reset),
+          .hcount(hcount),
+          .vcount(vcount),
+          .vsync(vsync_in),
+          .directions(direction), //up,down,left,right
+          .confirm_in(btnc),
+          .activate_in(sw[3]),
+          .sw2(sw[2]), //whether to make the size twice
+          .cam(sw[15]?thres:cam),
+          .cur_pos_x(x_mean[8:0]),
+          .cur_pos_y(y_mean[8:0]),
+          .cur_rad(7'd40),
+          .speed1(9'sd100),
+          .speed2(-9'sd150),
+          .pixel_out(pixel_out),
+          .goal_pixel(goal_pixel),
+          .goal_rad(goal_rad),
+          .track(track),
+          .move(move)
+          //for debug
+//          ,
+//          .state(state),
+//          .cursor_x(cursor_x),
+//          .cursor_y(cursor_y),
+//          .up(dir[3]), 
+//          .down(dir[1]), 
+//          .left(dir[2]), 
+//          .right(dir[0])
+          );
+    //////////////////////////////////////////
+    
+    
 //    assign rgb = sw[0] ? {12{border}} : pixel ; //{{4{hcount[7]}}, {4{hcount[6]}}, {4{hcount[5]}}};
 
     // the following lines are required for the Nexys4 VGA circuit - do not change
@@ -454,3 +509,4 @@ module display_8hex(
        endcase
       end
 endmodule
+

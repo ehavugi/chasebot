@@ -2,13 +2,13 @@
 # Webtalk v2019.2 (64-bit)
 # SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
 # IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
-# Start of session at: Mon Nov 25 20:01:43 2019
-# Process ID: 17200
+# Start of session at: Tue Nov 26 17:29:37 2019
+# Process ID: 17108
 # Current directory: C:/ubuntu/6.111/camera/camera.sim/sim_1/behav/xsim
 # Command line: wbtcv.exe -mode batch -source C:/ubuntu/6.111/camera/camera.sim/sim_1/behav/xsim/xsim.dir/speed_bar_tb_behav/webtalk/xsim_webtalk.tcl -notrace
 # Log file: C:/ubuntu/6.111/camera/camera.sim/sim_1/behav/xsim/webtalk.log
 # Journal file: C:/ubuntu/6.111/camera/camera.sim/sim_1/behav/xsim\webtalk.jou
 #-----------------------------------------------------------
 source C:/ubuntu/6.111/camera/camera.sim/sim_1/behav/xsim/xsim.dir/speed_bar_tb_behav/webtalk/xsim_webtalk.tcl -notrace
-INFO: [Common 17-186] 'C:/ubuntu/6.111/camera/camera.sim/sim_1/behav/xsim/xsim.dir/speed_bar_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Mon Nov 25 20:01:45 2019. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx2/Vivado/2019.2/doc/webtalk_introduction.html.
-INFO: [Common 17-206] Exiting Webtalk at Mon Nov 25 20:01:45 2019...
+INFO: [Common 17-186] 'C:/ubuntu/6.111/camera/camera.sim/sim_1/behav/xsim/xsim.dir/speed_bar_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Tue Nov 26 17:29:39 2019. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx2/Vivado/2019.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Tue Nov 26 17:29:39 2019...

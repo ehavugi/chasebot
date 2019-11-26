@@ -1,0 +1,1034 @@
+/*
+
+Xilinx Vivado v2019.1 (64-bit) [Major: 2019, Minor: 1]
+SW Build: 2552052 on Fri May 24 14:49:42 MDT 2019
+IP Build: 2548770 on Fri May 24 18:01:18 MDT 2019
+
+Process ID (PID): 3972
+License: Customer
+
+Current time: 	Tue Nov 26 16:15:17 EST 2019
+Time zone: 	Eastern Standard Time (America/New_York)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 8
+
+Screen size: 1920x1080
+Screen resolution (DPI): 125
+Available screens: 1
+Available disk space: 59 GB
+Default font: family=Segoe UI,name=Segoe UI,style=plain,size=15
+
+Java version: 	9.0.4 64-bit
+Java home: 	C:/Xilinx/Vivado/2019.1/tps/win64/jre9.0.4
+Java executable location: 	C:/Xilinx/Vivado/2019.1/tps/win64/jre9.0.4/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	Owner
+User home directory: C:/Users/Owner
+User working directory: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2019.1
+RDI_DATADIR: C:/Xilinx/Vivado/2019.1/data
+RDI_BINDIR: C:/Xilinx/Vivado/2019.1/bin
+
+Vivado preferences file location: C:/Users/Owner/AppData/Roaming/Xilinx/Vivado/2019.1/vivado.xml
+Vivado preferences directory: C:/Users/Owner/AppData/Roaming/Xilinx/Vivado/2019.1/
+Vivado layouts directory: C:/Users/Owner/AppData/Roaming/Xilinx/Vivado/2019.1/layouts
+PlanAhead jar file location: 	C:/Xilinx/Vivado/2019.1/lib/classes/planAhead.jar
+Vivado log file location: 	C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/vivado.log
+Vivado journal file location: 	C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/vivado.jou
+Engine tmp dir: 	C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/.Xil/Vivado-3972-DESKTOP-5DFT9M2
+
+Xilinx Environment Variables
+----------------------------
+VciSDKDir: C:\Program Files\IXXAT\VCI 3.5\sdk\vci
+XILINX: C:/Xilinx/Vivado/2019.1/ids_lite/ISE
+XILINX_DSP: C:/Xilinx/Vivado/2019.1/ids_lite/ISE
+XILINX_PLANAHEAD: C:/Xilinx/Vivado/2019.1
+XILINX_SDK: C:/Xilinx/SDK/2019.1
+XILINX_VIVADO: C:/Xilinx/Vivado/2019.1
+XILINX_VIVADO_HLS: C:/Xilinx/Vivado/2019.1
+
+
+GUI allocated memory:	154 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 694 MB
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// by (cl):  Open Project : addNotify
+// Opening Vivado Project: C:\Users\Owner\OneDrive\pic\Documents\GitHub\chasebot\camera\camera.xpr. Version: Vivado v2019.1 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 735 MB. GUI used memory: 51 MB. Current time: 11/26/19, 4:15:19 PM EST
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 74 MB (+75455kb) [00:00:13]
+// [Engine Memory]: 782 MB (+668080kb) [00:00:13]
+// [GUI Memory]: 99 MB (+22291kb) [00:00:13]
+// [Engine Memory]: 834 MB (+13837kb) [00:00:14]
+// [GUI Memory]: 107 MB (+3219kb) [00:00:15]
+// WARNING: HEventQueue.dispatchEvent() is taking  3758 ms.
+// [Engine Memory]: 877 MB (+1125kb) [00:00:15]
+// Tcl Message: open_project C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'. 
+// Tcl Message: open_project: Time (s): cpu = 00:00:18 ; elapsed = 00:00:09 . Memory (MB): peak = 907.516 ; gain = 266.867 
+// Project name: camera; location: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera; part: xc7a100tcsg324-3
+dismissDialog("Open Project"); // by (cl)
+// Tcl Message: update_compile_order -fileset sources_1 
+// [GUI Memory]: 116 MB (+3045kb) [00:00:28]
+// Elapsed time: 12 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_level (top_level.sv)]", 1, true); // B (F, cl) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_level (top_level.sv), clkdivider : clk_wiz_lab3 (clk_wiz_lab3.v)]", 2, false, false, false, false, false, true); // B (F, cl) - Double Click
+// [Engine Memory]: 924 MB (+3547kb) [00:00:31]
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_level (top_level.sv), clkdivider : clk_wiz_lab3 (clk_wiz_lab3.v)]", 2, false); // B (F, cl)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_level (top_level.sv), clkdivider : clk_wiz_lab3 (clk_wiz_lab3.v)]", 2, false); // B (F, cl)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_level (top_level.sv), clkdivider : clk_wiz_lab3 (clk_wiz_lab3.v)]", 2, false); // B (F, cl)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_level (top_level.sv), clkdivider : clk_wiz_lab3 (clk_wiz_lab3.v)]", 2, false); // B (F, cl)
+selectCodeEditor("top_level.sv", 353, 229); // cl (w, cl)
+selectCodeEditor("top_level.sv", 246, 277); // cl (w, cl)
+selectCodeEditor("top_level.sv", 194, 212); // cl (w, cl)
+selectCodeEditor("top_level.sv", 194, 212, false, false, false, false, true); // cl (w, cl) - Double Click
+typeControlKey((HResource) null, "top_level.sv", 'c'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 150, 204); // cl (w, cl)
+selectCodeEditor("top_level.sv", 150, 204, false, false, false, false, true); // cl (w, cl) - Double Click
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, cl)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// A (cl): Synthesis is Out-of-date: addNotify
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (A)
+// by (cl):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+dismissDialog("Synthesis is Out-of-date"); // A (cl)
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// f (cl): Launch Runs: addNotify
+// HMemoryUtils.trashcanNow. Engine heap size: 946 MB. GUI used memory: 61 MB. Current time: 11/26/19, 4:16:14 PM EST
+// Elapsed time: 10 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// 'cx' command handler elapsed time: 11 seconds
+dismissDialog("Launch Runs"); // f (cl)
+// TclEventType: RUN_LAUNCH
+// by (cl):  Generate Bitstream : addNotify
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4 
+// Tcl Message: INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/sqrt/sqrt.xci' is already up-to-date 
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Tue Nov 26 16:16:24 2019] Launched synth_1... Run output will be captured here: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/synth_1/runme.log [Tue Nov 26 16:16:24 2019] Launched impl_1... Run output will be captured here: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/impl_1/runme.log 
+// TclEventType: RUN_STATUS_CHANGE
+dismissDialog("Generate Bitstream"); // by (cl)
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// ah (cl): Bitstream Generation Completed: addNotify
+// Elapsed time: 237 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (ah)
+// Run Command: PAResourceCommand.PACommandNames_GOTO_IMPLEMENTED_DESIGN
+// by (cl):  Open Implemented Design : addNotify
+// Tcl Message: open_run impl_1 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,081 MB. GUI used memory: 62 MB. Current time: 11/26/19, 4:20:24 PM EST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,358 MB. GUI used memory: 62 MB. Current time: 11/26/19, 4:20:39 PM EST
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: POWER_CNS_STALE
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_NEW
+// [Engine Memory]: 1,806 MB (+876299kb) [00:05:39]
+// HMemoryUtils.trashcanNow. Engine heap size: 1,807 MB. GUI used memory: 62 MB. Current time: 11/26/19, 4:20:48 PM EST
+// [Engine Memory]: 1,923 MB (+27716kb) [00:05:40]
+// [GUI Memory]: 122 MB (+842kb) [00:05:41]
+// Xgd.load filename: C:/Xilinx/Vivado/2019.1/data/parts/xilinx/artix7/devint/artix7/xc7a100t/xc7a100t.xgd; ZipEntry: xc7a100t_detail.xgd elapsed time: 0.7s
+// TclEventType: DESIGN_NEW
+// [GUI Memory]: 130 MB (+1242kb) [00:05:43]
+// Device: addNotify
+// DeviceView Instantiated
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// RouteApi::loadEngineXgd elapsed time: 3.7s
+// WARNING: HEventQueue.dispatchEvent() is taking  3012 ms.
+// TclEventType: CURR_DESIGN_SET
+// Tcl Message: INFO: [Device 21-403] Loading part xc7a100tcsg324-3 INFO: [Netlist 29-17] Analyzing 724 Unisim elements for replacement INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds INFO: [Project 1-479] Netlist was created with Vivado 2019.1 INFO: [Project 1-570] Preparing netlist for logic optimization INFO: [Timing 38-478] Restoring timing data from binary archive. INFO: [Timing 38-479] Binary timing data restore complete. INFO: [Project 1-856] Restoring constraints from binary archive. INFO: [Project 1-853] Binary constraint restore complete. 
+// Tcl Message: Reading XDEF placement. Reading placer database... Reading XDEF routing. 
+// Tcl Message: Read XDEF File: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.844 . Memory (MB): peak = 1880.227 ; gain = 0.000 
+// Tcl Message: Restored from archive | CPU: 1.000000 secs | Memory: 0.000000 MB | 
+// Tcl Message: Finished XDEF File Restore: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.846 . Memory (MB): peak = 1880.227 ; gain = 0.000 Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1880.227 ; gain = 0.000 
+// Tcl Message: INFO: [Project 1-111] Unisim Transformation Summary: No Unisim elements were transformed.  
+// Device view-level: 0.0
+// Tcl Message: open_run: Time (s): cpu = 00:00:42 ; elapsed = 00:00:30 . Memory (MB): peak = 2030.340 ; gain = 1054.520 
+// RouteApi: Init Delay Mediator Swing Worker Finished
+// ExpRunCommands.openImplResults elapsed time: 31.2s
+// TclEventType: DRC_ADDED
+// TclEventType: METHODOLOGY_ADDED
+// TclEventType: POWER_UPDATED
+// [GUI Memory]: 149 MB (+13969kb) [00:05:49]
+// [GUI Memory]: 158 MB (+1551kb) [00:05:55]
+// WARNING: HEventQueue.dispatchEvent() is taking  8447 ms.
+// TclEventType: TIMING_SUMMARY_UPDATED
+// 'dR' command handler elapsed time: 45 seconds
+// Device view-level: 0.1
+// Device view-level: 0.0
+// Elapsed time: 45 seconds
+dismissDialog("Open Implemented Design"); // by (cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,992 MB. GUI used memory: 113 MB. Current time: 11/26/19, 4:21:10 PM EST
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Open Hardware Manager]", 32, true); // u (O, cl) - Node
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER
+// Tcl Command: 'rdi::info_commands get_hw_probes'
+// Tcl Command: 'load_features labtools'
+// TclEventType: LOAD_FEATURE
+// by (cl):  Open Hardware Manager : addNotify
+// TclEventType: HW_SESSION_OPEN
+// [GUI Memory]: 170 MB (+3334kb) [00:06:04]
+// WARNING: HEventQueue.dispatchEvent() is taking  1510 ms.
+// Tcl Message: open_hw 
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // v
+dismissDialog("Open Hardware Manager"); // by (cl)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Open Hardware Manager, Open Target]", 32, false); // u (O, cl)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HW_TARGET
+selectMenuItem(PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET, "Auto Connect"); // ah (an, cl)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER
+// Tcl Command: 'rdi::info_commands get_hw_probes'
+// Run Command: PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET
+// Tcl Message: connect_hw_server 
+// Tcl Message: INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121 
+// by (cl):  Auto Connect : addNotify
+// Tcl Message: INFO: [Labtools 27-2222] Launching hw_server... 
+// Tcl Message: INFO: [Labtools 27-2221] Launch Output:  ****** Xilinx hw_server v2019.1   **** Build date : May 24 2019 at 15:13:31     ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.   
+// TclEventType: HW_SERVER_UPDATE
+// TclEventType: HW_TARGET_CHANGE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_ADD
+// TclEventType: HW_TARGET_UPDATE
+// WARNING: HEventQueue.dispatchEvent() is taking  4388 ms.
+// Tcl Message: open_hw_target 
+// Tcl Message: INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292645463A 
+// HMemoryUtils.trashcanNow. Engine heap size: 2,928 MB. GUI used memory: 114 MB. Current time: 11/26/19, 4:21:27 PM EST
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/impl_1/top_level.bit} [get_hw_devices xc7a100t_0] 
+// Tcl Message: current_hw_device [get_hw_devices xc7a100t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// [Engine Memory]: 2,933 MB (+958416kb) [00:06:19]
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+// Elapsed time: 10 seconds
+dismissDialog("Auto Connect"); // by (cl)
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // h (cS, cl)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// bC (cl): Program Device: addNotify
+applyEnter(PAResourceOtoP.ProgramFpgaDialog_SPECIFY_BITSTREAM_FILE, "C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/impl_1/top_level.bit"); // am (al, bC)
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a (bC)
+// by (cl):  Program Device : addNotify
+dismissDialog("Program Device"); // bC (cl)
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xc7a100t_0] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/impl_1/top_level.bit} [get_hw_devices xc7a100t_0] 
+// Tcl Message: program_hw_devices [get_hw_devices xc7a100t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+// 'I' command handler elapsed time: 3 seconds
+dismissDialog("Program Device"); // by (cl)
+// Elapsed time: 44 seconds
+selectCodeEditor("top_level.sv", 220, 167); // cl (w, cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,958 MB. GUI used memory: 115 MB. Current time: 11/26/19, 4:22:29 PM EST
+// Elapsed time: 12 seconds
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "sw[14]"); // l (aT, cl)
+selectCodeEditor("top_level.sv", 139, 34); // cl (w, cl)
+selectCodeEditor("top_level.sv", 139, 34, false, false, false, false, true); // cl (w, cl) - Double Click
+selectCodeEditor("top_level.sv", 139, 69); // cl (w, cl)
+selectCodeEditor("top_level.sv", 139, 69, false, false, false, false, true); // cl (w, cl) - Double Click
+selectCodeEditor("top_level.sv", 139, 69); // cl (w, cl)
+selectCodeEditor("top_level.sv", 195, 98); // cl (w, cl)
+selectCodeEditor("top_level.sv", 195, 98, false, false, false, false, true); // cl (w, cl) - Double Click
+// Elapsed time: 69 seconds
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "sw[14]"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "sw[14]"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "sw[14]"); // l (aT, cl)
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "sw[13]", true); // l (aT, cl)
+selectCodeEditor("top_level.sv", 113, 358); // cl (w, cl)
+selectCodeEditor("top_level.sv", 121, 316); // cl (w, cl)
+selectCodeEditor("top_level.sv", 121, 316, false, false, false, false, true); // cl (w, cl) - Double Click
+selectCodeEditor("top_level.sv", 201, 300); // cl (w, cl)
+selectCodeEditor("top_level.sv", 201, 300, false, false, false, false, true); // cl (w, cl) - Double Click
+selectCodeEditor("top_level.sv", 201, 300); // cl (w, cl)
+selectCodeEditor("top_level.sv", 201, 300); // cl (w, cl)
+selectCodeEditor("top_level.sv", 201, 300, false, false, false, false, true); // cl (w, cl) - Double Click
+selectCodeEditor("top_level.sv", 201, 300); // cl (w, cl)
+selectCodeEditor("top_level.sv", 202, 165); // cl (w, cl)
+// Elapsed time: 10 seconds
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "rgb2"); // l (aT, cl)
+selectCodeEditor("top_level.sv", 167, 92); // cl (w, cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,978 MB. GUI used memory: 115 MB. Current time: 11/26/19, 4:24:25 PM EST
+// Elapsed time: 20 seconds
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "sw[12]"); // l (aT, cl)
+selectCodeEditor("top_level.sv", 193, 59); // cl (w, cl)
+// Elapsed time: 19 seconds
+selectCodeEditor("top_level.sv", 193, 59); // cl (w, cl)
+selectCodeEditor("top_level.sv", 193, 59, false, false, false, false, true); // cl (w, cl) - Double Click
+selectCodeEditor("top_level.sv", 193, 59); // cl (w, cl)
+selectCodeEditor("top_level.sv", 273, 194); // cl (w, cl)
+// Elapsed time: 30 seconds
+selectCodeEditor("top_level.sv", 125, 241); // cl (w, cl)
+selectCodeEditor("top_level.sv", 125, 241, false, false, false, false, true); // cl (w, cl) - Double Click
+// Elapsed time: 76 seconds
+selectCodeEditor("top_level.sv", 253, 277); // cl (w, cl)
+selectCodeEditor("top_level.sv", 253, 277, false, false, false, false, true); // cl (w, cl) - Double Click
+selectCodeEditor("top_level.sv", 228, 266); // cl (w, cl)
+selectCodeEditor("top_level.sv", 228, 266); // cl (w, cl)
+selectCodeEditor("top_level.sv", 228, 266); // cl (w, cl)
+selectCodeEditor("top_level.sv", 228, 266, false, false, false, false, true); // cl (w, cl) - Double Click
+typeControlKey((HResource) null, "top_level.sv", 'c'); // cl (w, cl)
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pos_x_d", true); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pos_x_d"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pos_x_d"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pos_x_d"); // l (aT, cl)
+// Elapsed time: 20 seconds
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "sw[12]"); // l (aT, cl)
+selectCodeEditor("top_level.sv", 113, 349); // cl (w, cl)
+selectCodeEditor("top_level.sv", 110, 277); // cl (w, cl)
+selectCodeEditor("top_level.sv", 110, 277, false, false, false, false, true); // cl (w, cl) - Double Click
+// Elapsed time: 32 seconds
+selectCodeEditor("top_level.sv", 421, 128); // cl (w, cl)
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "sw[14]"); // l (aT, cl)
+selectCodeEditor("top_level.sv", 267, 117); // cl (w, cl)
+selectCodeEditor("top_level.sv", 267, 117, false, false, false, false, true); // cl (w, cl) - Double Click
+selectCodeEditor("top_level.sv", 108, 114); // cl (w, cl)
+selectCodeEditor("top_level.sv", 108, 114, false, false, false, false, true); // cl (w, cl) - Double Click
+selectCodeEditor("top_level.sv", 156, 94); // cl (w, cl)
+selectCodeEditor("top_level.sv", 156, 94, false, false, false, false, true); // cl (w, cl) - Double Click
+selectCodeEditor("top_level.sv", 156, 94); // cl (w, cl)
+// Elapsed time: 46 seconds
+selectCodeEditor("top_level.sv", 348, 133); // cl (w, cl)
+selectCodeEditor("top_level.sv", 286, 113); // cl (w, cl)
+selectCodeEditor("top_level.sv", 286, 113, false, false, false, false, true); // cl (w, cl) - Double Click
+selectCodeEditor("top_level.sv", 237, 65); // cl (w, cl)
+selectCodeEditor("top_level.sv", 237, 65, false, false, false, false, true); // cl (w, cl) - Double Click
+selectCodeEditor("top_level.sv", 253, 60); // cl (w, cl)
+selectCodeEditor("top_level.sv", 253, 60, false, false, false, false, true); // cl (w, cl) - Double Click
+typeControlKey((HResource) null, "top_level.sv", 'c'); // cl (w, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pos_x_d"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pos_x_d"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pos_x_d"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pos_x_d"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pos_x_d"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pos_x_d"); // l (aT, cl)
+selectCodeEditor("top_level.sv", 108, 329); // cl (w, cl)
+selectCodeEditor("top_level.sv", 89, 220); // cl (w, cl)
+selectCodeEditor("top_level.sv", 89, 220, false, false, false, false, true); // cl (w, cl) - Double Click
+typeControlKey((HResource) null, "top_level.sv", 'c'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 121, 181); // cl (w, cl)
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pos_x_d", true); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pos_x_d"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pos_x_d"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pos_x_d"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pos_x_d"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pos_x_d"); // l (aT, cl)
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pos_x_d"); // l (aT, cl)
+selectCodeEditor("top_level.sv", 171, 299); // cl (w, cl)
+selectCodeEditor("top_level.sv", 150, 313); // cl (w, cl)
+selectCodeEditor("top_level.sv", 150, 313, false, false, false, false, true); // cl (w, cl) - Double Click
+typeControlKey((HResource) null, "top_level.sv", 'c'); // cl (w, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pos_x_d"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pos_x_d"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pos_x_d"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pos_x_d"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pos_x_d"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pos_x_d"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pos_x_d"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pos_x_d"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pos_x_d"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pos_x_d"); // l (aT, cl)
+selectCodeEditor("top_level.sv", 167, 325); // cl (w, cl)
+selectCodeEditor("top_level.sv", 89, 247); // cl (w, cl)
+selectCodeEditor("top_level.sv", 153, 129); // cl (w, cl)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,998 MB. GUI used memory: 115 MB. Current time: 11/26/19, 4:30:20 PM EST
+// Elapsed time: 87 seconds
+selectCodeEditor("top_level.sv", 392, 51); // cl (w, cl)
+selectCodeEditor("top_level.sv", 392, 51, false, false, false, false, true); // cl (w, cl) - Double Click
+selectCodeEditor("top_level.sv", 440, 48); // cl (w, cl)
+selectCodeEditor("top_level.sv", 278, 27); // cl (w, cl)
+// Elapsed time: 14 seconds
+selectCodeEditor("top_level.sv", 42, 37); // cl (w, cl)
+selectCodeEditor("top_level.sv", 42, 37, false, false, false, false, true); // cl (w, cl) - Double Click
+selectCodeEditor("top_level.sv", 42, 37); // cl (w, cl)
+selectCodeEditor("top_level.sv", 42, 37); // cl (w, cl)
+selectCodeEditor("top_level.sv", 377, 50); // cl (w, cl)
+selectCodeEditor("top_level.sv", 303, 100); // cl (w, cl)
+selectCodeEditor("top_level.sv", 303, 100, false, false, false, false, true); // cl (w, cl) - Double Click
+selectCodeEditor("top_level.sv", 303, 100); // cl (w, cl)
+selectCodeEditor("top_level.sv", 346, 101); // cl (w, cl)
+selectMenu(PAResourceItoN.MainMenuMgr_WINDOW, "Window"); // Z (q, cl)
+selectMenuItem(PAResourceCommand.PACommandNames_FILESET_WINDOW, "Sources"); // ah (cl)
+dismissMenu(PAResourceItoN.MainMenuMgr_WINDOW, "Window"); // Z (q, cl)
+// Run Command: PAResourceCommand.PACommandNames_FILESET_WINDOW
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_level (top_level.sv), uut : sqrt (sqrt.xci)]", 8, false); // B (F, cl)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_level (top_level.sv), uut : sqrt (sqrt.xci)]", 8, false, false, false, false, false, true); // B (F, cl) - Double Click
+// Run Command: PAResourceCommand.PACommandNames_RECUSTOMIZE_CORE
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_level (top_level.sv), uut : sqrt (sqrt.xci)]", 8, false); // B (F, cl)
+// TclEventType: LOAD_FEATURE
+// O (cl):  Re-customize IP : addNotify
+// r (cl): Re-customize IP: addNotify
+// WARNING: HEventQueue.dispatchEvent() is taking  1178 ms.
+dismissDialog("Re-customize IP"); // O (cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 3,036 MB. GUI used memory: 119 MB. Current time: 11/26/19, 4:32:30 PM EST
+// [GUI Memory]: 178 MB (+128kb) [00:17:26]
+dismissDialog("Re-customize IP"); // r (cl)
+selectCodeEditor("top_level.sv", 389, 80); // cl (w, cl)
+selectCodeEditor("top_level.sv", 387, 90); // cl (w, cl)
+selectCodeEditor("top_level.sv", 387, 90, false, false, false, false, true); // cl (w, cl) - Double Click
+// Elapsed time: 10 seconds
+selectCodeEditor("top_level.sv", 315, 323); // cl (w, cl)
+selectCodeEditor("top_level.sv", 315, 323, false, false, false, false, true); // cl (w, cl) - Double Click
+typeControlKey((HResource) null, "top_level.sv", 'c'); // cl (w, cl)
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "square_r", true); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "square_r"); // l (aT, cl)
+selectCodeEditor("top_level.sv", 220, 154); // cl (w, cl)
+selectCodeEditor("top_level.sv", 242, 187); // cl (w, cl)
+selectCodeEditor("top_level.sv", 263, 215); // cl (w, cl)
+selectCodeEditor("top_level.sv", 263, 215, false, false, false, false, true); // cl (w, cl) - Double Click
+// Elapsed time: 11 seconds
+selectCodeEditor("top_level.sv", 230, 204); // cl (w, cl)
+selectCodeEditor("top_level.sv", 230, 204, false, false, false, false, true); // cl (w, cl) - Double Click
+selectCodeEditor("top_level.sv", 230, 204); // cl (w, cl)
+selectCodeEditor("top_level.sv", 267, 262); // cl (w, cl)
+selectCodeEditor("top_level.sv", 267, 262, false, false, false, false, true); // cl (w, cl) - Double Click
+selectCodeEditor("top_level.sv", 132, 140); // cl (w, cl)
+selectCodeEditor("top_level.sv", 132, 140, false, false, false, false, true); // cl (w, cl) - Double Click
+selectCodeEditor("top_level.sv", 107, 94); // cl (w, cl)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 15 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 30, false); // u (O, cl)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// A (cl): Synthesis is Out-of-date: addNotify
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (A)
+// by (cl):  Resetting Runs : addNotify
+dismissDialog("Synthesis is Out-of-date"); // A (cl)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// f (cl): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// 'cx' command handler elapsed time: 4 seconds
+dismissDialog("Launch Runs"); // f (cl)
+// TclEventType: RUN_LAUNCH
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4 
+// Tcl Message: INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/sqrt/sqrt.xci' is already up-to-date 
+// by (cl):  Generate Bitstream : addNotify
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Tue Nov 26 16:33:30 2019] Launched synth_1... Run output will be captured here: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/synth_1/runme.log [Tue Nov 26 16:33:30 2019] Launched impl_1... Run output will be captured here: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // by (cl)
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: HW_TARGET_NEEDS_CLOSE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_SYSMON_DELETE
+// TclEventType: HW_TARGET_UPDATE
+// TclEventType: DEBUG_PROBE_DELETE
+// Tcl Message: ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210292645463A 
+// n (cl): Close Hardware Target: addNotify
+// TclEventType: HW_TARGET_NEEDS_CLOSE
+// TclEventType: HW_SERVER_UPDATE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed time: 55 seconds
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f (n)
+dismissDialog("Close Hardware Target"); // n (cl)
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 29 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, null, -1); // u (O, cl)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, null, -1); // u (O, cl)
+selectCodeEditor("top_level.sv", 209, 276); // cl (w, cl)
+selectCodeEditor("top_level.sv", 201, 19); // cl (w, cl)
+selectCodeEditor("top_level.sv", 235, 54); // cl (w, cl)
+selectCodeEditor("top_level.sv", 216, 119); // cl (w, cl)
+selectCodeEditor("top_level.sv", 155, 169); // cl (w, cl)
+selectCodeEditor("top_level.sv", 118, 210); // cl (w, cl)
+selectCodeEditor("top_level.sv", 118, 210, false, false, false, false, true); // cl (w, cl) - Double Click
+// Elapsed time: 20 seconds
+selectCodeEditor("top_level.sv", 522, 152); // cl (w, cl)
+selectCodeEditor("top_level.sv", 193, 245); // cl (w, cl)
+selectCodeEditor("top_level.sv", 103, 185); // cl (w, cl)
+selectCodeEditor("top_level.sv", 103, 185, false, false, false, false, true); // cl (w, cl) - Double Click
+selectCodeEditor("top_level.sv", 103, 185); // cl (w, cl)
+selectCodeEditor("top_level.sv", 101, 173); // cl (w, cl)
+selectCodeEditor("top_level.sv", 101, 173, false, false, false, false, true); // cl (w, cl) - Double Click
+selectCodeEditor("top_level.sv", 101, 173); // cl (w, cl)
+selectCodeEditor("top_level.sv", 91, 149); // cl (w, cl)
+selectCodeEditor("top_level.sv", 91, 149, false, false, false, false, true); // cl (w, cl) - Double Click
+selectCodeEditor("top_level.sv", 92, 75); // cl (w, cl)
+selectCodeEditor("top_level.sv", 164, 180); // cl (w, cl)
+selectCodeEditor("top_level.sv", 164, 180, false, false, false, false, true); // cl (w, cl) - Double Click
+selectCodeEditor("top_level.sv", 164, 180); // cl (w, cl)
+selectCodeEditor("top_level.sv", 164, 180, false, false, false, false, true); // cl (w, cl) - Double Click
+selectCodeEditor("top_level.sv", 164, 180); // cl (w, cl)
+selectCodeEditor("top_level.sv", 164, 180); // cl (w, cl)
+selectCodeEditor("top_level.sv", 164, 180); // cl (w, cl)
+selectCodeEditor("top_level.sv", 164, 180); // cl (w, cl)
+selectCodeEditor("top_level.sv", 164, 180, false, false, false, false, true); // cl (w, cl) - Double Click
+// Elapsed time: 38 seconds
+selectCodeEditor("top_level.sv", 163, 226); // cl (w, cl)
+selectCodeEditor("top_level.sv", 125, 257); // cl (w, cl)
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// ah (cl): Bitstream Generation Completed: addNotify
+// Elapsed time: 71 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (ah)
+// Run Command: PAResourceCommand.PACommandNames_REPORTS_WINDOW
+dismissDialog("Bitstream Generation Completed"); // ah (cl)
+selectCodeEditor("top_level.sv", 253, 259); // cl (w, cl)
+selectCodeEditor("top_level.sv", 151, 250); // cl (w, cl)
+selectCodeEditor("top_level.sv", 151, 250, false, false, false, false, true); // cl (w, cl) - Double Click
+selectCodeEditor("top_level.sv", 134, 261); // cl (w, cl)
+selectCodeEditor("top_level.sv", 134, 261, false, false, false, false, true); // cl (w, cl) - Double Click
+selectCodeEditor("top_level.sv", 134, 261); // cl (w, cl)
+selectCodeEditor("top_level.sv", 134, 240); // cl (w, cl)
+selectCodeEditor("top_level.sv", 134, 240, false, false, false, false, true); // cl (w, cl) - Double Click
+typeControlKey((HResource) null, "top_level.sv", 'c'); // cl (w, cl)
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pos_x_d", true); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pos_x_d"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pos_x_d"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pos_x_d"); // l (aT, cl)
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pos_x_d"); // l (aT, cl)
+selectCodeEditor("top_level.sv", 216, 322); // cl (w, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pos_x_d"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pos_x_d"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pos_x_d"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pos_x_d"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pos_x_d"); // l (aT, cl)
+selectCodeEditor("top_level.sv", 222, 356); // cl (w, cl)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 47 seconds
+selectCodeEditor("top_level.sv", 117, 338); // cl (w, cl)
+selectCodeEditor("top_level.sv", 117, 338, false, false, false, false, true); // cl (w, cl) - Double Click
+selectCodeEditor("top_level.sv", 117, 288); // cl (w, cl)
+selectCodeEditor("top_level.sv", 117, 288, false, false, false, false, true); // cl (w, cl) - Double Click
+selectCodeEditor("top_level.sv", 93, 297); // cl (w, cl)
+selectCodeEditor("top_level.sv", 93, 297, false, false, false, false, true); // cl (w, cl) - Double Click
+typeControlKey((HResource) null, "top_level.sv", 'c'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 229, 60); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 244, 37); // cl (w, cl)
+selectCodeEditor("top_level.sv", 148, 134); // cl (w, cl)
+// Elapsed time: 10 seconds
+selectCodeEditor("top_level.sv", 245, 98); // cl (w, cl)
+selectCodeEditor("top_level.sv", 245, 98, false, false, false, false, true); // cl (w, cl) - Double Click
+// Elapsed time: 12 seconds
+selectCodeEditor("top_level.sv", 410, 95); // cl (w, cl)
+selectCodeEditor("top_level.sv", 292, 99); // cl (w, cl)
+// Elapsed time: 11 seconds
+selectCodeEditor("top_level.sv", 399, 84); // cl (w, cl)
+selectCodeEditor("top_level.sv", 399, 84, false, false, false, false, true); // cl (w, cl) - Double Click
+selectCodeEditor("top_level.sv", 399, 84); // cl (w, cl)
+selectCodeEditor("top_level.sv", 235, 98); // cl (w, cl)
+selectCodeEditor("top_level.sv", 235, 98, false, false, false, false, true); // cl (w, cl) - Double Click
+selectCodeEditor("top_level.sv", 235, 98); // cl (w, cl)
+selectCodeEditor("top_level.sv", 235, 98); // cl (w, cl)
+// Elapsed time: 15 seconds
+selectCodeEditor("top_level.sv", 395, 164); // cl (w, cl)
+selectCodeEditor("top_level.sv", 230, 98); // cl (w, cl)
+selectCodeEditor("top_level.sv", 230, 98, false, false, false, false, true); // cl (w, cl) - Double Click
+selectCodeEditor("top_level.sv", 230, 98); // cl (w, cl)
+selectCodeEditor("top_level.sv", 230, 116); // cl (w, cl)
+selectCodeEditor("top_level.sv", 230, 116, false, false, false, false, true); // cl (w, cl) - Double Click
+typeControlKey((HResource) null, "top_level.sv", 'c'); // cl (w, cl)
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "size_d"); // l (aT, cl)
+selectCodeEditor("top_level.sv", 230, 116, false, true, false, false, false); // cl (w, cl) - Control Key
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "size_d"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "size_d"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "size_d"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "size_d"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "size_d"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "size_d"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "size_d"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "size_d"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "size_d"); // l (aT, cl)
+selectCodeEditor("top_level.sv", 127, 313); // cl (w, cl)
+selectCodeEditor("top_level.sv", 268, 182); // cl (w, cl)
+selectCodeEditor("top_level.sv", 268, 182, false, false, false, false, true); // cl (w, cl) - Double Click
+selectCodeEditor("top_level.sv", 180, 84); // cl (w, cl)
+// Elapsed time: 12 seconds
+selectCodeEditor("top_level.sv", 248, 174); // cl (w, cl)
+selectCodeEditor("top_level.sv", 288, 220); // cl (w, cl)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("top_level.sv", 288, 220, false, true, false, false, false); // cl (w, cl) - Control Key
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "size", true); // l (aT, cl)
+selectCodeEditor("top_level.sv", 424, 343); // cl (w, cl)
+selectCodeEditor("top_level.sv", 424, 343, false, false, false, false, true); // cl (w, cl) - Double Click
+typeControlKey((HResource) null, "top_level.sv", 'c'); // cl (w, cl)
+// Elapsed time: 17 seconds
+selectCodeEditor("top_level.sv", 248, 167); // cl (w, cl)
+selectCodeEditor("top_level.sv", 248, 167, false, false, false, false, true); // cl (w, cl) - Double Click
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("top_level.sv", 170, 234); // cl (w, cl)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 30, false); // u (O, cl)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 30, false); // u (O, cl)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// A (cl): Synthesis is Out-of-date: addNotify
+selectCheckBox(RDIResource.MessageWithOptionDialog_DONT_SHOW_THIS_DIALOG_AGAIN, "Don't show this dialog again", false); // g (Q, A): FALSE
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (A)
+// by (cl):  Resetting Runs : addNotify
+dismissDialog("Synthesis is Out-of-date"); // A (cl)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// f (cl): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+dismissDialog("Launch Runs"); // f (cl)
+// by (cl):  Generate Bitstream : addNotify
+// TclEventType: RUN_LAUNCH
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_LAUNCH
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4 
+// Tcl Message: INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/sqrt/sqrt.xci' is already up-to-date 
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Tue Nov 26 16:41:26 2019] Launched synth_1... Run output will be captured here: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/synth_1/runme.log [Tue Nov 26 16:41:26 2019] Launched impl_1... Run output will be captured here: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // by (cl)
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// WARNING: HTimer (ExpRunMgr Pending Runs Timer) is taking 427ms to process. Increasing delay to 3000 ms.
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// ah (cl): Bitstream Generation Completed: addNotify
+// Elapsed time: 258 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (ah)
+// Run Command: PAResourceCommand.PACommandNames_REPORTS_WINDOW
+dismissDialog("Bitstream Generation Completed"); // ah (cl)
+// TclEventType: HW_TARGET_NEEDS_CLOSE
+// TclEventType: HW_SERVER_UPDATE
+// Elapsed time: 277 seconds
+selectButton(PAResourceOtoP.ProgramDebugTab_OPEN_TARGET, "Open target"); // h (cS, cl)
+// TclEventType: HW_TARGET_CHANGE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_ADD
+// TclEventType: HW_TARGET_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // h (cS, cl)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// bC (cl): Program Device: addNotify
+applyEnter(PAResourceOtoP.ProgramFpgaDialog_SPECIFY_BITSTREAM_FILE, "C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/impl_1/top_level.bit"); // am (al, bC)
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a (bC)
+// by (cl):  Program Device : addNotify
+dismissDialog("Program Device"); // bC (cl)
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xc7a100t_0] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/impl_1/top_level.bit} [get_hw_devices xc7a100t_0] 
+// Tcl Message: program_hw_devices [get_hw_devices xc7a100t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+// 'I' command handler elapsed time: 3 seconds
+dismissDialog("Program Device"); // by (cl)
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // h (cS, cl)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// bC (cl): Program Device: addNotify
+applyEnter(PAResourceOtoP.ProgramFpgaDialog_SPECIFY_BITSTREAM_FILE, "C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/impl_1/top_level.bit"); // am (al, bC)
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a (bC)
+// by (cl):  Program Device : addNotify
+dismissDialog("Program Device"); // bC (cl)
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xc7a100t_0] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/impl_1/top_level.bit} [get_hw_devices xc7a100t_0] 
+// Tcl Message: program_hw_devices [get_hw_devices xc7a100t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+// 'I' command handler elapsed time: 3 seconds
+dismissDialog("Program Device"); // by (cl)
+// Elapsed time: 68 seconds
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "y_mean", true); // l (aT, cl)
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "y_mean"); // l (aT, cl)
+// Elapsed time: 118 seconds
+selectCodeEditor("top_level.sv", 287, 113); // cl (w, cl)
+selectCodeEditor("top_level.sv", 225, 352); // cl (w, cl)
+selectCodeEditor("top_level.sv", 225, 352, false, false, false, false, true); // cl (w, cl) - Double Click
+typeControlKey((HResource) null, "top_level.sv", 'c'); // cl (w, cl)
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "y_mean", true); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "y_mean"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "y_mean"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "y_mean"); // l (aT, cl)
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "x_mean", true); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "x_mean"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "x_mean"); // l (aT, cl)
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "y_mean", true); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "y_mean"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "y_mean"); // l (aT, cl)
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "y_mean"); // l (aT, cl)
+selectCodeEditor("top_level.sv", 453, 207); // cl (w, cl)
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "y_mean", true); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "y_mean"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "y_mean"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "y_mean"); // l (aT, cl)
+selectCodeEditor("top_level.sv", 319, 284); // cl (w, cl)
+// Elapsed time: 22 seconds
+selectCodeEditor("top_level.sv", 381, 323); // cl (w, cl)
+selectCodeEditor("top_level.sv", 42, 198); // cl (w, cl)
+typeControlKey(null, null, 'z');
+selectCodeEditor("top_level.sv", 237, 332); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'c'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 17, 335); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 17, 335, false, true, false, false, false); // cl (w, cl) - Control Key
+selectCodeEditor("top_level.sv", 175, 206); // cl (w, cl)
+selectCodeEditor("top_level.sv", 361, 247); // cl (w, cl)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("top_level.sv", 361, 247); // cl (w, cl)
+selectCodeEditor("top_level.sv", 361, 247, false, false, false, false, true); // cl (w, cl) - Double Click
+selectCodeEditor("top_level.sv", 361, 247); // cl (w, cl)
+selectCodeEditor("top_level.sv", 344, 246); // cl (w, cl)
+selectCodeEditor("top_level.sv", 344, 246, false, false, false, false, true); // cl (w, cl) - Double Click
+selectCodeEditor("top_level.sv", 296, 310); // cl (w, cl)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("top_level.sv", 317, 305); // cl (w, cl)
+selectCodeEditor("top_level.sv", 317, 305, false, false, false, false, true); // cl (w, cl) - Double Click
+selectCodeEditor("top_level.sv", 317, 305); // cl (w, cl)
+selectCodeEditor("top_level.sv", 317, 305, false, false, false, false, true); // cl (w, cl) - Double Click
+typeControlKey((HResource) null, "top_level.sv", 'c'); // cl (w, cl)
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "y_mean", true); // l (aT, cl)
+selectCodeEditor("top_level.sv", 344, 294); // cl (w, cl)
+selectCodeEditor("top_level.sv", 344, 294, false, false, false, false, true); // cl (w, cl) - Double Click
+selectCodeEditor("top_level.sv", 345, 267); // cl (w, cl)
+selectCodeEditor("top_level.sv", 340, 285); // cl (w, cl)
+selectCodeEditor("top_level.sv", 340, 285, false, false, false, false, true); // cl (w, cl) - Double Click
+typeControlKey((HResource) null, "top_level.sv", 'c'); // cl (w, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pos_y_"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pos_y_"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pos_y_"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pos_y_"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pos_y_"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pos_y_"); // l (aT, cl)
+selectCodeEditor("top_level.sv", 154, 96); // cl (w, cl)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 30, false); // u (O, cl)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// A (cl): Synthesis is Out-of-date: addNotify
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (A)
+// by (cl):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+dismissDialog("Synthesis is Out-of-date"); // A (cl)
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// f (cl): Launch Runs: addNotify
+selectCheckBox(PAResourceItoN.LaunchPanel_DONT_SHOW_THIS_DIALOG_AGAIN, "Don't show this dialog again", true); // g (a, f): TRUE
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// 'cx' command handler elapsed time: 6 seconds
+dismissDialog("Launch Runs"); // f (cl)
+// by (cl):  Generate Bitstream : addNotify
+// TclEventType: RUN_LAUNCH
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4 
+// Tcl Message: INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/sqrt/sqrt.xci' is already up-to-date 
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Tue Nov 26 16:55:39 2019] Launched synth_1... Run output will be captured here: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/synth_1/runme.log [Tue Nov 26 16:55:39 2019] Launched impl_1... Run output will be captured here: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // by (cl)
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// ah (cl): Implementation Failed: addNotify
+// Elapsed time: 100 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (ah)
+// Run Command: PAResourceCommand.PACommandNames_MESSAGE_WINDOW
+dismissDialog("Implementation Failed"); // ah (cl)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation]", 3, true); // ah (O, cl) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Opt Design]", 4, true); // ah (O, cl) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Opt Design, DRC]", 5, true); // ah (O, cl) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Opt Design, DRC, Netlist]", 6, true); // ah (O, cl) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Opt Design, DRC, Netlist, Net]", 7, true); // ah (O, cl) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Opt Design, DRC, Netlist, Net, [DRC MDRV-1] Multiple Driver Nets: Net center_yy/U0/i_synth/i_nd_to_rdy/m_axis_dout_tvalid has multiple drivers: center_xx/U0/i_synth/i_nd_to_rdy/opt_has_pipe.i_pipe[34].pipe_reg[34][0]/Q, and center_yy/U0/i_synth/i_nd_to_rdy/opt_has_pipe.i_pipe[34].pipe_reg[34][0]/Q.. ]", 8, true); // ah (O, cl) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Opt Design, [Vivado_Tcl 4-78] Error(s) found during DRC. Opt_design not run.. ]", 9, false); // ah (O, cl)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, impl_1]", 10, true); // ah (O, cl) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, impl_1, General Messages]", 11, true); // ah (O, cl) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, impl_1, General Messages, [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210292645463A. ]", 12, false); // ah (O, cl)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, impl_1, General Messages, [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210292645463A. ]", 12, false); // ah (O, cl)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, impl_1, General Messages, [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210292645463A. ]", 12, false); // ah (O, cl)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, impl_1, General Messages, [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210292645463A. ]", 12, false); // ah (O, cl)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, impl_1, General Messages, [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210292645463A. ]", 12, false); // ah (O, cl)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, impl_1, General Messages, [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210292645463A. ]", 12, false); // ah (O, cl)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, impl_1, General Messages, [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210292645463A. ]", 12, false); // ah (O, cl)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, impl_1, General Messages, [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210292645463A. ]", 12, false); // ah (O, cl)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, impl_1, General Messages, [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210292645463A. ]", 12, false); // ah (O, cl)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, impl_1, General Messages, [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210292645463A. ]", 12, false); // ah (O, cl)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, impl_1, General Messages, [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210292645463A. ]", 12, false); // ah (O, cl)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, impl_1, General Messages, [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210292645463A. ]", 12, false); // ah (O, cl)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, impl_1, General Messages, [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210292645463A. ]", 12, false); // ah (O, cl)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, impl_1, General Messages]", 11, true); // ah (O, cl) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, impl_1]", 10, true); // ah (O, cl) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Opt Design, [Vivado_Tcl 4-78] Error(s) found during DRC. Opt_design not run.. ]", 9, false); // ah (O, cl)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Opt Design, DRC, Netlist, Net, [DRC MDRV-1] Multiple Driver Nets: Net center_yy/U0/i_synth/i_nd_to_rdy/m_axis_dout_tvalid has multiple drivers: center_xx/U0/i_synth/i_nd_to_rdy/opt_has_pipe.i_pipe[34].pipe_reg[34][0]/Q, and center_yy/U0/i_synth/i_nd_to_rdy/opt_has_pipe.i_pipe[34].pipe_reg[34][0]/Q.. ]", 8, true); // ah (O, cl) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Opt Design, DRC, Netlist, Net]", 7, true); // ah (O, cl) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Opt Design, DRC, Netlist]", 6, true); // ah (O, cl) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Opt Design, DRC]", 5, true); // ah (O, cl) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Opt Design]", 4, true); // ah (O, cl) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation]", 3, true); // ah (O, cl) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, synth_1, [Synth 8-4442] BlackBox module uut has unconnected pin s_axis_cartesian_tdata[0]. ]", 2, false); // ah (O, cl)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, synth_1]", 1, true); // ah (O, cl) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis]", 0, true); // ah (O, cl) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis]", 0, true); // ah (O, cl) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis]", 0, true); // ah (O, cl) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis]", 0, true); // ah (O, cl) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis]", 0, true); // ah (O, cl) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis]", 0, true); // ah (O, cl) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis]", 0, true); // ah (O, cl) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis]", 0, true); // ah (O, cl) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis]", 0, true); // ah (O, cl) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis]", 0, true); // ah (O, cl) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis]", 0, true); // ah (O, cl) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis]", 0, true); // ah (O, cl) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis]", 0, true); // ah (O, cl) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis]", 0, true); // ah (O, cl) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis]", 0, true); // ah (O, cl) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis]", 0, true); // ah (O, cl) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, synth_1, [Synth 8-4442] BlackBox module uut has unconnected pin s_axis_cartesian_tdata[0]. ]", 2, false); // ah (O, cl)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, synth_1, [Synth 8-4442] BlackBox module uut has unconnected pin s_axis_cartesian_tdata[0]. ]", 2, false, false, false, false, false, true); // ah (O, cl) - Double Click
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, synth_1, [Synth 8-4442] BlackBox module uut has unconnected pin s_axis_cartesian_tdata[0]. ]", 2, false); // ah (O, cl)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, synth_1, [Synth 8-4442] BlackBox module uut has unconnected pin s_axis_cartesian_tdata[0]. ]", 2, false); // ah (O, cl)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, synth_1, [Synth 8-4442] BlackBox module uut has unconnected pin s_axis_cartesian_tdata[0]. ]", 2, false, false, false, false, false, true); // ah (O, cl) - Double Click
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, synth_1, [Synth 8-4442] BlackBox module uut has unconnected pin s_axis_cartesian_tdata[0]. ]", 2, false); // ah (O, cl)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, synth_1, [Synth 8-4442] BlackBox module uut has unconnected pin s_axis_cartesian_tdata[0]. ]", 2, false); // ah (O, cl)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, synth_1, [Synth 8-4442] BlackBox module uut has unconnected pin s_axis_cartesian_tdata[0]. ]", 2, false, false, false, false, false, true); // ah (O, cl) - Double Click
+selectCodeEditor("top_level.sv", 292, 222); // cl (w, cl)
+selectCodeEditor("top_level.sv", 351, 168); // cl (w, cl)
+selectCodeEditor("top_level.sv", 351, 168, false, false, false, false, true); // cl (w, cl) - Double Click
+selectCodeEditor("top_level.sv", 316, 296); // cl (w, cl)
+// Elapsed time: 10 seconds
+selectCheckBox(PAResourceItoN.MsgView_CRITICAL_WARNINGS, (String) null, false); // g (aR, cl): FALSE
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation]", 0, true); // ah (O, cl) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Opt Design]", 1, true); // ah (O, cl) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Opt Design, DRC]", 2, true); // ah (O, cl) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Opt Design, DRC, Netlist]", 3, true); // ah (O, cl) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Opt Design, DRC, Netlist, Net]", 4, true); // ah (O, cl) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Opt Design, DRC, Netlist, Net, [DRC MDRV-1] Multiple Driver Nets: Net center_yy/U0/i_synth/i_nd_to_rdy/m_axis_dout_tvalid has multiple drivers: center_xx/U0/i_synth/i_nd_to_rdy/opt_has_pipe.i_pipe[34].pipe_reg[34][0]/Q, and center_yy/U0/i_synth/i_nd_to_rdy/opt_has_pipe.i_pipe[34].pipe_reg[34][0]/Q.. ]", 5, true); // ah (O, cl) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Opt Design, [Vivado_Tcl 4-78] Error(s) found during DRC. Opt_design not run.. ]", 6, false); // ah (O, cl)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, impl_1]", 7, true); // ah (O, cl) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, impl_1, General Messages]", 8, true); // ah (O, cl) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, impl_1, General Messages, [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210292645463A. ]", 9, false); // ah (O, cl)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, impl_1, General Messages]", 8, true); // ah (O, cl) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, impl_1]", 7, true); // ah (O, cl) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Opt Design, [Vivado_Tcl 4-78] Error(s) found during DRC. Opt_design not run.. ]", 6, false); // ah (O, cl)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Opt Design, DRC, Netlist, Net, [DRC MDRV-1] Multiple Driver Nets: Net center_yy/U0/i_synth/i_nd_to_rdy/m_axis_dout_tvalid has multiple drivers: center_xx/U0/i_synth/i_nd_to_rdy/opt_has_pipe.i_pipe[34].pipe_reg[34][0]/Q, and center_yy/U0/i_synth/i_nd_to_rdy/opt_has_pipe.i_pipe[34].pipe_reg[34][0]/Q.. ]", 5, true); // ah (O, cl) - Node
+selectCodeEditor("top_level.sv", 296, 243); // cl (w, cl)
+selectCodeEditor("top_level.sv", 447, 284); // cl (w, cl)
+selectCodeEditor("top_level.sv", 358, 292); // cl (w, cl)
+selectCodeEditor("top_level.sv", 367, 290); // cl (w, cl)
+selectCodeEditor("top_level.sv", 367, 290, false, false, false, false, true); // cl (w, cl) - Double Click
+typeControlKey((HResource) null, "top_level.sv", 'c'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 201, 332); // cl (w, cl)
+selectCodeEditor("top_level.sv", 245, 312); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 133, 328); // cl (w, cl)
+selectCodeEditor("top_level.sv", 345, 264); // cl (w, cl)
+selectCodeEditor("top_level.sv", 345, 264); // cl (w, cl)
+selectCodeEditor("top_level.sv", 340, 246); // cl (w, cl)
+selectCodeEditor("top_level.sv", 340, 246); // cl (w, cl)
+selectCodeEditor("top_level.sv", 340, 246, false, false, false, false, true); // cl (w, cl) - Double Click
+typeControlKey((HResource) null, "top_level.sv", 'c'); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("top_level.sv", 340, 271); // cl (w, cl)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 30, false); // u (O, cl)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// A (cl): Synthesis is Out-of-date: addNotify
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (A)
+// by (cl):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+dismissDialog("Synthesis is Out-of-date"); // A (cl)
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+dismissDialog("Resetting Runs"); // by (cl)
+// TclEventType: RUN_LAUNCH
+// by (cl):  Generate Bitstream : addNotify
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_LAUNCH
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4 
+// Tcl Message: INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/sqrt/sqrt.xci' is already up-to-date 
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Tue Nov 26 16:58:52 2019] Launched synth_1... Run output will be captured here: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/synth_1/runme.log [Tue Nov 26 16:58:52 2019] Launched impl_1... Run output will be captured here: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // by (cl)
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed time: 49 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_EDIT, "Edit"); // Z (q, cl)
+dismissMenu(PAResourceItoN.MainMenuMgr_EDIT, "Edit"); // Z (q, cl)
+selectMenu(PAResourceItoN.MainMenuMgr_FLOW, "Flow"); // Z (q, cl)
+selectMenu(PAResourceCommand.PACommandNames_SIMULATION_RUN, "Run Simulation"); // Z (cl)
+dismissMenu(PAResourceItoN.MainMenuMgr_FLOW, "Flow"); // Z (q, cl)
+selectCodeEditor("top_level.sv", 261, 123); // cl (w, cl)
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// HMemoryUtils.trashcanNow. Engine heap size: 3,039 MB. GUI used memory: 119 MB. Current time: 11/26/19, 5:02:30 PM EST
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// ah (cl): Bitstream Generation Completed: addNotify
+// Elapsed time: 261 seconds
+selectCheckBox(RDIResource.MessageWithOptionDialog_DONT_SHOW_THIS_DIALOG_AGAIN, "Don't show this dialog again", true); // g (Q, ah): TRUE
+selectCheckBox(RDIResource.MessageWithOptionDialog_DONT_SHOW_THIS_DIALOG_AGAIN, "Don't show this dialog again", false); // g (Q, ah): FALSE
+selectCheckBox(RDIResource.MessageWithOptionDialog_DONT_SHOW_THIS_DIALOG_AGAIN, "Don't show this dialog again", false); // g (Q, ah): FALSE
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (ah)
+// Run Command: PAResourceCommand.PACommandNames_REPORTS_WINDOW
+dismissDialog("Bitstream Generation Completed"); // ah (cl)
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // h (cS, cl)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// bC (cl): Program Device: addNotify
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a (bC)
+// by (cl):  Program Device : addNotify
+dismissDialog("Program Device"); // bC (cl)
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xc7a100t_0] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/impl_1/top_level.bit} [get_hw_devices xc7a100t_0] 
+// Tcl Message: program_hw_devices [get_hw_devices xc7a100t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+// 'I' command handler elapsed time: 3 seconds
+dismissDialog("Program Device"); // by (cl)
+// Elapsed time: 79 seconds
+selectCodeEditor("top_level.sv", 460, 126); // cl (w, cl)
+// Elapsed time: 330 seconds
+selectCodeEditor("top_level.sv", 287, 228); // cl (w, cl)
+selectCodeEditor("top_level.sv", 287, 228, false, false, false, false, true); // cl (w, cl) - Double Click
+selectCodeEditor("top_level.sv", 287, 228); // cl (w, cl)

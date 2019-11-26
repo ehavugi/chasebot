@@ -7,8 +7,8 @@ module camera_read(
 	output logic pixel_valid_out,
 	output logic frame_done_out
     );
-	 
 	
+	rgb2hsv xx(.clock(), .reset(), .r(), .g(), .b(), .h(),.s(), .v());//
 	logic [1:0] FSM_state = 0;
     logic pixel_half = 0;
 

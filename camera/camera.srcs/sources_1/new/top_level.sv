@@ -33,15 +33,15 @@ module top_level(
     // create 65mhz system clock, happens to match 1024 x 768 XVGA timing
     clk_wiz_lab3 clkdivider(.clk_in1(clk_100mhz), .clk_out1(clk_65mhz));
 
-    wire [31:0] data;      //  instantiate 7-segment display; display (8) 4-bit hex
+    logic [31:0] data;      //  instantiate 7-segment display; display (8) 4-bit hex
     wire [6:0] segments;
     assign {cg, cf, ce, cd, cc, cb, ca} = segments[6:0];
     display_8hex display(.clk_in(clk_65mhz),.data_in(data), .seg_out(segments), .strobe_out(an));
     //assign seg[6:0] = segments;
     assign  dp = 1'b1;  // turn off the period
 
-    assign led = sw;                        // turn leds on
-    assign data = {size_, sw[3:0]};   // display 0123456 + sw[3:0]
+    assign led = sw;  
+    
     assign led16_r = btnl;                  // left button -> red led
     assign led16_g = btnc;                  // center button -> green led
     assign led16_b = btnr;                  // right button -> blue led
@@ -58,13 +58,41 @@ module top_level(
           .hsync_out(hsync),.vsync_out(vsync),.blank_out(blank));
 
 
-    // btnc button is user reset
+    // sw[0] button is user reset
     wire reset;
-    debounce db1(.reset_in(reset),.clock_in(clk_65mhz),.noisy_in(btnc),.clean_out(reset));
+    debounce db1(.reset_in(reset),.clock_in(clk_65mhz),.noisy_in(sw[0]),.clean_out(reset));
    
     logic xclk;
     logic[1:0] xclk_count;
-    
+    logic ready2;
+logic ready;
+logic [31:0] x_mean;
+logic [31:0] y_mean;
+logic [31:0] x_remainder;
+logic [31:0] y_remainder;
+logic [31:0] pos_y_d;
+logic [31:0] pos_x_d;
+logic [31:0] size;
+logic [31:0] size_d;
+logic [31:0] size_;
+logic [31:0] pos_x;
+logic [31:0] pos_x_;
+logic [31:0] pos_y;
+logic [31:0] pos_y_;
+logic [31:0] pos_x;
+logic [31:0] pos_x_d;
+logic [7:0] h,s,v;
+rgb2hsv  x(.clock(clk_65mhz),.reset(reset),.r({red,4'h0}), .g({green,4'h0}), .b({blue,4'h0}), .h(h), .s(s), .v(v));
+
+always_ff @(posedge clk_65mhz) begin
+    case (sw[14:13])  // thingd to display on a 7 segment displays
+        2'b00:  data = {pos_x_d[27:0], sw[3:0]};   // xxx(center)xxxx(size)x(switch)
+        2'b01:  data = {y_mean[15:0],x_mean[11:0], sw[3:0]};   // display 0123456 + sw[3:0]
+        2'b10: data = {size_[27:0], sw[3:0]}; 
+        2'b11: data={radius[27:0],sw[3:0]}; 
+    endcase;
+ end
+          
     logic pclk_buff, pclk_in;
     logic vsync_buff, vsync_in;
     logic href_buff, href_in;
@@ -121,30 +149,30 @@ module top_level(
         pixel_in <= pixel_buff;
         old_output_pixels <= output_pixels;
         xclk_count <= xclk_count + 2'b01;
-        if (sw[3])begin
-            //processed_pixels <= {red_diff<<2, green_diff<<2, blue_diff<<2};
-            processed_pixels <= output_pixels - old_output_pixels;
-        end else if (sw[4]) begin
-            if ((output_pixels[15:12]>4'b1000)&&(output_pixels[10:7]<4'b1000)&&(output_pixels[4:1]<4'b1000))begin
-                processed_pixels <= 12'hF00;
-            end else begin
-                processed_pixels <= 12'h000;
-            end
-        end else if (sw[5]) begin
-            if ((output_pixels[15:12]<4'b1000)&&(output_pixels[10:7]>4'b1000)&&(output_pixels[4:1]<4'b1000))begin
-                processed_pixels <= 12'h0F0;
-            end else begin
-                processed_pixels <= 12'h000;
-            end
-        end else if (sw[6]) begin
-            if ((output_pixels[15:12]<4'b1000)&&(output_pixels[10:7]<4'b1000)&&(output_pixels[4:1]>4'b1000))begin
-                processed_pixels <= 12'h00F;
-            end else begin
-                processed_pixels <= 12'h000;
-            end
-        end else begin
+//        if (sw[3])begin
+//            //processed_pixels <= {red_diff<<2, green_diff<<2, blue_diff<<2};
+//            processed_pixels <= output_pixels - old_output_pixels;
+//        end else if (sw[4]) begin
+//            if ((output_pixels[15:12]>4'b1000)&&(output_pixels[10:7]<4'b1000)&&(output_pixels[4:1]<4'b1000))begin
+//                processed_pixels <= 12'hF00;
+//            end else begin
+//                processed_pixels <= 12'h000;
+//            end
+//        end else if (sw[5]) begin
+//            if ((output_pixels[15:12]<4'b1000)&&(output_pixels[10:7]>4'b1000)&&(output_pixels[4:1]<4'b1000))begin
+//                processed_pixels <= 12'h0F0;
+//            end else begin
+//                processed_pixels <= 12'h000;
+//            end
+//        end else if (sw[6]) begin
+//            if ((output_pixels[15:12]<4'b1000)&&(output_pixels[10:7]<4'b1000)&&(output_pixels[4:1]>4'b1000))begin
+//                processed_pixels <= 12'h00F;
+//            end else begin
+//                processed_pixels <= 12'h000;
+//            end
+//        end else begin
             processed_pixels = {output_pixels[15:12],output_pixels[10:7],output_pixels[4:1]};
-        end
+//        end
             
     end
     assign pixel_addr_out = sw[2]?((hcount>>1)+(vcount>>1)*32'd320):hcount+vcount*32'd320;
@@ -153,11 +181,9 @@ module top_level(
 logic [3:0] red,green, blue;
 logic[11:0] thres;
 assign {red,green,blue}=cam;
-logic [27:0] size;
-logic [15:0] size_x;
-logic [15:0] size_;
-logic [15:0] pos_x;
-logic [15:0] pos_y;
+logic [31:0] radius_;
+logic [31:0] pos_y_;
+
 
 logic [26:0] count_f=0;
 always @(posedge clk_65mhz) begin
@@ -166,31 +192,79 @@ always @(posedge clk_65mhz) begin
     end
     else begin
         count_f<=0;
-        size_<=size_x;
+        size_<=size_d;
+        pos_x_<=pos_x_d;
+        pos_y_<=pos_y_d;
+        radius_<=radius;
     end
+    
 end
-divider #(36) pos_x_d (
-		.clk(clk), 
-		.sign(sign), 
-		.start(start), 
-		.dividend(pos_x), 
-		.divider(size), 
-		.quotient(quotient), 
-		.remainder(remainder), 
-		.ready(ready)
+
+logic [31:0] square_r;
+logic [31:0] x_remainder1;
+logic [31:0] y_remainder;
+logic [31:0] radius;
+logic ready3;
+logic ready4;
+logic ready_y;
+
+
+sqrt uut (.aclk(clk_65mhz), 
+		.s_axis_cartesian_tdata(square_x), 
+		.s_axis_cartesian_tvalid(1), 
+		.m_axis_dout_tdata(radius),
+		.m_axis_dout_tvalid(ready4)
 	);
+//logic size__=
+divider32 square_xx(.s_axis_divisor_tdata(size_*7),
+            .s_axis_divisor_tvalid(1),
+            .s_axis_dividend_tdata(32'd22),
+            .s_axis_dividend_tvalid(1),
+            .aclk(clk_65mhz),
+            .m_axis_dout_tdata({square_r,x_remainder1}),
+            .m_axis_dout_tvalid(ready3));
+  
+divider32 center_xx(.s_axis_divisor_tdata(size_),
+            .s_axis_divisor_tvalid(1),
+            .s_axis_dividend_tdata(pos_x_),
+            .s_axis_dividend_tvalid(1),
+            .aclk(clk_65mhz),
+            .m_axis_dout_tdata({x_mean,x_remainder}),
+            .m_axis_dout_tvalid(ready2));
+ 
+ divider32 center_yy(.s_axis_divisor_tdata(size_),
+            .s_axis_divisor_tvalid(1),
+            .s_axis_dividend_tdata(pos_y_),
+            .s_axis_dividend_tvalid(1),
+            .aclk(clk_65mhz),
+            .m_axis_dout_tdata({y_mean,y_remainder}),
+            .m_axis_dout_tvalid(ready_y));
+  
+            
+logic recount;
+logic threshold;
+always_comb begin
+    if (sw[12]) threshold=(red>(green+4))&&(red>(blue+4));
+    else threshold=(h<40)&&(s>100);
+ end
 
 always @(posedge clk_65mhz) begin
-    if ((red>(green+4))&&(red>(blue+4))) begin
+    if (threshold) begin
         thres<=cam;
         size<=size+1;
         pos_x<=pos_x+hcount;
         pos_y<=pos_y+vcount;
-        if (vsync) size_x<=size;
-     end
-    else begin thres=12'b0;
-         end
-
+       end
+    else begin thres=12'b0;end
+    if (vsync) begin 
+            size_d<=size;
+            pos_x_d<=pos_x;
+            pos_y_d<=pos_y;
+          end
+    else begin size<=0;
+        pos_x<=0;
+        pos_y<=0;
+    end
 end
                                         
    camera_read  my_camera(.p_clock_in(pclk_in),
@@ -203,9 +277,7 @@ end
    
     // UP and DOWN buttons for pong paddle
     wire up,down;
-    debounce db2(.reset_in(reset),.clock_in(clk_65mhz),.noisy_in(btnu),.clean_out(up));
-    debounce db3(.reset_in(reset),.clock_in(clk_65mhz),.noisy_in(btnd),.clean_out(down));
-
+    
     wire phsync,pvsync,pblank;
     pong_game pg(.vclock_in(clk_65mhz),.reset_in(reset),
                 .up_in(up),.down_in(down),.pspeed_in(sw[15:12]),
@@ -237,10 +309,12 @@ end
          b <= pblank;
 //         rgb <= pixel;
 //         rgb <= cam;
-           rgb<=thres;
+        if (sw[15]) rgb<=thres;
+        else rgb<=cam;
       end
     end
-
+ 
+    
 //    assign rgb = sw[0] ? {12{border}} : pixel ; //{{4{hcount[7]}}, {4{hcount[6]}}, {4{hcount[5]}}};
 
     // the following lines are required for the Nexys4 VGA circuit - do not change
