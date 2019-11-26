@@ -43,7 +43,7 @@ read_verilog -library xil_defaultlib -sv {
   C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/display_8hex.sv
   C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/rgb2hsv.sv
   C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv
-  C:/Users/mitadm/Downloads/init_test.sv
+  C:/ubuntu/6.111/camera/camera.srcs/sources_1/imports/Downloads/init_test.sv
 }
 read_verilog -library xil_defaultlib {
   C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/clk_wiz_lab3.v

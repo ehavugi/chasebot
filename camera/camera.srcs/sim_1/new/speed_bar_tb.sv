@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 
 
-// to see the variables inside speed_bar is correct. the output pixel is nothing
+// to see if the variables inside speed_bar is correct. the output pixel is nothing
 module speed_bar_tb;
     logic [10:0] hcount;
     logic [9:0] vcount;
