@@ -10,7 +10,7 @@ module speed_bar_tb;
 
     speed_bar uut(.hcount_in(hcount),
                   .vcount_in(vcount),
-                  .speed1(speed1), .speed2(speeda2),
+                  .speed1(speed1), .speed2(speed2),
                   .pixel_out(pixel)
                   );
  initial begin

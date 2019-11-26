@@ -2,14 +2,13 @@
 
 //given the camera pixel, outputs everything to display
 module initialize(
-  input clk_100mhz,
   input clk_65mhz,
   input reset,
   input [10:0] hcount,
   input [9:0] vcount,
   input vsync,
   input [3:0] directions, //up,down,left,right
-  input confirm,
+  input confirm_in,
   input activate,
   input sw2, //whether to make the size twice
   input [11:0] cam,
@@ -31,7 +30,7 @@ module initialize(
   assign width = sw2?10'd640:10'd320;
 
   //generate the blobs
-  logic [11:0] box,box_confirmed,cursor,pad,speed_bar,selected_pixel;
+  logic [11:0] box,box_confirmed,cursor,pad,speed_bar,selected_pixel,goal_pad;
   logic [10:0] cursor_x;
   logic [9:0] cursor_y;
 
@@ -39,6 +38,7 @@ module initialize(
   box #(.COLOR(12'hf00)) confirmed_box_gen (.x_in({2'b00,cur_pos_x}), .y_in({1'b0,cur_pos_y}), .hcount_in(hcount), .vcount_in(vcount), .radius_in(cur_rad), .pixel_out(box_confirmed));
   cursor cursor_gen(.x_in(cursor_x), .y_in(cursor_y), .hcount_in(hcount), .vcount_in(vcount), .sw2(sw2), .pixel_out(cursor));
   colorpad colorpad_gen(.pixel_in(selected_pixel), .hcount_in(hcount), .vcount_in(vcount), .pixel_out(pad));
+  colorpad goal_colorpad_gen(.pixel_in(goal_pixel), .hcount_in(hcount), .vcount_in(vcount), .pixel_out(pad));
   speed_bar speed_bar_gen(.speed1(speed1), .speed2(speed2), .hcount_in(hcount), .vcount_in(vcount), .pixel_out(speed_bar));
 
   ///////////////////////////////////cursor control////////////////////////////////////////////////////////
@@ -61,6 +61,7 @@ module initialize(
   debounce db2(.reset_in(reset),.clock_in(clk_65mhz),.noisy_in(directions[2]),.clean_out(down));
   debounce db3(.reset_in(reset),.clock_in(clk_65mhz),.noisy_in(directions[1]),.clean_out(left));
   debounce db4(.reset_in(reset),.clock_in(clk_65mhz),.noisy_in(directions[0]),.clean_out(right));
+  debounce db5(.reset_in(reset),.clock_in(clk_65mhz),.noisy_in(confirm_in),.clean_out(confirm));
 
   always_ff @(posedge clk_65mhz) begin
     if (up) begin
@@ -103,19 +104,56 @@ end //end always_ff
 parameter INITIALIZE = 0;
 parameter SELECTED = 1;
 parameter CONFIRMED = 2;
-parameter DEACTIVATE = 0;
+parameter MOVE = 0;
 
 //logic [1:0] state;
 logic [1:0] old_state;
+logic old_activate;
+logic activated;
+
+assign activated = ~old_activate & activate;     //if switched to activated
 always_ff @(posedge clk_65mhz) begin
+    if(reset) begin
+        //initialize
+        old_state <= 0;
+        old_activate <= 0;
+        state <= INITIALIZE;
+        cursor_x <= 0;
+        cursor_y <= 0;
+        goal_rad <= 0;
+        goal_pixel <=0;
+        pixel_out <= 0;
+    end
     old_state <= state;
-    case(state) 
+    old_activate <= activate;
+    if(activated) state <= INITIALIZE;
+    case(state)
       INITIALIZE: begin
         track <= 0;
         move <= 0;
+        if(confirm) state <= SELECTED;
+        pixel_out <= &cursor?cursor:cam + pad;
         end
       SELECTED: begin
-                end
+        track <= 1;
+        move <= 0;
+        if(up | down | left | right) state <= INITIALIZE;
+        pixel_out <= (&cursor | &box)?cursor+box:cam + pad;
+        //get the goal pixel
+        end
+      CONFIRMED: begin
+        track <= 1;
+        move <= 0;
+        if(~activate) state <= MOVE;
+        pixel_out <= &box?box_confirmed:cam;
+        goal_rad <= cur_rad;
+        end
+      MOVE: begin
+        track <= 1;
+        move <= 1;
+        //pixel_out <= &box?box_confirmed:cam+goal_pad;
+        pixel_out <= &box?box_confirmed:cam;
+        end
     endcase
 end
 

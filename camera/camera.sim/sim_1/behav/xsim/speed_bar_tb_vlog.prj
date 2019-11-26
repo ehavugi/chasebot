@@ -1,0 +1,39 @@
+# compile verilog/system verilog design source files
+verilog blk_mem_gen_v8_4_3  \
+"../../../../camera.ip_user_files/ipstatic/simulation/blk_mem_gen_v8_4.v" \
+
+verilog xil_defaultlib  \
+"../../../../camera.srcs/sources_1/ip/blk_mem_gen_0/sim/blk_mem_gen_0.v" \
+"../../../../camera.srcs/sources_1/new/clk_wiz_lab3.v" \
+"../../../../camera.srcs/sources_1/new/divider.v" \
+
+sv xil_defaultlib  \
+"../../../../camera.srcs/sources_1/new/camera_read.sv" \
+"../../../../camera.srcs/sources_1/new/pong_game.sv" \
+"../../../../camera.srcs/sources_1/new/xvga.sv" \
+"../../../../camera.srcs/sources_1/new/top_level.sv" \
+"../../../../camera.srcs/sources_1/new/blob.sv" \
+"../../../../camera.srcs/sources_1/new/digits.sv" \
+"../../../../camera.srcs/sources_1/new/picture_blob.sv" \
+"../../../../camera.srcs/sources_1/new/debounce.sv" \
+"../../../../camera.srcs/sources_1/new/display_8hex.sv" \
+"../../../../camera.srcs/sources_1/new/rgb2hsv.sv" \
+
+verilog xil_defaultlib  \
+"../../../../camera.srcs/sources_1/new/rgb2hsv.v" \
+
+sv xil_defaultlib  \
+"../../../../camera.srcs/sources_1/new/initialize.sv" \
+"../../../../camera.srcs/sim_1/new/rgb2hsv_tb.sv" \
+
+verilog xil_defaultlib  \
+"../../../../camera.srcs/sources_1/new/d_tf.v" \
+
+sv xil_defaultlib  \
+"../../../../camera.srcs/sim_1/new/speed_bar_tb.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

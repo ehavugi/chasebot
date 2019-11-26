@@ -1,0 +1,786 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Mon Nov 25 22:55:36 2019
+# Process ID: 5708
+# Current directory: C:/ubuntu/6.111/camera/camera.runs/synth_1
+# Command line: vivado.exe -log init_test.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source init_test.tcl
+# Log file: C:/ubuntu/6.111/camera/camera.runs/synth_1/init_test.vds
+# Journal file: C:/ubuntu/6.111/camera/camera.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source init_test.tcl -notrace
+Command: synth_design -top init_test -part xc7a100tcsg324-3
+Starting synth_design
+INFO: [IP_Flow 19-2162] IP 'blk_mem_gen_0' is locked:
+* IP definition 'Block Memory Generator (8.4)' for IP 'blk_mem_gen_0' (customized with software release 2019.1) has a different revision in the IP Catalog.
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tcsg324-3
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 3268 
+WARNING: [Synth 8-6901] identifier 'size_' is used before its declaration [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/top_level.sv:44]
+WARNING: [Synth 8-2490] overwriting previous definition of module synchronize [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/top_level.sv:257]
+WARNING: [Synth 8-2490] overwriting previous definition of module display_8hex [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/display_8hex.sv:11]
+WARNING: [Synth 8-2490] overwriting previous definition of module rgb2hsv [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/rgb2hsv.v:22]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 980.961 ; gain = 239.559
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'init_test' [C:/Users/mitadm/Downloads/init_test.sv:12]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_lab3' [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/clk_wiz_lab3.v:67]
+INFO: [Synth 8-6157] synthesizing module 'IBUF' [C:/Xilinx2/Vivado/2019.2/scripts/rt/data/unisim_comp.v:32937]
+	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
+	Parameter IBUF_DELAY_VALUE bound to: 0 - type: string 
+	Parameter IBUF_LOW_PWR bound to: TRUE - type: string 
+	Parameter IFD_DELAY_VALUE bound to: AUTO - type: string 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'IBUF' (1#1) [C:/Xilinx2/Vivado/2019.2/scripts/rt/data/unisim_comp.v:32937]
+INFO: [Synth 8-6157] synthesizing module 'MMCME2_ADV' [C:/Xilinx2/Vivado/2019.2/scripts/rt/data/unisim_comp.v:39940]
+	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
+	Parameter CLKFBOUT_MULT_F bound to: 50.375000 - type: double 
+	Parameter CLKFBOUT_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKFBOUT_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKIN1_PERIOD bound to: 10.000000 - type: double 
+	Parameter CLKIN2_PERIOD bound to: 0.000000 - type: double 
+	Parameter CLKOUT0_DIVIDE_F bound to: 15.500000 - type: double 
+	Parameter CLKOUT0_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT0_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT0_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKOUT1_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT1_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT1_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT1_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKOUT2_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT2_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT2_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT2_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKOUT3_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT3_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT3_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT3_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKOUT4_CASCADE bound to: FALSE - type: string 
+	Parameter CLKOUT4_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT4_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT4_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT4_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKOUT5_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT5_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT5_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT5_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKOUT6_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT6_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT6_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT6_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter COMPENSATION bound to: ZHOLD - type: string 
+	Parameter DIVCLK_DIVIDE bound to: 5 - type: integer 
+	Parameter IS_CLKINSEL_INVERTED bound to: 1'b0 
+	Parameter IS_PSEN_INVERTED bound to: 1'b0 
+	Parameter IS_PSINCDEC_INVERTED bound to: 1'b0 
+	Parameter IS_PWRDWN_INVERTED bound to: 1'b0 
+	Parameter IS_RST_INVERTED bound to: 1'b0 
+	Parameter REF_JITTER1 bound to: 0.010000 - type: double 
+	Parameter REF_JITTER2 bound to: 0.010000 - type: double 
+	Parameter SS_EN bound to: FALSE - type: string 
+	Parameter SS_MODE bound to: CENTER_HIGH - type: string 
+	Parameter SS_MOD_PERIOD bound to: 10000 - type: integer 
+	Parameter STARTUP_WAIT bound to: FALSE - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'MMCME2_ADV' (2#1) [C:/Xilinx2/Vivado/2019.2/scripts/rt/data/unisim_comp.v:39940]
+INFO: [Synth 8-6157] synthesizing module 'BUFG' [C:/Xilinx2/Vivado/2019.2/scripts/rt/data/unisim_comp.v:1075]
+INFO: [Synth 8-6155] done synthesizing module 'BUFG' (3#1) [C:/Xilinx2/Vivado/2019.2/scripts/rt/data/unisim_comp.v:1075]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_lab3' (4#1) [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/clk_wiz_lab3.v:67]
+INFO: [Synth 8-6157] synthesizing module 'display_8hex' [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/display_8hex.sv:11]
+	Parameter bits bound to: 13 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'display_8hex' (5#1) [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/display_8hex.sv:11]
+INFO: [Synth 8-6157] synthesizing module 'xvga' [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/xvga.sv:23]
+	Parameter DISPLAY_WIDTH bound to: 1024 - type: integer 
+	Parameter DISPLAY_HEIGHT bound to: 768 - type: integer 
+	Parameter H_FP bound to: 24 - type: integer 
+	Parameter H_SYNC_PULSE bound to: 136 - type: integer 
+	Parameter H_BP bound to: 160 - type: integer 
+	Parameter V_FP bound to: 3 - type: integer 
+	Parameter V_SYNC_PULSE bound to: 6 - type: integer 
+	Parameter V_BP bound to: 29 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xvga' (6#1) [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/xvga.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_0' [C:/ubuntu/6.111/camera/camera.runs/synth_1/.Xil/Vivado-5708-CDBF9Y2/realtime/blk_mem_gen_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_0' (7#1) [C:/ubuntu/6.111/camera/camera.runs/synth_1/.Xil/Vivado-5708-CDBF9Y2/realtime/blk_mem_gen_0_stub.v:6]
+WARNING: [Synth 8-689] width (12) of port connection 'doutb' does not match port width (16) of module 'blk_mem_gen_0' [C:/Users/mitadm/Downloads/init_test.sv:104]
+INFO: [Synth 8-6157] synthesizing module 'divider' [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/divider.v:12]
+	Parameter WIDTH bound to: 36 - type: integer 
+WARNING: [Synth 8-6014] Unused sequential element diff_reg was removed.  [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/divider.v:53]
+INFO: [Synth 8-6155] done synthesizing module 'divider' (8#1) [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/divider.v:12]
+WARNING: [Synth 8-689] width (1) of port connection 'quotient' does not match port width (36) of module 'divider' [C:/Users/mitadm/Downloads/init_test.sv:179]
+WARNING: [Synth 8-689] width (1) of port connection 'remainder' does not match port width (36) of module 'divider' [C:/Users/mitadm/Downloads/init_test.sv:180]
+INFO: [Synth 8-6157] synthesizing module 'camera_read' [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/camera_read.sv:1]
+	Parameter WAIT_FRAME_START bound to: 0 - type: integer 
+	Parameter ROW_CAPTURE bound to: 1 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/camera_read.sv:21]
+INFO: [Synth 8-6155] done synthesizing module 'camera_read' (9#1) [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/camera_read.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'pong_game' [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/pong_game.sv:8]
+INFO: [Synth 8-6155] done synthesizing module 'pong_game' (10#1) [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/pong_game.sv:8]
+INFO: [Synth 8-6157] synthesizing module 'initialize' [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:4]
+	Parameter CURSORSPEED bound to: 2 - type: integer 
+	Parameter SAMPLESIZE bound to: 2 - type: integer 
+	Parameter INITIALIZE bound to: 0 - type: integer 
+	Parameter SELECTED bound to: 1 - type: integer 
+	Parameter CONFIRMED bound to: 2 - type: integer 
+	Parameter MOVE bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'box' [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/blob.sv:22]
+	Parameter THICKNESS bound to: 2 - type: integer 
+	Parameter COLOR bound to: 12'b111111111111 
+INFO: [Synth 8-6155] done synthesizing module 'box' (11#1) [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/blob.sv:22]
+INFO: [Synth 8-6157] synthesizing module 'box__parameterized0' [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/blob.sv:22]
+	Parameter THICKNESS bound to: 2 - type: integer 
+	Parameter COLOR bound to: 12'b111100000000 
+INFO: [Synth 8-6155] done synthesizing module 'box__parameterized0' (11#1) [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/blob.sv:22]
+INFO: [Synth 8-6157] synthesizing module 'cursor' [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/blob.sv:49]
+	Parameter THICKNESS bound to: 1 - type: integer 
+	Parameter COLOR bound to: 12'b111111111111 
+	Parameter WIDTH bound to: 320 - type: integer 
+	Parameter HEIGHT bound to: 240 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'cursor' (12#1) [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/blob.sv:49]
+INFO: [Synth 8-6157] synthesizing module 'colorpad' [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/blob.sv:74]
+	Parameter WIDTH bound to: 30 - type: integer 
+	Parameter HEIGHT bound to: 30 - type: integer 
+	Parameter X bound to: 800 - type: integer 
+	Parameter Y bound to: 600 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'colorpad' (13#1) [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/blob.sv:74]
+INFO: [Synth 8-6157] synthesizing module 'speed_bar' [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/blob.sv:93]
+	Parameter WIDTH bound to: 50 - type: integer 
+	Parameter HEIGHT bound to: 256 - type: integer 
+	Parameter X bound to: 800 - type: integer 
+	Parameter Y bound to: 200 - type: integer 
+	Parameter TOTAL bound to: 250 - type: integer 
+	Parameter COLOR bound to: 12'b111100000000 
+INFO: [Synth 8-6157] synthesizing module 'blob' [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/blob.sv:6]
+	Parameter COLOR bound to: 12'b111100000000 
+INFO: [Synth 8-6155] done synthesizing module 'blob' (14#1) [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/blob.sv:6]
+INFO: [Synth 8-6155] done synthesizing module 'speed_bar' (15#1) [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/blob.sv:93]
+INFO: [Synth 8-6157] synthesizing module 'debounce' [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/top_level.sv:275]
+INFO: [Synth 8-6155] done synthesizing module 'debounce' (16#1) [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/top_level.sv:275]
+WARNING: [Synth 8-151] case item 32'b00000000000000000000000000000000 is unreachable [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:130]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:130]
+WARNING: [Synth 8-6014] Unused sequential element old_state_reg was removed.  [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:118]
+INFO: [Synth 8-6155] done synthesizing module 'initialize' (17#1) [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:4]
+WARNING: [Synth 8-689] width (12) of port connection 'pixel_out' does not match port width (1) of module 'initialize' [C:/Users/mitadm/Downloads/init_test.sv:253]
+WARNING: [Synth 8-6014] Unused sequential element count_f_reg was removed.  [C:/Users/mitadm/Downloads/init_test.sv:165]
+WARNING: [Synth 8-6014] Unused sequential element size__reg was removed.  [C:/Users/mitadm/Downloads/init_test.sv:170]
+WARNING: [Synth 8-6014] Unused sequential element thres_reg was removed.  [C:/Users/mitadm/Downloads/init_test.sv:186]
+WARNING: [Synth 8-6014] Unused sequential element pos_y_reg was removed.  [C:/Users/mitadm/Downloads/init_test.sv:189]
+WARNING: [Synth 8-6014] Unused sequential element size_x_reg was removed.  [C:/Users/mitadm/Downloads/init_test.sv:190]
+WARNING: [Synth 8-3936] Found unconnected internal register 'old_output_pixels_reg' and it is trimmed from '16' to '13' bits. [C:/Users/mitadm/Downloads/init_test.sv:92]
+WARNING: [Synth 8-3848] Net up in module/entity init_test does not have driver. [C:/Users/mitadm/Downloads/init_test.sv:214]
+WARNING: [Synth 8-3848] Net down in module/entity init_test does not have driver. [C:/Users/mitadm/Downloads/init_test.sv:214]
+WARNING: [Synth 8-3848] Net clk in module/entity init_test does not have driver. [C:/Users/mitadm/Downloads/init_test.sv:174]
+WARNING: [Synth 8-3848] Net sign in module/entity init_test does not have driver. [C:/Users/mitadm/Downloads/init_test.sv:175]
+WARNING: [Synth 8-3848] Net start in module/entity init_test does not have driver. [C:/Users/mitadm/Downloads/init_test.sv:176]
+INFO: [Synth 8-6155] done synthesizing module 'init_test' (18#1) [C:/Users/mitadm/Downloads/init_test.sv:12]
+WARNING: [Synth 8-3917] design init_test has port dp driven by constant 1
+WARNING: [Synth 8-3331] design pong_game has unconnected port vclock_in
+WARNING: [Synth 8-3331] design pong_game has unconnected port reset_in
+WARNING: [Synth 8-3331] design pong_game has unconnected port up_in
+WARNING: [Synth 8-3331] design pong_game has unconnected port down_in
+WARNING: [Synth 8-3331] design pong_game has unconnected port pspeed_in[3]
+WARNING: [Synth 8-3331] design pong_game has unconnected port pspeed_in[2]
+WARNING: [Synth 8-3331] design pong_game has unconnected port pspeed_in[1]
+WARNING: [Synth 8-3331] design pong_game has unconnected port pspeed_in[0]
+WARNING: [Synth 8-3331] design pong_game has unconnected port hcount_in[10]
+WARNING: [Synth 8-3331] design pong_game has unconnected port hcount_in[9]
+WARNING: [Synth 8-3331] design pong_game has unconnected port hcount_in[5]
+WARNING: [Synth 8-3331] design pong_game has unconnected port hcount_in[4]
+WARNING: [Synth 8-3331] design pong_game has unconnected port hcount_in[3]
+WARNING: [Synth 8-3331] design pong_game has unconnected port hcount_in[2]
+WARNING: [Synth 8-3331] design pong_game has unconnected port hcount_in[1]
+WARNING: [Synth 8-3331] design pong_game has unconnected port hcount_in[0]
+WARNING: [Synth 8-3331] design pong_game has unconnected port vcount_in[9]
+WARNING: [Synth 8-3331] design pong_game has unconnected port vcount_in[5]
+WARNING: [Synth 8-3331] design pong_game has unconnected port vcount_in[4]
+WARNING: [Synth 8-3331] design pong_game has unconnected port vcount_in[3]
+WARNING: [Synth 8-3331] design pong_game has unconnected port vcount_in[2]
+WARNING: [Synth 8-3331] design pong_game has unconnected port vcount_in[1]
+WARNING: [Synth 8-3331] design pong_game has unconnected port vcount_in[0]
+WARNING: [Synth 8-3331] design init_test has unconnected port jd[2]
+WARNING: [Synth 8-3331] design init_test has unconnected port jd[1]
+WARNING: [Synth 8-3331] design init_test has unconnected port jd[0]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1035.156 ; gain = 293.754
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 1035.156 ; gain = 293.754
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 1035.156 ; gain = 293.754
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.023 . Memory (MB): peak = 1035.156 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/ubuntu/6.111/camera/camera.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'jojos_bram'
+Finished Parsing XDC File [c:/ubuntu/6.111/camera/camera.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'jojos_bram'
+Parsing XDC File [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/nexys4ddr.xdc]
+Finished Parsing XDC File [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/nexys4ddr.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/nexys4ddr.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/init_test_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/init_test_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+INFO: [Timing 38-2] Deriving generated clocks
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1160.652 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1160.652 ; gain = 0.000
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'jojos_bram' at clock pin 'clkb' is different from the actual clock period '15.385', this can lead to different synthesis results.
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1160.652 ; gain = 419.250
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-3
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1160.652 ; gain = 419.250
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for jojos_bram. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1160.652 ; gain = 419.250
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'FSM_state_reg' in module 'camera_read'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'initialize'
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/mitadm/Downloads/init_test.sv:151]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <multiplier> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/mitadm/Downloads/init_test.sv:151]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+        WAIT_FRAME_START |                                0 |                               00
+             ROW_CAPTURE |                                1 |                               01
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'FSM_state_reg' using encoding 'sequential' in module 'camera_read'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+              INITIALIZE |                                0 |                               00
+                SELECTED |                                1 |                               01
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'initialize'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1160.652 ; gain = 419.250
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     72 Bit       Adders := 1     
+	   2 Input     36 Bit       Adders := 2     
+	   2 Input     33 Bit       Adders := 4     
+	   2 Input     32 Bit       Adders := 2     
+	   3 Input     12 Bit       Adders := 6     
+	   2 Input     12 Bit       Adders := 2     
+	   2 Input     11 Bit       Adders := 9     
+	   3 Input     11 Bit       Adders := 10    
+	   2 Input     10 Bit       Adders := 9     
+	   3 Input     10 Bit       Adders := 4     
+	   2 Input      9 Bit       Adders := 5     
+	   2 Input      8 Bit       Adders := 2     
+	   2 Input      7 Bit       Adders := 2     
+	   2 Input      6 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 2     
+	   2 Input      3 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 2     
++---Registers : 
+	               72 Bit    Registers := 2     
+	               36 Bit    Registers := 2     
+	               16 Bit    Registers := 1     
+	               13 Bit    Registers := 2     
+	               12 Bit    Registers := 2     
+	               11 Bit    Registers := 1     
+	               10 Bit    Registers := 1     
+	                9 Bit    Registers := 3     
+	                8 Bit    Registers := 3     
+	                7 Bit    Registers := 2     
+	                6 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 33    
++---Muxes : 
+	   2 Input     72 Bit        Muxes := 2     
+	   2 Input     36 Bit        Muxes := 3     
+	   3 Input     16 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input     12 Bit        Muxes := 9     
+	   3 Input     12 Bit        Muxes := 3     
+	   2 Input     11 Bit        Muxes := 4     
+	   2 Input     10 Bit        Muxes := 5     
+	   2 Input      9 Bit        Muxes := 3     
+	   8 Input      8 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 3     
+	   2 Input      4 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 43    
+	   3 Input      1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module init_test 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     33 Bit       Adders := 4     
+	   2 Input      5 Bit       Adders := 2     
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	               13 Bit    Registers := 2     
+	               12 Bit    Registers := 1     
+	                8 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 9     
++---Muxes : 
+	   3 Input     12 Bit        Muxes := 2     
+	   2 Input     12 Bit        Muxes := 4     
+	   2 Input     11 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 3     
+	   3 Input      1 Bit        Muxes := 3     
+Module display_8hex 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                7 Bit    Registers := 1     
++---Muxes : 
+	   8 Input      8 Bit        Muxes := 1     
+Module xvga 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     11 Bit       Adders := 1     
+	   2 Input     10 Bit       Adders := 1     
++---Registers : 
+	               11 Bit    Registers := 1     
+	               10 Bit    Registers := 1     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 2     
+Module divider 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     72 Bit       Adders := 1     
+	   2 Input     36 Bit       Adders := 2     
+	   2 Input      6 Bit       Adders := 1     
++---Registers : 
+	               72 Bit    Registers := 2     
+	               36 Bit    Registers := 2     
+	                6 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     72 Bit        Muxes := 2     
+	   2 Input     36 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 3     
+Module camera_read 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   3 Input     16 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+Module pong_game 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      3 Bit       Adders := 1     
+Module box 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     12 Bit       Adders := 2     
+	   3 Input     11 Bit       Adders := 4     
+	   2 Input     11 Bit       Adders := 2     
+	   2 Input     10 Bit       Adders := 2     
+	   3 Input     10 Bit       Adders := 2     
+	   2 Input      7 Bit       Adders := 1     
++---Muxes : 
+	   2 Input     12 Bit        Muxes := 1     
+Module box__parameterized0 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     12 Bit       Adders := 2     
+	   3 Input     11 Bit       Adders := 4     
+	   2 Input     11 Bit       Adders := 2     
+	   2 Input     10 Bit       Adders := 2     
+	   3 Input     10 Bit       Adders := 2     
+	   2 Input      7 Bit       Adders := 1     
++---Muxes : 
+	   3 Input     12 Bit        Muxes := 1     
+Module cursor 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     12 Bit        Muxes := 1     
+Module colorpad 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     12 Bit        Muxes := 1     
+Module blob 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     12 Bit       Adders := 1     
+	   3 Input     11 Bit       Adders := 1     
+	   2 Input     11 Bit       Adders := 1     
+	   2 Input     10 Bit       Adders := 1     
+Module speed_bar 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     12 Bit       Adders := 1     
+	   2 Input      9 Bit       Adders := 2     
+	   2 Input      8 Bit       Adders := 2     
++---Muxes : 
+	   2 Input     12 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 2     
+Module debounce 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 4     
+Module initialize 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
+	   2 Input     12 Bit       Adders := 1     
+	   2 Input     11 Bit       Adders := 2     
+	   2 Input     10 Bit       Adders := 2     
+	   2 Input      9 Bit       Adders := 3     
+	   2 Input      1 Bit       Adders := 2     
++---Registers : 
+	               12 Bit    Registers := 1     
+	                9 Bit    Registers := 3     
+	                7 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input     11 Bit        Muxes := 3     
+	   2 Input     10 Bit        Muxes := 4     
+	   2 Input      9 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 13    
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+DSP Report: Generating DSP P0, operation Mode is: C+A*(B:0x140).
+DSP Report: operator P0 is absorbed into DSP P0.
+DSP Report: operator p_0_out is absorbed into DSP P0.
+WARNING: [Synth 8-3917] design init_test has port dp driven by constant 1
+WARNING: [Synth 8-3331] design initialize has unconnected port cam[11]
+WARNING: [Synth 8-3331] design initialize has unconnected port cam[10]
+WARNING: [Synth 8-3331] design initialize has unconnected port cam[9]
+WARNING: [Synth 8-3331] design initialize has unconnected port cam[8]
+WARNING: [Synth 8-3331] design init_test has unconnected port jd[2]
+WARNING: [Synth 8-3331] design init_test has unconnected port jd[1]
+WARNING: [Synth 8-3331] design init_test has unconnected port jd[0]
+INFO: [Synth 8-3886] merging instance 'initializer/goal_pixel_reg[1]' (FDRE) to 'initializer/goal_pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'initializer/goal_pixel_reg[2]' (FDRE) to 'initializer/goal_pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'initializer/goal_pixel_reg[3]' (FDRE) to 'initializer/goal_pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'initializer/goal_pixel_reg[4]' (FDRE) to 'initializer/goal_pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'initializer/goal_pixel_reg[5]' (FDRE) to 'initializer/goal_pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'initializer/goal_pixel_reg[6]' (FDRE) to 'initializer/goal_pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'initializer/goal_pixel_reg[7]' (FDRE) to 'initializer/goal_pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'initializer/goal_pixel_reg[8]' (FDRE) to 'initializer/goal_pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'initializer/goal_pixel_reg[9]' (FDRE) to 'initializer/goal_pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'initializer/goal_pixel_reg[10]' (FDRE) to 'initializer/goal_pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'initializer/goal_pixel_reg[11]' (FDRE) to 'initializer/goal_pixel_reg[0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\initializer/goal_pixel_reg[0] )
+INFO: [Synth 8-3886] merging instance 'rgb_reg[4]' (FD) to 'rgb_reg[5]'
+INFO: [Synth 8-3886] merging instance 'rgb_reg[5]' (FD) to 'rgb_reg[6]'
+INFO: [Synth 8-3886] merging instance 'rgb_reg[6]' (FD) to 'rgb_reg[7]'
+INFO: [Synth 8-3886] merging instance 'rgb_reg[1]' (FD) to 'rgb_reg[2]'
+INFO: [Synth 8-3886] merging instance 'rgb_reg[2]' (FD) to 'rgb_reg[3]'
+INFO: [Synth 8-3886] merging instance 'rgb_reg[8]' (FD) to 'rgb_reg[9]'
+INFO: [Synth 8-3886] merging instance 'rgb_reg[9]' (FD) to 'rgb_reg[10]'
+INFO: [Synth 8-3886] merging instance 'rgb_reg[10]' (FD) to 'rgb_reg[11]'
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'initializer/cursor_x_reg[10]/Q' [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:121]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:121]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:121]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'initializer/cursor_x_reg[9]/Q' [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:121]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:121]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:121]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'initializer/cursor_x_reg[8]/Q' [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:121]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:121]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:121]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'initializer/cursor_x_reg[7]/Q' [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:121]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:121]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:121]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'initializer/cursor_x_reg[6]/Q' [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:121]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:121]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:121]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'initializer/cursor_x_reg[5]/Q' [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:121]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:121]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:121]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'initializer/cursor_x_reg[4]/Q' [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:121]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:121]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:121]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'initializer/cursor_x_reg[3]/Q' [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:121]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:121]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:121]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'initializer/cursor_x_reg[2]/Q' [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:121]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:121]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:121]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'initializer/cursor_x_reg[1]/Q' [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:121]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:121]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:121]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'initializer/cursor_x_reg[0]/Q' [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:121]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:121]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:121]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'initializer/cursor_y_reg[9]/Q' [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:122]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:122]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:122]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'initializer/cursor_y_reg[8]/Q' [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:122]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:122]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:122]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'initializer/cursor_y_reg[7]/Q' [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:122]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:122]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:122]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'initializer/cursor_y_reg[6]/Q' [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:122]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:122]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:122]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'initializer/cursor_y_reg[5]/Q' [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:122]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:122]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:122]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'initializer/cursor_y_reg[4]/Q' [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:122]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:122]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:122]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'initializer/cursor_y_reg[3]/Q' [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:122]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:122]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:122]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'initializer/cursor_y_reg[2]/Q' [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:122]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:122]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:122]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'initializer/cursor_y_reg[1]/Q' [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:122]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:122]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:122]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'initializer/cursor_y_reg[0]/Q' [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:122]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:122]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv:122]
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1160.652 ; gain = 419.250
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping	Report (see note below)
++------------+---------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping   | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+---------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|init_test   | C+A*(B:0x140) | 10     | 9      | 11     | -      | 17     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
++------------+---------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 1171.305 ; gain = 429.902
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:26 . Memory (MB): peak = 1197.332 ; gain = 455.930
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1200.344 ; gain = 458.941
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 1207.125 ; gain = 465.723
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 1207.125 ; gain = 465.723
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 1207.125 ; gain = 465.723
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 1207.125 ; gain = 465.723
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 1207.125 ; gain = 465.723
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 1207.125 ; gain = 465.723
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |blk_mem_gen_0 |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+--------------+------+
+|      |Cell          |Count |
++------+--------------+------+
+|1     |blk_mem_gen_0 |     1|
+|2     |BUFG          |     3|
+|3     |CARRY4        |    76|
+|4     |DSP48E1       |     1|
+|5     |LUT1          |    36|
+|6     |LUT2          |    73|
+|7     |LUT3          |    68|
+|8     |LUT4          |    58|
+|9     |LUT5          |    24|
+|10    |LUT6          |    53|
+|11    |MMCME2_ADV    |     1|
+|12    |FDRE          |   257|
+|13    |FDSE          |     5|
+|14    |IBUF          |    33|
+|15    |OBUF          |    54|
++------+--------------+------+
+
+Report Instance Areas: 
++------+---------------+-------------+------+
+|      |Instance       |Module       |Cells |
++------+---------------+-------------+------+
+|1     |top            |             |   758|
+|2     |  clkdivider   |clk_wiz_lab3 |     4|
+|3     |  display      |display_8hex |    50|
+|4     |  initializer  |initialize   |   224|
+|5     |    box_gen    |box          |    42|
+|6     |    cursor_gen |cursor       |     2|
+|7     |    db1        |debounce     |    35|
+|8     |    db2        |debounce_0   |    36|
+|9     |    db3        |debounce_1   |    35|
+|10    |    db4        |debounce_2   |    35|
+|11    |    db5        |debounce_3   |    36|
+|12    |  my_camera    |camera_read  |    49|
+|13    |  xvga1        |xvga         |   202|
++------+---------------+-------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 1207.125 ; gain = 465.723
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 63 critical warnings and 8 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:22 ; elapsed = 00:00:28 . Memory (MB): peak = 1207.125 ; gain = 340.227
+Synthesis Optimization Complete : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1207.125 ; gain = 465.723
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1207.125 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 78 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1219.195 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+82 Infos, 58 Warnings, 63 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 1219.195 ; gain = 761.520
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1219.195 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'C:/ubuntu/6.111/camera/camera.runs/synth_1/init_test.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file init_test_utilization_synth.rpt -pb init_test_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Nov 25 22:56:18 2019...
