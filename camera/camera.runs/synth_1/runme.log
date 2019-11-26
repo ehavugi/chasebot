@@ -15,11 +15,21 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Device 21-403] Loading part xc7a100tcsg324-3
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 10236 
-WARNING: [Synth 8-6901] identifier 'size_' is used before its declaration [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:44]
-WARNING: [Synth 8-2490] overwriting previous definition of module synchronize [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:257]
+INFO: Helper process launched with PID 5000 
+WARNING: [Synth 8-976] pos_x has already been declared [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:80]
+WARNING: [Synth 8-2654] second declaration of pos_x ignored [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:80]
+INFO: [Synth 8-994] pos_x is declared here [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:76]
+WARNING: [Synth 8-976] pos_x_d has already been declared [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:81]
+WARNING: [Synth 8-2654] second declaration of pos_x_d ignored [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:81]
+INFO: [Synth 8-994] pos_x_d is declared here [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:72]
+WARNING: [Synth 8-992] red is already implicitly declared earlier [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:179]
+WARNING: [Synth 8-992] green is already implicitly declared earlier [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:179]
+WARNING: [Synth 8-992] blue is already implicitly declared earlier [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:179]
+WARNING: [Synth 8-6901] identifier 'radius_' is used before its declaration [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:90]
+WARNING: [Synth 8-6901] identifier 'radius' is used before its declaration [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:194]
+WARNING: [Synth 8-2490] overwriting previous definition of module synchronize [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:317]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 732.117 ; gain = 182.848
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 732.688 ; gain = 182.336
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'top_level' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:12]
 INFO: [Synth 8-6157] synthesizing module 'clk_wiz_lab3' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/clk_wiz_lab3.v:67]
@@ -83,9 +93,9 @@ INFO: [Synth 8-6155] done synthesizing module 'MMCME2_ADV' (2#1) [C:/Xilinx/Viva
 INFO: [Synth 8-6157] synthesizing module 'BUFG' [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:1075]
 INFO: [Synth 8-6155] done synthesizing module 'BUFG' (3#1) [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:1075]
 INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_lab3' (4#1) [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/clk_wiz_lab3.v:67]
-INFO: [Synth 8-6157] synthesizing module 'display_8hex' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:308]
+INFO: [Synth 8-6157] synthesizing module 'display_8hex' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:368]
 	Parameter bits bound to: 13 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'display_8hex' (5#1) [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:308]
+INFO: [Synth 8-6155] done synthesizing module 'display_8hex' (5#1) [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:368]
 INFO: [Synth 8-6157] synthesizing module 'xvga' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/xvga.sv:23]
 	Parameter DISPLAY_WIDTH bound to: 1024 - type: integer 
 	Parameter DISPLAY_HEIGHT bound to: 768 - type: integer 
@@ -96,31 +106,44 @@ INFO: [Synth 8-6157] synthesizing module 'xvga' [C:/Users/Owner/OneDrive/pic/Doc
 	Parameter V_SYNC_PULSE bound to: 6 - type: integer 
 	Parameter V_BP bound to: 29 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'xvga' (6#1) [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/xvga.sv:23]
-INFO: [Synth 8-6157] synthesizing module 'debounce' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:275]
-INFO: [Synth 8-6155] done synthesizing module 'debounce' (7#1) [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:275]
-INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_0' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/synth_1/.Xil/Vivado-19364-DESKTOP-5DFT9M2/realtime/blk_mem_gen_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_0' (8#1) [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/synth_1/.Xil/Vivado-19364-DESKTOP-5DFT9M2/realtime/blk_mem_gen_0_stub.v:6]
-WARNING: [Synth 8-689] width (12) of port connection 'doutb' does not match port width (16) of module 'blk_mem_gen_0' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:103]
+INFO: [Synth 8-6157] synthesizing module 'debounce' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:335]
+INFO: [Synth 8-6155] done synthesizing module 'debounce' (7#1) [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:335]
+INFO: [Synth 8-6157] synthesizing module 'rgb2hsv' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:22]
 INFO: [Synth 8-6157] synthesizing module 'divider' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/divider.v:12]
-	Parameter WIDTH bound to: 36 - type: integer 
+	Parameter WIDTH bound to: 8 - type: integer 
 WARNING: [Synth 8-6014] Unused sequential element diff_reg was removed.  [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/divider.v:53]
-INFO: [Synth 8-6155] done synthesizing module 'divider' (9#1) [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/divider.v:12]
-WARNING: [Synth 8-689] width (1) of port connection 'quotient' does not match port width (36) of module 'divider' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:178]
-WARNING: [Synth 8-689] width (1) of port connection 'remainder' does not match port width (36) of module 'divider' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:179]
+INFO: [Synth 8-6155] done synthesizing module 'divider' (8#1) [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/divider.v:12]
+WARNING: [Synth 8-689] width (16) of port connection 'dividend' does not match port width (8) of module 'divider' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:57]
+WARNING: [Synth 8-689] width (16) of port connection 'divider' does not match port width (8) of module 'divider' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:58]
+WARNING: [Synth 8-689] width (16) of port connection 'quotient' does not match port width (8) of module 'divider' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:59]
+WARNING: [Synth 8-689] width (16) of port connection 'remainder' does not match port width (8) of module 'divider' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:63]
+WARNING: [Synth 8-689] width (16) of port connection 'dividend' does not match port width (8) of module 'divider' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:69]
+WARNING: [Synth 8-689] width (16) of port connection 'divider' does not match port width (8) of module 'divider' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:70]
+WARNING: [Synth 8-689] width (16) of port connection 'quotient' does not match port width (8) of module 'divider' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:71]
+WARNING: [Synth 8-689] width (16) of port connection 'remainder' does not match port width (8) of module 'divider' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:72]
+WARNING: [Synth 8-7023] instance 'hue_div2' of module 'divider' has 8 connections declared, but only 7 given [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:66]
+INFO: [Synth 8-6155] done synthesizing module 'rgb2hsv' (9#1) [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:22]
+INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_0' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/synth_1/.Xil/Vivado-16448-DESKTOP-5DFT9M2/realtime/blk_mem_gen_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_0' (10#1) [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/synth_1/.Xil/Vivado-16448-DESKTOP-5DFT9M2/realtime/blk_mem_gen_0_stub.v:6]
+WARNING: [Synth 8-689] width (12) of port connection 'doutb' does not match port width (16) of module 'blk_mem_gen_0' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:129]
+INFO: [Synth 8-6157] synthesizing module 'sqrt' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/synth_1/.Xil/Vivado-16448-DESKTOP-5DFT9M2/realtime/sqrt_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'sqrt' (11#1) [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/synth_1/.Xil/Vivado-16448-DESKTOP-5DFT9M2/realtime/sqrt_stub.v:6]
+WARNING: [Synth 8-689] width (32) of port connection 'm_axis_dout_tdata' does not match port width (24) of module 'sqrt' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:208]
+INFO: [Synth 8-6157] synthesizing module 'divider32' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/synth_1/.Xil/Vivado-16448-DESKTOP-5DFT9M2/realtime/divider32_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'divider32' (12#1) [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/synth_1/.Xil/Vivado-16448-DESKTOP-5DFT9M2/realtime/divider32_stub.v:6]
 INFO: [Synth 8-6157] synthesizing module 'camera_read' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/camera_read.sv:1]
 	Parameter WAIT_FRAME_START bound to: 0 - type: integer 
 	Parameter ROW_CAPTURE bound to: 1 - type: integer 
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/camera_read.sv:11]
 INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/camera_read.sv:21]
-INFO: [Synth 8-6155] done synthesizing module 'camera_read' (10#1) [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/camera_read.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'camera_read' (13#1) [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/camera_read.sv:1]
 INFO: [Synth 8-6157] synthesizing module 'pong_game' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/pong_game.sv:8]
-INFO: [Synth 8-6155] done synthesizing module 'pong_game' (11#1) [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/pong_game.sv:8]
-WARNING: [Synth 8-6014] Unused sequential element thres_reg was removed.  [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:185]
-WARNING: [Synth 8-6014] Unused sequential element pos_y_reg was removed.  [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:188]
-WARNING: [Synth 8-3936] Found unconnected internal register 'old_output_pixels_reg' and it is trimmed from '16' to '13' bits. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:91]
-WARNING: [Synth 8-3848] Net clk in module/entity top_level does not have driver. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:173]
-WARNING: [Synth 8-3848] Net sign in module/entity top_level does not have driver. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:174]
-WARNING: [Synth 8-3848] Net start in module/entity top_level does not have driver. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:175]
-INFO: [Synth 8-6155] done synthesizing module 'top_level' (12#1) [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:12]
+INFO: [Synth 8-6155] done synthesizing module 'pong_game' (14#1) [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/pong_game.sv:8]
+WARNING: [Synth 8-6014] Unused sequential element pos_y_d_reg was removed.  [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:247]
+WARNING: [Synth 8-6014] Unused sequential element pos_y_reg was removed.  [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:247]
+WARNING: [Synth 8-3936] Found unconnected internal register 'old_output_pixels_reg' and it is trimmed from '16' to '13' bits. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:117]
+WARNING: [Synth 8-3848] Net clk in module/entity top_level does not have driver. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:205]
+INFO: [Synth 8-6155] done synthesizing module 'top_level' (15#1) [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:12]
 WARNING: [Synth 8-3917] design top_level has port dp driven by constant 1
 WARNING: [Synth 8-3331] design pong_game has unconnected port vclock_in
 WARNING: [Synth 8-3331] design pong_game has unconnected port reset_in
@@ -145,11 +168,12 @@ WARNING: [Synth 8-3331] design pong_game has unconnected port vcount_in[3]
 WARNING: [Synth 8-3331] design pong_game has unconnected port vcount_in[2]
 WARNING: [Synth 8-3331] design pong_game has unconnected port vcount_in[1]
 WARNING: [Synth 8-3331] design pong_game has unconnected port vcount_in[0]
+WARNING: [Synth 8-3331] design rgb2hsv has unconnected port reset
 WARNING: [Synth 8-3331] design top_level has unconnected port jd[2]
 WARNING: [Synth 8-3331] design top_level has unconnected port jd[1]
 WARNING: [Synth 8-3331] design top_level has unconnected port jd[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 775.336 ; gain = 226.066
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 778.352 ; gain = 228.000
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -162,10 +186,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 775.336 ; gain = 226.066
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 778.352 ; gain = 228.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 775.336 ; gain = 226.066
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 778.352 ; gain = 228.000
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -173,41 +197,65 @@ INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
+Parsing XDC File [c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/sqrt/sqrt/sqrt_in_context.xdc] for cell 'uut'
+Finished Parsing XDC File [c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/sqrt/sqrt/sqrt_in_context.xdc] for cell 'uut'
 Parsing XDC File [c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'jojos_bram'
 Finished Parsing XDC File [c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'jojos_bram'
+Parsing XDC File [c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/divider32/divider32/divider32_in_context.xdc] for cell 'square_xx'
+Finished Parsing XDC File [c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/divider32/divider32/divider32_in_context.xdc] for cell 'square_xx'
+Parsing XDC File [c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/divider32/divider32/divider32_in_context.xdc] for cell 'center_xx'
+Finished Parsing XDC File [c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/divider32/divider32/divider32_in_context.xdc] for cell 'center_xx'
 Parsing XDC File [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/nexys4ddr.xdc]
 Finished Parsing XDC File [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/nexys4ddr.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/nexys4ddr.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_level_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_level_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/synth_1/dont_touch.xdc]
 INFO: [Timing 38-2] Deriving generated clocks
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 923.469 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 928.680 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 923.469 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 928.680 ; gain = 0.000
+WARNING: [Timing 38-316] Clock period '1000.000' specified during out-of-context synthesis of instance 'center_xx' at clock pin 'aclk' is different from the actual clock period '15.385', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'jojos_bram' at clock pin 'clkb' is different from the actual clock period '15.385', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '1000.000' specified during out-of-context synthesis of instance 'square_xx' at clock pin 'aclk' is different from the actual clock period '15.385', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 923.469 ; gain = 374.199
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 928.680 ; gain = 378.328
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-3
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 923.469 ; gain = 374.199
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 928.680 ; gain = 378.328
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for uut. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for jojos_bram. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for center_xx. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for square_xx. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 923.469 ; gain = 374.199
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 928.680 ; gain = 378.328
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <multiplier> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:117]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:117]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <multiplier> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:112]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:112]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <multiplier> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:111]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:111]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <multiplier> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:107]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:107]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <multiplier> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:69]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:69]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:138]
 INFO: [Synth 8-802] inferred FSM for state register 'FSM_state_reg' in module 'camera_read'
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:150]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <multiplier> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:150]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:176]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <multiplier> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:176]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -216,7 +264,7 @@ INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <multiplier> is shared.
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'FSM_state_reg' using encoding 'sequential' in module 'camera_read'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 923.469 ; gain = 374.199
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 928.680 ; gain = 378.328
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -229,40 +277,45 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   3 Input     72 Bit       Adders := 1     
-	   2 Input     36 Bit       Adders := 2     
+	   3 Input     16 Bit       Adders := 4     
+	   2 Input     16 Bit       Adders := 2     
 	   2 Input     11 Bit       Adders := 1     
 	   2 Input     10 Bit       Adders := 1     
-	   2 Input      6 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 8     
+	   3 Input      8 Bit       Adders := 6     
+	   2 Input      6 Bit       Adders := 4     
 	   3 Input      6 Bit       Adders := 2     
 	   2 Input      3 Bit       Adders := 1     
 	   2 Input      2 Bit       Adders := 1     
 +---Registers : 
-	               72 Bit    Registers := 2     
-	               36 Bit    Registers := 2     
-	               16 Bit    Registers := 3     
+	               32 Bit    Registers := 5     
+	               24 Bit    Registers := 1     
+	               19 Bit    Registers := 2     
+	               16 Bit    Registers := 13    
 	               13 Bit    Registers := 2     
-	               12 Bit    Registers := 1     
+	               12 Bit    Registers := 2     
 	               11 Bit    Registers := 1     
 	               10 Bit    Registers := 1     
-	                8 Bit    Registers := 3     
+	                8 Bit    Registers := 121   
 	                7 Bit    Registers := 1     
-	                6 Bit    Registers := 1     
+	                6 Bit    Registers := 4     
 	                2 Bit    Registers := 1     
-	                1 Bit    Registers := 25    
+	                1 Bit    Registers := 31    
++---Multipliers : 
+	                 3x32  Multipliers := 1     
 +---Muxes : 
-	   2 Input     72 Bit        Muxes := 2     
-	   2 Input     36 Bit        Muxes := 3     
+	   4 Input     32 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 21    
 	   3 Input     16 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 1     
-	   2 Input     12 Bit        Muxes := 4     
+	   2 Input     12 Bit        Muxes := 6     
 	   3 Input     12 Bit        Muxes := 2     
 	   2 Input     11 Bit        Muxes := 1     
 	   2 Input     10 Bit        Muxes := 1     
 	   8 Input      8 Bit        Muxes := 1     
-	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 35    
+	   3 Input      8 Bit        Muxes := 2     
 	   2 Input      4 Bit        Muxes := 3     
-	   2 Input      1 Bit        Muxes := 22    
+	   2 Input      1 Bit        Muxes := 44    
 	   3 Input      1 Bit        Muxes := 3     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -277,20 +330,25 @@ Detailed RTL Component Info :
 	   3 Input      6 Bit       Adders := 2     
 	   2 Input      2 Bit       Adders := 1     
 +---Registers : 
-	               16 Bit    Registers := 2     
+	               32 Bit    Registers := 5     
+	               24 Bit    Registers := 1     
 	               13 Bit    Registers := 2     
-	               12 Bit    Registers := 1     
+	               12 Bit    Registers := 2     
 	                8 Bit    Registers := 2     
 	                2 Bit    Registers := 1     
 	                1 Bit    Registers := 9     
++---Multipliers : 
+	                 3x32  Multipliers := 1     
 +---Muxes : 
-	   2 Input     12 Bit        Muxes := 4     
+	   4 Input     32 Bit        Muxes := 1     
+	   2 Input     12 Bit        Muxes := 6     
 	   3 Input     12 Bit        Muxes := 2     
 	   2 Input     11 Bit        Muxes := 1     
 	   2 Input     10 Bit        Muxes := 1     
 	   2 Input      8 Bit        Muxes := 1     
 	   2 Input      4 Bit        Muxes := 3     
 	   3 Input      1 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 1     
 Module display_8hex 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -318,18 +376,32 @@ Detailed RTL Component Info :
 Module divider 
 Detailed RTL Component Info : 
 +---Adders : 
-	   3 Input     72 Bit       Adders := 1     
-	   2 Input     36 Bit       Adders := 2     
+	   3 Input     16 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 2     
 	   2 Input      6 Bit       Adders := 1     
 +---Registers : 
-	               72 Bit    Registers := 2     
-	               36 Bit    Registers := 2     
+	               16 Bit    Registers := 2     
+	                8 Bit    Registers := 2     
 	                6 Bit    Registers := 1     
 	                1 Bit    Registers := 2     
 +---Muxes : 
-	   2 Input     72 Bit        Muxes := 2     
-	   2 Input     36 Bit        Muxes := 3     
+	   2 Input     16 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 3     
 	   2 Input      1 Bit        Muxes := 3     
+Module rgb2hsv 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     16 Bit       Adders := 1     
+	   3 Input      8 Bit       Adders := 3     
++---Registers : 
+	               19 Bit    Registers := 1     
+	               16 Bit    Registers := 2     
+	                8 Bit    Registers := 55    
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 6     
+	   2 Input      8 Bit        Muxes := 11    
+	   3 Input      8 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 6     
 Module camera_read 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -359,15 +431,167 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-4471] merging register 'delta_reg[7:0]' into 'delta_reg[7:0]' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:99]
+INFO: [Synth 8-4471] merging register 'delta_reg[7:0]' into 'delta_reg[7:0]' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:99]
+WARNING: [Synth 8-3936] Found unconnected internal register 's_top_reg' and it is trimmed from '16' to '8' bits. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:57]
+WARNING: [Synth 8-3936] Found unconnected internal register 'h_top_reg' and it is trimmed from '16' to '8' bits. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:69]
+WARNING: [Synth 8-3936] Found unconnected internal register 'xx/s_top_reg' and it is trimmed from '16' to '8' bits. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:57]
+WARNING: [Synth 8-3936] Found unconnected internal register 'xx/h_top_reg' and it is trimmed from '16' to '8' bits. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:69]
 DSP Report: Generating DSP P0, operation Mode is: C+A*(B:0x140).
 DSP Report: operator P0 is absorbed into DSP P0.
 DSP Report: operator p_0_out is absorbed into DSP P0.
 WARNING: [Synth 8-3917] design top_level has port dp driven by constant 1
+WARNING: [Synth 8-3331] design rgb2hsv has unconnected port reset
 WARNING: [Synth 8-3331] design top_level has unconnected port jd[2]
 WARNING: [Synth 8-3331] design top_level has unconnected port jd[1]
 WARNING: [Synth 8-3331] design top_level has unconnected port jd[0]
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[0][0]' (FDE) to 'x/h_add_reg[0][2]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[0][1]' (FDE) to 'x/h_add_reg[0][3]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[0][2]' (FDE) to 'x/h_add_reg[0][4]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[0][3]' (FDE) to 'x/h_add_reg[0][5]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[0][4]' (FDE) to 'x/h_add_reg[0][6]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[0][5]' (FDE) to 'x/h_add_reg[0][7]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[1][0]' (FD) to 'x/h_add_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[1][1]' (FD) to 'x/h_add_reg[1][5]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[1][2]' (FD) to 'x/h_add_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[1][3]' (FD) to 'x/h_add_reg[1][5]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[1][4]' (FD) to 'x/h_add_reg[1][6]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[1][5]' (FD) to 'x/h_add_reg[1][7]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[2][0]' (FD) to 'x/h_add_reg[2][4]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[2][1]' (FD) to 'x/h_add_reg[2][5]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[2][2]' (FD) to 'x/h_add_reg[2][4]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[2][3]' (FD) to 'x/h_add_reg[2][5]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[2][4]' (FD) to 'x/h_add_reg[2][6]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[2][5]' (FD) to 'x/h_add_reg[2][7]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[3][0]' (FD) to 'x/h_add_reg[3][4]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[3][1]' (FD) to 'x/h_add_reg[3][5]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[3][2]' (FD) to 'x/h_add_reg[3][4]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[3][3]' (FD) to 'x/h_add_reg[3][5]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[3][4]' (FD) to 'x/h_add_reg[3][6]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[3][5]' (FD) to 'x/h_add_reg[3][7]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[4][0]' (FD) to 'x/h_add_reg[4][4]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[4][1]' (FD) to 'x/h_add_reg[4][5]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[4][2]' (FD) to 'x/h_add_reg[4][4]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[4][3]' (FD) to 'x/h_add_reg[4][5]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[4][4]' (FD) to 'x/h_add_reg[4][6]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[4][5]' (FD) to 'x/h_add_reg[4][7]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[5][0]' (FD) to 'x/h_add_reg[5][4]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[5][1]' (FD) to 'x/h_add_reg[5][5]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[5][2]' (FD) to 'x/h_add_reg[5][4]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[5][3]' (FD) to 'x/h_add_reg[5][5]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[5][4]' (FD) to 'x/h_add_reg[5][6]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[5][5]' (FD) to 'x/h_add_reg[5][7]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[6][0]' (FD) to 'x/h_add_reg[6][4]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[6][1]' (FD) to 'x/h_add_reg[6][5]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[6][2]' (FD) to 'x/h_add_reg[6][4]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[6][3]' (FD) to 'x/h_add_reg[6][5]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[6][4]' (FD) to 'x/h_add_reg[6][6]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[6][5]' (FD) to 'x/h_add_reg[6][7]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[7][0]' (FD) to 'x/h_add_reg[7][4]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[7][1]' (FD) to 'x/h_add_reg[7][5]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[7][2]' (FD) to 'x/h_add_reg[7][4]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[7][3]' (FD) to 'x/h_add_reg[7][5]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[7][4]' (FD) to 'x/h_add_reg[7][6]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[7][5]' (FD) to 'x/h_add_reg[7][7]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[8][0]' (FD) to 'x/h_add_reg[8][4]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[8][1]' (FD) to 'x/h_add_reg[8][5]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[8][2]' (FD) to 'x/h_add_reg[8][4]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[8][3]' (FD) to 'x/h_add_reg[8][5]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[8][4]' (FD) to 'x/h_add_reg[8][6]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[8][5]' (FD) to 'x/h_add_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[9][0]' (FD) to 'x/h_add_reg[9][4]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[9][1]' (FD) to 'x/h_add_reg[9][5]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[9][2]' (FD) to 'x/h_add_reg[9][4]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[9][3]' (FD) to 'x/h_add_reg[9][5]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[9][4]' (FD) to 'x/h_add_reg[9][6]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[9][5]' (FD) to 'x/h_add_reg[9][7]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[10][0]' (FD) to 'x/h_add_reg[10][4]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[10][1]' (FD) to 'x/h_add_reg[10][5]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[10][2]' (FD) to 'x/h_add_reg[10][4]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[10][3]' (FD) to 'x/h_add_reg[10][5]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[10][4]' (FD) to 'x/h_add_reg[10][6]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[10][5]' (FD) to 'x/h_add_reg[10][7]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[11][0]' (FD) to 'x/h_add_reg[11][4]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[11][1]' (FD) to 'x/h_add_reg[11][5]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[11][2]' (FD) to 'x/h_add_reg[11][4]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[11][3]' (FD) to 'x/h_add_reg[11][5]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[11][4]' (FD) to 'x/h_add_reg[11][6]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[11][5]' (FD) to 'x/h_add_reg[11][7]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[12][0]' (FD) to 'x/h_add_reg[12][4]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[12][1]' (FD) to 'x/h_add_reg[12][5]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[12][2]' (FD) to 'x/h_add_reg[12][4]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[12][3]' (FD) to 'x/h_add_reg[12][5]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[12][4]' (FD) to 'x/h_add_reg[12][6]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[12][5]' (FD) to 'x/h_add_reg[12][7]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[13][0]' (FD) to 'x/h_add_reg[13][4]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[13][1]' (FD) to 'x/h_add_reg[13][5]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[13][2]' (FD) to 'x/h_add_reg[13][4]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[13][3]' (FD) to 'x/h_add_reg[13][5]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[13][4]' (FD) to 'x/h_add_reg[13][6]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[13][5]' (FD) to 'x/h_add_reg[13][7]'
+INFO: [Synth 8-3886] merging instance 'x/my_r_reg[1]' (FD) to 'x/my_r_reg[3]'
+INFO: [Synth 8-3886] merging instance 'x/my_g_reg[1]' (FD) to 'x/my_r_reg[3]'
+INFO: [Synth 8-3886] merging instance 'x/my_b_reg[1]' (FD) to 'x/my_r_reg[3]'
+INFO: [Synth 8-3886] merging instance 'x/my_r_reg[0]' (FD) to 'x/my_r_reg[3]'
+INFO: [Synth 8-3886] merging instance 'x/my_g_reg[0]' (FD) to 'x/my_r_reg[3]'
+INFO: [Synth 8-3886] merging instance 'x/my_b_reg[0]' (FD) to 'x/my_r_reg[3]'
+INFO: [Synth 8-3886] merging instance 'x/my_g_reg[2]' (FD) to 'x/my_r_reg[3]'
+INFO: [Synth 8-3886] merging instance 'x/my_g_reg[3]' (FD) to 'x/my_r_reg[3]'
+INFO: [Synth 8-3886] merging instance 'x/my_b_reg[2]' (FD) to 'x/my_r_reg[3]'
+INFO: [Synth 8-3886] merging instance 'x/my_r_reg[2]' (FD) to 'x/my_r_reg[3]'
+INFO: [Synth 8-3886] merging instance 'x/my_b_reg[3]' (FD) to 'x/my_r_reg[3]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\x/my_r_reg[3] )
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[14][0]' (FD) to 'x/h_add_reg[14][4]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[14][1]' (FD) to 'x/h_add_reg[14][5]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[14][2]' (FD) to 'x/h_add_reg[14][4]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[14][3]' (FD) to 'x/h_add_reg[14][5]'
+INFO: [Synth 8-3886] merging instance 'x/h_add_reg[14][4]' (FD) to 'x/h_add_reg[14][6]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\x/h_bottom_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\x/hue_div2/quotient_temp_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\x/hue_div2/quotient_temp_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\x/hue_div2/quotient_temp_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\x/hue_div2/quotient_temp_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\x/hue_div2/quotient_temp_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\x/hue_div2/quotient_temp_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\x/hue_div2/bit0_inferred /\x/hue_div2/bit_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\x/hue_div2/bit0_inferred /\x/hue_div2/bit_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\x/hue_div2/bit0_inferred /\x/hue_div2/bit_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\x/hue_div2/bit0_inferred /\x/hue_div2/bit_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\x/hue_div2/bit0_inferred /\x/hue_div2/bit_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\x/hue_div1/quotient_temp_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\x/hue_div1/quotient_temp_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\x/hue_div1/quotient_temp_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\x/hue_div1/quotient_temp_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\x/hue_div1/quotient_temp_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\x/hue_div1/quotient_temp_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\x/hue_div1/divider_copy_reg[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\x/hue_div1/negative_output_reg )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\x/hue_div1/bit0_inferred /\x/hue_div1/bit_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\x/hue_div1/bit0_inferred /\x/hue_div1/bit_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\x/hue_div1/bit0_inferred /\x/hue_div1/bit_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\x/hue_div1/bit0_inferred /\x/hue_div1/bit_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\x/hue_div1/bit0_inferred /\x/hue_div1/bit_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\x/hue_div2/quotient_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\x/hue_div2/quotient_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\x/hue_div2/quotient_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\x/hue_div2/quotient_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\x/hue_div2/quotient_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\x/hue_div2/quotient_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\x/hue_div2/quotient_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\x/hue_div2/quotient_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\x/hue_div1/quotient_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\x/hue_div1/quotient_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\x/hue_div1/quotient_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\x/hue_div1/quotient_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\x/hue_div1/quotient_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\x/hue_div1/quotient_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\x/hue_div1/quotient_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\x/hue_div1/quotient_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\x/my_r_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\x/my_b_delay2_reg[3] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 923.469 ; gain = 374.199
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 928.680 ; gain = 378.328
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -394,13 +618,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 930.871 ; gain = 381.602
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 934.539 ; gain = 384.188
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 955.441 ; gain = 406.172
+Finished Timing Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 974.914 ; gain = 424.563
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -412,7 +636,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 964.465 ; gain = 415.195
+Finished Technology Mapping : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 974.914 ; gain = 424.563
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -435,8 +659,9 @@ Start Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-4442] BlackBox module uut has unconnected pin aclk
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 970.313 ; gain = 421.043
+Finished IO Insertion : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 981.605 ; gain = 431.254
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -449,7 +674,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 970.313 ; gain = 421.043
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 981.605 ; gain = 431.254
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -461,25 +686,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 970.313 ; gain = 421.043
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 981.605 ; gain = 431.254
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 970.313 ; gain = 421.043
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 981.605 ; gain = 431.254
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 970.313 ; gain = 421.043
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 981.605 ; gain = 431.254
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 970.313 ; gain = 421.043
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 981.605 ; gain = 431.254
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -490,6 +715,8 @@ Report BlackBoxes:
 |      |BlackBox name |Instances |
 +------+--------------+----------+
 |1     |blk_mem_gen_0 |         1|
+|2     |sqrt          |         1|
+|3     |divider32     |         2|
 +------+--------------+----------+
 
 Report Cell Usage: 
@@ -497,54 +724,57 @@ Report Cell Usage:
 |      |Cell          |Count |
 +------+--------------+------+
 |1     |blk_mem_gen_0 |     1|
-|2     |BUFG          |     3|
-|3     |CARRY4        |    24|
-|4     |DSP48E1       |     1|
-|5     |LUT1          |    10|
-|6     |LUT2          |    37|
-|7     |LUT3          |    37|
-|8     |LUT4          |    52|
-|9     |LUT5          |    28|
-|10    |LUT6          |    54|
-|11    |MMCME2_ADV    |     1|
-|12    |FDRE          |   215|
-|13    |FDSE          |    16|
-|14    |IBUF          |    31|
-|15    |OBUF          |    54|
+|2     |divider32     |     1|
+|3     |divider32__2  |     1|
+|4     |sqrt          |     1|
+|5     |BUFG          |     3|
+|6     |CARRY4        |    44|
+|7     |DSP48E1       |     1|
+|8     |LUT1          |    16|
+|9     |LUT2          |    91|
+|10    |LUT3          |    35|
+|11    |LUT4          |    44|
+|12    |LUT5          |    35|
+|13    |LUT6          |   103|
+|14    |MMCME2_ADV    |     1|
+|15    |FDRE          |   423|
+|16    |FDSE          |    20|
+|17    |IBUF          |    31|
+|18    |OBUF          |    54|
 +------+--------------+------+
 
 Report Instance Areas: 
 +------+-------------+-------------+------+
 |      |Instance     |Module       |Cells |
 +------+-------------+-------------+------+
-|1     |top          |             |   579|
+|1     |top          |             |  1072|
 |2     |  clkdivider |clk_wiz_lab3 |     4|
-|3     |  display    |display_8hex |    84|
+|3     |  display    |display_8hex |   105|
 |4     |  my_camera  |camera_read  |    58|
-|5     |  xvga1      |xvga         |   123|
+|5     |  xvga1      |xvga         |   157|
 +------+-------------+-------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 970.313 ; gain = 421.043
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 981.605 ; gain = 431.254
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 4 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:23 . Memory (MB): peak = 970.313 ; gain = 272.910
-Synthesis Optimization Complete : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 970.313 ; gain = 421.043
+Synthesis finished with 0 errors, 1 critical warnings and 9 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:26 . Memory (MB): peak = 981.605 ; gain = 280.926
+Synthesis Optimization Complete : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 981.605 ; gain = 431.254
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 26 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 46 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 970.313 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 981.605 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-44 Infos, 44 Warnings, 0 Critical Warnings and 0 Errors encountered.
+210 Infos, 67 Warnings, 1 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 970.313 ; gain = 675.469
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 970.313 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 981.605 ; gain = 686.797
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 981.605 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/synth_1/top_level.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_level_utilization_synth.rpt -pb top_level_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Nov 25 19:10:58 2019...
+INFO: [Common 17-206] Exiting Vivado at Mon Nov 25 23:42:21 2019...

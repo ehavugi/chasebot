@@ -17,6 +17,8 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_param chipscope.maxJobs 2
+set_param xicom.use_bs_reader 1
 create_project -in_memory -part xc7a100tcsg324-3
 
 set_param project.singleFileAddWarning.threshold 0
@@ -39,9 +41,16 @@ read_verilog -library xil_defaultlib -sv {
 read_verilog -library xil_defaultlib {
   C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/clk_wiz_lab3.v
   C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/divider.v
+  C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v
 }
+read_ip -quiet c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/sqrt/sqrt.xci
+set_property used_in_implementation false [get_files -all c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/sqrt/sqrt_ooc.xdc]
+
 read_ip -quiet C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci
 set_property used_in_implementation false [get_files -all c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0_ooc.xdc]
+
+read_ip -quiet C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/divider32/divider32.xci
+set_property used_in_implementation false [get_files -all c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/divider32/divider32_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -54,6 +63,8 @@ foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
 read_xdc C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/nexys4ddr.xdc
 set_property used_in_implementation false [get_files C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/nexys4ddr.xdc]
 
+read_xdc dont_touch.xdc
+set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
 

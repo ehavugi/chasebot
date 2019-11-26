@@ -33,15 +33,15 @@ module top_level(
     // create 65mhz system clock, happens to match 1024 x 768 XVGA timing
     clk_wiz_lab3 clkdivider(.clk_in1(clk_100mhz), .clk_out1(clk_65mhz));
 
-    wire [31:0] data;      //  instantiate 7-segment display; display (8) 4-bit hex
+    logic [31:0] data;      //  instantiate 7-segment display; display (8) 4-bit hex
     wire [6:0] segments;
     assign {cg, cf, ce, cd, cc, cb, ca} = segments[6:0];
     display_8hex display(.clk_in(clk_65mhz),.data_in(data), .seg_out(segments), .strobe_out(an));
     //assign seg[6:0] = segments;
     assign  dp = 1'b1;  // turn off the period
 
-    assign led = sw;                        // turn leds on
-    assign data = {size_, sw[3:0]};   // display 0123456 + sw[3:0]
+    assign led = sw;  
+    
     assign led16_r = btnl;                  // left button -> red led
     assign led16_g = btnc;                  // center button -> green led
     assign led16_b = btnr;                  // right button -> blue led
@@ -64,7 +64,33 @@ module top_level(
    
     logic xclk;
     logic[1:0] xclk_count;
-    
+    logic ready2;
+logic ready;
+logic [31:0] x_mean;
+logic [31:0] x_remainder;
+logic [31:0] pos_y_d;
+logic [31:0] pos_x_d;
+logic [31:0] size;
+logic [31:0] size_d;
+logic [31:0] size_;
+logic [31:0] pos_x;
+logic [31:0] pos_x_;
+logic [31:0] pos_y;
+logic [31:0] pos_y_;
+logic [31:0] pos_x;
+logic [31:0] pos_x_d;
+logic [7:0] h,s,v;
+rgb2hsv  x(.clock(clk_65mhz),.reset(reset),.r({red,4'h0}), .g({green,4'h0}), .b({blue,4'h0}), .h(h), .s(s), .v(v));
+
+always_ff @(posedge clk_65mhz) begin
+    case (sw[14:13])  // thingd to display on a 7 segment displays
+        2'b00:  data = {pos_x_d[27:0], sw[3:0]};   // xxx(center)xxxx(size)x(switch)
+        2'b01:  data = {x_mean[27:0], sw[3:0]};   // display 0123456 + sw[3:0]
+        2'b10: data = {size_d[27:0], sw[3:0]}; 
+        2'b11: data={radius_[27:0],sw[3:0]}; 
+    endcase;
+ end
+          
     logic pclk_buff, pclk_in;
     logic vsync_buff, vsync_in;
     logic href_buff, href_in;
@@ -153,11 +179,8 @@ module top_level(
 logic [3:0] red,green, blue;
 logic[11:0] thres;
 assign {red,green,blue}=cam;
-logic [27:0] size;
-logic [15:0] size_x;
-logic [15:0] size_;
-logic [15:0] pos_x;
-logic [15:0] pos_y;
+logic [31:0] radius_;
+
 
 logic [26:0] count_f=0;
 always @(posedge clk_65mhz) begin
@@ -166,31 +189,67 @@ always @(posedge clk_65mhz) begin
     end
     else begin
         count_f<=0;
-        size_<=size_x;
+        size_<=size_d;
+        pos_x_<=pos_x_d;
+        radius_<=radius;
     end
+    
 end
-divider #(36) pos_x_d (
-		.clk(clk), 
-		.sign(sign), 
-		.start(start), 
-		.dividend(pos_x), 
-		.divider(size), 
-		.quotient(quotient), 
-		.remainder(remainder), 
-		.ready(ready)
+
+logic [31:0] square_r;
+logic [31:0] x_remainder1;
+logic [31:0] radius;
+logic ready3;
+logic ready4;
+
+sqrt uut (.aclk(clk), 
+		.s_axis_cartesian_tdata(square_r), 
+		.s_axis_cartesian_tvalid(1), 
+		.m_axis_dout_tdata(radius),
+		.m_axis_dout_tvalid(ready4)
 	);
 
+divider32 square_xx(.s_axis_divisor_tdata(size_*7),
+            .s_axis_divisor_tvalid(1),
+            .s_axis_dividend_tdata(32'd22),
+            .s_axis_dividend_tvalid(1),
+            .aclk(clk_65mhz),
+            .m_axis_dout_tdata({square_r,x_remainder1}),
+            .m_axis_dout_tvalid(ready3));
+  
+divider32 center_xx(.s_axis_divisor_tdata(size_),
+            .s_axis_divisor_tvalid(1),
+            .s_axis_dividend_tdata(pos_x_),
+            .s_axis_dividend_tvalid(1),
+            .aclk(clk_65mhz),
+            .m_axis_dout_tdata({x_mean,x_remainder}),
+            .m_axis_dout_tvalid(ready2));
+  
+            
+logic recount;
+logic threshold;
+always_comb begin
+    if (sw[13]) threshold=(red>(green+4))&&(red>(blue+4));
+    else threshold=(h<40)&&(s>100);
+ end
+
 always @(posedge clk_65mhz) begin
-    if ((red>(green+4))&&(red>(blue+4))) begin
+    if (threshold) begin
         thres<=cam;
         size<=size+1;
         pos_x<=pos_x+hcount;
-        pos_y<=pos_y+vcount;
-        if (vsync) size_x<=size;
-     end
-    else begin thres=12'b0;
-         end
-
+//        pos_y<=pos_y+vcount;
+       end
+    else begin thres=12'b0;end
+    if (vsync) begin 
+            size_d<=size;
+            pos_x_d<=pos_x;
+            pos_y_d<=pos_y;
+          end
+    else begin size<=0;
+        pos_x<=0;
+        pos_y<=0;
+    end
 end
                                         
    camera_read  my_camera(.p_clock_in(pclk_in),
@@ -237,7 +296,8 @@ end
          b <= pblank;
 //         rgb <= pixel;
 //         rgb <= cam;
-           rgb<=cam;
+        if (sw[15]) rgb<=thres;
+        else rgb<=cam;
       end
     end
 
