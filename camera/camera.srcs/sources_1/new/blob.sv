@@ -24,7 +24,7 @@ module box
                COLOR = 12'hFFF)  // default color: white
    (input [10:0] x_in,hcount_in,
     input [9:0] y_in,vcount_in,
-    input [6:0] radius_in,
+    input [7:0] radius_in,
     output logic [11:0] pixel_out);
 
     logic [6:0] inner;  //length to specify inside the box
@@ -93,7 +93,7 @@ endmodule
 module speed_bar  //display a bar indicating speed of each motor
       #(parameter WIDTH=50, //length of the bar
                   HEIGHT =256, //height of the bar
-                  X = 800,  //start pos
+                  X = 700,  //start pos
                   Y = 200,  //baseline pos
                   TOTAL = WIDTH*5,
                   COLOR = 12'hF00 // default color: red, the baseline is white
@@ -110,13 +110,13 @@ module speed_bar  //display a bar indicating speed of each motor
 
       assign x1 = X + WIDTH;
       assign x2 = X + WIDTH*3;
-      assign y1 = speed1[8]?Y:Y+speed1[7:0];
-      assign y2 = speed2[8]?Y:Y+speed2[7:0];
+      assign y1 = speed1[8]?Y:Y-speed1[7:0];
+      assign y2 = speed2[8]?Y:Y-speed2[7:0];
       assign abs1 = speed1[8]?~speed1[7:0]+8'b1:speed1[7:0];
       assign abs2 = speed2[8]?~speed2[7:0]+8'b1:speed2[7:0];
 
       assign pixel_out = &bar?bar:motor1 + motor2;
-
+//      assign pixel_out = motor1;
       blob #(.COLOR(COLOR))  m1 
             (.x_in(x1), .y_in(y1), .hcount_in(hcount_in), .vcount_in(vcount_in), .width(WIDTH), .height(abs1), .pixel_out(motor1));
       blob #(.COLOR(COLOR)) m2

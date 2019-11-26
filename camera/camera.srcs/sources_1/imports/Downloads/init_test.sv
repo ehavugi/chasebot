@@ -40,14 +40,15 @@ module init_test(
     //assign seg[6:0] = segments;
     assign  dp = 1'b1;  // turn off the period
 
-    assign led = sw;                        // turn leds on
-    assign data = {state,sw[3:0]};   // display 0123456 + sw[3:0]
-    assign led16_r = btnl;                  // left button -> red led
-    assign led16_g = btnc;                  // center button -> green led
-    assign led16_b = btnr;                  // right button -> blue led
-    assign led17_r = btnl;
-    assign led17_g = btnc;
-    assign led17_b = btnr;
+    //assign led = sw;                        // turn leds on
+    assign led[3:0] = dir;
+    assign data = {2'b0,cursor_y,1'b0,cursor_x,2'b00,state,sw[3:0]};   // display 0123456 + sw[3:0]
+//    assign led16_r = btnl;                  // left button -> red led
+//    assign led16_g = btnc;                  // center button -> green led
+//    assign led16_b = btnr;                  // right button -> blue led
+//    assign led17_r = btnl;
+//    assign led17_g = btnc;
+//    assign led17_b = btnr;
 
     wire [10:0] hcount;    // pixel on current line
     wire [9:0] vcount;     // line number
@@ -122,30 +123,30 @@ module init_test(
         pixel_in <= pixel_buff;
         old_output_pixels <= output_pixels;
         xclk_count <= xclk_count + 2'b01;
-        if (sw[3])begin
-            //processed_pixels <= {red_diff<<2, green_diff<<2, blue_diff<<2};
-            processed_pixels <= output_pixels - old_output_pixels;
-        end else if (sw[4]) begin
-            if ((output_pixels[15:12]>4'b1000)&&(output_pixels[10:7]<4'b1000)&&(output_pixels[4:1]<4'b1000))begin
-                processed_pixels <= 12'hF00;
-            end else begin
-                processed_pixels <= 12'h000;
-            end
-        end else if (sw[5]) begin
-            if ((output_pixels[15:12]<4'b1000)&&(output_pixels[10:7]>4'b1000)&&(output_pixels[4:1]<4'b1000))begin
-                processed_pixels <= 12'h0F0;
-            end else begin
-                processed_pixels <= 12'h000;
-            end
-        end else if (sw[6]) begin
-            if ((output_pixels[15:12]<4'b1000)&&(output_pixels[10:7]<4'b1000)&&(output_pixels[4:1]>4'b1000))begin
-                processed_pixels <= 12'h00F;
-            end else begin
-                processed_pixels <= 12'h000;
-            end
-        end else begin
+//        if (sw[3])begin
+//            //processed_pixels <= {red_diff<<2, green_diff<<2, blue_diff<<2};
+//            processed_pixels <= output_pixels - old_output_pixels;
+//        end else if (sw[4]) begin
+//            if ((output_pixels[15:12]>4'b1000)&&(output_pixels[10:7]<4'b1000)&&(output_pixels[4:1]<4'b1000))begin
+//                processed_pixels <= 12'hF00;
+//            end else begin
+//                processed_pixels <= 12'h000;
+//            end
+//        end else if (sw[5]) begin
+//            if ((output_pixels[15:12]<4'b1000)&&(output_pixels[10:7]>4'b1000)&&(output_pixels[4:1]<4'b1000))begin
+//                processed_pixels <= 12'h0F0;
+//            end else begin
+//                processed_pixels <= 12'h000;
+//            end
+//        end else if (sw[6]) begin
+//            if ((output_pixels[15:12]<4'b1000)&&(output_pixels[10:7]<4'b1000)&&(output_pixels[4:1]>4'b1000))begin
+//                processed_pixels <= 12'h00F;
+//            end else begin
+//                processed_pixels <= 12'h000;
+//            end
+//        end else begin
             processed_pixels = {output_pixels[15:12],output_pixels[10:7],output_pixels[4:1]};
-        end
+//        end
             
     end
     assign pixel_addr_out = sw[2]?((hcount>>1)+(vcount>>1)*32'd320):hcount+vcount*32'd320;
@@ -170,16 +171,6 @@ always @(posedge clk_65mhz) begin
         size_<=size_x;
     end
 end
-divider #(36) pos_x_d (
-		.clk(clk), 
-		.sign(sign), 
-		.start(start), 
-		.dividend(pos_x), 
-		.divider(size), 
-		.quotient(quotient), 
-		.remainder(remainder), 
-		.ready(ready)
-	);
 
 always @(posedge clk_65mhz) begin
     if ((red>(green+4))&&(red>(blue+4))) begin
@@ -233,16 +224,19 @@ end
     logic [11:0] goal_pixel,pixel_out;
     logic track,move;
     logic [1:0] state;
+    logic [10:0] cursor_x;
+    logic [9:0] cursor_y;
+    logic [3:0] dir;
     
     initialize initializer(
           .clk_65mhz(clk_65mhz),
           .reset(reset),
           .hcount(hcount),
           .vcount(vcount),
-          .vsync(vsync),
+          .vsync(vsync_in),
           .directions({btnu,btnd,btnl,btnr}), //up,down,left,right
           .confirm_in(btnc),
-          .activate(sw[15]),
+          .activate_in(sw[15]),
           .sw2(sw[2]), //whether to make the size twice
           .cam(cam),
           .cur_pos_x({sw[14:11],4'b0}),
@@ -255,7 +249,14 @@ end
           .goal_rad(goal_rad),
           .track(track),
           .move(move),
-          .state(state) //for debug
+          //for debug
+          .state(state),
+          .cursor_x(cursor_x),
+          .cursor_y(cursor_y),
+          .up(dir[3]), 
+          .down(dir[1]), 
+          .left(dir[2]), 
+          .right(dir[0])
           );
     
 //    //camera size
@@ -330,6 +331,12 @@ end
          vs <= vsync;
          b <= blank;
          rgb <= {{4{hcount[8]}}, {4{hcount[7]}}, {4{hcount[6]}}} ;
+     end else if (sw[1:0] == 2'b11) begin
+         // color bars
+         hs <= hsync;
+         vs <= vsync;
+         b <= blank;
+         rgb <= cam;
       end else begin
          // default: pong
          hs <= phsync;
