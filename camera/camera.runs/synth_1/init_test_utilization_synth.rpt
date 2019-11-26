@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Mon Nov 25 22:56:18 2019
+| Date         : Mon Nov 25 23:01:40 2019
 | Host         : CDBF9Y2 running 64-bit major release  (build 9200)
 | Command      : report_utilization -file init_test_utilization_synth.rpt -pb init_test_utilization_synth.pb
 | Design       : init_test
@@ -30,8 +30,8 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             |  265 |     0 |     63400 |  0.42 |
-|   LUT as Logic          |  265 |     0 |     63400 |  0.42 |
+| Slice LUTs*             |  274 |     0 |     63400 |  0.43 |
+|   LUT as Logic          |  274 |     0 |     63400 |  0.43 |
 |   LUT as Memory         |    0 |     0 |     19000 |  0.00 |
 | Slice Registers         |  262 |     0 |    126800 |  0.21 |
 |   Register as Flip Flop |  262 |     0 |    126800 |  0.21 |
@@ -56,8 +56,8 @@ Table of Contents
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
-| 5     |          Yes |         Set |            - |
-| 257   |          Yes |       Reset |            - |
+| 0     |          Yes |         Set |            - |
+| 262   |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -147,17 +147,16 @@ Table of Contents
 +------------+------+---------------------+
 |  Ref Name  | Used | Functional Category |
 +------------+------+---------------------+
-| FDRE       |  257 |        Flop & Latch |
+| FDRE       |  262 |        Flop & Latch |
+| LUT3       |   77 |                 LUT |
 | CARRY4     |   76 |          CarryLogic |
-| LUT2       |   73 |                 LUT |
-| LUT3       |   68 |                 LUT |
-| LUT4       |   58 |                 LUT |
+| LUT2       |   68 |                 LUT |
+| LUT6       |   61 |                 LUT |
 | OBUF       |   54 |                  IO |
-| LUT6       |   53 |                 LUT |
-| LUT1       |   36 |                 LUT |
+| LUT4       |   52 |                 LUT |
+| LUT1       |   35 |                 LUT |
 | IBUF       |   33 |                  IO |
-| LUT5       |   24 |                 LUT |
-| FDSE       |    5 |        Flop & Latch |
+| LUT5       |   26 |                 LUT |
 | BUFG       |    3 |               Clock |
 | MMCME2_ADV |    1 |               Clock |
 | DSP48E1    |    1 |    Block Arithmetic |

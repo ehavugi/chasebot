@@ -151,8 +151,10 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../../Users/mitadm/Downloads/init_test.sv">
+      <File Path="$PSRCDIR/sources_1/imports/Downloads/init_test.sv">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../Users/mitadm/Downloads/init_test.sv"/>
+          <Attr Name="ImportTime" Val="1574740817"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
