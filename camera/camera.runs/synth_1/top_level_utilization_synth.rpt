@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Mon Nov 25 23:42:21 2019
+| Date         : Tue Nov 26 16:59:49 2019
 | Host         : DESKTOP-5DFT9M2 running 64-bit major release  (build 9200)
 | Command      : report_utilization -file top_level_utilization_synth.rpt -pb top_level_utilization_synth.pb
 | Design       : top_level
@@ -30,11 +30,11 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             |  267 |     0 |     63400 |  0.42 |
-|   LUT as Logic          |  267 |     0 |     63400 |  0.42 |
+| Slice LUTs*             |  279 |     0 |     63400 |  0.44 |
+|   LUT as Logic          |  279 |     0 |     63400 |  0.44 |
 |   LUT as Memory         |    0 |     0 |     19000 |  0.00 |
-| Slice Registers         |  443 |     0 |    126800 |  0.35 |
-|   Register as Flip Flop |  443 |     0 |    126800 |  0.35 |
+| Slice Registers         |  515 |     0 |    126800 |  0.41 |
+|   Register as Flip Flop |  515 |     0 |    126800 |  0.41 |
 |   Register as Latch     |    0 |     0 |    126800 |  0.00 |
 | F7 Muxes                |    0 |     0 |     31700 |  0.00 |
 | F8 Muxes                |    0 |     0 |     15850 |  0.00 |
@@ -57,7 +57,7 @@ Table of Contents
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
 | 20    |          Yes |         Set |            - |
-| 423   |          Yes |       Reset |            - |
+| 495   |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -147,17 +147,17 @@ Table of Contents
 +------------+------+---------------------+
 |  Ref Name  | Used | Functional Category |
 +------------+------+---------------------+
-| FDRE       |  423 |        Flop & Latch |
-| LUT6       |  103 |                 LUT |
-| LUT2       |   91 |                 LUT |
+| FDRE       |  495 |        Flop & Latch |
+| LUT6       |  107 |                 LUT |
+| LUT2       |  102 |                 LUT |
 | OBUF       |   54 |                  IO |
+| CARRY4     |   52 |          CarryLogic |
 | LUT4       |   44 |                 LUT |
-| CARRY4     |   44 |          CarryLogic |
-| LUT5       |   35 |                 LUT |
-| LUT3       |   35 |                 LUT |
+| LUT3       |   36 |                 LUT |
+| LUT5       |   31 |                 LUT |
 | IBUF       |   31 |                  IO |
 | FDSE       |   20 |        Flop & Latch |
-| LUT1       |   16 |                 LUT |
+| LUT1       |   15 |                 LUT |
 | BUFG       |    3 |               Clock |
 | MMCME2_ADV |    1 |               Clock |
 | DSP48E1    |    1 |    Block Arithmetic |
@@ -170,7 +170,7 @@ Table of Contents
 +---------------+------+
 |    Ref Name   | Used |
 +---------------+------+
-| divider32     |    2 |
+| divider32     |    3 |
 | sqrt          |    1 |
 | blk_mem_gen_0 |    1 |
 +---------------+------+

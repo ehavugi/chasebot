@@ -43,7 +43,7 @@ read_verilog -library xil_defaultlib {
   C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/divider.v
   C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v
 }
-read_ip -quiet c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/sqrt/sqrt.xci
+read_ip -quiet C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/sqrt/sqrt.xci
 set_property used_in_implementation false [get_files -all c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/sqrt/sqrt_ooc.xdc]
 
 read_ip -quiet C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci

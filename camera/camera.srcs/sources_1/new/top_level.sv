@@ -67,7 +67,9 @@ module top_level(
     logic ready2;
 logic ready;
 logic [31:0] x_mean;
+logic [31:0] y_mean;
 logic [31:0] x_remainder;
+logic [31:0] y_remainder;
 logic [31:0] pos_y_d;
 logic [31:0] pos_x_d;
 logic [31:0] size;
@@ -85,9 +87,9 @@ rgb2hsv  x(.clock(clk_65mhz),.reset(reset),.r({red,4'h0}), .g({green,4'h0}), .b(
 always_ff @(posedge clk_65mhz) begin
     case (sw[14:13])  // thingd to display on a 7 segment displays
         2'b00:  data = {pos_x_d[27:0], sw[3:0]};   // xxx(center)xxxx(size)x(switch)
-        2'b01:  data = {x_mean[27:0], sw[3:0]};   // display 0123456 + sw[3:0]
-        2'b10: data = {size_d[27:0], sw[3:0]}; 
-        2'b11: data={radius_[27:0],sw[3:0]}; 
+        2'b01:  data = {y_mean[15:0],x_mean[11:0], sw[3:0]};   // display 0123456 + sw[3:0]
+        2'b10: data = {size_[27:0], sw[3:0]}; 
+        2'b11: data={radius[27:0],sw[3:0]}; 
     endcase;
  end
           
@@ -180,6 +182,7 @@ logic [3:0] red,green, blue;
 logic[11:0] thres;
 assign {red,green,blue}=cam;
 logic [31:0] radius_;
+logic [31:0] pos_y_;
 
 
 logic [26:0] count_f=0;
@@ -191,6 +194,7 @@ always @(posedge clk_65mhz) begin
         count_f<=0;
         size_<=size_d;
         pos_x_<=pos_x_d;
+        pos_y_<=pos_y_d;
         radius_<=radius;
     end
     
@@ -198,17 +202,20 @@ end
 
 logic [31:0] square_r;
 logic [31:0] x_remainder1;
+logic [31:0] y_remainder;
 logic [31:0] radius;
 logic ready3;
 logic ready4;
+logic ready_y;
 
-sqrt uut (.aclk(clk), 
-		.s_axis_cartesian_tdata(square_r), 
+
+sqrt uut (.aclk(clk_65mhz), 
+		.s_axis_cartesian_tdata(square_x), 
 		.s_axis_cartesian_tvalid(1), 
 		.m_axis_dout_tdata(radius),
 		.m_axis_dout_tvalid(ready4)
 	);
-
+//logic size__=
 divider32 square_xx(.s_axis_divisor_tdata(size_*7),
             .s_axis_divisor_tvalid(1),
             .s_axis_dividend_tdata(32'd22),
@@ -224,12 +231,20 @@ divider32 center_xx(.s_axis_divisor_tdata(size_),
             .aclk(clk_65mhz),
             .m_axis_dout_tdata({x_mean,x_remainder}),
             .m_axis_dout_tvalid(ready2));
+ 
+ divider32 center_yy(.s_axis_divisor_tdata(size_),
+            .s_axis_divisor_tvalid(1),
+            .s_axis_dividend_tdata(pos_y_),
+            .s_axis_dividend_tvalid(1),
+            .aclk(clk_65mhz),
+            .m_axis_dout_tdata({y_mean,y_remainder}),
+            .m_axis_dout_tvalid(ready_y));
   
             
 logic recount;
 logic threshold;
 always_comb begin
-    if (sw[13]) threshold=(red>(green+4))&&(red>(blue+4));
+    if (sw[12]) threshold=(red>(green+4))&&(red>(blue+4));
     else threshold=(h<40)&&(s>100);
  end
 
@@ -238,7 +253,7 @@ always @(posedge clk_65mhz) begin
         thres<=cam;
         size<=size+1;
         pos_x<=pos_x+hcount;
-//        pos_y<=pos_y+vcount;
+        pos_y<=pos_y+vcount;
        end
     else begin thres=12'b0;end
     if (vsync) begin 
