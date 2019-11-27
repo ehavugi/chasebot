@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Tue Nov 26 18:16:38 2019
+| Date         : Wed Nov 27 10:01:07 2019
 | Host         : CDBF9Y2 running 64-bit major release  (build 9200)
 | Command      : report_utilization -file track_init_utilization_placed.rpt -pb track_init_utilization_placed.pb
 | Design       : track_init
@@ -31,13 +31,13 @@ Table of Contents
 +----------------------------+------+-------+-----------+-------+
 |          Site Type         | Used | Fixed | Available | Util% |
 +----------------------------+------+-------+-----------+-------+
-| Slice LUTs                 | 3085 |     0 |     63400 |  4.87 |
-|   LUT as Logic             | 3084 |     0 |     63400 |  4.86 |
-|   LUT as Memory            |    1 |     0 |     19000 | <0.01 |
+| Slice LUTs                 | 3184 |     0 |     63400 |  5.02 |
+|   LUT as Logic             | 3158 |     0 |     63400 |  4.98 |
+|   LUT as Memory            |   26 |     0 |     19000 |  0.14 |
 |     LUT as Distributed RAM |    0 |     0 |           |       |
-|     LUT as Shift Register  |    1 |     0 |           |       |
-| Slice Registers            | 6364 |     0 |    126800 |  5.02 |
-|   Register as Flip Flop    | 6364 |     0 |    126800 |  5.02 |
+|     LUT as Shift Register  |   26 |     0 |           |       |
+| Slice Registers            | 6437 |     0 |    126800 |  5.08 |
+|   Register as Flip Flop    | 6437 |     0 |    126800 |  5.08 |
 |   Register as Latch        |    0 |     0 |    126800 |  0.00 |
 | F7 Muxes                   |   10 |     0 |     31700 |  0.03 |
 | F8 Muxes                   |    0 |     0 |     15850 |  0.00 |
@@ -58,8 +58,8 @@ Table of Contents
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
 | 1     |          Yes |           - |        Reset |
-| 20    |          Yes |         Set |            - |
-| 6343  |          Yes |       Reset |            - |
+| 8     |          Yes |         Set |            - |
+| 6428  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -69,25 +69,25 @@ Table of Contents
 +--------------------------------------------+------+-------+-----------+-------+
 |                  Site Type                 | Used | Fixed | Available | Util% |
 +--------------------------------------------+------+-------+-----------+-------+
-| Slice                                      | 1279 |     0 |     15850 |  8.07 |
-|   SLICEL                                   |  880 |     0 |           |       |
-|   SLICEM                                   |  399 |     0 |           |       |
-| LUT as Logic                               | 3084 |     0 |     63400 |  4.86 |
+| Slice                                      | 1346 |     0 |     15850 |  8.49 |
+|   SLICEL                                   |  917 |     0 |           |       |
+|   SLICEM                                   |  429 |     0 |           |       |
+| LUT as Logic                               | 3158 |     0 |     63400 |  4.98 |
 |   using O5 output only                     |    0 |       |           |       |
-|   using O6 output only                     | 2855 |       |           |       |
-|   using O5 and O6                          |  229 |       |           |       |
-| LUT as Memory                              |    1 |     0 |     19000 | <0.01 |
+|   using O6 output only                     | 2933 |       |           |       |
+|   using O5 and O6                          |  225 |       |           |       |
+| LUT as Memory                              |   26 |     0 |     19000 |  0.14 |
 |   LUT as Distributed RAM                   |    0 |     0 |           |       |
-|   LUT as Shift Register                    |    1 |     0 |           |       |
-|     using O5 output only                   |    1 |       |           |       |
-|     using O6 output only                   |    0 |       |           |       |
+|   LUT as Shift Register                    |   26 |     0 |           |       |
+|     using O5 output only                   |    0 |       |           |       |
+|     using O6 output only                   |   26 |       |           |       |
 |     using O5 and O6                        |    0 |       |           |       |
-| Slice Registers                            | 6364 |     0 |    126800 |  5.02 |
-|   Register driven from within the Slice    | 2912 |       |           |       |
-|   Register driven from outside the Slice   | 3452 |       |           |       |
-|     LUT in front of the register is unused | 1668 |       |           |       |
-|     LUT in front of the register is used   | 1784 |       |           |       |
-| Unique Control Sets                        |   40 |       |     15850 |  0.25 |
+| Slice Registers                            | 6437 |     0 |    126800 |  5.08 |
+|   Register driven from within the Slice    | 2936 |       |           |       |
+|   Register driven from outside the Slice   | 3501 |       |           |       |
+|     LUT in front of the register is unused | 1787 |       |           |       |
+|     LUT in front of the register is used   | 1714 |       |           |       |
+| Unique Control Sets                        |   37 |       |     15850 |  0.23 |
 +--------------------------------------------+------+-------+-----------+-------+
 * Note: Available Control Sets calculated as Slice Registers / 8, Review the Control Sets Report for more information regarding control sets.
 
@@ -148,7 +148,7 @@ Table of Contents
 +------------+------+-------+-----------+-------+
 |  Site Type | Used | Fixed | Available | Util% |
 +------------+------+-------+-----------+-------+
-| BUFGCTRL   |    3 |     0 |        32 |  9.38 |
+| BUFGCTRL   |    4 |     0 |        32 | 12.50 |
 | BUFIO      |    0 |     0 |        24 |  0.00 |
 | MMCME2_ADV |    1 |     0 |         6 | 16.67 |
 | PLLE2_ADV  |    0 |     0 |         6 |  0.00 |
@@ -182,22 +182,23 @@ Table of Contents
 +------------+------+---------------------+
 |  Ref Name  | Used | Functional Category |
 +------------+------+---------------------+
-| FDRE       | 6343 |        Flop & Latch |
-| LUT3       | 2189 |                 LUT |
-| CARRY4     |  763 |          CarryLogic |
-| LUT2       |  350 |                 LUT |
-| LUT1       |  281 |                 LUT |
-| LUT6       |  267 |                 LUT |
-| LUT4       |  153 |                 LUT |
-| LUT5       |   73 |                 LUT |
-| OBUF       |   54 |                  IO |
+| FDRE       | 6428 |        Flop & Latch |
+| LUT3       | 2223 |                 LUT |
+| CARRY4     |  773 |          CarryLogic |
+| LUT2       |  397 |                 LUT |
+| LUT6       |  268 |                 LUT |
+| LUT1       |  268 |                 LUT |
+| LUT4       |  148 |                 LUT |
+| LUT5       |   79 |                 LUT |
+| OBUF       |   48 |                  IO |
 | RAMB36E1   |   34 |        Block Memory |
 | IBUF       |   33 |                  IO |
-| FDSE       |   20 |        Flop & Latch |
+| SRL16E     |   26 |  Distributed Memory |
 | MUXF7      |   10 |               MuxFx |
+| FDSE       |    8 |        Flop & Latch |
+| OBUFT      |    6 |                  IO |
 | RAMB18E1   |    4 |        Block Memory |
-| BUFG       |    3 |               Clock |
-| SRL16E     |    1 |  Distributed Memory |
+| BUFG       |    4 |               Clock |
 | MMCME2_ADV |    1 |               Clock |
 | FDCE       |    1 |        Flop & Latch |
 | DSP48E1    |    1 |    Block Arithmetic |

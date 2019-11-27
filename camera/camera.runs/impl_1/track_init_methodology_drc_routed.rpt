@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Tue Nov 26 18:17:21 2019
+| Date         : Wed Nov 27 10:01:45 2019
 | Host         : CDBF9Y2 running 64-bit major release  (build 9200)
 | Command      : report_methodology -file track_init_methodology_drc_routed.rpt -pb track_init_methodology_drc_routed.pb -rpx track_init_methodology_drc_routed.rpx
 | Design       : track_init

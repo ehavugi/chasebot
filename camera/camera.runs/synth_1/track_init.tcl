@@ -36,7 +36,6 @@ read_verilog -library xil_defaultlib -sv {
   C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/blob.sv
   C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/camera_read.sv
   C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv
-  C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/pong_game.sv
   C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/xvga.sv
   C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/track_init.sv
 }
