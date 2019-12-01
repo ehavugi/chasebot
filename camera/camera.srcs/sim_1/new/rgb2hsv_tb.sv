@@ -20,5 +20,8 @@ module rgb2hsv_tb;
 
         b = 8'h00;
         #50;  //as you run it...should see 10101010 show up ont eh data out line
+        b=8'hff;
+        #50;
+     
      end
 endmodule

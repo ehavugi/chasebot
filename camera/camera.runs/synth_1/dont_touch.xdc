@@ -3,5 +3,8 @@
 
 # XDC: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/nexys4ddr.xdc
 
+# IP: ip/div_16/div_16.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==div_16 || ORIG_REF_NAME==div_16} -quiet] -quiet
+
 # IP: ip/sqrt/sqrt.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==sqrt || ORIG_REF_NAME==sqrt} -quiet] -quiet

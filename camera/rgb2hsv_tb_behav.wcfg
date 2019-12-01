@@ -3,47 +3,53 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="sqrt_tb_behav.wdb" id="1">
+      <db_ref path="rgb2hsv_tb_behav.wdb" id="1">
          <top_modules>
             <top_module name="glbl" />
-            <top_module name="sqrt_tb" />
+            <top_module name="rgb2hsv_tb" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="766250000fs"></ZoomStartTime>
-      <ZoomEndTime time="1166750001fs"></ZoomEndTime>
-      <Cursor1Time time="930750000fs"></Cursor1Time>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="473000001fs"></ZoomEndTime>
+      <Cursor1Time time="319000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="176"></NameColumnWidth>
-      <ValueColumnWidth column_width="134"></ValueColumnWidth>
+      <NameColumnWidth column_width="178"></NameColumnWidth>
+      <ValueColumnWidth column_width="177"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="6" />
-   <wvobject fp_name="/sqrt_tb/clk" type="logic">
-      <obj_property name="ElementShortName">clk</obj_property>
-      <obj_property name="ObjectShortName">clk</obj_property>
+   <WVObjectSize size="8" />
+   <wvobject fp_name="/rgb2hsv_tb/clock" type="logic">
+      <obj_property name="ElementShortName">clock</obj_property>
+      <obj_property name="ObjectShortName">clock</obj_property>
    </wvobject>
-   <wvobject fp_name="/sqrt_tb/sign" type="logic">
-      <obj_property name="ElementShortName">sign</obj_property>
-      <obj_property name="ObjectShortName">sign</obj_property>
+   <wvobject fp_name="/rgb2hsv_tb/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
    </wvobject>
-   <wvobject fp_name="/sqrt_tb/start" type="logic">
-      <obj_property name="ElementShortName">start</obj_property>
-      <obj_property name="ObjectShortName">start</obj_property>
+   <wvobject fp_name="/rgb2hsv_tb/r" type="array">
+      <obj_property name="ElementShortName">r[7:0]</obj_property>
+      <obj_property name="ObjectShortName">r[7:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/sqrt_tb/number" type="array">
-      <obj_property name="ElementShortName">number[31:0]</obj_property>
-      <obj_property name="ObjectShortName">number[31:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   <wvobject fp_name="/rgb2hsv_tb/g" type="array">
+      <obj_property name="ElementShortName">g[7:0]</obj_property>
+      <obj_property name="ObjectShortName">g[7:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/sqrt_tb/result" type="array">
-      <obj_property name="ElementShortName">result[31:0]</obj_property>
-      <obj_property name="ObjectShortName">result[31:0]</obj_property>
-      <obj_property name="Radix">BINARYRADIX</obj_property>
+   <wvobject fp_name="/rgb2hsv_tb/b" type="array">
+      <obj_property name="ElementShortName">b[7:0]</obj_property>
+      <obj_property name="ObjectShortName">b[7:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/sqrt_tb/ready" type="logic">
-      <obj_property name="ElementShortName">ready</obj_property>
-      <obj_property name="ObjectShortName">ready</obj_property>
+   <wvobject fp_name="/rgb2hsv_tb/h" type="array">
+      <obj_property name="ElementShortName">h[7:0]</obj_property>
+      <obj_property name="ObjectShortName">h[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/rgb2hsv_tb/s" type="array">
+      <obj_property name="ElementShortName">s[7:0]</obj_property>
+      <obj_property name="ObjectShortName">s[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/rgb2hsv_tb/v" type="array">
+      <obj_property name="ElementShortName">v[7:0]</obj_property>
+      <obj_property name="ObjectShortName">v[7:0]</obj_property>
    </wvobject>
 </wave_config>

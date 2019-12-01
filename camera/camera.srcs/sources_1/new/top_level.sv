@@ -40,7 +40,10 @@ module top_level(
     //assign seg[6:0] = segments;
     assign  dp = 1'b1;  // turn off the period
 
-    assign led = sw;  
+    assign led[3] = ready4;  
+    assign led[2]=ready3;
+    assign led[1]=ready1;
+    
     
     assign led16_r = btnl;                  // left button -> red led
     assign led16_g = btnc;                  // center button -> green led
@@ -89,7 +92,7 @@ always_ff @(posedge clk_65mhz) begin
         2'b00:  data = {pos_x_d[27:0], sw[3:0]};   // xxx(center)xxxx(size)x(switch)
         2'b01:  data = {y_mean[15:0],x_mean[11:0], sw[3:0]};   // display 0123456 + sw[3:0]
         2'b10: data = {size_[27:0], sw[3:0]}; 
-        2'b11: data={radius[27:0],sw[3:0]}; 
+        2'b11: data={4'h0,radius[23:0],sw[3:0]}; 
     endcase;
  end
           
@@ -119,8 +122,13 @@ always_ff @(posedge clk_65mhz) begin
     assign red_diff = (output_pixels[15:12]>old_output_pixels[15:12])?output_pixels[15:12]-old_output_pixels[15:12]:old_output_pixels[15:12]-output_pixels[15:12];
     assign green_diff = (output_pixels[10:7]>old_output_pixels[10:7])?output_pixels[10:7]-old_output_pixels[10:7]:old_output_pixels[10:7]-output_pixels[10:7];
     assign blue_diff = (output_pixels[4:1]>old_output_pixels[4:1])?output_pixels[4:1]-old_output_pixels[4:1]:old_output_pixels[4:1]-output_pixels[4:1];
-
     
+    logic[11:0] goalpixel;
+    assign goalpixel=sw[11:0];
+    logic[7:0] h_t,s_t,v_t;
+    
+    rgb2hsv  goal_px(.clock(clk_65mhz),.reset(reset),.r({goalpixel[11:8],4'h0}),.g({goalpixel[7:4],4'h0}), .b({goalpixel[3:0],4'h0}), .h(h_t), .s(s_t), .v(v_t));
+
     
     blk_mem_gen_0 jojos_bram(.addra(pixel_addr_in), 
                              .clka(pclk_in),
@@ -138,6 +146,7 @@ always_ff @(posedge clk_65mhz) begin
         end
     end
     
+    
     always_ff @(posedge clk_65mhz) begin
         pclk_buff <= jb[0];//WAS JB
         vsync_buff <= jb[1]; //WAS JB
@@ -149,39 +158,16 @@ always_ff @(posedge clk_65mhz) begin
         pixel_in <= pixel_buff;
         old_output_pixels <= output_pixels;
         xclk_count <= xclk_count + 2'b01;
-        if (sw[3])begin
-            //processed_pixels <= {red_diff<<2, green_diff<<2, blue_diff<<2};
-            processed_pixels <= output_pixels - old_output_pixels;
-        end else if (sw[4]) begin
-            if ((output_pixels[15:12]>4'b1000)&&(output_pixels[10:7]<4'b1000)&&(output_pixels[4:1]<4'b1000))begin
-                processed_pixels <= 12'hF00;
-            end else begin
-                processed_pixels <= 12'h000;
-            end
-        end else if (sw[5]) begin
-            if ((output_pixels[15:12]<4'b1000)&&(output_pixels[10:7]>4'b1000)&&(output_pixels[4:1]<4'b1000))begin
-                processed_pixels <= 12'h0F0;
-            end else begin
-                processed_pixels <= 12'h000;
-            end
-        end else if (sw[6]) begin
-            if ((output_pixels[15:12]<4'b1000)&&(output_pixels[10:7]<4'b1000)&&(output_pixels[4:1]>4'b1000))begin
-                processed_pixels <= 12'h00F;
-            end else begin
-                processed_pixels <= 12'h000;
-            end
-        end else begin
-            processed_pixels = {output_pixels[15:12],output_pixels[10:7],output_pixels[4:1]};
-        end
-            
+        processed_pixels = {output_pixels[15:12],output_pixels[10:7],output_pixels[4:1]};           
+    
     end
-    assign pixel_addr_out = sw[2]?((hcount>>1)+(vcount>>1)*32'd320):hcount+vcount*32'd320;
-    assign cam = sw[2]&&((hcount<640) &&  (vcount<480))?frame_buff_out:~sw[2]&&((hcount<320) &&  (vcount<240))?frame_buff_out:12'h000;
+    assign pixel_addr_out = (1'b0)?((hcount>>1)+(vcount>>1)*32'd320):hcount+vcount*32'd320;
+    assign cam =1'b0&&((hcount<640) &&  (vcount<480))?frame_buff_out:~1'b0&&((hcount<320) &&  (vcount<240))?frame_buff_out:12'h000;
 
 logic [3:0] red,green, blue;
 logic[11:0] thres;
 assign {red,green,blue}=cam;
-logic [31:0] radius_;
+logic [23:0] radius_;
 logic [31:0] pos_y_;
 
 
@@ -203,22 +189,24 @@ end
 logic [31:0] square_r;
 logic [31:0] x_remainder1;
 logic [31:0] y_remainder;
-logic [31:0] radius;
+logic [23:0] radius;
 logic ready3;
 logic ready4;
-logic ready_y;
+logic ready1;
 
 
 sqrt uut (.aclk(clk_65mhz), 
-		.s_axis_cartesian_tdata(square_x), 
+		.s_axis_cartesian_tdata(square_r), 
 		.s_axis_cartesian_tvalid(1), 
 		.m_axis_dout_tdata(radius),
 		.m_axis_dout_tvalid(ready4)
 	);
-//logic size__=
-divider32 square_xx(.s_axis_divisor_tdata(size_*7),
+logic [31:0] size__;
+assign size__=size_*3'd7;
+
+divider32 square_xx(.s_axis_divisor_tdata(32'd22),
             .s_axis_divisor_tvalid(1),
-            .s_axis_dividend_tdata(32'd22),
+            .s_axis_dividend_tdata(size__),
             .s_axis_dividend_tvalid(1),
             .aclk(clk_65mhz),
             .m_axis_dout_tdata({square_r,x_remainder1}),
@@ -238,14 +226,15 @@ divider32 center_xx(.s_axis_divisor_tdata(size_),
             .s_axis_dividend_tvalid(1),
             .aclk(clk_65mhz),
             .m_axis_dout_tdata({y_mean,y_remainder}),
-            .m_axis_dout_tvalid(ready_y));
+            .m_axis_dout_tvalid(ready1));
   
             
 logic recount;
 logic threshold;
+
 always_comb begin
     if (sw[12]) threshold=(red>(green+4))&&(red>(blue+4));
-    else threshold=(h<40)&&(s>100);
+    else threshold=(h<h_t+5)&&(s>s_t-20)&&(v>v_t-20);
  end
 
 always @(posedge clk_65mhz) begin
@@ -292,20 +281,20 @@ end
 
     reg b,hs,vs;
     always_ff @(posedge clk_65mhz) begin
-      if (sw[1:0] == 2'b01) begin
-         // 1 pixel outline of visible area (white)
-         hs <= hsync;
-         vs <= vsync;
-         b <= blank;
-         rgb <= {12{border}};
-      end else if (sw[1:0] == 2'b10) begin
-         // color bars
-         hs <= hsync;
-         vs <= vsync;
-         b <= blank;
-         rgb <= {{4{hcount[8]}}, {4{hcount[7]}}, {4{hcount[6]}}} ;
-      end else begin
-         // default: pong
+//      if (sw[1:0] == 2'b01) begin
+//         // 1 pixel outline of visible area (white)
+//         hs <= hsync;
+//         vs <= vsync;
+//         b <= blank;
+//         rgb <= {12{border}};
+//      end else if (sw[1:0] == 2'b10) begin
+//         // color bars
+//         hs <= hsync;
+//         vs <= vsync;
+//         b <= blank;
+//         rgb <= {{4{hcount[8]}}, {4{hcount[7]}}, {4{hcount[6]}}} ;
+//      end else begin
+//         // default: pong
          hs <= phsync;
          vs <= pvsync;
          b <= pblank;
@@ -313,7 +302,7 @@ end
 //         rgb <= cam;
         if (sw[15]) rgb<=thres;
         else rgb<=cam;
-      end
+//      end
     end
 
 //    assign rgb = sw[0] ? {12{border}} : pixel ; //{{4{hcount[7]}}, {4{hcount[6]}}, {4{hcount[5]}}};

@@ -52,7 +52,7 @@ module sqrt_tb;
 	logic [31:0] number;
     // Outputs
 
-	logic [31:0] result;
+	logic [23:0] result;
 	wire ready;
 
 	// Instantiate the Unit Under Test (UUT)
