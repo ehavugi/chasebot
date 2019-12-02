@@ -17,7 +17,6 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param chipscope.maxJobs 2
 set_param xicom.use_bs_reader 1
 create_project -in_memory -part xc7a100tcsg324-3
 
@@ -35,7 +34,9 @@ set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib -sv {
   C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/blob.sv
   C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/camera_read.sv
+  C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/control.sv
   C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/initialize.sv
+  C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/motor_put.sv
   C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/xvga.sv
   C:/ubuntu/6.111/camera/camera.srcs/sources_1/new/track_init.sv
 }

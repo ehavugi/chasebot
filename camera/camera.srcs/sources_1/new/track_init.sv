@@ -258,6 +258,13 @@ end
     
     
     /////////////INITIALIZE//////////////////
+    logic signed [8:0] speed,turn;
+    logic en1,ina1,inb1,ina2,inb2,en2;
+    logic [7:0] speed_1,speed_2;
+    logic signed [8:0] speed1,speed2;
+    assign speed1 = {inb1,speed_1};
+    assign speed2 = {inb2,speed_2};
+    
     logic [11:0] pixel_out,goal_pixel,goal_rad;
     logic track,mode;
     logic [3:0] direction;
@@ -278,8 +285,8 @@ end
           .cur_pos_x(x_mean[8:0]),
           .cur_pos_y(y_mean[8:0]),
           .cur_rad(radius>>1),
-          .speed1(9'sd100),
-          .speed2(-9'sd150),
+          .speed1(speed1),
+          .speed2(speed2),
           .pixel_out(pixel_out),
           .goal_pixel(goal_pixel),
           .goal_rad(goal_rad),
@@ -296,6 +303,31 @@ end
 //          .right(dir[0])
           );
     //////////////////////////////////////////
+    
+    
+    
+    /////////////CONTROL//////////////////
+    control my_control( .clk_in(clk_65mhz),
+                        .rst_in(reset),
+                        .ready_in(frame_done_out),
+                        .cur_pos_x(x_mean[8:0]),
+                        .cur_pos_y(y_mean[8:0]),
+                        .cur_rad(radius>>1),
+                        .goal_rad(7'd30),
+                        .params({{2'b00,sw[11:10]},3'b000,{2'b00,sw[9:8]},3'b000,1'b1,sw[7]}),
+                        .speed(speed),
+                        .turn(turn)
+                        );
+    
+    motor_out my_motor( .clk_in(clk_65mhz),
+                        .rst_in(reset),
+                        .speed_in(speed),
+                        .turn_in(turn),
+                        .motor_out({en1,ina1,inb1,ina2,inb2,en2}),
+                        
+                        .speed_1(speed_1),
+                        .speed_2(speed_2)
+                        );
     
     //what to display
     wire up,down;
