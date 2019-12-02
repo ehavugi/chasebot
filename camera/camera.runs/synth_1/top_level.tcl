@@ -35,6 +35,7 @@ set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib -sv {
   C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/camera_read.sv
   C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/pong_game.sv
+  C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/tracker.sv
   C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/xvga.sv
   C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv
 }

@@ -29,28 +29,36 @@ module top_level(
    output ca, cb, cc, cd, ce, cf, cg, dp,  // segments a-g, dp
    output[7:0] an    // Display location 0-7
    );
-    logic clk_65mhz;
+ 
+logic[11:0] goalpixel;
+logic[7:0] h_t,s_t,v_t;
+
+logic [31:0] x_mean;
+logic [31:0] y_mean;
+
+logic [31:0] square_r;
+logic [23:0] radius;
+
+logic clk_65mhz;
     // create 65mhz system clock, happens to match 1024 x 768 XVGA timing
-    clk_wiz_lab3 clkdivider(.clk_in1(clk_100mhz), .clk_out1(clk_65mhz));
+clk_wiz_lab3 clkdivider(.clk_in1(clk_100mhz), .clk_out1(clk_65mhz));
 
     logic [31:0] data;      //  instantiate 7-segment display; display (8) 4-bit hex
     wire [6:0] segments;
+
     assign {cg, cf, ce, cd, cc, cb, ca} = segments[6:0];
     display_8hex display(.clk_in(clk_65mhz),.data_in(data), .seg_out(segments), .strobe_out(an));
-    //assign seg[6:0] = segments;
-    assign  dp = 1'b1;  // turn off the period
+    logic [31:0] x_center;
+    logic [31:0] y_center;
 
-    assign led[3] = ready4;  
-    assign led[2]=ready3;
-    assign led[1]=ready1;
-    
-    
     assign led16_r = btnl;                  // left button -> red led
     assign led16_g = btnc;                  // center button -> green led
     assign led16_b = btnr;                  // right button -> blue led
     assign led17_r = btnl;
     assign led17_g = btnc;
     assign led17_b = btnr;
+
+    assign goalpixel=sw[11:0];
 
     wire [10:0] hcount;    // pixel on current line
     wire [9:0] vcount;     // line number
@@ -60,42 +68,13 @@ module top_level(
     xvga xvga1(.vclock_in(clk_65mhz),.hcount_out(hcount),.vcount_out(vcount),
           .hsync_out(hsync),.vsync_out(vsync),.blank_out(blank));
 
-
     // btnc button is user reset
     wire reset;
     debounce db1(.reset_in(reset),.clock_in(clk_65mhz),.noisy_in(btnc),.clean_out(reset));
-   
+ 
     logic xclk;
     logic[1:0] xclk_count;
-    logic ready2;
-logic ready;
-logic [31:0] x_mean;
-logic [31:0] y_mean;
-logic [31:0] x_remainder;
-logic [31:0] y_remainder;
-logic [31:0] pos_y_d;
-logic [31:0] pos_x_d;
-logic [31:0] size;
-logic [31:0] size_d;
-logic [31:0] size_;
-logic [31:0] pos_x;
-logic [31:0] pos_x_;
-logic [31:0] pos_y;
-logic [31:0] pos_y_;
-logic [31:0] pos_x;
-logic [31:0] pos_x_d;
-logic [7:0] h,s,v;
-rgb2hsv  x(.clock(clk_65mhz),.reset(reset),.r({red,4'h0}), .g({green,4'h0}), .b({blue,4'h0}), .h(h), .s(s), .v(v));
-
-always_ff @(posedge clk_65mhz) begin
-    case (sw[14:13])  // thingd to display on a 7 segment displays
-        2'b00:  data = {pos_x_d[27:0], sw[3:0]};   // xxx(center)xxxx(size)x(switch)
-        2'b01:  data = {y_mean[15:0],x_mean[11:0], sw[3:0]};   // display 0123456 + sw[3:0]
-        2'b10: data = {size_[27:0], sw[3:0]}; 
-        2'b11: data={4'h0,radius[23:0],sw[3:0]}; 
-    endcase;
- end
-          
+           
     logic pclk_buff, pclk_in;
     logic vsync_buff, vsync_in;
     logic href_buff, href_in;
@@ -164,98 +143,27 @@ always_ff @(posedge clk_65mhz) begin
     assign pixel_addr_out = (1'b0)?((hcount>>1)+(vcount>>1)*32'd320):hcount+vcount*32'd320;
     assign cam =1'b0&&((hcount<640) &&  (vcount<480))?frame_buff_out:~1'b0&&((hcount<320) &&  (vcount<240))?frame_buff_out:12'h000;
 
-logic [3:0] red,green, blue;
-logic[11:0] thres;
-assign {red,green,blue}=cam;
-logic [23:0] radius_;
-logic [31:0] pos_y_;
-
-
-logic [26:0] count_f=0;
-always @(posedge clk_65mhz) begin
-    if (count_f<65000000) begin
-        count_f<=count_f+1;
-    end
-    else begin
-        count_f<=0;
-        size_<=size_d;
-        pos_x_<=pos_x_d;
-        pos_y_<=pos_y_d;
-        radius_<=radius;
-    end
-    
-end
-
-logic [31:0] square_r;
-logic [31:0] x_remainder1;
-logic [31:0] y_remainder;
-logic [23:0] radius;
-logic ready3;
-logic ready4;
-logic ready1;
-
-
-sqrt uut (.aclk(clk_65mhz), 
-		.s_axis_cartesian_tdata(square_r), 
-		.s_axis_cartesian_tvalid(1), 
-		.m_axis_dout_tdata(radius),
-		.m_axis_dout_tvalid(ready4)
-	);
-logic [31:0] size__;
-assign size__=size_*3'd7;
-
-divider32 square_xx(.s_axis_divisor_tdata(32'd22),
-            .s_axis_divisor_tvalid(1),
-            .s_axis_dividend_tdata(size__),
-            .s_axis_dividend_tvalid(1),
-            .aclk(clk_65mhz),
-            .m_axis_dout_tdata({square_r,x_remainder1}),
-            .m_axis_dout_tvalid(ready3));
-  
-divider32 center_xx(.s_axis_divisor_tdata(size_),
-            .s_axis_divisor_tvalid(1),
-            .s_axis_dividend_tdata(pos_x_),
-            .s_axis_dividend_tvalid(1),
-            .aclk(clk_65mhz),
-            .m_axis_dout_tdata({x_mean,x_remainder}),
-            .m_axis_dout_tvalid(ready2));
- 
- divider32 center_yy(.s_axis_divisor_tdata(size_),
-            .s_axis_divisor_tvalid(1),
-            .s_axis_dividend_tdata(pos_y_),
-            .s_axis_dividend_tvalid(1),
-            .aclk(clk_65mhz),
-            .m_axis_dout_tdata({y_mean,y_remainder}),
-            .m_axis_dout_tvalid(ready1));
-  
-            
-logic recount;
-logic threshold;
-
-always_comb begin
-    if (sw[12]) threshold=(red>(green+4))&&(red>(blue+4));
-    else threshold=(h<h_t+5)&&(s>s_t-20)&&(v>v_t-20);
+always_ff @(posedge clk_65mhz) begin
+    case (sw[14:13])  // thingd to display on a 7 segment displays
+        2'b00:  data = {4'h0,radius[23:0], sw[3:0]};   // xxx(center)xxxx(size)x(switch)
+        2'b01:  data = {y_center[15:0],x_center[11:0], sw[3:0]};   // display 0123456 + sw[3:0]
+        2'b10: data = {x_center[27:0], sw[3:0]}; 
+        2'b11: data={4'h0,radius[23:0],sw[3:0]}; 
+    endcase;
  end
-
-always @(posedge clk_65mhz) begin
-    if (threshold) begin
-        thres<=cam;
-        size<=size+1;
-        pos_x<=pos_x+hcount;
-        pos_y<=pos_y+vcount;
-       end
-    else begin thres=12'b0;end
-    if (vsync) begin 
-            size_d<=size;
-            pos_x_d<=pos_x;
-            pos_y_d<=pos_y;
-          end
-    else begin size<=0;
-        pos_x<=0;
-        pos_y<=0;
-    end
-end
-                                        
+  tracker numbeer1(.clk(clk_65mhz),
+        .sw(sw[15:0]), 
+        .cam(cam),
+        .hcount(hcount),
+        .vcount(vcount),
+        .goalpixel(goalpixel), 
+        .vsync(vsync),
+        .radius(radius),
+        .x_center(x_center),
+        .y_center(y_center),
+        .thres(thres)
+    );
+                   
    camera_read  my_camera(.p_clock_in(pclk_in),
                           .vsync_in(vsync_in),
                           .href_in(href_in),
@@ -280,6 +188,7 @@ end
                    hcount == 512 | vcount == 384);
 
     reg b,hs,vs;
+    
     always_ff @(posedge clk_65mhz) begin
 //      if (sw[1:0] == 2'b01) begin
 //         // 1 pixel outline of visible area (white)
@@ -443,5 +352,3 @@ module display_8hex(
        endcase
       end
 endmodule
-
-
