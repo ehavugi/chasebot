@@ -1,1 +1,0 @@
-divider32.vhd,vhdl,xil_defaultlib,../../../../camera.srcs/sources_1/ip/divider32/sim/divider32.vhd,

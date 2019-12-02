@@ -1,7 +1,0 @@
-Running: xsim.dir/rgb2hsv_tb_behav/xsimk.exe -simmode gui -wdb rgb2hsv_tb_behav.wdb -simrunnum 0 -socket 50660
-Design successfully loaded
-Design Loading Memory Usage: 5088 KB (Peak: 5088 KB)
-Design Loading CPU Usage: 31 ms
-Simulation completed
-Simulation Memory Usage: 5688 KB (Peak: 5688 KB)
-Simulation CPU Usage: 1203 ms
