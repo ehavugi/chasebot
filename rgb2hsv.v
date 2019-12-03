@@ -50,28 +50,28 @@ module rgb2hsv(clock, reset, r, g, b, h, s, v);
 		//the s_divider (16/16) has delay 18
 		//the hue_div (16/16) has delay 18
 
-		divider hue_div1(
-		.clk(clock),
-		.sign(0),
-		.start(1),
-		.dividend(s_top),
-		.divider(s_bottom),
-		.quotient(s_quotient),
+
 	        // note: the "fractional" output was originally named "remainder" in this
 		// file -- it seems coregen will name this output "fractional" even if
 		// you didn't select the remainder type as fractional.
-		.remainder(s_remainder),
-		.ready(s_rfd)
-		);
-		divider hue_div2(
-		.clk(clock),
-		.start(1),
-		.dividend(h_top),
-		.divider(h_bottom),
-		.quotient(h_quotient),
-		.remainder(h_remainder),
-		.ready(h_rfd)
-		);
+	
+		div_16 s_param(.s_axis_divisor_tdata(s_bottom),
+            .s_axis_divisor_tvalid(1),
+            .s_axis_dividend_tdata(s_top),
+            .s_axis_dividend_tvalid(1),
+            .aclk(clock),
+            .m_axis_dout_tdata({s_quotient,s_remainder}),
+            .m_axis_dout_tvalid(s_rfd));
+		
+		div_16 hue_param(.s_axis_divisor_tdata(h_bottom),
+            .s_axis_divisor_tvalid(1),
+            .s_axis_dividend_tdata(h_top),
+            .s_axis_dividend_tvalid(1),
+            .aclk(clock),
+            .m_axis_dout_tdata({h_quotient,h_remainder}),
+            .m_axis_dout_tvalid(h_rfd));
+  
+	
 		always @ (posedge clock) begin
 		
 			// Clock 1: latch the inputs (always positive)
