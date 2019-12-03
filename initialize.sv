@@ -52,12 +52,14 @@ module initialize(
   parameter SAMPLESIZE = 2; // (0 -> 1, 1 -> 4, 2 -> 16)
 
 //  logic up,down,left,right;
-  logic [7:0] sum_r,sum_g,sum_b;
+  logic [7:0] sum_r,sum_g,sum_b,sum_r_d,sum_g_d,sum_b_d;
   logic [3:0] shifted_r,shifted_g,shifted_b;
+  
   assign shifted_r = sum_r >> 4;
   assign shifted_g = sum_g >> 4;
   assign shifted_b = sum_b >> 4;
-
+  
+  
   //single sample
   //assign selected_pixel = (vcount == cursor_y && hcount == cursor_x)? cam:selected_pixel;
   
@@ -76,7 +78,9 @@ module initialize(
     if(reset) begin
         cursor_x <= 11'h00f;
         cursor_y <= 10'h00f;
-        selected_buff <= 0;
+        
+        
+        //selected_buff <= 12'hff0;
     end else begin
         if (up) begin
             if(cursor_y < CURSORSPEED) cursor_y <= 0;
@@ -101,22 +105,22 @@ module initialize(
         end
     end
     
-  always_ff @(posedge clk_65mhz) begin
-    //update pixel selected by cursor (average 4 or 16bits around)
-    if(vsync) begin
-        selected_buff <= {shifted_r,shifted_g,shifted_b};
-        sum_r <= 0;
-        sum_g <= 0;
-        sum_b <= 0;
-    end
-    else begin
-        if ((vcount >= cursor_y - SAMPLESIZE && vcount < cursor_y) && (hcount >= cursor_x - SAMPLESIZE && hcount < cursor_x + SAMPLESIZE)) begin
-            sum_r <= sum_r + cam[11:8];
-            sum_g <= sum_g + cam[7:4];
-            sum_b <= sum_b + cam[3:0];
-        end
-    end
-end //end always_ff
+//  always_ff @(posedge clk_65mhz) begin
+//    //update pixel selected by cursor (average 4 or 16bits around)
+//    if ((vcount >= cursor_y - SAMPLESIZE && vcount < cursor_y) && (hcount >= cursor_x - SAMPLESIZE && hcount < cursor_x + SAMPLESIZE)) begin
+//            sum_r <= sum_r + cam[11:8];
+//            sum_g <= sum_g + cam[7:4];
+//            sum_b <= sum_b + cam[3:0];
+//        end
+//    if(vcount == 10'd550 && hcount ==11'd750) begin
+//        sum_r <= 0;
+//        sum_g <= 0;
+//        sum_b <= 0;
+//        selected_buff <= selected_buff + 1;
+////        selected_buff <= 12'hf00;
+//    end
+//end //end always_ff
+    
 
 /////////////////////////////////////////////////end cursor control///////////////////////////////
 
@@ -145,7 +149,25 @@ always_ff @(posedge clk_65mhz) begin
         goal_pixel <= 0;
         pixel_out <= 0;
         old_confirmed <= 0;
+        selected_buff <= 12'hff0;
+        sum_r <= 0;
+        sum_g <= 0;
+        sum_b <= 0;
     end else begin
+    //pad 
+        if ((vcount >= cursor_y - SAMPLESIZE && vcount < cursor_y) && (hcount >= cursor_x - SAMPLESIZE && hcount < cursor_x + SAMPLESIZE)) begin
+            sum_r <= sum_r + cam[11:8];
+            sum_g <= sum_g + cam[7:4];
+            sum_b <= sum_b + cam[3:0];
+        end
+        if(vcount == 10'd550 && hcount == 11'd750) begin
+            sum_r <= 0;
+            sum_g <= 0;
+            sum_b <= 0;
+            selected_buff <= {sum_r[7:4],sum_g[7:4],sum_b[7:4]};
+//            selected_buff <= 12'hf00;
+        end
+        
         old_state <= state;
         old_activate <= activate;
         old_confirmed <= confirm_serial;

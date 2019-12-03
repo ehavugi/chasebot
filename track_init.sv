@@ -262,8 +262,8 @@ end
     logic en1,ina1,inb1,ina2,inb2,en2;
     logic [7:0] speed_1,speed_2;
     logic signed [8:0] speed1,speed2;
-    assign speed1 = {inb1,speed_1};
-    assign speed2 = {inb2,speed_2};
+    assign speed1 = {inb1,inb1?~speed_1 + 9'b1:speed_1};
+    assign speed2 = {inb2,inb2?~speed_2 + 9'b1:speed_2};
     
     logic [11:0] pixel_out,goal_pixel,goal_rad;
     logic track,mode;
