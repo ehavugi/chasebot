@@ -49,7 +49,7 @@ module initialize(
   
   ///////////////////////////////////cursor control////////////////////////////////////////////////////////
   parameter CURSORSPEED = 3;
-  parameter SAMPLESIZE = 2; // (0 -> 1, 1 -> 4, 2 -> 16)
+  parameter SAMPLESIZE = 1; // (0 -> 1, 1 -> 4, 2 -> 16)
 
 //  logic up,down,left,right;
   logic [7:0] sum_r,sum_g,sum_b,sum_r_d,sum_g_d,sum_b_d;
@@ -135,9 +135,11 @@ logic [1:0] old_state;
 logic old_activate;
 logic activated;
 logic selected;
+logic confirmed;
 
 assign activated = ~old_activate & activate;     //if switched to activated
 assign selected = (state==SELECTED && old_state==INITIALIZE);
+assign confirmed = (state==CONFIRMED && old_state==SELECTED);
 
 always_ff @(posedge clk_65mhz) begin
     if(reset) begin
@@ -149,12 +151,13 @@ always_ff @(posedge clk_65mhz) begin
         goal_pixel <= 0;
         pixel_out <= 0;
         old_confirmed <= 0;
-        selected_buff <= 12'hff0;
+        selected_buff <= 12'h000;
         sum_r <= 0;
         sum_g <= 0;
         sum_b <= 0;
     end else begin
     //pad 
+        if(vcount == cursor_y && hcount == cursor_x) selected_buff <= cam;
         if ((vcount >= cursor_y - SAMPLESIZE && vcount < cursor_y) && (hcount >= cursor_x - SAMPLESIZE && hcount < cursor_x + SAMPLESIZE)) begin
             sum_r <= sum_r + cam[11:8];
             sum_g <= sum_g + cam[7:4];
@@ -164,7 +167,7 @@ always_ff @(posedge clk_65mhz) begin
             sum_r <= 0;
             sum_g <= 0;
             sum_b <= 0;
-            selected_buff <= {sum_r[7:4],sum_g[7:4],sum_b[7:4]};
+//            selected_buff <= {sum_r[5:2],sum_g[5:2],sum_b[5:2]};
 //            selected_buff <= 12'hf00;
         end
         
@@ -175,6 +178,9 @@ always_ff @(posedge clk_65mhz) begin
         if(activated) state <= INITIALIZE;
         //get the goal pixel
         if(selected) goal_pixel <= selected_buff;
+        //get the goal radius
+        if(confirmed) goal_rad <= cur_rad;
+        
         case(state)
           INITIALIZE: begin
             track <= 0;
@@ -195,7 +201,6 @@ always_ff @(posedge clk_65mhz) begin
             move <= 0;
             if(~activate) state <= MOVE;
             pixel_out <= &box?box_confirmed:cam+speed_bar+goal_pad;
-            goal_rad <= cur_rad;
             end
           MOVE: begin
             track <= 1;

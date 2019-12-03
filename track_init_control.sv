@@ -43,7 +43,8 @@ module track_init_control(
    output led17_b, led17_g, led17_r,
    output[15:0] led,
    output ca, cb, cc, cd, ce, cf, cg, dp,  // segments a-g, dp
-   output[7:0] an    // Display location 0-7
+   output[7:0] an,    // Display location 0-7
+   output[7:0] jc   //for motor output
    );
     logic clk_65mhz;
     // create 65mhz system clock, happens to match 1024 x 768 XVGA timing
@@ -142,8 +143,10 @@ module track_init_control(
     logic [31:0] x_center,y_center;
     logic [11:0] thres;
     logic [11:0] pixel_out,goal_pixel,goal_rad;
+    logic [7:0] h_t,s_t,v_t;
     
-    
+    rgb2hsv  goal_px(.clock(clk_65mhz),.reset(reset),.r({goal_pixel[11:8],4'h0}),.g({goal_pixel[7:4],4'h0}), .b({goal_pixel[3:0],4'h0}), .h(h_t), .s(s_t), .v(v_t));
+
     tracker my_tracker(
     .clk(clk_65mhz),
     .sw(sw), 
@@ -166,9 +169,9 @@ module track_init_control(
     // things to display on a 7 segment displays
     always_ff @(posedge clk_65mhz) begin
         case (sw[14:13])  
-            //2'b00:  data <= {x_center[27:0], sw[3:0]};   // xxx(center)xxxx(size)x(switch)
+            2'b00:  data <= {h_t,s_t,v_t,4'h0,sw[3:0]};   // xxx(center)xxxx(size)x(switch)
             2'b01:  data <= {x_center[15:0],y_center[11:0], sw[3:0]};   // display 0123456 + sw[3:0]
-            //2'b10: data <= {size_[27:0], sw[3:0]}; 
+            2'b10: data <= {goal_pixel,sw[3:0]}; 
             2'b11: data <= {radius,sw[3:0]};
             default: data <= {x_center[15:0],y_center[11:0], sw[3:0]};
         endcase;
@@ -234,7 +237,7 @@ module track_init_control(
                         .cur_pos_x(x_center[8:0]),
                         .cur_pos_y(y_center[8:0]),
                         .cur_rad(radius),
-                        .goal_rad(7'd30),
+                        .goal_rad(goal_rad),
                         .params({{2'b00,sw[11:10]},3'b000,{2'b00,sw[9:8]},3'b000,1'b1,sw[7]}),
                         .speed(speed),
                         .turn(turn)
@@ -248,6 +251,8 @@ module track_init_control(
                         .speed_1(speed_1),
                         .speed_2(speed_2)
                         );
+                        
+    assign jc[5:0] = move?{en2,en1,inb2,ina2,inb1,ina1}:6'b0;
     ////////////////////////////////////////////////////////////////
     //what to display
     wire up,down;

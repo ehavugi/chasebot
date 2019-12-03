@@ -83,7 +83,7 @@ assign {red,green,blue}=cam; // get camera components
 
 
 always @(posedge clk) begin
-    if (count_f<65000000) begin
+    if (count_f<6500000) begin
         count_f<=count_f+1;
     end
     else begin
