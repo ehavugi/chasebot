@@ -70,7 +70,8 @@ module track_init_control(
     // sw[0] button is user reset
     wire reset;
     debounce db1(.reset_in(reset),.clock_in(clk_65mhz),.noisy_in(sw[0]),.clean_out(reset));
-   
+    logic scale; //1 when twice scaling 
+    
     logic xclk;
     logic[1:0] xclk_count;
           
@@ -124,8 +125,8 @@ module track_init_control(
             
     end
     
-    assign pixel_addr_out = sw[2]?((hcount>>1)+(vcount>>1)*32'd320):hcount+vcount*32'd320;
-    assign cam = sw[2]&&((hcount<640) &&  (vcount<480))?frame_buff_out:~sw[2]&&((hcount<320) &&  (vcount<240))?frame_buff_out:12'h000;
+    assign pixel_addr_out = scale?((hcount>>1)+(vcount>>1)*32'd320):hcount+vcount*32'd320;
+    assign cam = scale&&((hcount<640) &&  (vcount<480))?frame_buff_out:~scale&&((hcount<320) &&  (vcount<240))?frame_buff_out:12'h000;
     assign {red,green,blue}=cam;
 
                                       
@@ -190,7 +191,7 @@ module track_init_control(
     assign speed2 = {inb2,inb2?~speed_2 + 9'b1:speed_2};
     
     
-    logic track,mode;
+    logic track,move;
     logic [3:0] direction;
     assign direction = {btnu,btnd,btnl,btnr};
     
@@ -203,8 +204,8 @@ module track_init_control(
           .vsync(frame_done_out),
           .directions(direction), //up,down,left,right
           .confirm_in(btnc),
-          .activate_in(sw[3]),
-          .sw2(sw[2]), //whether to make the size twice
+          .activate_in(sw[1]),
+          .sw2(scale), //whether to make the size twice
           .cam(sw[15]?thres:cam),
           .cur_pos_x(x_center[8:0]),
           .cur_pos_y(y_center[8:0]),
@@ -231,6 +232,10 @@ module track_init_control(
     
     
     /////////////CONTROL//////////////////
+    logic [3:0] Kps,Kpt;
+    logic [2:0] Kds,Kdt;
+    logic [1:0] mode;
+    
     control my_control( .clk_in(clk_65mhz),
                         .rst_in(reset),
                         .ready_in(frame_done_out),
@@ -238,7 +243,7 @@ module track_init_control(
                         .cur_pos_y(y_center[8:0]),
                         .cur_rad(radius),
                         .goal_rad(goal_rad),
-                        .params({{2'b00,sw[11:10]},3'b000,{2'b00,sw[9:8]},3'b000,1'b1,sw[7]}),
+                        .params({Kps,Kds,Kpt,Kdt,mode}),
                         .speed(speed),
                         .turn(turn)
                         );
@@ -252,8 +257,20 @@ module track_init_control(
                         .speed_2(speed_2)
                         );
                         
-    assign jc[5:0] = move?{en2,en1,inb2,ina2,inb1,ina1}:6'b0;
+    assign jc[5:0] = move?{en2,en1,ina2,inb2,ina1,inb1}:6'b0;
     ////////////////////////////////////////////////////////////////
+    
+    ///////////////switch FSM//////////////////////////////////////
+    assign scale = ~move & sw[2];
+    
+    assign {Kps[3:1],Kds,Kpt[3:1],Kdt,mode[0]} = move?sw[14:2]:0;
+    assign mode[1] = 1;
+    assign Kps[0] = 0;
+    assign Kpt[0] = 0;
+    
+    
+    
+    
     //what to display
     wire up,down;
     reg b,hs,vs;
