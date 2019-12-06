@@ -22,7 +22,7 @@ module initialize(
   output logic track,
   output logic move,
   //for debug
-  output logic [1:0] state, 
+  output logic [2:0] state, 
   output logic [10:0] cursor_x,
   output logic [9:0] cursor_y,
   output logic up,down,left,right
@@ -65,7 +65,7 @@ module initialize(
   
   //assign selected_pixel = {shifted_r,shifted_g,shifted_b};
   logic confirm,confirm_serial,old_confirmed,activate;
-  assign confirm = confirm_serial & ~old_confirmed;
+  assign confirm = confirm_serial & ~old_confirmed; //pulse
   
   debounce db1(.reset_in(reset),.clock_in(clk_65mhz),.noisy_in(directions[3]),.clean_out(up));
   debounce db2(.reset_in(reset),.clock_in(clk_65mhz),.noisy_in(directions[2]),.clean_out(down));
@@ -129,9 +129,10 @@ parameter INITIALIZE = 0;
 parameter SELECTED = 1;
 parameter CONFIRMED = 2;
 parameter MOVE = 3;
+parameter PAUSE = 4;
 
 //logic [1:0] state;
-logic [1:0] old_state;
+logic [2:0] old_state;
 logic old_activate;
 logic activated;
 logic selected;
@@ -206,7 +207,13 @@ always_ff @(posedge clk_65mhz) begin
             track <= 1;
             move <= 1;
             pixel_out <= &box?box_confirmed:cam+goal_pad+speed_bar;
-    //        pixel_out <= &box?box_confirmed:cam+speed_bar;
+            if(confirm) state <= PAUSE;
+            end
+          PAUSE: begin
+            track <= 0;
+            move <= 0;
+            pixel_out <= &box?box_confirmed:cam+goal_pad+speed_bar;
+            if(confirm) state <= MOVE;
             end
         endcase
     end

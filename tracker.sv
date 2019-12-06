@@ -22,22 +22,20 @@
 
 module tracker(
     input clk,
-    input [15:0] sw, 
+    input use_rgb, 
     input [11:0] cam,
     input [10:0] hcount,
     input [9:0] vcount,
     input [11:0]  goalpixel, 
     input vsync,
-    output [23:0] radius,
-    output [31:0] x_center,
-    output [31:0] y_center,
-    output [11:0] thres
+    output logic [23:0] radius,
+    output logic [31:0] x_center,
+    output logic [31:0] y_center,
+    output logic [11:0] thres
     );
 
 logic[7:0] h_t,s_t,v_t;
 
-logic [31:0] x_center;
-logic [31:0] y_center;
 logic [31:0] x_remainder;
 logic [31:0] y_remainder;
 logic [31:0] x_remainder1;
@@ -57,12 +55,10 @@ logic [31:0] pos_x_;
 logic [31:0] pos_x_d;
 logic [7:0] h,s,v;
 logic [3:0] red,green, blue;
-logic[11:0] thres;
 logic [23:0] radius_;
 logic [31:0] pos_y_;
 logic [26:0] count_f=0;
 logic [31:0] square_r;
-logic [23:0] radius;
 logic ready4;
 logic ready2;
 logic ready3;
@@ -82,18 +78,25 @@ rgb2hsv  goal_px(.clock(clk_65mhz),.reset(reset),.r({goalpixel[11:8],4'h0}),.g({
 assign {red,green,blue}=cam; // get camera components
 
 
-always @(posedge clk) begin
-    if (count_f<6500000) begin
-        count_f<=count_f+1;
-    end
-    else begin
-        count_f<=0;
-        size_<=size_d;
-        pos_x_<=pos_x_d;
-        pos_y_<=pos_y_d;
-        radius_<=radius;
-    end
-   
+//always @(posedge clk) begin
+//    if (count_f<6500000) begin
+//        count_f<=count_f+1;
+//    end
+//    else begin
+//        count_f<=0;
+//        size_<=size_d;
+//        pos_x_<=pos_x_d;
+//        pos_y_<=pos_y_d;
+//        radius_<=radius;
+//    end
+//end
+
+always @(negedge vsync) begin
+    count_f<=0;
+    size_<=size_d;
+    pos_x_<=pos_x_d;
+    pos_y_<=pos_y_d;
+    radius_<=radius;
 end
 
 // get the radius given radius squared
@@ -133,7 +136,7 @@ divider32 center_xx(.s_axis_divisor_tdata(size_),
            
 
 always_comb begin
-    if (sw[12]) threshold=(red>(green+4))&&(red>(blue+4));
+    if (use_rgb) threshold=(red>(green+4))&&(red>(blue+4));
     else threshold=(h<h_t+5)&&(s>s_t-20)&&(v>v_t-20);
  end
  

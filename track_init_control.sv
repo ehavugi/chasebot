@@ -145,12 +145,13 @@ module track_init_control(
     logic [11:0] thres;
     logic [11:0] pixel_out,goal_pixel,goal_rad;
     logic [7:0] h_t,s_t,v_t;
+    logic show_thres,use_rgb;
     
     rgb2hsv  goal_px(.clock(clk_65mhz),.reset(reset),.r({goal_pixel[11:8],4'h0}),.g({goal_pixel[7:4],4'h0}), .b({goal_pixel[3:0],4'h0}), .h(h_t), .s(s_t), .v(v_t));
 
     tracker my_tracker(
     .clk(clk_65mhz),
-    .sw(sw), 
+    .use_rgb(use_rgb), 
     .cam(cam),
     .hcount(hcount),
     .vcount(vcount),
@@ -161,24 +162,6 @@ module track_init_control(
     .y_center(y_center),
     .thres(thres)
     );
-    
-    
-    
-    
-    
-    
-    // things to display on a 7 segment displays
-    always_ff @(posedge clk_65mhz) begin
-        case (sw[14:13])  
-            2'b00:  data <= {h_t,s_t,v_t,4'h0,sw[3:0]};   // xxx(center)xxxx(size)x(switch)
-            2'b01:  data <= {x_center[15:0],y_center[11:0], sw[3:0]};   // display 0123456 + sw[3:0]
-            2'b10: data <= {goal_pixel,sw[3:0]}; 
-            2'b11: data <= {radius,sw[3:0]};
-            default: data <= {x_center[15:0],y_center[11:0], sw[3:0]};
-        endcase;
-     end
-    
-    
     
     
     
@@ -193,6 +176,7 @@ module track_init_control(
     
     logic track,move;
     logic [3:0] direction;
+    logic [2:0] state;
     assign direction = {btnu,btnd,btnl,btnr};
     
     initialize initializer(
@@ -206,7 +190,7 @@ module track_init_control(
           .confirm_in(btnc),
           .activate_in(sw[1]),
           .sw2(scale), //whether to make the size twice
-          .cam(sw[15]?thres:cam),
+          .cam(show_thres?thres:cam),
           .cur_pos_x(x_center[8:0]),
           .cur_pos_y(y_center[8:0]),
           .cur_rad(radius),
@@ -218,8 +202,8 @@ module track_init_control(
           .track(track),
           .move(move)
           //for debug
-//          ,
-//          .state(state),
+          ,
+          .state(state)
 //          .cursor_x(cursor_x),
 //          .cursor_y(cursor_y),
 //          .up(dir[3]), 
@@ -235,6 +219,8 @@ module track_init_control(
     logic [3:0] Kps,Kpt;
     logic [2:0] Kds,Kdt;
     logic [1:0] mode;
+    logic [15:0] params;
+    assign params = mode[1]?{Kps,Kds,Kpt,Kdt,mode}:{speed1_in,speed2_in,mode};
     
     control my_control( .clk_in(clk_65mhz),
                         .rst_in(reset),
@@ -250,6 +236,7 @@ module track_init_control(
     
     motor_out my_motor( .clk_in(clk_65mhz),
                         .rst_in(reset),
+                        .offset(8'd50),
                         .speed_in(speed),
                         .turn_in(turn),
                         .motor_out({en1,ina1,inb1,ina2,inb2,en2}),
@@ -257,22 +244,80 @@ module track_init_control(
                         .speed_2(speed_2)
                         );
                         
-    assign jc[5:0] = move?{en2,en1,ina2,inb2,ina1,inb1}:6'b0;
+    assign jc[5:0] = move?{en1,en2,ina2,inb2,ina1,inb1}:6'b0;
     ////////////////////////////////////////////////////////////////
     
-    ///////////////switch FSM//////////////////////////////////////
-    assign scale = ~move & sw[2];
+    ///////////////switch,segment display FSM/////////////////////////////////////
+    parameter INITIALIZE = 0;
+    parameter SELECTED = 1;
+    parameter CONFIRMED = 2;
+    parameter MOVE = 3;
+    parameter PAUSE = 4;
     
-    assign {Kps[3:1],Kds,Kpt[3:1],Kdt,mode[0]} = move?sw[14:2]:0;
-    assign mode[1] = 1;
-    assign Kps[0] = 0;
-    assign Kpt[0] = 0;
+    logic [1:0] seg_display;
+    logic [7:0] speed1_in;  //signed
+    logic [7:0] speed2_in;
+    
+    assign scale = 0;   //no scaling
+    //assign mode[1] = 1;
+    assign Kps[3] = 0;
+    assign Kpt[3] = 0;
+    assign speed1_in[1:0] = 0;
+    assign speed2_in[1:0] = 0;
+    
+    // things to display on a 7 segment displays
+    always_ff @(posedge clk_65mhz) begin
+        case (seg_display)  
+            2'b00: data <= {7'b0,speed1,7'b0,speed2};   // xxx(center)xxxx(size)x(switch)
+            2'b01: data <= {x_center[15:0],y_center[11:0], sw[3:0]};   // display 0123456 + sw[3:0]
+            2'b10: data <= {{2'b0,goal_rad},{5'b0,state}}; 
+            2'b11: data <= {radius,sw[3:0]};
+            default: data <= {x_center[15:0],y_center[11:0], sw[3:0]};
+        endcase;
+     end
+     
+    
+    //switch controls
+    //sw[0] is always reset
+    //sw[1] is always used for state transition
+    
+    always @(posedge clk_65mhz) begin
+        case(state)
+            INITIALIZE: begin
+                seg_display <= sw[14:13];
+                use_rgb <= sw[12];
+                show_thres <= sw[15];
+                end
+            SELECTED: begin
+                seg_display <= sw[14:13];
+                use_rgb <= sw[12];
+                show_thres <= sw[15];
+                //calibration related stuff too
+                end
+            CONFIRMED: begin
+                {Kps[2:0],Kds,Kpt[2:0],Kdt,mode} <= sw[15:2];
+                speed1_in[7:2] <= sw[15:10];
+                speed2_in[7:2] <= sw[9:4];
+                end
+            PAUSE: begin
+                {Kps[2:0],Kds,Kpt[2:0],Kdt,mode} <= sw[15:2];
+                speed1_in[7:2] <= sw[15:10];
+                speed2_in[7:2] <= sw[9:4];
+                end
+            default: begin
+                {Kps[2:0],Kds,Kpt[2:0],Kdt,mode} <= sw[15:2];
+                speed1_in[7:2] <= sw[15:10];
+                speed2_in[7:2] <= sw[9:4];
+                end
+        endcase
+    end
+    
+    
     
     
     
     
     //what to display
-    wire up,down;
     reg b,hs,vs;
     
     always_ff @(posedge clk_65mhz) begin

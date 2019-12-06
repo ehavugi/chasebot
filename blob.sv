@@ -94,7 +94,7 @@ module speed_bar  //display a bar indicating speed of each motor
       #(parameter WIDTH=50, //length of the bar
                   HEIGHT =256, //height of the bar
                   X = 700,  //start pos
-                  Y = 200,  //baseline pos
+                  Y = 300,  //baseline pos
                   TOTAL = WIDTH*5,
                   COLOR = 12'hF00 // default color: red, the baseline is white
       )

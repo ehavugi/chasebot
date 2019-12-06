@@ -8,7 +8,7 @@ module control(
                 input [8:0] cur_pos_x,
                 input [8:0] cur_pos_y,
                 input [6:0] cur_rad,
-	              input [6:0] goal_rad,
+                input [6:0] goal_rad,
                 input [15:0] params,
                 output logic signed [8:0] speed,
                 output logic signed [8:0] turn
@@ -19,6 +19,8 @@ parameter HEIGHT = 240;
 parameter WIDTH = 320;
 
 //modes
+parameter FORWARD = 0;
+parameter DIRECT = 1;
 parameter GOALKEEP = 3;
 parameter CHASE = 2;
 
@@ -30,6 +32,7 @@ logic signed [3:0] Ktd;
 logic [1:0] mode;
 
 assign {Ksp[3:0],Ksd[2:0],Ktp[3:0],Ktd[2:0],mode} = params;
+
 assign Ksp[4] = 0;
 assign Ksd[3] = 0;
 assign Ktp[4] = 0;
@@ -88,6 +91,10 @@ always_comb begin
         CHASE:  begin
                     raw_speed = (Ksp * e_r) + (Ksd * e_dr);
                     raw_turn = (Ktp * e_x) + (Ktd * e_dx);
+                end
+        DIRECT: begin
+                   raw_speed = {params[15],8'd0,params[14:8],1'b0};
+                   raw_turn = {params[7],8'd0,params[6:0],1'b0};
                 end
         default:begin
                     raw_speed = 0;
