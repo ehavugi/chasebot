@@ -63,9 +63,43 @@ module track_init_control(
     wire hsync, vsync, blank;
     wire [11:0] pixel;
     reg [11:0] rgb;    
+ parameter DELAY_SIZE=23;
+    reg[10:0] hcount_delay  [DELAY_SIZE:0];
+    reg [9:0] vcount_delay  [DELAY_SIZE:0];
+    reg [11:0] pixel_out_delay [DELAY_SIZE:0];
+    reg vsync_delay  [DELAY_SIZE:0];
+    reg hsync_delay [DELAY_SIZE:0];
+    reg blank_delay [DELAY_SIZE:0];
+    reg [4:0] i;
+    parameter SEL_D=221;
+
+    always@(posedge clk_65mhz) begin
+    //delay the hcount and vcount signals 18 times
+    hcount_delay[0]<=hcount;
+    vcount_delay[0]<=vcount;
+    vsync_delay[0]<=vsync;
+    hsync_delay[0]<=hsync;
+    blank_delay[0]<=blank;
+    pixel_out_delay[0]<=pixel_out;    
+    
+    
+//    pixel_out_delay<=pixel_out;
+	for(i=1; i<DELAY_SIZE; i=i+1) begin
+		  hcount_delay[i] <= hcount_delay[i-1];
+		  vcount_delay[i] <= vcount_delay[i-1];
+		  vsync_delay[i] <= vsync_delay[i-1];
+		  hsync_delay[i]<=hsync_delay[i-1];
+		  blank_delay[i]<=blank_delay[i-1];
+		  pixel_out_delay[i]<=pixel_out_delay[i-1];
+		  
+	    end
+    
+    end
+//    xvga xvga1(.vclock_in(clk_65mhz),.hcount_out(hcount_delay[20]),.vcount_out(vcount_delay[20]),
+//          .hsync_out(hsync_de\\\\lay[20]),.vsync_out(vsync_delay[20]),.blank_out(blank_delay[20]));
+
     xvga xvga1(.vclock_in(clk_65mhz),.hcount_out(hcount),.vcount_out(vcount),
           .hsync_out(hsync),.vsync_out(vsync),.blank_out(blank));
-
 
     // sw[0] button is user reset
     wire reset;
@@ -327,10 +361,10 @@ module track_init_control(
     reg b,hs,vs;
     
     always_ff @(posedge clk_65mhz) begin
-        hs <= hsync;
-        vs <= vsync;
-        b <= blank;
-        rgb <= pixel_out;
+        hs <= hsync_delay[SEL_D];
+        vs <= vsync_delay[SEL_D];
+        b <= blank_delay[SEL_D];
+        rgb <= pixel_out; // not delay as it  has incurred a delay  already
     end
     
     // the following lines are required for the Nexys4 VGA circuit - do not change
