@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="473000001fs"></ZoomEndTime>
-      <Cursor1Time time="319000000fs"></Cursor1Time>
+      <ZoomStartTime time="150000000fs"></ZoomStartTime>
+      <ZoomEndTime time="413000001fs"></ZoomEndTime>
+      <Cursor1Time time="254500000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="178"></NameColumnWidth>
-      <ValueColumnWidth column_width="177"></ValueColumnWidth>
+      <NameColumnWidth column_width="112"></NameColumnWidth>
+      <ValueColumnWidth column_width="115"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="8" />
+   <WVObjectSize size="22" />
    <wvobject fp_name="/rgb2hsv_tb/clock" type="logic">
       <obj_property name="ElementShortName">clock</obj_property>
       <obj_property name="ObjectShortName">clock</obj_property>
@@ -51,5 +51,61 @@
    <wvobject fp_name="/rgb2hsv_tb/v" type="array">
       <obj_property name="ElementShortName">v[7:0]</obj_property>
       <obj_property name="ObjectShortName">v[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/rgb2hsv_tb/x/hue2/aclk" type="logic">
+      <obj_property name="ElementShortName">aclk</obj_property>
+      <obj_property name="ObjectShortName">aclk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/rgb2hsv_tb/x/hue2/s_axis_divisor_tvalid" type="logic">
+      <obj_property name="ElementShortName">s_axis_divisor_tvalid</obj_property>
+      <obj_property name="ObjectShortName">s_axis_divisor_tvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/rgb2hsv_tb/x/hue2/s_axis_divisor_tdata" type="array">
+      <obj_property name="ElementShortName">s_axis_divisor_tdata[15:0]</obj_property>
+      <obj_property name="ObjectShortName">s_axis_divisor_tdata[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/rgb2hsv_tb/x/hue2/s_axis_dividend_tvalid" type="logic">
+      <obj_property name="ElementShortName">s_axis_dividend_tvalid</obj_property>
+      <obj_property name="ObjectShortName">s_axis_dividend_tvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/rgb2hsv_tb/x/hue2/s_axis_dividend_tdata" type="array">
+      <obj_property name="ElementShortName">s_axis_dividend_tdata[15:0]</obj_property>
+      <obj_property name="ObjectShortName">s_axis_dividend_tdata[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/rgb2hsv_tb/x/hue2/m_axis_dout_tvalid" type="logic">
+      <obj_property name="ElementShortName">m_axis_dout_tvalid</obj_property>
+      <obj_property name="ObjectShortName">m_axis_dout_tvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/rgb2hsv_tb/x/hue2/m_axis_dout_tdata" type="array">
+      <obj_property name="ElementShortName">m_axis_dout_tdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axis_dout_tdata[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/rgb2hsv_tb/x/hue2/aclk" type="logic">
+      <obj_property name="ElementShortName">aclk</obj_property>
+      <obj_property name="ObjectShortName">aclk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/rgb2hsv_tb/x/hue2/s_axis_divisor_tvalid" type="logic">
+      <obj_property name="ElementShortName">s_axis_divisor_tvalid</obj_property>
+      <obj_property name="ObjectShortName">s_axis_divisor_tvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/rgb2hsv_tb/x/hue2/s_axis_divisor_tdata" type="array">
+      <obj_property name="ElementShortName">s_axis_divisor_tdata[15:0]</obj_property>
+      <obj_property name="ObjectShortName">s_axis_divisor_tdata[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/rgb2hsv_tb/x/hue2/s_axis_dividend_tvalid" type="logic">
+      <obj_property name="ElementShortName">s_axis_dividend_tvalid</obj_property>
+      <obj_property name="ObjectShortName">s_axis_dividend_tvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/rgb2hsv_tb/x/hue2/s_axis_dividend_tdata" type="array">
+      <obj_property name="ElementShortName">s_axis_dividend_tdata[15:0]</obj_property>
+      <obj_property name="ObjectShortName">s_axis_dividend_tdata[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/rgb2hsv_tb/x/hue2/m_axis_dout_tvalid" type="logic">
+      <obj_property name="ElementShortName">m_axis_dout_tvalid</obj_property>
+      <obj_property name="ObjectShortName">m_axis_dout_tvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/rgb2hsv_tb/x/hue2/m_axis_dout_tdata" type="array">
+      <obj_property name="ElementShortName">m_axis_dout_tdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axis_dout_tdata[31:0]</obj_property>
    </wvobject>
 </wave_config>

@@ -1,0 +1,13 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../camera.srcs/sources_1/new/divider.v" \
+"../../../../camera.srcs/sources_1/new/rgb2hsv.v" \
+
+sv xil_defaultlib  \
+"../../../../camera.srcs/sim_1/new/rgb2hsv_tb.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

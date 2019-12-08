@@ -1,7 +1,7 @@
-Running: xsim.dir/rgb2hsv_tb_behav/xsimk.exe -simmode gui -wdb rgb2hsv_tb_behav.wdb -simrunnum 0 -socket 51218
+Running: xsim.dir/rgb2hsv_tb_behav/xsimk.exe -simmode gui -wdb rgb2hsv_tb_behav.wdb -simrunnum 0 -socket 50726
 Design successfully loaded
-Design Loading Memory Usage: 7752 KB (Peak: 7752 KB)
+Design Loading Memory Usage: 7816 KB (Peak: 7816 KB)
 Design Loading CPU Usage: 61 ms
 Simulation completed
-Simulation Memory Usage: 15116 KB (Peak: 15116 KB)
-Simulation CPU Usage: 2624 ms
+Simulation Memory Usage: 16920 KB (Peak: 16920 KB)
+Simulation CPU Usage: 3890 ms

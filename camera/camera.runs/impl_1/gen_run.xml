@@ -1,84 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-3" LaunchTime="1575254013">
-  <File Type="BITSTR-BMM" Name="top_level_bd.bmm"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="top_level_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="top_level_timing_summary_init.rpt"/>
-  <File Type="ROUTE-PWR" Name="top_level_power_routed.rpt"/>
-  <File Type="PA-TCL" Name="top_level.tcl"/>
-  <File Type="OPT-TIMING" Name="top_level_timing_summary_opted.rpt"/>
-  <File Type="OPT-DCP" Name="top_level_opt.dcp"/>
-  <File Type="ROUTE-PWR-SUM" Name="top_level_power_summary_routed.pb"/>
-  <File Type="REPORTS-TCL" Name="top_level_reports.tcl"/>
-  <File Type="OPT-DRC" Name="top_level_drc_opted.rpt"/>
-  <File Type="OPT-HWDEF" Name="top_level.hwdef"/>
-  <File Type="PWROPT-DCP" Name="top_level_pwropt.dcp"/>
-  <File Type="PWROPT-DRC" Name="top_level_drc_pwropted.rpt"/>
-  <File Type="PWROPT-TIMING" Name="top_level_timing_summary_pwropted.rpt"/>
-  <File Type="PLACE-DCP" Name="top_level_placed.dcp"/>
-  <File Type="PLACE-IO" Name="top_level_io_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="top_level_clock_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL" Name="top_level_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL-PB" Name="top_level_utilization_placed.pb"/>
-  <File Type="PLACE-CTRL" Name="top_level_control_sets_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="top_level_incremental_reuse_placed.rpt"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="top_level_incremental_reuse_pre_placed.rpt"/>
-  <File Type="BG-BGN" Name="top_level.bgn"/>
-  <File Type="PLACE-TIMING" Name="top_level_timing_summary_placed.rpt"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="top_level_postplace_pwropt.dcp"/>
-  <File Type="BG-BIN" Name="top_level.bin"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="top_level_timing_summary_postplace_pwropted.rpt"/>
-  <File Type="PHYSOPT-DCP" Name="top_level_physopt.dcp"/>
-  <File Type="PHYSOPT-DRC" Name="top_level_drc_physopted.rpt"/>
-  <File Type="BITSTR-MSK" Name="top_level.msk"/>
-  <File Type="PHYSOPT-TIMING" Name="top_level_timing_summary_physopted.rpt"/>
-  <File Type="ROUTE-ERROR-DCP" Name="top_level_routed_error.dcp"/>
-  <File Type="ROUTE-DCP" Name="top_level_routed.dcp"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="top_level_routed_bb.dcp"/>
-  <File Type="ROUTE-DRC" Name="top_level_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-PB" Name="top_level_drc_routed.pb"/>
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-3" LaunchTime="1575766365">
+  <File Type="BITSTR-BMM" Name="track_init_control_bd.bmm"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="track_init_control_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="track_init_control_timing_summary_init.rpt"/>
+  <File Type="ROUTE-PWR" Name="track_init_control_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="track_init_control.tcl"/>
+  <File Type="OPT-TIMING" Name="track_init_control_timing_summary_opted.rpt"/>
+  <File Type="OPT-DCP" Name="track_init_control_opt.dcp"/>
+  <File Type="ROUTE-PWR-SUM" Name="track_init_control_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="track_init_control_reports.tcl"/>
+  <File Type="OPT-DRC" Name="track_init_control_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="track_init_control.hwdef"/>
+  <File Type="PWROPT-DCP" Name="track_init_control_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="track_init_control_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="track_init_control_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="track_init_control_placed.dcp"/>
+  <File Type="PLACE-IO" Name="track_init_control_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="track_init_control_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="track_init_control_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="track_init_control_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="track_init_control_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="track_init_control_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="track_init_control_incremental_reuse_pre_placed.rpt"/>
+  <File Type="BG-BGN" Name="track_init_control.bgn"/>
+  <File Type="PLACE-TIMING" Name="track_init_control_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="track_init_control_postplace_pwropt.dcp"/>
+  <File Type="BG-BIN" Name="track_init_control.bin"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="track_init_control_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="track_init_control_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="track_init_control_drc_physopted.rpt"/>
+  <File Type="BITSTR-MSK" Name="track_init_control.msk"/>
+  <File Type="PHYSOPT-TIMING" Name="track_init_control_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="track_init_control_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="track_init_control_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="track_init_control_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="track_init_control_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="track_init_control_drc_routed.pb"/>
   <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
-  <File Type="BITSTR-LTX" Name="top_level.ltx"/>
-  <File Type="ROUTE-DRC-RPX" Name="top_level_drc_routed.rpx"/>
-  <File Type="BITSTR-MMI" Name="top_level.mmi"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="top_level_methodology_drc_routed.rpt"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="top_level_methodology_drc_routed.rpx"/>
-  <File Type="BITSTR-SYSDEF" Name="top_level.sysdef"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="top_level_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-PWR-RPX" Name="top_level_power_routed.rpx"/>
-  <File Type="ROUTE-STATUS" Name="top_level_route_status.rpt"/>
-  <File Type="ROUTE-STATUS-PB" Name="top_level_route_status.pb"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="top_level_timing_summary_routed.rpt"/>
-  <File Type="ROUTE-TIMING-PB" Name="top_level_timing_summary_routed.pb"/>
-  <File Type="ROUTE-TIMING-RPX" Name="top_level_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-SIMILARITY" Name="top_level_incremental_reuse_routed.rpt"/>
-  <File Type="ROUTE-CLK" Name="top_level_clock_utilization_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW" Name="top_level_bus_skew_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW-PB" Name="top_level_bus_skew_routed.pb"/>
-  <File Type="ROUTE-BUS-SKEW-RPX" Name="top_level_bus_skew_routed.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-DCP" Name="top_level_postroute_physopt.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="top_level_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="top_level_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="top_level_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="top_level_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="top_level_bus_skew_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="top_level_bus_skew_postroute_physopted.pb"/>
-  <File Type="BG-BIT" Name="top_level.bit"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="top_level_bus_skew_postroute_physopted.rpx"/>
-  <File Type="BITSTR-RBT" Name="top_level.rbt"/>
-  <File Type="BITSTR-NKY" Name="top_level.nky"/>
-  <File Type="BG-DRC" Name="top_level.drc"/>
-  <File Type="RDI-RDI" Name="top_level.vdi"/>
+  <File Type="BITSTR-LTX" Name="track_init_control.ltx"/>
+  <File Type="ROUTE-DRC-RPX" Name="track_init_control_drc_routed.rpx"/>
+  <File Type="BITSTR-MMI" Name="track_init_control.mmi"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="track_init_control_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="track_init_control_methodology_drc_routed.rpx"/>
+  <File Type="BITSTR-SYSDEF" Name="track_init_control.sysdef"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="track_init_control_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="track_init_control_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="track_init_control_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="track_init_control_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="track_init_control_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="track_init_control_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="track_init_control_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="track_init_control_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="track_init_control_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="track_init_control_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="track_init_control_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="track_init_control_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="track_init_control_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="track_init_control_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="track_init_control_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="track_init_control_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="track_init_control_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="track_init_control_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="track_init_control_bus_skew_postroute_physopted.pb"/>
+  <File Type="BG-BIT" Name="track_init_control.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="track_init_control_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BITSTR-RBT" Name="track_init_control.rbt"/>
+  <File Type="BITSTR-NKY" Name="track_init_control.nky"/>
+  <File Type="BG-DRC" Name="track_init_control.drc"/>
+  <File Type="RDI-RDI" Name="track_init_control.vdi"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PSRCDIR/sources_1/ip/div_16/div_16.xci">
+    <File Path="$PSRCDIR/sources_1/ip/sqrt/sqrt.xci">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/ip/sqrt/sqrt.xci">
+    <File Path="$PSRCDIR/sources_1/ip/div_16/div_16.xci">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -92,7 +92,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/rgb2hsv.v">
+    <File Path="$PSRCDIR/sources_1/new/blob.sv">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -106,7 +106,35 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/pong_game.sv">
+    <File Path="$PSRCDIR/sources_1/new/control.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/initialize.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/motor_put.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/rgb2hsv.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/top_level.sv">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -127,8 +155,16 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/top_level.sv">
+    <File Path="$PSRCDIR/sources_1/new/track_init_control.sv">
       <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/pong_game.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -182,9 +218,49 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/debounce.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/picture_blob.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/motor_out.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/d_tf.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/divider_tb.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="top_level"/>
+      <Option Name="TopModule" Val="track_init_control"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">

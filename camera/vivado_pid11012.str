@@ -1,0 +1,639 @@
+/*
+
+Xilinx Vivado v2019.1 (64-bit) [Major: 2019, Minor: 1]
+SW Build: 2552052 on Fri May 24 14:49:42 MDT 2019
+IP Build: 2548770 on Fri May 24 18:01:18 MDT 2019
+
+Process ID (PID): 11012
+License: Customer
+
+Current time: 	Mon Dec 02 18:36:58 EST 2019
+Time zone: 	Eastern Standard Time (America/New_York)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 8
+
+Screen size: 1920x1080
+Screen resolution (DPI): 125
+Available screens: 1
+Available disk space: 57 GB
+Default font: family=Segoe UI,name=Segoe UI,style=plain,size=15
+
+Java version: 	9.0.4 64-bit
+Java home: 	C:/Xilinx/Vivado/2019.1/tps/win64/jre9.0.4
+Java executable location: 	C:/Xilinx/Vivado/2019.1/tps/win64/jre9.0.4/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	Owner
+User home directory: C:/Users/Owner
+User working directory: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera
+User country: 	ES
+User language: 	es
+User locale: 	es_ES
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2019.1
+RDI_DATADIR: C:/Xilinx/Vivado/2019.1/data
+RDI_BINDIR: C:/Xilinx/Vivado/2019.1/bin
+
+Vivado preferences file location: C:/Users/Owner/AppData/Roaming/Xilinx/Vivado/2019.1/vivado.xml
+Vivado preferences directory: C:/Users/Owner/AppData/Roaming/Xilinx/Vivado/2019.1/
+Vivado layouts directory: C:/Users/Owner/AppData/Roaming/Xilinx/Vivado/2019.1/layouts
+PlanAhead jar file location: 	C:/Xilinx/Vivado/2019.1/lib/classes/planAhead.jar
+Vivado log file location: 	C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/vivado.log
+Vivado journal file location: 	C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/vivado.jou
+Engine tmp dir: 	C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/.Xil/Vivado-11012-DESKTOP-5DFT9M2
+
+Xilinx Environment Variables
+----------------------------
+VciSDKDir: C:\Program Files\IXXAT\VCI 3.5\sdk\vci
+XILINX: C:/Xilinx/Vivado/2019.1/ids_lite/ISE
+XILINX_DSP: C:/Xilinx/Vivado/2019.1/ids_lite/ISE
+XILINX_PLANAHEAD: C:/Xilinx/Vivado/2019.1
+XILINX_SDK: C:/Xilinx/SDK/2019.1
+XILINX_VIVADO: C:/Xilinx/Vivado/2019.1
+XILINX_VIVADO_HLS: C:/Xilinx/Vivado/2019.1
+
+
+GUI allocated memory:	132 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 555 MB
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// HOptionPane Warning: 'This project was created with a future version of Vivado. It will be opened in read-only mode for the protection of unrecognized data. Please use 'File | Save Project As...' if you need to alter a copy of this project. The project may or may not open reliably with this version of Vivado. OK to proceed and open the project? (Future Project Version)'
+// HMemoryUtils.trashcanNow. Engine heap size: 555 MB. GUI used memory: 51 MB. Current time: 12/2/19, 6:37:00 PM EST
+// by (cl):  Open Project : addNotify
+// Opening Vivado Project: C:\Users\Owner\OneDrive\pic\Documents\GitHub\chasebot\camera\camera.xpr. Version: Vivado v2019.2 
+selectButton("OptionPane.button", "OK"); // JButton (A, G)
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 86 MB (+88204kb) [00:00:29]
+// [Engine Memory]: 762 MB (+648055kb) [00:00:29]
+// [Engine Memory]: 810 MB (+10095kb) [00:00:30]
+// [GUI Memory]: 100 MB (+9189kb) [00:00:31]
+// WARNING: HEventQueue.dispatchEvent() is taking  3320 ms.
+// Tcl Message: open_project C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.xpr 
+// Tcl Message: INFO: [Project 1-313] Project file moved from 'C:/ubuntu/6.111/camera' since last save. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 828 MB. GUI used memory: 57 MB. Current time: 12/2/19, 6:37:17 PM EST
+// Tcl Message: open_project: Time (s): cpu = 00:00:16 ; elapsed = 00:00:14 . Memory (MB): peak = 862.613 ; gain = 269.961 
+// Project name: camera; location: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera; part: xc7a100tcsg324-3
+// Elapsed time: 16 seconds
+dismissDialog("Open Project"); // by (cl)
+// a (cl): Critical Messages: addNotify
+// [Engine Memory]: 866 MB (+16400kb) [00:00:36]
+// Tcl Message: update_compile_order -fileset sources_1 
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f (a)
+// y (cl): Project is Read-Only: addNotify
+dismissDialog("Critical Messages"); // a (cl)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (y)
+dismissDialog("Project is Read-Only"); // y (cl)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, track_init (track_init.sv)]", 1, true); // B (F, cl) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, track_init (track_init.sv), clkdivider : clk_wiz_lab3 (clk_wiz_lab3.v)]", 2, false, false, false, false, false, true); // B (F, cl) - Double Click
+// [GUI Memory]: 116 MB (+11519kb) [00:00:44]
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, track_init (track_init.sv), clkdivider : clk_wiz_lab3 (clk_wiz_lab3.v)]", 2, false); // B (F, cl)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, track_init (track_init.sv), clkdivider : clk_wiz_lab3 (clk_wiz_lab3.v)]", 2, false); // B (F, cl)
+selectCodeEditor("track_init.sv", 222, 147); // D (w, cl)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, track_init (track_init.sv)]", 1, true); // B (F, cl) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, track_init (track_init.sv)]", 1, true, false, false, false, false, true); // B (F, cl) - Double Click - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, track_init (track_init.sv)]", 1, true); // B (F, cl) - Node
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Open Hardware Manager]", 21, true); // u (O, cl) - Node
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER
+// HOptionPane Warning: 'Project 'camera' is read-only. To save your work, use 'File | Save Project As' or click the 'Save Project As' button. (Read-Only Project)'
+selectButton("OptionPane.button", "OK"); // JButton (A, G)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Open Hardware Manager]", 21, true); // u (O, cl) - Node
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER
+// HOptionPane Warning: 'Project 'camera' is read-only. To save your work, use 'File | Save Project As' or click the 'Save Project As' button. (Read-Only Project)'
+selectButton("OptionPane.button", "OK"); // JButton (A, G)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Open Hardware Manager]", 21, true); // u (O, cl) - Node
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER
+// HOptionPane Warning: 'Project 'camera' is read-only. To save your work, use 'File | Save Project As' or click the 'Save Project As' button. (Read-Only Project)'
+// Run Command: PAResourceCommand.PACommandNames_SAVE_PROJECT_AS
+// aE (cl): Save Project As: addNotify
+selectButton("OptionPane.button", "Save Project As..."); // JButton (A, G)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (aE)
+// 'Q' command handler elapsed time: 4 seconds
+// TclEventType: PROJECT_RENAME
+dismissDialog("Save Project As"); // aE (cl)
+// by (cl):  Save Project As : addNotify
+// Tcl Message: save_project_as project_1 C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/project_1 -force 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 893 MB. GUI used memory: 64 MB. Current time: 12/2/19, 6:38:00 PM EST
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: PROJECT_RENAME
+// Tcl Message: save_project_as: Time (s): cpu = 00:00:19 ; elapsed = 00:00:16 . Memory (MB): peak = 919.402 ; gain = 11.133 
+// by (cl):  Save Constraints : addNotify
+// Elapsed time: 16 seconds
+dismissDialog("Save Constraints"); // by (cl)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Open Hardware Manager]", 21, true); // u (O, cl) - Node
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER
+// Tcl Command: 'rdi::info_commands get_hw_probes'
+// Tcl Command: 'load_features labtools'
+// TclEventType: LOAD_FEATURE
+// by (cl):  Open Hardware Manager : addNotify
+// TclEventType: HW_SESSION_OPEN
+// Tcl Message: open_hw 
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // v
+// [Engine Memory]: 935 MB (+26648kb) [00:01:25]
+dismissDialog("Open Hardware Manager"); // by (cl)
+selectButton(PAResourceOtoP.ProgramDebugTab_OPEN_TARGET, "Open target"); // h (cS, cl)
+selectMenuItem(PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET, "Auto Connect"); // ah (an, cl)
+// Run Command: PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET
+// Tcl Message: connect_hw_server 
+// Tcl Message: INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121 
+// by (cl):  Auto Connect : addNotify
+// Tcl Message: INFO: [Labtools 27-2222] Launching hw_server... 
+// Tcl Message: INFO: [Labtools 27-2221] Launch Output:  ****** Xilinx hw_server v2019.1   **** Build date : May 24 2019 at 15:13:31     ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.   
+// TclEventType: HW_SERVER_UPDATE
+// TclEventType: HW_TARGET_CHANGE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_ADD
+// TclEventType: HW_TARGET_UPDATE
+// WARNING: HEventQueue.dispatchEvent() is taking  3847 ms.
+// Tcl Message: open_hw_target 
+// Tcl Message: INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292645463A 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/project_1/project_1.runs/impl_1/track_init.bit} [get_hw_devices xc7a100t_0] 
+// Tcl Message: current_hw_device [get_hw_devices xc7a100t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// [GUI Memory]: 127 MB (+6356kb) [00:01:35]
+// [Engine Memory]: 2,049 MB (+1119075kb) [00:01:35]
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+dismissDialog("Auto Connect"); // by (cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,055 MB. GUI used memory: 65 MB. Current time: 12/2/19, 6:38:20 PM EST
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // h (cS, cl)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// bC (cl): Program Device: addNotify
+applyEnter(PAResourceOtoP.ProgramFpgaDialog_SPECIFY_BITSTREAM_FILE, "C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/project_1/project_1.runs/impl_1/track_init.bit"); // am (al, bC)
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a (bC)
+// by (cl):  Program Device : addNotify
+// TclEventType: HW_DEVICE_CHANGE
+dismissDialog("Program Device"); // bC (cl)
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xc7a100t_0] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/project_1/project_1.runs/impl_1/track_init.bit} [get_hw_devices xc7a100t_0] 
+// Tcl Message: program_hw_devices [get_hw_devices xc7a100t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+dismissDialog("Program Device"); // by (cl)
+// Elapsed time: 141 seconds
+selectCodeEditor("track_init.sv", 32, 216); // D (w, cl)
+selectCodeEditor("track_init.sv", 179, 290); // D (w, cl)
+// Elapsed time: 27 seconds
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "thres", true); // l (aT, cl)
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "thres"); // l (aT, cl)
+selectCodeEditor("track_init.sv", 209, 264); // D (w, cl)
+selectCodeEditor("track_init.sv", 209, 264, false, false, false, false, true); // D (w, cl) - Double Click
+selectCodeEditor("track_init.sv", 188, 264); // D (w, cl)
+selectCodeEditor("track_init.sv", 188, 264, false, false, false, false, true); // D (w, cl) - Double Click
+selectCodeEditor("track_init.sv", 188, 264); // D (w, cl)
+selectCodeEditor("track_init.sv", 188, 264); // D (w, cl)
+selectCodeEditor("track_init.sv", 211, 266); // D (w, cl)
+// Elapsed time: 79 seconds
+selectCodeEditor("track_init.sv", 176, 264); // D (w, cl)
+selectCodeEditor("track_init.sv", 342, 272); // D (w, cl)
+selectCodeEditor("track_init.sv", 169, 263); // D (w, cl)
+typeControlKey((HResource) null, "track_init.sv", 'v'); // D (w, cl)
+selectCodeEditor("track_init.sv", 245, 262); // D (w, cl)
+selectCodeEditor("track_init.sv", 298, 324); // D (w, cl)
+selectCodeEditor("track_init.sv", 401, 267); // D (w, cl)
+selectCodeEditor("track_init.sv", 401, 267, false, false, false, false, true); // D (w, cl) - Double Click
+selectCodeEditor("track_init.sv", 253, 270); // D (w, cl)
+selectCodeEditor("track_init.sv", 308, 267); // D (w, cl)
+selectCodeEditor("track_init.sv", 308, 267, false, false, false, false, true); // D (w, cl) - Double Click
+typeControlKey((HResource) null, "track_init.sv", 'c'); // D (w, cl)
+selectCodeEditor("track_init.sv", 490, 59); // D (w, cl)
+// Elapsed time: 39 seconds
+selectCodeEditor("track_init.sv", 129, 218); // D (w, cl)
+selectCodeEditor("track_init.sv", 46, 26); // D (w, cl)
+typeControlKey((HResource) null, "track_init.sv", 'v'); // D (w, cl)
+selectCodeEditor("track_init.sv", 76, 59); // D (w, cl)
+selectCodeEditor("track_init.sv", 116, 82); // D (w, cl)
+selectCodeEditor("track_init.sv", 321, 37); // D (w, cl)
+selectCodeEditor("track_init.sv", 791, 41); // D (w, cl)
+selectCodeEditor("track_init.sv", 658, 58); // D (w, cl)
+selectCodeEditor("track_init.sv", 658, 58, false, false, false, false, true); // D (w, cl) - Double Click
+selectCodeEditor("track_init.sv", 658, 58, false, false, false, true, false); // D (w, cl) - Popup Trigger
+selectCodeEditor("track_init.sv", 614, 46); // D (w, cl)
+selectCodeEditor("track_init.sv", 852, 63); // D (w, cl)
+selectCodeEditor("track_init.sv", 852, 63, false, false, false, false, true); // D (w, cl) - Double Click
+selectCodeEditor("track_init.sv", 193, 49); // D (w, cl)
+selectCodeEditor("track_init.sv", 172, 39); // D (w, cl)
+selectCodeEditor("track_init.sv", 172, 39); // D (w, cl)
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "h,s"); // l (aT, cl)
+selectCodeEditor("track_init.sv", 219, 26); // D (w, cl)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 15 seconds
+selectCodeEditor("track_init.sv", 666, 312); // D (w, cl)
+selectCodeEditor("track_init.sv", 666, 312, false, false, false, false, true); // D (w, cl) - Double Click
+selectCodeEditor("track_init.sv", 666, 312); // D (w, cl)
+selectCodeEditor("track_init.sv", 574, 297); // D (w, cl)
+selectCodeEditor("track_init.sv", 574, 297, false, false, false, false, true); // D (w, cl) - Double Click
+typeControlKey((HResource) null, "track_init.sv", 'c'); // D (w, cl)
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "goalpixel", true); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "goalpixel"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "goalpixel"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "goalpixel"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "goalpixel"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "goalpixel"); // l (aT, cl)
+// Elapsed time: 10 seconds
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pixel", true); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pixel"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pixel"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pixel"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pixel"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pixel"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pixel"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pixel"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pixel"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pixel"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pixel"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pixel"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pixel"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pixel"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pixel"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pixel"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pixel"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pixel"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pixel"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pixel"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pixel"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pixel"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pixel"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pixel"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pixel"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pixel"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pixel"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pixel"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pixel"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pixel"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pixel"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pixel"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pixel"); // l (aT, cl)
+selectCodeEditor("track_init.sv", 285, 347); // D (w, cl)
+selectCodeEditor("track_init.sv", 285, 347, false, false, false, false, true); // D (w, cl) - Double Click
+typeControlKey((HResource) null, "track_init.sv", 'c'); // D (w, cl)
+selectCodeEditor("track_init.sv", 525, 217); // D (w, cl)
+selectCodeEditor("track_init.sv", 525, 217, false, false, false, false, true); // D (w, cl) - Double Click
+typeControlKey((HResource) null, "track_init.sv", 'v'); // D (w, cl)
+selectCodeEditor("track_init.sv", 775, 216); // D (w, cl)
+selectCodeEditor("track_init.sv", 775, 216, false, false, false, false, true); // D (w, cl) - Double Click
+typeControlKey((HResource) null, "track_init.sv", 'v'); // D (w, cl)
+selectCodeEditor("track_init.sv", 1018, 225); // D (w, cl)
+selectCodeEditor("track_init.sv", 1018, 225, false, false, false, false, true); // D (w, cl) - Double Click
+typeControlKey((HResource) null, "track_init.sv", 'v'); // D (w, cl)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("track_init.sv", 899, 315); // D (w, cl)
+// Elapsed time: 22 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, cl)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// A (cl): Synthesis is Out-of-date: addNotify
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (A)
+// by (cl):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+dismissDialog("Synthesis is Out-of-date"); // A (cl)
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+dismissDialog("Resetting Runs"); // by (cl)
+// TclEventType: RUN_LAUNCH
+// by (cl):  Generate Bitstream : addNotify
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4 
+// Tcl Message: INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/project_1/project_1.srcs/sources_1/ip/sqrt/sqrt.xci' is already up-to-date 
+// Tcl Message: [Mon Dec  2 18:45:44 2019] Launched synth_1... Run output will be captured here: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/project_1/project_1.runs/synth_1/runme.log [Mon Dec  2 18:45:44 2019] Launched impl_1... Run output will be captured here: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/project_1/project_1.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // by (cl)
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// ah (cl): Bitstream Generation Completed: addNotify
+// Elapsed time: 332 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (ah)
+// Run Command: PAResourceCommand.PACommandNames_GOTO_IMPLEMENTED_DESIGN
+// by (cl):  Open Implemented Design : addNotify
+// Tcl Message: open_run impl_1 
+// HMemoryUtils.trashcanNow. Engine heap size: 2,268 MB. GUI used memory: 67 MB. Current time: 12/2/19, 6:51:20 PM EST
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: POWER_CNS_STALE
+// TclEventType: FLOORPLAN_MODIFY
+// HMemoryUtils.trashcanNow. Engine heap size: 2,987 MB. GUI used memory: 66 MB. Current time: 12/2/19, 6:51:45 PM EST
+// TclEventType: DESIGN_NEW
+// HMemoryUtils.trashcanNow. Engine heap size: 2,988 MB. GUI used memory: 66 MB. Current time: 12/2/19, 6:51:45 PM EST
+// [Engine Memory]: 2,988 MB (+876697kb) [00:15:01]
+// TclEventType: DESIGN_NEW
+// [GUI Memory]: 136 MB (+2108kb) [00:15:03]
+// Device: addNotify
+// [GUI Memory]: 146 MB (+3087kb) [00:15:04]
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// RouteApi::loadEngineXgd elapsed time: 2.5s
+// DeviceView Instantiated
+// WARNING: HEventQueue.dispatchEvent() is taking  2007 ms.
+// TclEventType: CURR_DESIGN_SET
+// Tcl Message: INFO: [Device 21-403] Loading part xc7a100tcsg324-3 INFO: [Netlist 29-17] Analyzing 857 Unisim elements for replacement INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds INFO: [Project 1-479] Netlist was created with Vivado 2019.1 INFO: [Project 1-570] Preparing netlist for logic optimization INFO: [Timing 38-478] Restoring timing data from binary archive. INFO: [Timing 38-479] Binary timing data restore complete. INFO: [Project 1-856] Restoring constraints from binary archive. INFO: [Project 1-853] Binary constraint restore complete. 
+// Tcl Message: Reading XDEF placement. Reading placer database... Reading XDEF routing. 
+// Tcl Message: Read XDEF File: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.886 . Memory (MB): peak = 3082.930 ; gain = 0.000 
+// Tcl Message: Restored from archive | CPU: 2.000000 secs | Memory: 0.000000 MB | 
+// Tcl Message: Finished XDEF File Restore: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.888 . Memory (MB): peak = 3082.930 ; gain = 0.000 Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 3082.930 ; gain = 0.000 
+// Tcl Message: INFO: [Project 1-111] Unisim Transformation Summary: No Unisim elements were transformed.  
+// Device view-level: 0,0
+// RouteApi: Init Delay Mediator Swing Worker Finished
+// ExpRunCommands.openImplResults elapsed time: 32.2s
+// TclEventType: DRC_ADDED
+// Tcl Message: open_run: Time (s): cpu = 00:00:36 ; elapsed = 00:00:31 . Memory (MB): peak = 3230.840 ; gain = 1110.832 
+// TclEventType: DRC_ADDED
+// TclEventType: METHODOLOGY_ADDED
+// TclEventType: POWER_UPDATED
+// [GUI Memory]: 156 MB (+2810kb) [00:15:08]
+// [Engine Memory]: 3,140 MB (+3144kb) [00:15:08]
+// [GUI Memory]: 167 MB (+3245kb) [00:15:14]
+// WARNING: HEventQueue.dispatchEvent() is taking  7382 ms.
+// TclEventType: TIMING_SUMMARY_UPDATED
+// 'dR' command handler elapsed time: 43 seconds
+// Device view-level: 0,1
+// Device view-level: 0,0
+// Elapsed time: 44 seconds
+dismissDialog("Open Implemented Design"); // by (cl)
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, -356170, 670413); // D (I, cl)
+selectMenu(RDIResource.MainWinMenuMgr_LAYOUT, "Layout"); // Z (q, cl)
+dismissMenu(RDIResource.MainWinMenuMgr_LAYOUT, "Layout"); // Z (q, cl)
+selectMenu(PAResourceItoN.MainMenuMgr_WINDOW, "Window"); // Z (q, cl)
+selectMenuItem(PAResourceCommand.PACommandNames_FILESET_WINDOW, "Sources"); // ah (cl)
+dismissMenu(PAResourceItoN.MainMenuMgr_WINDOW, "Window"); // Z (q, cl)
+// Run Command: PAResourceCommand.PACommandNames_FILESET_WINDOW
+// HMemoryUtils.trashcanNow. Engine heap size: 3,163 MB. GUI used memory: 119 MB. Current time: 12/2/19, 6:52:10 PM EST
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "track_init.sv", 2); // k (j, cl)
+selectCodeEditor("track_init.sv", 217, 247); // D (w, cl)
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "blob", true); // l (aT, cl)
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, (String) null); // l (aT, cl)
+selectCodeEditor("track_init.sv", 405, 231); // D (w, cl)
+// Elapsed time: 15 seconds
+selectCodeEditor("track_init.sv", 239, 290); // D (w, cl)
+selectCodeEditor("track_init.sv", 239, 290, false, false, false, false, true); // D (w, cl) - Double Click
+selectCodeEditor("track_init.sv", 217, 288); // D (w, cl)
+selectCodeEditor("track_init.sv", 217, 288, false, false, false, false, true); // D (w, cl) - Double Click
+selectCodeEditor("track_init.sv", 238, 310); // D (w, cl)
+selectCodeEditor("track_init.sv", 238, 310, false, false, false, false, true); // D (w, cl) - Double Click
+selectCodeEditor("track_init.sv", 482, 199); // D (w, cl)
+// Elapsed time: 27 seconds
+selectCodeEditor("track_init.sv", 233, 220); // D (w, cl)
+selectCodeEditor("track_init.sv", 233, 220, false, false, false, false, true); // D (w, cl) - Double Click
+typeControlKey((HResource) null, "track_init.sv", 'c'); // D (w, cl)
+// [GUI Memory]: 177 MB (+2753kb) [00:17:10]
+// Elapsed time: 27 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Open Hardware Manager, Program Device]", 34, false); // u (O, cl)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+selectMenuItem((HResource) null, "xc7a100t_0"); // ah (an, cl)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER
+// Tcl Command: 'rdi::info_commands get_hw_probes'
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// bC (cl): Program Device: addNotify
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // v
+applyEnter(PAResourceOtoP.ProgramFpgaDialog_SPECIFY_BITSTREAM_FILE, "C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/project_1/project_1.runs/impl_1/track_init.bit"); // am (al, bC)
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a (bC)
+// by (cl):  Program Device : addNotify
+dismissDialog("Program Device"); // bC (cl)
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xc7a100t_0] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/project_1/project_1.runs/impl_1/track_init.bit} [get_hw_devices xc7a100t_0] 
+// Tcl Message: program_hw_devices [get_hw_devices xc7a100t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+// 'I' command handler elapsed time: 3 seconds
+dismissDialog("Program Device"); // by (cl)
+// Elapsed time: 101 seconds
+selectCodeEditor("track_init.sv", 130, 268); // D (w, cl)
+// Elapsed time: 14 seconds
+selectCodeEditor("track_init.sv", 171, 178); // D (w, cl)
+selectCodeEditor("track_init.sv", 139, 161); // D (w, cl)
+selectCodeEditor("track_init.sv", 553, 148); // D (w, cl)
+selectCodeEditor("track_init.sv", 83, 202); // D (w, cl)
+typeControlKey((HResource) null, "track_init.sv", 'c'); // D (w, cl)
+selectCodeEditor("track_init.sv", 232, 176); // D (w, cl)
+typeControlKey((HResource) null, "track_init.sv", 'v'); // D (w, cl)
+selectCodeEditor("track_init.sv", 278, 182); // D (w, cl)
+selectCodeEditor("track_init.sv", 278, 182, false, false, false, false, true); // D (w, cl) - Double Click
+selectCodeEditor("track_init.sv", 482, 115); // D (w, cl)
+// Elapsed time: 19 seconds
+selectCodeEditor("track_init.sv", 223, 97); // D (w, cl)
+selectCodeEditor("track_init.sv", 223, 97, false, false, false, false, true); // D (w, cl) - Double Click
+selectCodeEditor("track_init.sv", 285, 93); // D (w, cl)
+selectCodeEditor("track_init.sv", 285, 93, false, false, false, false, true); // D (w, cl) - Double Click
+selectCodeEditor("track_init.sv", 371, 92); // D (w, cl)
+selectCodeEditor("track_init.sv", 349, 94); // D (w, cl)
+selectCodeEditor("track_init.sv", 349, 94, false, false, false, false, true); // D (w, cl) - Double Click
+selectCodeEditor("track_init.sv", 360, 95); // D (w, cl)
+selectCodeEditor("track_init.sv", 360, 95, false, false, false, false, true); // D (w, cl) - Double Click
+// Elapsed time: 16 seconds
+selectCodeEditor("track_init.sv", 370, 103); // D (w, cl)
+selectCodeEditor("track_init.sv", 370, 103, false, false, false, false, true); // D (w, cl) - Double Click
+selectCodeEditor("track_init.sv", 477, 94); // D (w, cl)
+selectCodeEditor("track_init.sv", 477, 94, false, false, false, false, true); // D (w, cl) - Double Click
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 30, false); // u (O, cl)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// A (cl): Synthesis is Out-of-date: addNotify
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (A)
+// by (cl):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+dismissDialog("Synthesis is Out-of-date"); // A (cl)
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+dismissDialog("Resetting Runs"); // by (cl)
+// TclEventType: RUN_LAUNCH
+// by (cl):  Generate Bitstream : addNotify
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4 
+// Tcl Message: INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/project_1/project_1.srcs/sources_1/ip/sqrt/sqrt.xci' is already up-to-date 
+// Tcl Message: [Mon Dec  2 18:57:15 2019] Launched synth_1... Run output will be captured here: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/project_1/project_1.runs/synth_1/runme.log [Mon Dec  2 18:57:15 2019] Launched impl_1... Run output will be captured here: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/project_1/project_1.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // by (cl)
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 253 seconds
+selectCodeEditor("track_init.sv", 140, 143); // D (w, cl)
+selectCodeEditor("track_init.sv", 254, 304); // D (w, cl)
+selectCodeEditor("track_init.sv", 314, 123); // D (w, cl)
+selectCodeEditor("track_init.sv", 314, 123, false, false, false, false, true); // D (w, cl) - Double Click
+typeControlKey((HResource) null, "track_init.sv", 'c'); // D (w, cl)
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "h_t", true); // l (aT, cl)
+selectCodeEditor("track_init.sv", 570, 350); // D (w, cl)
+selectCodeEditor("track_init.sv", 570, 350, false, false, false, false, true); // D (w, cl) - Double Click
+typeControlKey((HResource) null, "track_init.sv", 'c'); // D (w, cl)
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "goal_pixel", true); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "goal_pixel"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "goal_pixel"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "goal_pixel"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "goal_pixel"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "goal_pixel"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "goal_pixel"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "goal_pixel"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "goal_pixel"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "goal_pixel"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "goal_pixel"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "goal_pixel"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "goal_pixel"); // l (aT, cl)
+selectCodeEditor("track_init.sv", 156, 153); // D (w, cl)
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// ah (cl): Bitstream Generation Completed: addNotify
+// Elapsed time: 64 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (ah)
+// Run Command: PAResourceCommand.PACommandNames_REPORTS_WINDOW
+dismissDialog("Bitstream Generation Completed"); // ah (cl)
+// Elapsed time: 19 seconds
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // h (cS, cl)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// bC (cl): Program Device: addNotify
+applyEnter(PAResourceOtoP.ProgramFpgaDialog_SPECIFY_BITSTREAM_FILE, "C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/project_1/project_1.runs/impl_1/track_init.bit"); // am (al, bC)
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a (bC)
+// by (cl):  Program Device : addNotify
+dismissDialog("Program Device"); // bC (cl)
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xc7a100t_0] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/project_1/project_1.runs/impl_1/track_init.bit} [get_hw_devices xc7a100t_0] 
+// Tcl Message: program_hw_devices [get_hw_devices xc7a100t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+// 'I' command handler elapsed time: 3 seconds
+dismissDialog("Program Device"); // by (cl)
+// Elapsed time: 45 seconds
+selectCodeEditor("track_init.sv", 321, 134); // D (w, cl)
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "track", true); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "track"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "track"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "track"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "track"); // l (aT, cl)
+selectCodeEditor("track_init.sv", 281, 220); // D (w, cl)
+// Elapsed time: 320 seconds
+selectCodeEditor("track_init.sv", 155, 154); // D (w, cl)
+// TclEventType: HW_TARGET_NEEDS_CLOSE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_SYSMON_DELETE
+// TclEventType: HW_TARGET_UPDATE
+// TclEventType: DEBUG_PROBE_DELETE
+// Tcl Message: ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210292645463A 
+// n (cl): Close Hardware Target: addNotify
+// TclEventType: HW_TARGET_NEEDS_CLOSE
+// TclEventType: HW_SERVER_UPDATE

@@ -1,0 +1,110 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Sat Dec  7 19:55:47 2019
+| Host         : DESKTOP-5DFT9M2 running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file track_init_control_control_sets_placed.rpt
+| Design       : track_init_control
+| Device       : xc7a100t
+-----------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    32 |
+|    Minimum number of control sets                        |    32 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |   150 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    32 |
+| >= 0 to < 4        |    10 |
+| >= 4 to < 6        |     5 |
+| >= 6 to < 8        |     3 |
+| >= 8 to < 10       |     1 |
+| >= 10 to < 12      |     2 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |    11 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |            6924 |         1647 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |              56 |           24 |
+| Yes          | No                    | No                     |              36 |           28 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |             170 |           47 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++----------------------+----------------------------------------------------------------------------+-----------------------------------------------+------------------+----------------+
+|     Clock Signal     |                                Enable Signal                               |                Set/Reset Signal               | Slice Load Count | Bel Load Count |
++----------------------+----------------------------------------------------------------------------+-----------------------------------------------+------------------+----------------+
+|  clkdivider/clk_out1 |                                                                            | display/strobe_out[0]_i_1_n_0                 |                1 |              1 |
+|  clkdivider/clk_out1 |                                                                            | display/p_0_in[0]                             |                1 |              1 |
+|  clkdivider/clk_out1 | db1/clean_out_reg_4                                                        |                                               |                1 |              1 |
+|  clkdivider/clk_out1 | db1/clean_out_reg_5                                                        |                                               |                1 |              1 |
+|  clkdivider/clk_out1 | db1/clean_out_reg_2                                                        |                                               |                1 |              1 |
+|  clkdivider/clk_out1 | db1/new_input_i_1__5_n_0                                                   |                                               |                1 |              1 |
+|  clkdivider/clk_out1 | db1/clean_out_reg_1                                                        |                                               |                1 |              1 |
+|  clkdivider/clk_out1 | db1/clean_out_reg_3                                                        |                                               |                1 |              1 |
+|  clkdivider/clk_out1 | db1/clean_out_reg_0                                                        |                                               |                1 |              1 |
+|  clkdivider/clk_out1 |                                                                            | display/p_0_in[2]                             |                1 |              2 |
+|  pclk_in_BUFG        |                                                                            |                                               |                1 |              4 |
+|  clkdivider/clk_out1 |                                                                            | data[31]_i_1_n_0                              |                2 |              4 |
+|  clkdivider/clk_out1 |                                                                            | display/p_0_in[1]                             |                2 |              4 |
+|  pclk_in_BUFG        | my_camera/pixel_data_out[7]_i_1_n_0                                        |                                               |                5 |              5 |
+|  clkdivider/clk_out1 |                                                                            | my_tracker/x/s_bottom0[0]                     |                3 |              5 |
+|  frame_done_out_BUFG | initializer/db1/clean_out_reg_1                                            | db1/reset                                     |                3 |              6 |
+|  pclk_in_BUFG        | my_camera/pixel_data_out[15]_i_1_n_0                                       |                                               |                7 |              7 |
+|  frame_done_out_BUFG | initializer/db4/clean_out_reg_2                                            | db1/reset                                     |                4 |              7 |
+|  frame_done_out_BUFG |                                                                            |                                               |                6 |              8 |
+|  clkdivider/clk_out1 |                                                                            | my_tracker/x/p_0_out_inferred__4/i__n_0       |                3 |             10 |
+|  clkdivider/clk_out1 |                                                                            | my_tracker/goal_px/p_0_out_inferred__4/i__n_0 |                4 |             10 |
+|  pclk_in_BUFG        | my_camera/valid_pixel                                                      | frame_done_out_BUFG                           |                5 |             17 |
+|  clkdivider/clk_out1 | my_tracker/uut/U0/i_synth/i_synth/gen_sqrt.square_root/gen_rdy_int/rdy_int |                                               |                9 |             17 |
+|  clkdivider/clk_out1 |                                                                            | db1/reset                                     |                7 |             19 |
+|  clkdivider/clk_out1 | initializer/db6/count                                                      | db1/clean_out_reg_5                           |                5 |             20 |
+|  clkdivider/clk_out1 | initializer/db1/count                                                      | db1/clean_out_reg_0                           |                5 |             20 |
+|  clkdivider/clk_out1 | initializer/db2/count                                                      | db1/clean_out_reg_1                           |                5 |             20 |
+|  clkdivider/clk_out1 | initializer/db3/count                                                      | db1/clean_out_reg_2                           |                5 |             20 |
+|  clkdivider/clk_out1 | initializer/db4/count                                                      | db1/clean_out_reg_3                           |                5 |             20 |
+|  clkdivider/clk_out1 | initializer/db5/count                                                      | db1/clean_out_reg_4                           |                5 |             20 |
+|  clkdivider/clk_out1 | db1/count                                                                  | db1/new_input_i_1__5_n_0                      |                5 |             20 |
+|  clkdivider/clk_out1 |                                                                            |                                               |             1640 |           6948 |
++----------------------+----------------------------------------------------------------------------+-----------------------------------------------+------------------+----------------+
+
+

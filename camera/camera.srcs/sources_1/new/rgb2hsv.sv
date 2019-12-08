@@ -1,24 +1,5 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: Kevin Zheng Class of 2012 
-//           Dept of Electrical Engineering &  Computer Science
-// 
-// Create Date:    18:45:01 11/10/2010 
-// Design Name: 
-// Module Name:    rgb2hsv 
-// Project Name: 
-// Target Devices: 
-// Tool versions: 
-// Description: 
-//
-// Dependencies: 
-//
-// Revision: 
-// Revision 0.01 - File Created
-// Additional Comments: 
-//
-//////////////////////////////////////////////////////////////////////////////////
+
 module rgb2hsv(clock, reset, r, g, b, h, s, v);
 		input wire clock;
 		input wire reset;
@@ -50,70 +31,27 @@ module rgb2hsv(clock, reset, r, g, b, h, s, v);
 		//the s_divider (16/16) has delay 18
 		//the hue_div (16/16) has delay 18
 
-//		divider hue_div1(
-//		.clk(clock),
-//		.dividend(s_top),
-//		.divisor(s_bottom),
-//		.quotient(s_quotient),
-//	        // note: the "fractional" output was originally named "remainder" in this
-//		// file -- it seems coregen will name this output "fractional" even if
-//		// you didn't select the remainder type as fractional.
-//		.fractional(s_remainder),
-//		.rfd(s_rfd)
-//		);
-//		divider hue_div2(
-//		.clk(clock),
-//		.dividend(h_top),
-//		.divisor(h_bottom),
-//		.quotient(h_quotient),
-//		.fractional(h_remainder),
-//		.rfd(h_rfd)
-//		);
 logic start;
 parameter m=8;
 reg[3:1] state=0;
 assign start=1'b1;
 reg[5:0] count=0;
-//always @(posedge clock)
-//    if (state==0 &count<2) begin
-//        state<=1'b0;
-//        count<=count+1;
-//        end
-//    else begin 
 
-div_gen_1 hue1(.aclk(clock),
+div_16 hue1(.aclk(clock),
     .s_axis_divisor_tvalid(1'b1),
-    .s_axis_divisor_tdata(s_buttom),
+    .s_axis_divisor_tdata(s_bottom),
     .s_axis_dividend_tvalid(1'b1),
     .s_axis_dividend_tdata(s_top),
-    .m_axis_dout_tdata(s_quotient), 
+    .m_axis_dout_tdata({s_quotient,s_remainder}), 
     .m_axis_dout_tvalid(s_rfd));
 
-div_gen_1 hue2(.aclk(clock),
+div_16 hue2(.aclk(clock),
     .s_axis_divisor_tvalid(1'b1),
-    .s_axis_divisor_tdata(h_buttom),
+    .s_axis_divisor_tdata(h_bottom),
     .s_axis_dividend_tvalid(1'b1),
     .s_axis_dividend_tdata(h_top),
-    .m_axis_dout_tdata(h_quotient), 
+    .m_axis_dout_tdata({h_quotient,h_remainder}), 
     .m_axis_dout_tvalid(h_rfd));
-    
-//divider1  hue_div1(
-//    .clk(clock),
-//    .sign(0),
-//    .start(start),
-//    .dividend(s_top),
-//    .divider(s_buttom),
-//    .remainder(s_quotient),
-//    .ready(s_rfd)); 
-    
-//divider1  hue_div2(
-//    .clk(clock),
-//    .sign(0),
-//    .start(start),
-//    .dividend(h_top),
-//    .divider(h_buttom),
-//    .remainder(h_quotient),
-//    .ready(h_rfd));
     
 		always @ (posedge clock) begin
 		

@@ -33,7 +33,7 @@ module top_level(
 logic[11:0] goalpixel;
 logic[7:0] h_t,s_t,v_t;
 
-logic [31:0] x_mean;
+logic [31:0] x_center;
 logic [31:0] y_mean;
 
 logic [31:0] square_r;
@@ -65,8 +65,8 @@ clk_wiz_lab3 clkdivider(.clk_in1(clk_100mhz), .clk_out1(clk_65mhz));
     wire hsync, vsync, blank;
     wire [11:0] pixel;
     reg [11:0] rgb;    
-    xvga xvga1(.vclock_in(clk_65mhz),.hcount_out(hcount),.vcount_out(vcount),
-          .hsync_out(hsync),.vsync_out(vsync),.blank_out(blank));
+    xvga xvga1(.vclock_in(clk_65mhz),.hcount_out(hcount_delay[22]),.vcount_out(vcount_delay[22]),
+          .hsync_out(hsync_delay[22]),.vsync_out(vsync_delay[22]),.blank_out(blank_delay[22]));
 
     // btnc button is user reset
     wire reset;
@@ -151,12 +151,40 @@ always_ff @(posedge clk_65mhz) begin
         2'b11: data={4'h0,radius[23:0],sw[3:0]}; 
     endcase;
  end
+    parameter DELAY_SIZE=23;
+    logic[10:0] hcount_delay  [DELAY_SIZE:0];
+    logic [9:0] vcount_delay  [DELAY_SIZE:0];
+    logic [11:0] pixel_out_delay [DELAY_SIZE:0];
+    logic vsync_delay  [DELAY_SIZE:0];
+    logic hsync_delay [DELAY_SIZE:0];
+    logic blank_delay [DELAY_SIZE:0];
+    reg [4:0] i;
+
+    always@(posedge clk_65mhz) begin
+    //delay the hcount and vcount signals 18 times
+    hcount_delay[0]<=hcount;
+    vcount_delay[0]<=vcount;
+    vsync_delay[0]<=vsync;
+    hsync_delay[0]<=hsync;
+    blank_delay[0]<=blank;
+    
+    
+//    pixel_out_delay<=pixel_out;
+	for(i=1; i<DELAY_SIZE; i=i+1) begin
+		hcount_delay[i] <= hcount_delay[i-1];
+		vcount_delay[i] <= vcount_delay[i-1];
+		vsync_delay[i] <= vsync_delay[i-1];
+		hsync_delay[i]<=hsync_delay[i-1];
+		blank_delay[i]<=blank_delay[i-1];
+	end
+    end
+ 
   tracker numbeer1(.clk(clk_65mhz),
         .sw(sw[15:0]), 
         .cam(cam),
         .hcount(hcount),
         .vcount(vcount),
-        .goalpixel(goalpixel), 
+        .goal_pixel(goalpixel), 
         .vsync(vsync),
         .radius(radius),
         .x_center(x_center),

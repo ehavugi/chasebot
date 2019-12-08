@@ -55,7 +55,7 @@ module rgb2hsv(clock, reset, r, g, b, h, s, v);
 		// file -- it seems coregen will name this output "fractional" even if
 		// you didn't select the remainder type as fractional.
 	
-		div_16 s_param(.s_axis_divisor_tdata(s_bottom),
+		div_gen_0 s_param(.s_axis_divisor_tdata(s_bottom),
             .s_axis_divisor_tvalid(1),
             .s_axis_dividend_tdata(s_top),
             .s_axis_dividend_tvalid(1),
@@ -63,7 +63,7 @@ module rgb2hsv(clock, reset, r, g, b, h, s, v);
             .m_axis_dout_tdata({s_quotient,s_remainder}),
             .m_axis_dout_tvalid(s_rfd));
 		
-		div_16 hue_param(.s_axis_divisor_tdata(h_bottom),
+		div_gen_0 hue_param(.s_axis_divisor_tdata(h_bottom),
             .s_axis_divisor_tvalid(1),
             .s_axis_dividend_tdata(h_top),
             .s_axis_dividend_tvalid(1),

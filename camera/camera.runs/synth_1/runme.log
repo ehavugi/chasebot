@@ -1,6 +1,6 @@
 
 *** Running vivado
-    with args -log top_level.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_level.tcl
+    with args -log track_init_control.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source track_init_control.tcl
 
 
 ****** Vivado v2019.1 (64-bit)
@@ -8,40 +8,39 @@
   **** IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
     ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 
-source top_level.tcl -notrace
-Command: synth_design -top top_level -part xc7a100tcsg324-3
+source track_init_control.tcl -notrace
+Command: synth_design -top track_init_control -part xc7a100tcsg324-3
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Device 21-403] Loading part xc7a100tcsg324-3
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 8904 
-WARNING: [Synth 8-2611] redeclaration of ansi port x_center is not allowed [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/tracker.sv:39]
-WARNING: [Synth 8-2611] redeclaration of ansi port y_center is not allowed [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/tracker.sv:40]
-WARNING: [Synth 8-976] y_remainder has already been declared [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/tracker.sv:44]
-WARNING: [Synth 8-2654] second declaration of y_remainder ignored [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/tracker.sv:44]
-INFO: [Synth 8-994] y_remainder is declared here [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/tracker.sv:42]
-WARNING: [Synth 8-976] pos_x_d has already been declared [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/tracker.sv:57]
-WARNING: [Synth 8-2654] second declaration of pos_x_d ignored [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/tracker.sv:57]
-INFO: [Synth 8-994] pos_x_d is declared here [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/tracker.sv:47]
-WARNING: [Synth 8-2611] redeclaration of ansi port thres is not allowed [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/tracker.sv:60]
-WARNING: [Synth 8-976] pos_y_ has already been declared [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/tracker.sv:62]
-WARNING: [Synth 8-2654] second declaration of pos_y_ ignored [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/tracker.sv:62]
-INFO: [Synth 8-994] pos_y_ is declared here [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/tracker.sv:54]
-WARNING: [Synth 8-2611] redeclaration of ansi port radius is not allowed [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/tracker.sv:65]
-WARNING: [Synth 8-976] goalpixel has already been declared [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:103]
-WARNING: [Synth 8-2654] second declaration of goalpixel ignored [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:103]
+INFO: Helper process launched with PID 14412 
+WARNING: [Synth 8-976] x_center has already been declared [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:51]
+WARNING: [Synth 8-2654] second declaration of x_center ignored [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:51]
+INFO: [Synth 8-994] x_center is declared here [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:36]
+WARNING: [Synth 8-976] goalpixel has already been declared [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:105]
+WARNING: [Synth 8-2654] second declaration of goalpixel ignored [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:105]
 INFO: [Synth 8-994] goalpixel is declared here [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:33]
-WARNING: [Synth 8-976] h_t has already been declared [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:105]
-WARNING: [Synth 8-2654] second declaration of h_t ignored [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:105]
+WARNING: [Synth 8-976] h_t has already been declared [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:107]
+WARNING: [Synth 8-2654] second declaration of h_t ignored [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:107]
 INFO: [Synth 8-994] h_t is declared here [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:34]
 INFO: [Synth 8-994] s_t is declared here [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:34]
 INFO: [Synth 8-994] v_t is declared here [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:34]
-WARNING: [Synth 8-2490] overwriting previous definition of module synchronize [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:228]
+WARNING: [Synth 8-976] pos_x_d has already been declared [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/tracker.sv:56]
+WARNING: [Synth 8-2654] second declaration of pos_x_d ignored [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/tracker.sv:56]
+INFO: [Synth 8-994] pos_x_d is declared here [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/tracker.sv:46]
+WARNING: [Synth 8-976] pos_y_ has already been declared [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/tracker.sv:61]
+WARNING: [Synth 8-2654] second declaration of pos_y_ ignored [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/tracker.sv:61]
+INFO: [Synth 8-994] pos_y_ is declared here [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/tracker.sv:53]
+WARNING: [Synth 8-6901] identifier 'vsync' is used before its declaration [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/track_init_control.sv:75]
+WARNING: [Synth 8-6901] identifier 'hsync' is used before its declaration [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/track_init_control.sv:76]
+WARNING: [Synth 8-6901] identifier 'blank' is used before its declaration [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/track_init_control.sv:77]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 732.324 ; gain = 181.414
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 732.242 ; gain = 181.543
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'top_level' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:12]
+INFO: [Synth 8-6157] synthesizing module 'track_init_control' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/track_init_control.sv:28]
+	Parameter DELAY_SIZE bound to: 23 - type: integer 
 INFO: [Synth 8-6157] synthesizing module 'clk_wiz_lab3' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/clk_wiz_lab3.v:67]
 INFO: [Synth 8-6157] synthesizing module 'IBUF' [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:32856]
 	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
@@ -103,9 +102,9 @@ INFO: [Synth 8-6155] done synthesizing module 'MMCME2_ADV' (2#1) [C:/Xilinx/Viva
 INFO: [Synth 8-6157] synthesizing module 'BUFG' [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:1075]
 INFO: [Synth 8-6155] done synthesizing module 'BUFG' (3#1) [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:1075]
 INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_lab3' (4#1) [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/clk_wiz_lab3.v:67]
-INFO: [Synth 8-6157] synthesizing module 'display_8hex' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:279]
+INFO: [Synth 8-6157] synthesizing module 'display_8hex' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:281]
 	Parameter bits bound to: 13 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'display_8hex' (5#1) [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:279]
+INFO: [Synth 8-6155] done synthesizing module 'display_8hex' (5#1) [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:281]
 INFO: [Synth 8-6157] synthesizing module 'xvga' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/xvga.sv:23]
 	Parameter DISPLAY_WIDTH bound to: 1024 - type: integer 
 	Parameter DISPLAY_HEIGHT bound to: 768 - type: integer 
@@ -116,86 +115,151 @@ INFO: [Synth 8-6157] synthesizing module 'xvga' [C:/Users/Owner/OneDrive/pic/Doc
 	Parameter V_SYNC_PULSE bound to: 6 - type: integer 
 	Parameter V_BP bound to: 29 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'xvga' (6#1) [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/xvga.sv:23]
-INFO: [Synth 8-6157] synthesizing module 'debounce' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:246]
-INFO: [Synth 8-6155] done synthesizing module 'debounce' (7#1) [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:246]
-INFO: [Synth 8-6157] synthesizing module 'rgb2hsv' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:22]
-INFO: [Synth 8-6157] synthesizing module 'div_16' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/synth_1/.Xil/Vivado-6168-DESKTOP-5DFT9M2/realtime/div_16_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'div_16' (8#1) [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/synth_1/.Xil/Vivado-6168-DESKTOP-5DFT9M2/realtime/div_16_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'rgb2hsv' (9#1) [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:22]
-INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_0' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/synth_1/.Xil/Vivado-6168-DESKTOP-5DFT9M2/realtime/blk_mem_gen_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_0' (10#1) [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/synth_1/.Xil/Vivado-6168-DESKTOP-5DFT9M2/realtime/blk_mem_gen_0_stub.v:6]
-WARNING: [Synth 8-689] width (12) of port connection 'doutb' does not match port width (16) of module 'blk_mem_gen_0' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:116]
-INFO: [Synth 8-6157] synthesizing module 'tracker' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/tracker.sv:23]
-WARNING: [Synth 8-6104] Input port 'goalpixel' has an internal driver [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/tracker.sv:74]
-INFO: [Synth 8-6157] synthesizing module 'sqrt' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/synth_1/.Xil/Vivado-6168-DESKTOP-5DFT9M2/realtime/sqrt_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'sqrt' (11#1) [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/synth_1/.Xil/Vivado-6168-DESKTOP-5DFT9M2/realtime/sqrt_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'divider32' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/synth_1/.Xil/Vivado-6168-DESKTOP-5DFT9M2/realtime/divider32_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'divider32' (12#1) [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/synth_1/.Xil/Vivado-6168-DESKTOP-5DFT9M2/realtime/divider32_stub.v:6]
-WARNING: [Synth 8-6014] Unused sequential element radius__reg was removed.  [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/tracker.sv:95]
-WARNING: [Synth 8-3848] Net reset in module/entity tracker does not have driver. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/tracker.sv:78]
-INFO: [Synth 8-6155] done synthesizing module 'tracker' (13#1) [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/tracker.sv:23]
-WARNING: [Synth 8-689] width (1) of port connection 'thres' does not match port width (12) of module 'tracker' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:162]
+INFO: [Synth 8-6157] synthesizing module 'debounce' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:248]
+INFO: [Synth 8-6155] done synthesizing module 'debounce' (7#1) [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:248]
+INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_0' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/synth_1/.Xil/Vivado-15536-DESKTOP-5DFT9M2/realtime/blk_mem_gen_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_0' (8#1) [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/synth_1/.Xil/Vivado-15536-DESKTOP-5DFT9M2/realtime/blk_mem_gen_0_stub.v:6]
+WARNING: [Synth 8-689] width (12) of port connection 'doutb' does not match port width (16) of module 'blk_mem_gen_0' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/track_init_control.sv:129]
 INFO: [Synth 8-6157] synthesizing module 'camera_read' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/camera_read.sv:1]
 	Parameter WAIT_FRAME_START bound to: 0 - type: integer 
 	Parameter ROW_CAPTURE bound to: 1 - type: integer 
 WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/camera_read.sv:11]
+INFO: [Synth 8-6157] synthesizing module 'rgb2hsv' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv:3]
+	Parameter m bound to: 8 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'div_16' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/synth_1/.Xil/Vivado-15536-DESKTOP-5DFT9M2/realtime/div_16_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'div_16' (9#1) [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/synth_1/.Xil/Vivado-15536-DESKTOP-5DFT9M2/realtime/div_16_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'rgb2hsv' (10#1) [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv:3]
 INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/camera_read.sv:21]
-INFO: [Synth 8-6155] done synthesizing module 'camera_read' (14#1) [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/camera_read.sv:1]
-INFO: [Synth 8-6157] synthesizing module 'pong_game' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/pong_game.sv:8]
-INFO: [Synth 8-6155] done synthesizing module 'pong_game' (15#1) [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/pong_game.sv:8]
-WARNING: [Synth 8-6014] Unused sequential element old_output_pixels_reg was removed.  [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:99]
-WARNING: [Synth 8-3848] Net led in module/entity top_level does not have driver. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:28]
-WARNING: [Synth 8-3848] Net dp in module/entity top_level does not have driver. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:29]
-INFO: [Synth 8-6155] done synthesizing module 'top_level' (16#1) [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/top_level.sv:12]
-WARNING: [Synth 8-3331] design pong_game has unconnected port vclock_in
-WARNING: [Synth 8-3331] design pong_game has unconnected port reset_in
-WARNING: [Synth 8-3331] design pong_game has unconnected port up_in
-WARNING: [Synth 8-3331] design pong_game has unconnected port down_in
-WARNING: [Synth 8-3331] design pong_game has unconnected port pspeed_in[3]
-WARNING: [Synth 8-3331] design pong_game has unconnected port pspeed_in[2]
-WARNING: [Synth 8-3331] design pong_game has unconnected port pspeed_in[1]
-WARNING: [Synth 8-3331] design pong_game has unconnected port pspeed_in[0]
-WARNING: [Synth 8-3331] design pong_game has unconnected port hcount_in[10]
-WARNING: [Synth 8-3331] design pong_game has unconnected port hcount_in[9]
-WARNING: [Synth 8-3331] design pong_game has unconnected port hcount_in[5]
-WARNING: [Synth 8-3331] design pong_game has unconnected port hcount_in[4]
-WARNING: [Synth 8-3331] design pong_game has unconnected port hcount_in[3]
-WARNING: [Synth 8-3331] design pong_game has unconnected port hcount_in[2]
-WARNING: [Synth 8-3331] design pong_game has unconnected port hcount_in[1]
-WARNING: [Synth 8-3331] design pong_game has unconnected port hcount_in[0]
-WARNING: [Synth 8-3331] design pong_game has unconnected port vcount_in[9]
-WARNING: [Synth 8-3331] design pong_game has unconnected port vcount_in[5]
-WARNING: [Synth 8-3331] design pong_game has unconnected port vcount_in[4]
-WARNING: [Synth 8-3331] design pong_game has unconnected port vcount_in[3]
-WARNING: [Synth 8-3331] design pong_game has unconnected port vcount_in[2]
-WARNING: [Synth 8-3331] design pong_game has unconnected port vcount_in[1]
-WARNING: [Synth 8-3331] design pong_game has unconnected port vcount_in[0]
+INFO: [Synth 8-6155] done synthesizing module 'camera_read' (11#1) [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/camera_read.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'tracker' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/tracker.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'sqrt' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/synth_1/.Xil/Vivado-15536-DESKTOP-5DFT9M2/realtime/sqrt_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'sqrt' (12#1) [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/synth_1/.Xil/Vivado-15536-DESKTOP-5DFT9M2/realtime/sqrt_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'divider32' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/synth_1/.Xil/Vivado-15536-DESKTOP-5DFT9M2/realtime/divider32_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'divider32' (13#1) [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/synth_1/.Xil/Vivado-15536-DESKTOP-5DFT9M2/realtime/divider32_stub.v:6]
+WARNING: [Synth 8-6014] Unused sequential element count_f_reg was removed.  [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/tracker.sv:84]
+WARNING: [Synth 8-6014] Unused sequential element size__reg was removed.  [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/tracker.sv:71]
+WARNING: [Synth 8-6014] Unused sequential element pos_x__reg was removed.  [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/tracker.sv:90]
+WARNING: [Synth 8-6014] Unused sequential element pos_y__reg was removed.  [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/tracker.sv:91]
+WARNING: [Synth 8-6014] Unused sequential element radius__reg was removed.  [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/tracker.sv:92]
+WARNING: [Synth 8-3848] Net reset in module/entity tracker does not have driver. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/tracker.sv:75]
+INFO: [Synth 8-6155] done synthesizing module 'tracker' (14#1) [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/tracker.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'initialize' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/initialize.sv:4]
+	Parameter CURSORSPEED bound to: 3 - type: integer 
+	Parameter SAMPLESIZE bound to: 2 - type: integer 
+	Parameter INITIALIZE bound to: 0 - type: integer 
+	Parameter SELECTED bound to: 1 - type: integer 
+	Parameter CONFIRMED bound to: 2 - type: integer 
+	Parameter MOVE bound to: 3 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'box' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/blob.sv:22]
+	Parameter THICKNESS bound to: 2 - type: integer 
+	Parameter COLOR bound to: 12'b111111111111 
+INFO: [Synth 8-6155] done synthesizing module 'box' (15#1) [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/blob.sv:22]
+INFO: [Synth 8-6157] synthesizing module 'box__parameterized0' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/blob.sv:22]
+	Parameter THICKNESS bound to: 2 - type: integer 
+	Parameter COLOR bound to: 12'b111100000000 
+INFO: [Synth 8-6155] done synthesizing module 'box__parameterized0' (15#1) [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/blob.sv:22]
+INFO: [Synth 8-6157] synthesizing module 'cursor' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/blob.sv:49]
+	Parameter THICKNESS bound to: 1 - type: integer 
+	Parameter COLOR bound to: 12'b111111111111 
+	Parameter WIDTH bound to: 320 - type: integer 
+	Parameter HEIGHT bound to: 240 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'cursor' (16#1) [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/blob.sv:49]
+INFO: [Synth 8-6157] synthesizing module 'colorpad' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/blob.sv:74]
+	Parameter WIDTH bound to: 30 - type: integer 
+	Parameter HEIGHT bound to: 30 - type: integer 
+	Parameter X bound to: 800 - type: integer 
+	Parameter Y bound to: 600 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'colorpad' (17#1) [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/blob.sv:74]
+INFO: [Synth 8-6157] synthesizing module 'speed_bar' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/blob.sv:93]
+	Parameter WIDTH bound to: 50 - type: integer 
+	Parameter HEIGHT bound to: 256 - type: integer 
+	Parameter X bound to: 700 - type: integer 
+	Parameter Y bound to: 200 - type: integer 
+	Parameter TOTAL bound to: 250 - type: integer 
+	Parameter COLOR bound to: 12'b111100000000 
+INFO: [Synth 8-6157] synthesizing module 'blob' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/blob.sv:6]
+	Parameter COLOR bound to: 12'b111100000000 
+INFO: [Synth 8-6155] done synthesizing module 'blob' (18#1) [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/blob.sv:6]
+INFO: [Synth 8-6155] done synthesizing module 'speed_bar' (19#1) [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/blob.sv:93]
+INFO: [Synth 8-6155] done synthesizing module 'initialize' (20#1) [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/initialize.sv:4]
+WARNING: [Synth 8-689] width (24) of port connection 'cur_rad' does not match port width (7) of module 'initialize' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/track_init_control.sv:235]
+WARNING: [Synth 8-689] width (12) of port connection 'goal_rad' does not match port width (7) of module 'initialize' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/track_init_control.sv:240]
+WARNING: [Synth 8-7023] instance 'initializer' of module 'initialize' has 27 connections declared, but only 20 given [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/track_init_control.sv:221]
+INFO: [Synth 8-6157] synthesizing module 'control' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/control.sv:4]
+	Parameter HEIGHT bound to: 240 - type: integer 
+	Parameter WIDTH bound to: 320 - type: integer 
+	Parameter GOALKEEP bound to: 3 - type: integer 
+	Parameter CHASE bound to: 2 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'threshold_by_abs' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/control.sv:125]
+INFO: [Synth 8-6155] done synthesizing module 'threshold_by_abs' (21#1) [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/control.sv:125]
+WARNING: [Synth 8-6014] Unused sequential element dx_reg was removed.  [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/control.sv:104]
+WARNING: [Synth 8-6014] Unused sequential element dr_reg was removed.  [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/control.sv:105]
+WARNING: [Synth 8-6014] Unused sequential element pre_x_reg was removed.  [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/control.sv:106]
+WARNING: [Synth 8-6014] Unused sequential element pre_r_reg was removed.  [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/control.sv:107]
+WARNING: [Synth 8-6014] Unused sequential element pre_dx_reg was removed.  [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/control.sv:108]
+WARNING: [Synth 8-6014] Unused sequential element pre_dr_reg was removed.  [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/control.sv:109]
+INFO: [Synth 8-6155] done synthesizing module 'control' (22#1) [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/control.sv:4]
+WARNING: [Synth 8-689] width (24) of port connection 'cur_rad' does not match port width (7) of module 'control' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/track_init_control.sv:263]
+INFO: [Synth 8-6157] synthesizing module 'motor_out' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/motor_put.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'pwm' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/motor_put.sv:42]
+INFO: [Synth 8-6155] done synthesizing module 'pwm' (23#1) [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/motor_put.sv:42]
+INFO: [Synth 8-6155] done synthesizing module 'motor_out' (24#1) [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/motor_put.sv:3]
+WARNING: [Synth 8-689] width (9) of port connection 'turn_in' does not match port width (7) of module 'motor_out' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/track_init_control.sv:273]
+INFO: [Synth 8-4471] merging register 'vsync_delay_reg[0]' into 'vs_reg' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/track_init_control.sv:75]
+INFO: [Synth 8-4471] merging register 'hsync_delay_reg[0]' into 'hs_reg' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/track_init_control.sv:76]
+INFO: [Synth 8-4471] merging register 'blank_delay_reg[0]' into 'b_reg' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/track_init_control.sv:77]
+WARNING: [Synth 8-6014] Unused sequential element vsync_delay_reg[0] was removed.  [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/track_init_control.sv:75]
+WARNING: [Synth 8-6014] Unused sequential element hsync_delay_reg[0] was removed.  [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/track_init_control.sv:76]
+WARNING: [Synth 8-6014] Unused sequential element blank_delay_reg[0] was removed.  [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/track_init_control.sv:77]
+WARNING: [Synth 8-3848] Net blank in module/entity track_init_control does not have driver. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/track_init_control.sv:89]
+WARNING: [Synth 8-3848] Net hsync in module/entity track_init_control does not have driver. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/track_init_control.sv:89]
+WARNING: [Synth 8-3848] Net vsync in module/entity track_init_control does not have driver. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/track_init_control.sv:89]
+WARNING: [Synth 8-3848] Net led16_b in module/entity track_init_control does not have driver. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/track_init_control.sv:42]
+WARNING: [Synth 8-3848] Net led16_g in module/entity track_init_control does not have driver. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/track_init_control.sv:42]
+WARNING: [Synth 8-3848] Net led16_r in module/entity track_init_control does not have driver. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/track_init_control.sv:42]
+WARNING: [Synth 8-3848] Net led17_b in module/entity track_init_control does not have driver. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/track_init_control.sv:43]
+WARNING: [Synth 8-3848] Net led17_g in module/entity track_init_control does not have driver. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/track_init_control.sv:43]
+WARNING: [Synth 8-3848] Net led17_r in module/entity track_init_control does not have driver. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/track_init_control.sv:43]
+WARNING: [Synth 8-3848] Net hcount in module/entity track_init_control does not have driver. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/track_init_control.sv:60]
+WARNING: [Synth 8-3848] Net vcount in module/entity track_init_control does not have driver. [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/track_init_control.sv:61]
+INFO: [Synth 8-6155] done synthesizing module 'track_init_control' (25#1) [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/track_init_control.sv:28]
+WARNING: [Synth 8-3917] design track_init_control has port dp driven by constant 1
+WARNING: [Synth 8-3331] design control has unconnected port cur_pos_y[8]
+WARNING: [Synth 8-3331] design control has unconnected port cur_pos_y[7]
+WARNING: [Synth 8-3331] design control has unconnected port cur_pos_y[6]
+WARNING: [Synth 8-3331] design control has unconnected port cur_pos_y[5]
+WARNING: [Synth 8-3331] design control has unconnected port cur_pos_y[4]
+WARNING: [Synth 8-3331] design control has unconnected port cur_pos_y[3]
+WARNING: [Synth 8-3331] design control has unconnected port cur_pos_y[2]
+WARNING: [Synth 8-3331] design control has unconnected port cur_pos_y[1]
+WARNING: [Synth 8-3331] design control has unconnected port cur_pos_y[0]
 WARNING: [Synth 8-3331] design rgb2hsv has unconnected port reset
 WARNING: [Synth 8-3331] design tracker has unconnected port sw[15]
 WARNING: [Synth 8-3331] design tracker has unconnected port sw[14]
 WARNING: [Synth 8-3331] design tracker has unconnected port sw[13]
-WARNING: [Synth 8-3331] design top_level has unconnected port led[15]
-WARNING: [Synth 8-3331] design top_level has unconnected port led[14]
-WARNING: [Synth 8-3331] design top_level has unconnected port led[13]
-WARNING: [Synth 8-3331] design top_level has unconnected port led[12]
-WARNING: [Synth 8-3331] design top_level has unconnected port led[11]
-WARNING: [Synth 8-3331] design top_level has unconnected port led[10]
-WARNING: [Synth 8-3331] design top_level has unconnected port led[9]
-WARNING: [Synth 8-3331] design top_level has unconnected port led[8]
-WARNING: [Synth 8-3331] design top_level has unconnected port led[7]
-WARNING: [Synth 8-3331] design top_level has unconnected port led[6]
-WARNING: [Synth 8-3331] design top_level has unconnected port led[5]
-WARNING: [Synth 8-3331] design top_level has unconnected port led[4]
-WARNING: [Synth 8-3331] design top_level has unconnected port led[3]
-WARNING: [Synth 8-3331] design top_level has unconnected port led[2]
-WARNING: [Synth 8-3331] design top_level has unconnected port led[1]
-WARNING: [Synth 8-3331] design top_level has unconnected port led[0]
-WARNING: [Synth 8-3331] design top_level has unconnected port dp
-WARNING: [Synth 8-3331] design top_level has unconnected port jd[2]
-WARNING: [Synth 8-3331] design top_level has unconnected port jd[1]
-WARNING: [Synth 8-3331] design top_level has unconnected port jd[0]
+WARNING: [Synth 8-3331] design tracker has unconnected port sw[11]
+WARNING: [Synth 8-3331] design tracker has unconnected port sw[10]
+WARNING: [Synth 8-3331] design tracker has unconnected port sw[9]
+WARNING: [Synth 8-3331] design tracker has unconnected port sw[8]
+WARNING: [Synth 8-3331] design tracker has unconnected port sw[7]
+WARNING: [Synth 8-3331] design tracker has unconnected port sw[6]
+WARNING: [Synth 8-3331] design tracker has unconnected port sw[5]
+WARNING: [Synth 8-3331] design tracker has unconnected port sw[4]
+WARNING: [Synth 8-3331] design tracker has unconnected port sw[3]
+WARNING: [Synth 8-3331] design tracker has unconnected port sw[2]
+WARNING: [Synth 8-3331] design tracker has unconnected port sw[1]
+WARNING: [Synth 8-3331] design tracker has unconnected port sw[0]
+WARNING: [Synth 8-3331] design track_init_control has unconnected port led16_b
+WARNING: [Synth 8-3331] design track_init_control has unconnected port led16_g
+WARNING: [Synth 8-3331] design track_init_control has unconnected port led16_r
+WARNING: [Synth 8-3331] design track_init_control has unconnected port led17_b
+WARNING: [Synth 8-3331] design track_init_control has unconnected port led17_g
+WARNING: [Synth 8-3331] design track_init_control has unconnected port led17_r
+WARNING: [Synth 8-3331] design track_init_control has unconnected port jd[2]
+WARNING: [Synth 8-3331] design track_init_control has unconnected port jd[1]
+WARNING: [Synth 8-3331] design track_init_control has unconnected port jd[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 777.941 ; gain = 227.031
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 783.707 ; gain = 233.008
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -208,10 +272,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 777.941 ; gain = 227.031
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 783.707 ; gain = 233.008
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 777.941 ; gain = 227.031
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 783.707 ; gain = 233.008
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -219,131 +283,117 @@ INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/div_16/div_16/div_gen_0_in_context.xdc] for cell 'goal_px/s_param'
-Finished Parsing XDC File [c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/div_16/div_16/div_gen_0_in_context.xdc] for cell 'goal_px/s_param'
-Parsing XDC File [c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/div_16/div_16/div_gen_0_in_context.xdc] for cell 'goal_px/hue_param'
-Finished Parsing XDC File [c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/div_16/div_16/div_gen_0_in_context.xdc] for cell 'goal_px/hue_param'
-Parsing XDC File [c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/div_16/div_16/div_gen_0_in_context.xdc] for cell 'numbeer1/x/s_param'
-Finished Parsing XDC File [c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/div_16/div_16/div_gen_0_in_context.xdc] for cell 'numbeer1/x/s_param'
-Parsing XDC File [c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/div_16/div_16/div_gen_0_in_context.xdc] for cell 'numbeer1/x/hue_param'
-Finished Parsing XDC File [c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/div_16/div_16/div_gen_0_in_context.xdc] for cell 'numbeer1/x/hue_param'
-Parsing XDC File [c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/div_16/div_16/div_gen_0_in_context.xdc] for cell 'numbeer1/goal_px/s_param'
-Finished Parsing XDC File [c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/div_16/div_16/div_gen_0_in_context.xdc] for cell 'numbeer1/goal_px/s_param'
-Parsing XDC File [c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/div_16/div_16/div_gen_0_in_context.xdc] for cell 'numbeer1/goal_px/hue_param'
-Finished Parsing XDC File [c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/div_16/div_16/div_gen_0_in_context.xdc] for cell 'numbeer1/goal_px/hue_param'
-Parsing XDC File [c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/div_16/div_16/div_gen_0_in_context.xdc] for cell 'my_camera/xx/s_param'
-Finished Parsing XDC File [c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/div_16/div_16/div_gen_0_in_context.xdc] for cell 'my_camera/xx/s_param'
-Parsing XDC File [c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/div_16/div_16/div_gen_0_in_context.xdc] for cell 'my_camera/xx/hue_param'
-Finished Parsing XDC File [c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/div_16/div_16/div_gen_0_in_context.xdc] for cell 'my_camera/xx/hue_param'
-Parsing XDC File [c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/sqrt/sqrt/sqrt_in_context.xdc] for cell 'numbeer1/uut'
-Finished Parsing XDC File [c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/sqrt/sqrt/sqrt_in_context.xdc] for cell 'numbeer1/uut'
+Parsing XDC File [c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/sqrt/sqrt/sqrt_in_context.xdc] for cell 'my_tracker/uut'
+Finished Parsing XDC File [c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/sqrt/sqrt/sqrt_in_context.xdc] for cell 'my_tracker/uut'
+Parsing XDC File [c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/div_16/div_16/div_gen_0_in_context.xdc] for cell 'my_camera/xx/hue1'
+Finished Parsing XDC File [c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/div_16/div_16/div_gen_0_in_context.xdc] for cell 'my_camera/xx/hue1'
+Parsing XDC File [c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/div_16/div_16/div_gen_0_in_context.xdc] for cell 'my_camera/xx/hue2'
+Finished Parsing XDC File [c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/div_16/div_16/div_gen_0_in_context.xdc] for cell 'my_camera/xx/hue2'
+Parsing XDC File [c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/div_16/div_16/div_gen_0_in_context.xdc] for cell 'my_tracker/x/hue1'
+Finished Parsing XDC File [c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/div_16/div_16/div_gen_0_in_context.xdc] for cell 'my_tracker/x/hue1'
+Parsing XDC File [c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/div_16/div_16/div_gen_0_in_context.xdc] for cell 'my_tracker/x/hue2'
+Finished Parsing XDC File [c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/div_16/div_16/div_gen_0_in_context.xdc] for cell 'my_tracker/x/hue2'
+Parsing XDC File [c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/div_16/div_16/div_gen_0_in_context.xdc] for cell 'my_tracker/goal_px/hue1'
+Finished Parsing XDC File [c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/div_16/div_16/div_gen_0_in_context.xdc] for cell 'my_tracker/goal_px/hue1'
+Parsing XDC File [c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/div_16/div_16/div_gen_0_in_context.xdc] for cell 'my_tracker/goal_px/hue2'
+Finished Parsing XDC File [c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/div_16/div_16/div_gen_0_in_context.xdc] for cell 'my_tracker/goal_px/hue2'
 Parsing XDC File [c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'jojos_bram'
 Finished Parsing XDC File [c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'jojos_bram'
-Parsing XDC File [c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/divider32/divider32/divider32_in_context.xdc] for cell 'numbeer1/square_xx'
-Finished Parsing XDC File [c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/divider32/divider32/divider32_in_context.xdc] for cell 'numbeer1/square_xx'
-Parsing XDC File [c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/divider32/divider32/divider32_in_context.xdc] for cell 'numbeer1/center_xx'
-Finished Parsing XDC File [c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/divider32/divider32/divider32_in_context.xdc] for cell 'numbeer1/center_xx'
-Parsing XDC File [c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/divider32/divider32/divider32_in_context.xdc] for cell 'numbeer1/center_yy'
-Finished Parsing XDC File [c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/divider32/divider32/divider32_in_context.xdc] for cell 'numbeer1/center_yy'
+Parsing XDC File [c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/divider32/divider32/divider32_in_context.xdc] for cell 'my_tracker/square_xx'
+Finished Parsing XDC File [c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/divider32/divider32/divider32_in_context.xdc] for cell 'my_tracker/square_xx'
+Parsing XDC File [c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/divider32/divider32/divider32_in_context.xdc] for cell 'my_tracker/center_xx'
+Finished Parsing XDC File [c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/divider32/divider32/divider32_in_context.xdc] for cell 'my_tracker/center_xx'
+Parsing XDC File [c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/divider32/divider32/divider32_in_context.xdc] for cell 'my_tracker/center_yy'
+Finished Parsing XDC File [c:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/ip/divider32/divider32/divider32_in_context.xdc] for cell 'my_tracker/center_yy'
 Parsing XDC File [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/nexys4ddr.xdc]
 Finished Parsing XDC File [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/nexys4ddr.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/nexys4ddr.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_level_propImpl.xdc].
-Resolution: To avoid this warning, move constraints listed in [.Xil/top_level_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/nexys4ddr.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/track_init_control_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/track_init_control_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Parsing XDC File [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/synth_1/dont_touch.xdc]
 Finished Parsing XDC File [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/synth_1/dont_touch.xdc]
 INFO: [Timing 38-2] Deriving generated clocks
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 929.590 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 936.121 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.024 . Memory (MB): peak = 929.590 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.029 . Memory (MB): peak = 936.121 ; gain = 0.000
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'jojos_bram' at clock pin 'clkb' is different from the actual clock period '15.385', this can lead to different synthesis results.
-WARNING: [Timing 38-316] Clock period '1000.000' specified during out-of-context synthesis of instance 'goal_px/hue_param' at clock pin 'aclk' is different from the actual clock period '15.385', this can lead to different synthesis results.
-WARNING: [Timing 38-316] Clock period '1000.000' specified during out-of-context synthesis of instance 'goal_px/s_param' at clock pin 'aclk' is different from the actual clock period '15.385', this can lead to different synthesis results.
-WARNING: [Timing 38-316] Clock period '1000.000' specified during out-of-context synthesis of instance 'numbeer1/center_xx' at clock pin 'aclk' is different from the actual clock period '15.385', this can lead to different synthesis results.
-WARNING: [Timing 38-316] Clock period '1000.000' specified during out-of-context synthesis of instance 'numbeer1/center_yy' at clock pin 'aclk' is different from the actual clock period '15.385', this can lead to different synthesis results.
-WARNING: [Timing 38-316] Clock period '1000.000' specified during out-of-context synthesis of instance 'numbeer1/square_xx' at clock pin 'aclk' is different from the actual clock period '15.385', this can lead to different synthesis results.
-WARNING: [Timing 38-316] Clock period '1000.000' specified during out-of-context synthesis of instance 'numbeer1/uut' at clock pin 'aclk' is different from the actual clock period '15.385', this can lead to different synthesis results.
-WARNING: [Timing 38-316] Clock period '1000.000' specified during out-of-context synthesis of instance 'numbeer1/goal_px/hue_param' at clock pin 'aclk' is different from the actual clock period '15.385', this can lead to different synthesis results.
-WARNING: [Timing 38-316] Clock period '1000.000' specified during out-of-context synthesis of instance 'numbeer1/goal_px/s_param' at clock pin 'aclk' is different from the actual clock period '15.385', this can lead to different synthesis results.
-WARNING: [Timing 38-316] Clock period '1000.000' specified during out-of-context synthesis of instance 'numbeer1/x/hue_param' at clock pin 'aclk' is different from the actual clock period '15.385', this can lead to different synthesis results.
-WARNING: [Timing 38-316] Clock period '1000.000' specified during out-of-context synthesis of instance 'numbeer1/x/s_param' at clock pin 'aclk' is different from the actual clock period '15.385', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '1000.000' specified during out-of-context synthesis of instance 'my_tracker/center_xx' at clock pin 'aclk' is different from the actual clock period '15.385', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '1000.000' specified during out-of-context synthesis of instance 'my_tracker/center_yy' at clock pin 'aclk' is different from the actual clock period '15.385', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '1000.000' specified during out-of-context synthesis of instance 'my_tracker/square_xx' at clock pin 'aclk' is different from the actual clock period '15.385', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '1000.000' specified during out-of-context synthesis of instance 'my_tracker/uut' at clock pin 'aclk' is different from the actual clock period '15.385', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '1000.000' specified during out-of-context synthesis of instance 'my_tracker/goal_px/hue1' at clock pin 'aclk' is different from the actual clock period '15.385', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '1000.000' specified during out-of-context synthesis of instance 'my_tracker/goal_px/hue2' at clock pin 'aclk' is different from the actual clock period '15.385', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '1000.000' specified during out-of-context synthesis of instance 'my_tracker/x/hue1' at clock pin 'aclk' is different from the actual clock period '15.385', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '1000.000' specified during out-of-context synthesis of instance 'my_tracker/x/hue2' at clock pin 'aclk' is different from the actual clock period '15.385', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 929.590 ; gain = 378.680
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 936.121 ; gain = 385.422
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-3
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 929.590 ; gain = 378.680
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 936.121 ; gain = 385.422
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property DONT_TOUCH = true for goal_px/hue_param. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for numbeer1/x/hue_param. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for numbeer1/goal_px/hue_param. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for my_camera/xx/hue_param. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for goal_px/s_param. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for numbeer1/x/s_param. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for numbeer1/goal_px/s_param. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for my_camera/xx/s_param. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for numbeer1/uut. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for my_tracker/uut. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for my_camera/xx/hue1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for my_tracker/x/hue1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for my_tracker/goal_px/hue1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for my_camera/xx/hue2. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for my_tracker/x/hue2. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for my_tracker/goal_px/hue2. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for jojos_bram. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for numbeer1/center_xx. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for numbeer1/center_yy. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for numbeer1/square_xx. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for my_tracker/center_xx. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for my_tracker/center_yy. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for my_tracker/square_xx. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 929.590 ; gain = 378.680
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 936.121 ; gain = 385.422
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <multiplier> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:117]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:117]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <multiplier> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:112]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:112]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <multiplier> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:111]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:111]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <multiplier> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:107]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:107]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <multiplier> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:68]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:68]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:138]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <multiplier> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:117]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:117]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <multiplier> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:112]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:112]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <multiplier> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:111]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:111]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <multiplier> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:107]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:107]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <multiplier> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:68]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:68]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:138]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <multiplier> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:117]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:117]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <multiplier> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:112]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:112]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <multiplier> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:111]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:111]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <multiplier> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:107]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:107]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <multiplier> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:68]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:68]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:138]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <multiplier> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:117]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:117]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <multiplier> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:112]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:112]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <multiplier> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:111]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:111]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <multiplier> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:107]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:107]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <multiplier> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:68]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:68]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:138]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <multiplier> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv:98]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv:98]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <multiplier> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv:93]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv:93]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <multiplier> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv:92]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv:92]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <multiplier> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv:88]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv:88]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <multiplier> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv:52]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv:52]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv:119]
 INFO: [Synth 8-802] inferred FSM for state register 'FSM_state_reg' in module 'camera_read'
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <multiplier> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv:98]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv:98]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <multiplier> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv:93]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv:93]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <multiplier> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv:92]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv:92]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <multiplier> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv:88]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv:88]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <multiplier> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv:52]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv:52]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv:119]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <multiplier> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv:98]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv:98]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <multiplier> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv:93]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv:93]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <multiplier> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv:92]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv:92]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <multiplier> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv:88]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv:88]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <multiplier> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv:52]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv:52]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv:119]
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'initialize'
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/control.sv:76]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <multiplier> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/control.sv:76]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <multiplier> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/control.sv:76]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/track_init_control.sv:153]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -351,8 +401,17 @@ INFO: [Synth 8-802] inferred FSM for state register 'FSM_state_reg' in module 'c
              ROW_CAPTURE |                                1 |                               01
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'FSM_state_reg' using encoding 'sequential' in module 'camera_read'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+              INITIALIZE |                               00 |                               00
+                SELECTED |                               01 |                               01
+               CONFIRMED |                               10 |                               10
+                    MOVE |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'initialize'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 929.590 ; gain = 378.680
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 936.121 ; gain = 385.422
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -365,38 +424,55 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     32 Bit       Adders := 2     
-	   2 Input     16 Bit       Adders := 4     
-	   2 Input     11 Bit       Adders := 1     
-	   2 Input     10 Bit       Adders := 1     
-	   3 Input     10 Bit       Adders := 1     
-	   3 Input      8 Bit       Adders := 12    
+	   2 Input     32 Bit       Adders := 6     
+	   2 Input     17 Bit       Adders := 1     
+	   2 Input     16 Bit       Adders := 7     
+	   3 Input     13 Bit       Adders := 1     
+	   3 Input     12 Bit       Adders := 7     
+	   2 Input     12 Bit       Adders := 5     
+	   2 Input     11 Bit       Adders := 9     
+	   3 Input     11 Bit       Adders := 10    
+	   2 Input     10 Bit       Adders := 12    
+	   3 Input     10 Bit       Adders := 6     
+	   3 Input      9 Bit       Adders := 3     
+	   2 Input      9 Bit       Adders := 5     
+	   3 Input      8 Bit       Adders := 9     
+	   2 Input      8 Bit       Adders := 7     
+	   2 Input      7 Bit       Adders := 2     
 	   3 Input      6 Bit       Adders := 2     
-	   2 Input      3 Bit       Adders := 1     
 	   2 Input      2 Bit       Adders := 1     
 +---Registers : 
-	               32 Bit    Registers := 7     
-	               19 Bit    Registers := 4     
-	               16 Bit    Registers := 9     
-	               12 Bit    Registers := 3     
-	               11 Bit    Registers := 1     
-	               10 Bit    Registers := 1     
-	                8 Bit    Registers := 223   
-	                7 Bit    Registers := 1     
-	                2 Bit    Registers := 1     
-	                1 Bit    Registers := 23    
-+---Multipliers : 
-	                 3x32  Multipliers := 1     
+	               32 Bit    Registers := 4     
+	               19 Bit    Registers := 3     
+	               16 Bit    Registers := 7     
+	               12 Bit    Registers := 6     
+	               11 Bit    Registers := 24    
+	               10 Bit    Registers := 24    
+	                9 Bit    Registers := 4     
+	                8 Bit    Registers := 173   
+	                7 Bit    Registers := 3     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 98    
 +---Muxes : 
-	   4 Input     32 Bit        Muxes := 1     
+	   3 Input     32 Bit        Muxes := 1     
+	   2 Input     19 Bit        Muxes := 1     
 	   2 Input     16 Bit        Muxes := 25    
 	   3 Input     16 Bit        Muxes := 1     
-	   2 Input     12 Bit        Muxes := 2     
+	   2 Input     15 Bit        Muxes := 4     
+	   2 Input     12 Bit        Muxes := 12    
+	   3 Input     12 Bit        Muxes := 1     
+	   4 Input     12 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 5     
+	   2 Input     10 Bit        Muxes := 7     
+	   2 Input      9 Bit        Muxes := 9     
 	   8 Input      8 Bit        Muxes := 1     
-	   2 Input      8 Bit        Muxes := 44    
-	   3 Input      8 Bit        Muxes := 4     
+	   2 Input      8 Bit        Muxes := 37    
+	   3 Input      8 Bit        Muxes := 3     
 	   2 Input      4 Bit        Muxes := 3     
-	   2 Input      1 Bit        Muxes := 44    
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 64    
+	   4 Input      1 Bit        Muxes := 4     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -404,19 +480,26 @@ Finished RTL Component Statistics
 Start RTL Hierarchical Component Statistics 
 ---------------------------------------------------------------------------------
 Hierarchical RTL Component report 
-Module top_level 
+Module track_init_control 
 Detailed RTL Component Info : 
 +---Adders : 
+	   2 Input     17 Bit       Adders := 1     
+	   2 Input      9 Bit       Adders := 2     
 	   2 Input      2 Bit       Adders := 1     
 +---Registers : 
 	               32 Bit    Registers := 1     
 	               12 Bit    Registers := 2     
+	               11 Bit    Registers := 22    
+	               10 Bit    Registers := 22    
 	                8 Bit    Registers := 2     
 	                2 Bit    Registers := 1     
-	                1 Bit    Registers := 9     
+	                1 Bit    Registers := 72    
 +---Muxes : 
-	   4 Input     32 Bit        Muxes := 1     
-	   2 Input     12 Bit        Muxes := 1     
+	   3 Input     32 Bit        Muxes := 1     
+	   2 Input     19 Bit        Muxes := 1     
+	   2 Input     12 Bit        Muxes := 3     
+	   2 Input     11 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 2     
 	   2 Input      4 Bit        Muxes := 3     
 Module display_8hex 
 Detailed RTL Component Info : 
@@ -456,6 +539,15 @@ Detailed RTL Component Info :
 	   2 Input      8 Bit        Muxes := 11    
 	   3 Input      8 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 6     
+Module camera_read 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   3 Input     16 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
 Module rgb2hsv__xdcDup__2 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -470,7 +562,7 @@ Detailed RTL Component Info :
 	   2 Input      8 Bit        Muxes := 11    
 	   3 Input      8 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 6     
-Module rgb2hsv__xdcDup__3 
+Module rgb2hsv 
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     16 Bit       Adders := 1     
@@ -491,40 +583,117 @@ Detailed RTL Component Info :
 	   3 Input     10 Bit       Adders := 1     
 	   3 Input      6 Bit       Adders := 2     
 +---Registers : 
-	               32 Bit    Registers := 6     
+	               32 Bit    Registers := 3     
 	               12 Bit    Registers := 1     
-+---Multipliers : 
-	                 3x32  Multipliers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module box 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     12 Bit       Adders := 2     
+	   3 Input     11 Bit       Adders := 4     
+	   2 Input     11 Bit       Adders := 2     
+	   2 Input     10 Bit       Adders := 2     
+	   3 Input     10 Bit       Adders := 2     
+	   2 Input      7 Bit       Adders := 1     
 +---Muxes : 
 	   2 Input     12 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 1     
-Module rgb2hsv 
+Module box__parameterized0 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     16 Bit       Adders := 1     
-	   3 Input      8 Bit       Adders := 3     
-+---Registers : 
-	               19 Bit    Registers := 1     
-	               16 Bit    Registers := 2     
-	                8 Bit    Registers := 55    
+	   3 Input     12 Bit       Adders := 2     
+	   3 Input     11 Bit       Adders := 4     
+	   2 Input     11 Bit       Adders := 2     
+	   2 Input     10 Bit       Adders := 2     
+	   3 Input     10 Bit       Adders := 2     
+	   2 Input      7 Bit       Adders := 1     
 +---Muxes : 
-	   2 Input     16 Bit        Muxes := 6     
-	   2 Input      8 Bit        Muxes := 11    
-	   3 Input      8 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 6     
-Module camera_read 
+	   3 Input     12 Bit        Muxes := 1     
+Module cursor 
 Detailed RTL Component Info : 
-+---Registers : 
-	               16 Bit    Registers := 1     
-	                1 Bit    Registers := 3     
 +---Muxes : 
-	   3 Input     16 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 5     
-Module pong_game 
+	   2 Input     12 Bit        Muxes := 1     
+Module colorpad 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     12 Bit        Muxes := 1     
+Module blob 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input      3 Bit       Adders := 1     
+	   3 Input     12 Bit       Adders := 1     
+	   3 Input     11 Bit       Adders := 1     
+	   2 Input     11 Bit       Adders := 1     
+	   2 Input     10 Bit       Adders := 1     
+Module speed_bar 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     12 Bit       Adders := 1     
+	   2 Input     10 Bit       Adders := 2     
+	   2 Input      8 Bit       Adders := 2     
++---Muxes : 
+	   2 Input     12 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 2     
+Module initialize 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 4     
+	   3 Input     13 Bit       Adders := 1     
+	   2 Input     12 Bit       Adders := 4     
+	   3 Input     12 Bit       Adders := 1     
+	   2 Input     11 Bit       Adders := 2     
+	   2 Input     10 Bit       Adders := 2     
+	   2 Input      8 Bit       Adders := 3     
++---Registers : 
+	               12 Bit    Registers := 3     
+	               11 Bit    Registers := 1     
+	               10 Bit    Registers := 1     
+	                8 Bit    Registers := 3     
+	                7 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input     12 Bit        Muxes := 4     
+	   4 Input     12 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 4     
+	   2 Input     10 Bit        Muxes := 5     
+	   2 Input      9 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 10    
+	   4 Input      1 Bit        Muxes := 4     
+Module threshold_by_abs 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     16 Bit       Adders := 2     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 3     
+Module control 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input      9 Bit       Adders := 3     
+	   2 Input      9 Bit       Adders := 1     
++---Registers : 
+	                9 Bit    Registers := 4     
+	                7 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     15 Bit        Muxes := 4     
+	   2 Input      9 Bit        Muxes := 4     
+Module pwm 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 1     
+Module motor_out 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 1     
+	   3 Input     10 Bit       Adders := 1     
+	   2 Input      9 Bit       Adders := 2     
++---Muxes : 
+	   2 Input      9 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 2     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -541,225 +710,263 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-INFO: [Synth 8-4471] merging register 'delta_reg[7:0]' into 'delta_reg[7:0]' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:99]
-INFO: [Synth 8-4471] merging register 'delta_reg[7:0]' into 'delta_reg[7:0]' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:99]
-DSP Report: Generating DSP h_top_reg, operation Mode is: (A*(B:0xff))'.
-DSP Report: register h_top_reg is absorbed into DSP h_top_reg.
-DSP Report: operator h_top0 is absorbed into DSP h_top_reg.
-INFO: [Synth 8-4471] merging register 'delta_reg[7:0]' into 'delta_reg[7:0]' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:99]
-INFO: [Synth 8-4471] merging register 'delta_reg[7:0]' into 'delta_reg[7:0]' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:99]
-DSP Report: Generating DSP h_top_reg, operation Mode is: (A*(B:0xff))'.
-DSP Report: register h_top_reg is absorbed into DSP h_top_reg.
-DSP Report: operator h_top0 is absorbed into DSP h_top_reg.
-INFO: [Synth 8-4471] merging register 'delta_reg[7:0]' into 'delta_reg[7:0]' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:99]
-INFO: [Synth 8-4471] merging register 'delta_reg[7:0]' into 'delta_reg[7:0]' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:99]
-DSP Report: Generating DSP h_top_reg, operation Mode is: (A*(B:0xff))'.
-DSP Report: register h_top_reg is absorbed into DSP h_top_reg.
-DSP Report: operator h_top0 is absorbed into DSP h_top_reg.
-INFO: [Synth 8-4471] merging register 'xx/delta_reg[7:0]' into 'xx/delta_reg[7:0]' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:99]
-INFO: [Synth 8-4471] merging register 'xx/delta_reg[7:0]' into 'xx/delta_reg[7:0]' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.v:99]
+INFO: [Synth 8-4471] merging register 'xx/delta_reg[7:0]' into 'xx/delta_reg[7:0]' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv:80]
+INFO: [Synth 8-4471] merging register 'xx/delta_reg[7:0]' into 'xx/delta_reg[7:0]' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv:80]
 DSP Report: Generating DSP xx/h_top_reg, operation Mode is: (A*(B:0xff))'.
 DSP Report: register xx/h_top_reg is absorbed into DSP xx/h_top_reg.
 DSP Report: operator h_top0 is absorbed into DSP xx/h_top_reg.
-DSP Report: Generating DSP pixel_addr_out, operation Mode is: C+A*(B:0x140).
-DSP Report: operator pixel_addr_out is absorbed into DSP pixel_addr_out.
-DSP Report: operator pixel_addr_out0 is absorbed into DSP pixel_addr_out.
-WARNING: [Synth 8-3331] design rgb2hsv__xdcDup__3 has unconnected port reset
+INFO: [Synth 8-4471] merging register 'delta_reg[7:0]' into 'delta_reg[7:0]' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv:80]
+INFO: [Synth 8-4471] merging register 'delta_reg[7:0]' into 'delta_reg[7:0]' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv:80]
+DSP Report: Generating DSP h_top_reg, operation Mode is: (A*(B:0xff))'.
+DSP Report: register h_top_reg is absorbed into DSP h_top_reg.
+DSP Report: operator h_top0 is absorbed into DSP h_top_reg.
+INFO: [Synth 8-4471] merging register 'delta_reg[7:0]' into 'delta_reg[7:0]' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv:80]
+INFO: [Synth 8-4471] merging register 'delta_reg[7:0]' into 'delta_reg[7:0]' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/rgb2hsv.sv:80]
+DSP Report: Generating DSP h_top_reg, operation Mode is: (A*(B:0xff))'.
+DSP Report: register h_top_reg is absorbed into DSP h_top_reg.
+DSP Report: operator h_top0 is absorbed into DSP h_top_reg.
+INFO: [Synth 8-4471] merging register 'e_dx_reg[8:0]' into 'e_dx_reg[8:0]' [C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.srcs/sources_1/new/control.sv:116]
+WARNING: [Synth 8-3917] design track_init_control has port dp driven by constant 1
+WARNING: [Synth 8-3331] design motor_out has unconnected port turn_in[0]
+WARNING: [Synth 8-3331] design control has unconnected port cur_pos_y[8]
+WARNING: [Synth 8-3331] design control has unconnected port cur_pos_y[7]
+WARNING: [Synth 8-3331] design control has unconnected port cur_pos_y[6]
+WARNING: [Synth 8-3331] design control has unconnected port cur_pos_y[5]
+WARNING: [Synth 8-3331] design control has unconnected port cur_pos_y[4]
+WARNING: [Synth 8-3331] design control has unconnected port cur_pos_y[3]
+WARNING: [Synth 8-3331] design control has unconnected port cur_pos_y[2]
+WARNING: [Synth 8-3331] design control has unconnected port cur_pos_y[1]
+WARNING: [Synth 8-3331] design control has unconnected port cur_pos_y[0]
+WARNING: [Synth 8-3331] design rgb2hsv has unconnected port reset
 WARNING: [Synth 8-3331] design rgb2hsv__xdcDup__2 has unconnected port reset
 WARNING: [Synth 8-3331] design tracker has unconnected port sw[15]
 WARNING: [Synth 8-3331] design tracker has unconnected port sw[14]
 WARNING: [Synth 8-3331] design tracker has unconnected port sw[13]
-WARNING: [Synth 8-3331] design rgb2hsv__xdcDup__1 has unconnected port reset
-WARNING: [Synth 8-3331] design top_level has unconnected port led[15]
-WARNING: [Synth 8-3331] design top_level has unconnected port led[14]
-WARNING: [Synth 8-3331] design top_level has unconnected port led[13]
-WARNING: [Synth 8-3331] design top_level has unconnected port led[12]
-WARNING: [Synth 8-3331] design top_level has unconnected port led[11]
-WARNING: [Synth 8-3331] design top_level has unconnected port led[10]
-WARNING: [Synth 8-3331] design top_level has unconnected port led[9]
-WARNING: [Synth 8-3331] design top_level has unconnected port led[8]
-WARNING: [Synth 8-3331] design top_level has unconnected port led[7]
-WARNING: [Synth 8-3331] design top_level has unconnected port led[6]
-WARNING: [Synth 8-3331] design top_level has unconnected port led[5]
-WARNING: [Synth 8-3331] design top_level has unconnected port led[4]
-WARNING: [Synth 8-3331] design top_level has unconnected port led[3]
-WARNING: [Synth 8-3331] design top_level has unconnected port led[2]
-WARNING: [Synth 8-3331] design top_level has unconnected port led[1]
-WARNING: [Synth 8-3331] design top_level has unconnected port led[0]
-WARNING: [Synth 8-3331] design top_level has unconnected port dp
-WARNING: [Synth 8-3331] design top_level has unconnected port jd[2]
-WARNING: [Synth 8-3331] design top_level has unconnected port jd[1]
-WARNING: [Synth 8-3331] design top_level has unconnected port jd[0]
-INFO: [Synth 8-3886] merging instance 'numbeer1/x/h_add_reg[0][0]' (FDE) to 'numbeer1/x/h_add_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/x/h_add_reg[0][1]' (FDE) to 'numbeer1/x/h_add_reg[0][3]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/x/h_add_reg[0][2]' (FDE) to 'numbeer1/x/h_add_reg[0][4]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/x/h_add_reg[0][3]' (FDE) to 'numbeer1/x/h_add_reg[0][5]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/x/h_add_reg[0][4]' (FDE) to 'numbeer1/x/h_add_reg[0][6]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/x/h_add_reg[0][5]' (FDE) to 'numbeer1/x/h_add_reg[0][7]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/goal_px/h_add_reg[0][0]' (FDE) to 'numbeer1/goal_px/h_add_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/goal_px/h_add_reg[0][1]' (FDE) to 'numbeer1/goal_px/h_add_reg[0][3]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/goal_px/h_add_reg[0][2]' (FDE) to 'numbeer1/goal_px/h_add_reg[0][4]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/goal_px/h_add_reg[0][3]' (FDE) to 'numbeer1/goal_px/h_add_reg[0][5]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/goal_px/h_add_reg[0][4]' (FDE) to 'numbeer1/goal_px/h_add_reg[0][6]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/goal_px/h_add_reg[0][5]' (FDE) to 'numbeer1/goal_px/h_add_reg[0][7]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/x/h_add_reg[1][0]' (FD) to 'numbeer1/x/h_add_reg[1][4]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/x/h_add_reg[1][1]' (FD) to 'numbeer1/x/h_add_reg[1][5]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/x/h_add_reg[1][2]' (FD) to 'numbeer1/x/h_add_reg[1][4]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/x/h_add_reg[1][3]' (FD) to 'numbeer1/x/h_add_reg[1][5]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/x/h_add_reg[1][4]' (FD) to 'numbeer1/x/h_add_reg[1][6]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/x/h_add_reg[1][5]' (FD) to 'numbeer1/x/h_add_reg[1][7]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/goal_px/h_add_reg[1][0]' (FD) to 'numbeer1/goal_px/h_add_reg[1][4]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/goal_px/h_add_reg[1][1]' (FD) to 'numbeer1/goal_px/h_add_reg[1][5]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/goal_px/h_add_reg[1][2]' (FD) to 'numbeer1/goal_px/h_add_reg[1][4]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/goal_px/h_add_reg[1][3]' (FD) to 'numbeer1/goal_px/h_add_reg[1][5]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/goal_px/h_add_reg[1][4]' (FD) to 'numbeer1/goal_px/h_add_reg[1][6]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/goal_px/h_add_reg[1][5]' (FD) to 'numbeer1/goal_px/h_add_reg[1][7]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/x/h_add_reg[2][0]' (FD) to 'numbeer1/x/h_add_reg[2][4]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/x/h_add_reg[2][1]' (FD) to 'numbeer1/x/h_add_reg[2][5]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/x/h_add_reg[2][2]' (FD) to 'numbeer1/x/h_add_reg[2][4]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/x/h_add_reg[2][3]' (FD) to 'numbeer1/x/h_add_reg[2][5]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/x/h_add_reg[2][4]' (FD) to 'numbeer1/x/h_add_reg[2][6]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/x/h_add_reg[2][5]' (FD) to 'numbeer1/x/h_add_reg[2][7]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/goal_px/h_add_reg[2][0]' (FD) to 'numbeer1/goal_px/h_add_reg[2][4]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/goal_px/h_add_reg[2][1]' (FD) to 'numbeer1/goal_px/h_add_reg[2][5]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/goal_px/h_add_reg[2][2]' (FD) to 'numbeer1/goal_px/h_add_reg[2][4]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/goal_px/h_add_reg[2][3]' (FD) to 'numbeer1/goal_px/h_add_reg[2][5]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/goal_px/h_add_reg[2][4]' (FD) to 'numbeer1/goal_px/h_add_reg[2][6]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/goal_px/h_add_reg[2][5]' (FD) to 'numbeer1/goal_px/h_add_reg[2][7]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/x/h_add_reg[3][0]' (FD) to 'numbeer1/x/h_add_reg[3][4]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/x/h_add_reg[3][1]' (FD) to 'numbeer1/x/h_add_reg[3][5]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/x/h_add_reg[3][2]' (FD) to 'numbeer1/x/h_add_reg[3][4]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/x/h_add_reg[3][3]' (FD) to 'numbeer1/x/h_add_reg[3][5]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/x/h_add_reg[3][4]' (FD) to 'numbeer1/x/h_add_reg[3][6]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/x/h_add_reg[3][5]' (FD) to 'numbeer1/x/h_add_reg[3][7]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/goal_px/h_add_reg[3][0]' (FD) to 'numbeer1/goal_px/h_add_reg[3][4]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/goal_px/h_add_reg[3][1]' (FD) to 'numbeer1/goal_px/h_add_reg[3][5]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/goal_px/h_add_reg[3][2]' (FD) to 'numbeer1/goal_px/h_add_reg[3][4]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/goal_px/h_add_reg[3][3]' (FD) to 'numbeer1/goal_px/h_add_reg[3][5]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/goal_px/h_add_reg[3][4]' (FD) to 'numbeer1/goal_px/h_add_reg[3][6]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/goal_px/h_add_reg[3][5]' (FD) to 'numbeer1/goal_px/h_add_reg[3][7]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/x/h_add_reg[4][0]' (FD) to 'numbeer1/x/h_add_reg[4][4]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/x/h_add_reg[4][1]' (FD) to 'numbeer1/x/h_add_reg[4][5]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/x/h_add_reg[4][2]' (FD) to 'numbeer1/x/h_add_reg[4][4]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/x/h_add_reg[4][3]' (FD) to 'numbeer1/x/h_add_reg[4][5]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/x/h_add_reg[4][4]' (FD) to 'numbeer1/x/h_add_reg[4][6]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/x/h_add_reg[4][5]' (FD) to 'numbeer1/x/h_add_reg[4][7]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/goal_px/h_add_reg[4][0]' (FD) to 'numbeer1/goal_px/h_add_reg[4][4]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/goal_px/h_add_reg[4][1]' (FD) to 'numbeer1/goal_px/h_add_reg[4][5]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/goal_px/h_add_reg[4][2]' (FD) to 'numbeer1/goal_px/h_add_reg[4][4]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/goal_px/h_add_reg[4][3]' (FD) to 'numbeer1/goal_px/h_add_reg[4][5]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/goal_px/h_add_reg[4][4]' (FD) to 'numbeer1/goal_px/h_add_reg[4][6]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/goal_px/h_add_reg[4][5]' (FD) to 'numbeer1/goal_px/h_add_reg[4][7]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/x/h_add_reg[5][0]' (FD) to 'numbeer1/x/h_add_reg[5][4]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/x/h_add_reg[5][1]' (FD) to 'numbeer1/x/h_add_reg[5][5]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/x/h_add_reg[5][2]' (FD) to 'numbeer1/x/h_add_reg[5][4]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/x/h_add_reg[5][3]' (FD) to 'numbeer1/x/h_add_reg[5][5]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/x/h_add_reg[5][4]' (FD) to 'numbeer1/x/h_add_reg[5][6]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/x/h_add_reg[5][5]' (FD) to 'numbeer1/x/h_add_reg[5][7]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/goal_px/h_add_reg[5][0]' (FD) to 'numbeer1/goal_px/h_add_reg[5][4]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/goal_px/h_add_reg[5][1]' (FD) to 'numbeer1/goal_px/h_add_reg[5][5]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/goal_px/h_add_reg[5][2]' (FD) to 'numbeer1/goal_px/h_add_reg[5][4]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/goal_px/h_add_reg[5][3]' (FD) to 'numbeer1/goal_px/h_add_reg[5][5]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/goal_px/h_add_reg[5][4]' (FD) to 'numbeer1/goal_px/h_add_reg[5][6]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/goal_px/h_add_reg[5][5]' (FD) to 'numbeer1/goal_px/h_add_reg[5][7]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/x/h_add_reg[6][0]' (FD) to 'numbeer1/x/h_add_reg[6][4]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/x/h_add_reg[6][1]' (FD) to 'numbeer1/x/h_add_reg[6][5]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/x/h_add_reg[6][2]' (FD) to 'numbeer1/x/h_add_reg[6][4]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/x/h_add_reg[6][3]' (FD) to 'numbeer1/x/h_add_reg[6][5]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/x/h_add_reg[6][4]' (FD) to 'numbeer1/x/h_add_reg[6][6]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/x/h_add_reg[6][5]' (FD) to 'numbeer1/x/h_add_reg[6][7]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/goal_px/h_add_reg[6][0]' (FD) to 'numbeer1/goal_px/h_add_reg[6][4]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/goal_px/h_add_reg[6][1]' (FD) to 'numbeer1/goal_px/h_add_reg[6][5]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/goal_px/h_add_reg[6][2]' (FD) to 'numbeer1/goal_px/h_add_reg[6][4]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/goal_px/h_add_reg[6][3]' (FD) to 'numbeer1/goal_px/h_add_reg[6][5]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/goal_px/h_add_reg[6][4]' (FD) to 'numbeer1/goal_px/h_add_reg[6][6]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/goal_px/h_add_reg[6][5]' (FD) to 'numbeer1/goal_px/h_add_reg[6][7]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/x/h_add_reg[7][0]' (FD) to 'numbeer1/x/h_add_reg[7][4]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/x/h_add_reg[7][1]' (FD) to 'numbeer1/x/h_add_reg[7][5]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/x/h_add_reg[7][2]' (FD) to 'numbeer1/x/h_add_reg[7][4]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/x/h_add_reg[7][3]' (FD) to 'numbeer1/x/h_add_reg[7][5]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/x/h_add_reg[7][4]' (FD) to 'numbeer1/x/h_add_reg[7][6]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/x/h_add_reg[7][5]' (FD) to 'numbeer1/x/h_add_reg[7][7]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/goal_px/h_add_reg[7][0]' (FD) to 'numbeer1/goal_px/h_add_reg[7][4]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/goal_px/h_add_reg[7][1]' (FD) to 'numbeer1/goal_px/h_add_reg[7][5]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/goal_px/h_add_reg[7][2]' (FD) to 'numbeer1/goal_px/h_add_reg[7][4]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/goal_px/h_add_reg[7][3]' (FD) to 'numbeer1/goal_px/h_add_reg[7][5]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/goal_px/h_add_reg[7][4]' (FD) to 'numbeer1/goal_px/h_add_reg[7][6]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/goal_px/h_add_reg[7][5]' (FD) to 'numbeer1/goal_px/h_add_reg[7][7]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/x/h_add_reg[8][0]' (FD) to 'numbeer1/x/h_add_reg[8][4]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/x/h_add_reg[8][1]' (FD) to 'numbeer1/x/h_add_reg[8][5]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/x/h_add_reg[8][2]' (FD) to 'numbeer1/x/h_add_reg[8][4]'
-INFO: [Synth 8-3886] merging instance 'numbeer1/x/h_add_reg[8][3]' (FD) to 'numbeer1/x/h_add_reg[8][5]'
+WARNING: [Synth 8-3331] design tracker has unconnected port sw[11]
+WARNING: [Synth 8-3331] design tracker has unconnected port sw[10]
+WARNING: [Synth 8-3331] design tracker has unconnected port sw[9]
+WARNING: [Synth 8-3331] design tracker has unconnected port sw[8]
+WARNING: [Synth 8-3331] design tracker has unconnected port sw[7]
+WARNING: [Synth 8-3331] design tracker has unconnected port sw[6]
+WARNING: [Synth 8-3331] design tracker has unconnected port sw[5]
+WARNING: [Synth 8-3331] design tracker has unconnected port sw[4]
+WARNING: [Synth 8-3331] design tracker has unconnected port sw[3]
+WARNING: [Synth 8-3331] design tracker has unconnected port sw[2]
+WARNING: [Synth 8-3331] design tracker has unconnected port sw[1]
+WARNING: [Synth 8-3331] design tracker has unconnected port sw[0]
+WARNING: [Synth 8-3331] design track_init_control has unconnected port led16_b
+WARNING: [Synth 8-3331] design track_init_control has unconnected port led16_g
+WARNING: [Synth 8-3331] design track_init_control has unconnected port led16_r
+WARNING: [Synth 8-3331] design track_init_control has unconnected port led17_b
+WARNING: [Synth 8-3331] design track_init_control has unconnected port led17_g
+WARNING: [Synth 8-3331] design track_init_control has unconnected port led17_r
+WARNING: [Synth 8-3331] design track_init_control has unconnected port jd[2]
+WARNING: [Synth 8-3331] design track_init_control has unconnected port jd[1]
+WARNING: [Synth 8-3331] design track_init_control has unconnected port jd[0]
+INFO: [Synth 8-3886] merging instance 'my_tracker/x/h_add_reg[0][0]' (FDE) to 'my_tracker/x/h_add_reg[0][2]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/x/h_add_reg[0][1]' (FDE) to 'my_tracker/x/h_add_reg[0][3]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/x/h_add_reg[0][2]' (FDE) to 'my_tracker/x/h_add_reg[0][4]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/x/h_add_reg[0][3]' (FDE) to 'my_tracker/x/h_add_reg[0][5]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/x/h_add_reg[0][4]' (FDE) to 'my_tracker/x/h_add_reg[0][6]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/x/h_add_reg[0][5]' (FDE) to 'my_tracker/x/h_add_reg[0][7]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/goal_px/h_add_reg[0][0]' (FDE) to 'my_tracker/goal_px/h_add_reg[0][2]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/goal_px/h_add_reg[0][1]' (FDE) to 'my_tracker/goal_px/h_add_reg[0][3]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/goal_px/h_add_reg[0][2]' (FDE) to 'my_tracker/goal_px/h_add_reg[0][4]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/goal_px/h_add_reg[0][3]' (FDE) to 'my_tracker/goal_px/h_add_reg[0][5]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/goal_px/h_add_reg[0][4]' (FDE) to 'my_tracker/goal_px/h_add_reg[0][6]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/goal_px/h_add_reg[0][5]' (FDE) to 'my_tracker/goal_px/h_add_reg[0][7]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/x/h_add_reg[1][0]' (FD) to 'my_tracker/x/h_add_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/x/h_add_reg[1][1]' (FD) to 'my_tracker/x/h_add_reg[1][5]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/x/h_add_reg[1][2]' (FD) to 'my_tracker/x/h_add_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/x/h_add_reg[1][3]' (FD) to 'my_tracker/x/h_add_reg[1][5]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/x/h_add_reg[1][4]' (FD) to 'my_tracker/x/h_add_reg[1][6]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/x/h_add_reg[1][5]' (FD) to 'my_tracker/x/h_add_reg[1][7]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/goal_px/h_add_reg[1][0]' (FD) to 'my_tracker/goal_px/h_add_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/goal_px/h_add_reg[1][1]' (FD) to 'my_tracker/goal_px/h_add_reg[1][5]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/goal_px/h_add_reg[1][2]' (FD) to 'my_tracker/goal_px/h_add_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/goal_px/h_add_reg[1][3]' (FD) to 'my_tracker/goal_px/h_add_reg[1][5]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/goal_px/h_add_reg[1][4]' (FD) to 'my_tracker/goal_px/h_add_reg[1][6]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/goal_px/h_add_reg[1][5]' (FD) to 'my_tracker/goal_px/h_add_reg[1][7]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/x/h_add_reg[2][0]' (FD) to 'my_tracker/x/h_add_reg[2][4]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/x/h_add_reg[2][1]' (FD) to 'my_tracker/x/h_add_reg[2][5]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/x/h_add_reg[2][2]' (FD) to 'my_tracker/x/h_add_reg[2][4]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/x/h_add_reg[2][3]' (FD) to 'my_tracker/x/h_add_reg[2][5]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/x/h_add_reg[2][4]' (FD) to 'my_tracker/x/h_add_reg[2][6]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/x/h_add_reg[2][5]' (FD) to 'my_tracker/x/h_add_reg[2][7]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/goal_px/h_add_reg[2][0]' (FD) to 'my_tracker/goal_px/h_add_reg[2][4]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/goal_px/h_add_reg[2][1]' (FD) to 'my_tracker/goal_px/h_add_reg[2][5]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/goal_px/h_add_reg[2][2]' (FD) to 'my_tracker/goal_px/h_add_reg[2][4]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/goal_px/h_add_reg[2][3]' (FD) to 'my_tracker/goal_px/h_add_reg[2][5]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/goal_px/h_add_reg[2][4]' (FD) to 'my_tracker/goal_px/h_add_reg[2][6]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/goal_px/h_add_reg[2][5]' (FD) to 'my_tracker/goal_px/h_add_reg[2][7]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/x/h_add_reg[3][0]' (FD) to 'my_tracker/x/h_add_reg[3][4]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/x/h_add_reg[3][1]' (FD) to 'my_tracker/x/h_add_reg[3][5]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/x/h_add_reg[3][2]' (FD) to 'my_tracker/x/h_add_reg[3][4]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/x/h_add_reg[3][3]' (FD) to 'my_tracker/x/h_add_reg[3][5]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/x/h_add_reg[3][4]' (FD) to 'my_tracker/x/h_add_reg[3][6]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/x/h_add_reg[3][5]' (FD) to 'my_tracker/x/h_add_reg[3][7]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/goal_px/h_add_reg[3][0]' (FD) to 'my_tracker/goal_px/h_add_reg[3][4]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/goal_px/h_add_reg[3][1]' (FD) to 'my_tracker/goal_px/h_add_reg[3][5]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/goal_px/h_add_reg[3][2]' (FD) to 'my_tracker/goal_px/h_add_reg[3][4]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/goal_px/h_add_reg[3][3]' (FD) to 'my_tracker/goal_px/h_add_reg[3][5]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/goal_px/h_add_reg[3][4]' (FD) to 'my_tracker/goal_px/h_add_reg[3][6]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/goal_px/h_add_reg[3][5]' (FD) to 'my_tracker/goal_px/h_add_reg[3][7]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/x/h_add_reg[4][0]' (FD) to 'my_tracker/x/h_add_reg[4][4]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/x/h_add_reg[4][1]' (FD) to 'my_tracker/x/h_add_reg[4][5]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/x/h_add_reg[4][2]' (FD) to 'my_tracker/x/h_add_reg[4][4]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/x/h_add_reg[4][3]' (FD) to 'my_tracker/x/h_add_reg[4][5]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/x/h_add_reg[4][4]' (FD) to 'my_tracker/x/h_add_reg[4][6]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/x/h_add_reg[4][5]' (FD) to 'my_tracker/x/h_add_reg[4][7]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/goal_px/h_add_reg[4][0]' (FD) to 'my_tracker/goal_px/h_add_reg[4][4]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/goal_px/h_add_reg[4][1]' (FD) to 'my_tracker/goal_px/h_add_reg[4][5]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/goal_px/h_add_reg[4][2]' (FD) to 'my_tracker/goal_px/h_add_reg[4][4]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/goal_px/h_add_reg[4][3]' (FD) to 'my_tracker/goal_px/h_add_reg[4][5]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/goal_px/h_add_reg[4][4]' (FD) to 'my_tracker/goal_px/h_add_reg[4][6]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/goal_px/h_add_reg[4][5]' (FD) to 'my_tracker/goal_px/h_add_reg[4][7]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/x/h_add_reg[5][0]' (FD) to 'my_tracker/x/h_add_reg[5][4]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/x/h_add_reg[5][1]' (FD) to 'my_tracker/x/h_add_reg[5][5]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/x/h_add_reg[5][2]' (FD) to 'my_tracker/x/h_add_reg[5][4]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/x/h_add_reg[5][3]' (FD) to 'my_tracker/x/h_add_reg[5][5]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/x/h_add_reg[5][4]' (FD) to 'my_tracker/x/h_add_reg[5][6]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/x/h_add_reg[5][5]' (FD) to 'my_tracker/x/h_add_reg[5][7]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/goal_px/h_add_reg[5][0]' (FD) to 'my_tracker/goal_px/h_add_reg[5][4]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/goal_px/h_add_reg[5][1]' (FD) to 'my_tracker/goal_px/h_add_reg[5][5]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/goal_px/h_add_reg[5][2]' (FD) to 'my_tracker/goal_px/h_add_reg[5][4]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/goal_px/h_add_reg[5][3]' (FD) to 'my_tracker/goal_px/h_add_reg[5][5]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/goal_px/h_add_reg[5][4]' (FD) to 'my_tracker/goal_px/h_add_reg[5][6]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/goal_px/h_add_reg[5][5]' (FD) to 'my_tracker/goal_px/h_add_reg[5][7]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/x/h_add_reg[6][0]' (FD) to 'my_tracker/x/h_add_reg[6][4]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/x/h_add_reg[6][1]' (FD) to 'my_tracker/x/h_add_reg[6][5]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/x/h_add_reg[6][2]' (FD) to 'my_tracker/x/h_add_reg[6][4]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/x/h_add_reg[6][3]' (FD) to 'my_tracker/x/h_add_reg[6][5]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/x/h_add_reg[6][4]' (FD) to 'my_tracker/x/h_add_reg[6][6]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/x/h_add_reg[6][5]' (FD) to 'my_tracker/x/h_add_reg[6][7]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/goal_px/h_add_reg[6][0]' (FD) to 'my_tracker/goal_px/h_add_reg[6][4]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/goal_px/h_add_reg[6][1]' (FD) to 'my_tracker/goal_px/h_add_reg[6][5]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/goal_px/h_add_reg[6][2]' (FD) to 'my_tracker/goal_px/h_add_reg[6][4]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/goal_px/h_add_reg[6][3]' (FD) to 'my_tracker/goal_px/h_add_reg[6][5]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/goal_px/h_add_reg[6][4]' (FD) to 'my_tracker/goal_px/h_add_reg[6][6]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/goal_px/h_add_reg[6][5]' (FD) to 'my_tracker/goal_px/h_add_reg[6][7]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/x/h_add_reg[7][0]' (FD) to 'my_tracker/x/h_add_reg[7][4]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/x/h_add_reg[7][1]' (FD) to 'my_tracker/x/h_add_reg[7][5]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/x/h_add_reg[7][2]' (FD) to 'my_tracker/x/h_add_reg[7][4]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/x/h_add_reg[7][3]' (FD) to 'my_tracker/x/h_add_reg[7][5]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/x/h_add_reg[7][4]' (FD) to 'my_tracker/x/h_add_reg[7][6]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/x/h_add_reg[7][5]' (FD) to 'my_tracker/x/h_add_reg[7][7]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/goal_px/h_add_reg[7][0]' (FD) to 'my_tracker/goal_px/h_add_reg[7][4]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/goal_px/h_add_reg[7][1]' (FD) to 'my_tracker/goal_px/h_add_reg[7][5]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/goal_px/h_add_reg[7][2]' (FD) to 'my_tracker/goal_px/h_add_reg[7][4]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/goal_px/h_add_reg[7][3]' (FD) to 'my_tracker/goal_px/h_add_reg[7][5]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/goal_px/h_add_reg[7][4]' (FD) to 'my_tracker/goal_px/h_add_reg[7][6]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/goal_px/h_add_reg[7][5]' (FD) to 'my_tracker/goal_px/h_add_reg[7][7]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/x/h_add_reg[8][0]' (FD) to 'my_tracker/x/h_add_reg[8][4]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/x/h_add_reg[8][1]' (FD) to 'my_tracker/x/h_add_reg[8][5]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/x/h_add_reg[8][2]' (FD) to 'my_tracker/x/h_add_reg[8][4]'
+INFO: [Synth 8-3886] merging instance 'my_tracker/x/h_add_reg[8][3]' (FD) to 'my_tracker/x/h_add_reg[8][5]'
 INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\x/my_r_reg[1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\x/my_g_reg[1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\x/my_b_reg[1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\x/my_r_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\x/my_g_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\x/my_b_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\x/my_g_reg[2] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\x/my_g_reg[3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\x/my_b_reg[2] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\x/my_r_reg[2] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\x/my_b_reg[3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\x/my_r_reg[3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\goal_px/my_r_reg[1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\goal_px/my_g_reg[1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\goal_px/my_b_reg[1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\goal_px/my_r_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\goal_px/my_g_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\goal_px/my_b_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\goal_px/my_g_reg[2] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\goal_px/my_g_reg[3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\goal_px/my_b_reg[2] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\goal_px/my_r_reg[2] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\goal_px/my_b_reg[3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\goal_px/my_r_reg[3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\x/h_bottom_reg[15] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\goal_px/h_bottom_reg[15] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\x/s_bottom_reg[8] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\x/s_bottom_reg[9] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\x/s_bottom_reg[10] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\x/s_bottom_reg[11] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\x/s_bottom_reg[12] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\x/s_bottom_reg[13] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\x/s_bottom_reg[14] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\x/s_bottom_reg[15] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\goal_px/s_bottom_reg[8] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\goal_px/s_bottom_reg[9] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\goal_px/s_bottom_reg[10] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\goal_px/s_bottom_reg[11] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\goal_px/s_bottom_reg[12] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\goal_px/s_bottom_reg[13] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\goal_px/s_bottom_reg[14] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\goal_px/s_bottom_reg[15] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\goal_px/max_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\goal_px/max_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\goal_px/v_delay_reg[1][3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\goal_px/v_delay_reg[1][3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\goal_px/v_delay_reg[1][3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\goal_px/v_delay_reg[1][3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\goal_px/v_delay_reg[1][3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\goal_px/v_delay_reg[1][3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\goal_px/v_delay_reg[1][3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\goal_px/v_delay_reg[1][3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\goal_px/v_delay_reg[1][3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\goal_px/v_delay_reg[1][3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\goal_px/v_delay_reg[1][3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\goal_px/v_delay_reg[1][3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\goal_px/v_delay_reg[1][3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\goal_px/v_delay_reg[1][3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\goal_px/v_delay_reg[1][3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\goal_px/v_delay_reg[1][3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\goal_px/v_delay_reg[1][3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\goal_px/v_delay_reg[1][3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\goal_px/v_delay_reg[1][3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\goal_px/v_delay_reg[1][3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\goal_px/delta_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\goal_px/delta_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (numbeer1/\goal_px/s_top_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/\goal_px/my_r_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/\x/h_bottom_reg[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/\goal_px/h_bottom_reg[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/\goal_px/s_bottom_reg[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/\goal_px/max_reg[0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (initializer/\selected_buff_reg[4] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (initializer/\selected_buff_reg[5] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (initializer/\selected_buff_reg[6] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (initializer/\selected_buff_reg[7] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (initializer/\selected_buff_reg[8] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (initializer/\selected_buff_reg[9] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (initializer/\selected_buff_reg[10] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (initializer/\selected_buff_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/\goal_px/max_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/\goal_px/v_delay_reg[1][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/\goal_px/v_delay_reg[2][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/\goal_px/v_delay_reg[2][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/\goal_px/v_delay_reg[2][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/\goal_px/v_delay_reg[2][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/\goal_px/v_delay_reg[2][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/\goal_px/v_delay_reg[2][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/\goal_px/v_delay_reg[2][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/\goal_px/v_delay_reg[2][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/\goal_px/v_delay_reg[2][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/\goal_px/v_delay_reg[2][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/\goal_px/v_delay_reg[2][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/\goal_px/v_delay_reg[2][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/\goal_px/v_delay_reg[2][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/\goal_px/v_delay_reg[2][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/\goal_px/v_delay_reg[2][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/\goal_px/v_delay_reg[2][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/\goal_px/v_delay_reg[2][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/\goal_px/v_delay_reg[2][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/\goal_px/v_delay_reg[2][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/\goal_px/delta_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/\goal_px/delta_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/\goal_px/s_top_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/\goal_px/h_add_reg[0][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_x_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_x_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_x_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_x_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_x_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_x_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_x_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_x_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_x_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_x_reg[9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_x_reg[10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_x_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_x_reg[12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_x_reg[13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_x_reg[14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_x_reg[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_x_reg[16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_x_reg[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_x_reg[18] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_x_reg[19] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_x_reg[20] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_x_reg[21] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_x_reg[22] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_x_reg[23] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_x_reg[24] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_x_reg[25] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_x_reg[26] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_x_reg[27] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_x_reg[28] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_x_reg[29] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_x_reg[30] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_x_reg[31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_y_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_y_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_y_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_y_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_y_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_y_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_y_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_y_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_y_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_y_reg[9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_y_reg[10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_y_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_y_reg[12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_y_reg[13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_y_reg[14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_y_reg[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_y_reg[16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_y_reg[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_y_reg[18] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_y_reg[19] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_y_reg[20] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_y_reg[21] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_y_reg[22] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_y_reg[23] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_y_reg[24] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_y_reg[25] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_y_reg[26] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_y_reg[27] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_y_reg[28] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (my_tracker/i_13/\pos_y_reg[29] )
+INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 929.590 ; gain = 378.680
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 936.121 ; gain = 385.422
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -772,8 +979,6 @@ DSP: Preliminary Mapping  Report (see note below)
 |rgb2hsv     | (A*(B:0xff))' | 16     | 8      | -      | -      | 16     | 0    | 0    | -    | -    | -     | 1    | 0    | 
 |rgb2hsv     | (A*(B:0xff))' | 16     | 8      | -      | -      | 16     | 0    | 0    | -    | -    | -     | 1    | 0    | 
 |rgb2hsv     | (A*(B:0xff))' | 16     | 8      | -      | -      | 16     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|rgb2hsv     | (A*(B:0xff))' | 16     | 8      | -      | -      | 16     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|top_level   | C+A*(B:0x140) | 10     | 9      | 11     | -      | 17     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
 +------------+---------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 
 Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
@@ -790,13 +995,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 943.828 ; gain = 392.918
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:37 ; elapsed = 00:00:38 . Memory (MB): peak = 941.180 ; gain = 390.480
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 978.863 ; gain = 427.953
+Finished Timing Optimization : Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 966.063 ; gain = 415.363
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -808,7 +1013,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 992.949 ; gain = 442.039
+Finished Technology Mapping : Time (s): cpu = 00:00:38 ; elapsed = 00:00:40 . Memory (MB): peak = 974.086 ; gain = 423.387
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -832,7 +1037,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 1001.156 ; gain = 450.246
+Finished IO Insertion : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 979.332 ; gain = 428.633
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -845,7 +1050,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 1001.156 ; gain = 450.246
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 979.332 ; gain = 428.633
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -857,41 +1062,41 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 1001.156 ; gain = 450.246
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 979.332 ; gain = 428.633
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 1001.156 ; gain = 450.246
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 979.332 ; gain = 428.633
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 1001.156 ; gain = 450.246
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 979.332 ; gain = 428.633
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 1001.156 ; gain = 450.246
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 979.332 ; gain = 428.633
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 
 Static Shift Register Report:
-+------------+-------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
-|Module Name | RTL Name                            | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
-+------------+-------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
-|top_level   | numbeer1/x/h_add_reg[18][7]         | 18     | 2     | NO           | NO                 | YES               | 0      | 2       | 
-|top_level   | numbeer1/x/h_negative_reg[18]       | 18     | 1     | NO           | NO                 | YES               | 0      | 1       | 
-|top_level   | numbeer1/x/v_reg[7]                 | 20     | 4     | NO           | NO                 | YES               | 0      | 4       | 
-|top_level   | numbeer1/goal_px/h_add_reg[18][7]   | 18     | 2     | NO           | NO                 | YES               | 0      | 2       | 
-|top_level   | numbeer1/goal_px/h_negative_reg[18] | 18     | 1     | NO           | NO                 | YES               | 0      | 1       | 
-|top_level   | numbeer1/goal_px/v_reg[7]           | 20     | 4     | NO           | NO                 | YES               | 0      | 4       | 
-+------------+-------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
++-------------------+---------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name        | RTL Name                              | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++-------------------+---------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|track_init_control | my_tracker/x/h_add_reg[18][7]         | 18     | 2     | NO           | NO                 | YES               | 0      | 2       | 
+|track_init_control | my_tracker/x/h_negative_reg[18]       | 18     | 1     | NO           | NO                 | YES               | 0      | 1       | 
+|track_init_control | my_tracker/x/v_reg[7]                 | 20     | 4     | NO           | NO                 | YES               | 0      | 4       | 
+|track_init_control | my_tracker/goal_px/h_add_reg[18][7]   | 18     | 1     | NO           | NO                 | YES               | 0      | 1       | 
+|track_init_control | my_tracker/goal_px/h_negative_reg[18] | 18     | 1     | NO           | NO                 | YES               | 0      | 1       | 
+|track_init_control | my_tracker/goal_px/v_reg[7]           | 20     | 1     | NO           | NO                 | YES               | 0      | 1       | 
++-------------------+---------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
 
 ---------------------------------------------------------------------------------
 Finished ROM, RAM, DSP and Shift Register Reporting
@@ -905,7 +1110,7 @@ Report BlackBoxes:
 |      |BlackBox name |Instances |
 +------+--------------+----------+
 |1     |blk_mem_gen_0 |         1|
-|2     |div_16        |         8|
+|2     |div_16        |         6|
 |3     |sqrt          |         1|
 |4     |divider32     |         3|
 +------+--------------+----------+
@@ -917,72 +1122,77 @@ Report Cell Usage:
 |1     |blk_mem_gen_0 |     1|
 |2     |div_16        |     1|
 |3     |div_16__10    |     1|
-|4     |div_16__11    |     1|
-|5     |div_16__12    |     1|
-|6     |div_16__13    |     1|
-|7     |div_16__14    |     1|
-|8     |div_16__8     |     1|
-|9     |div_16__9     |     1|
-|10    |divider32     |     1|
-|11    |divider32__3  |     1|
-|12    |divider32__4  |     1|
-|13    |sqrt          |     1|
-|14    |BUFG          |     3|
-|15    |CARRY4        |   137|
-|16    |DSP48E1_2     |     4|
-|17    |DSP48E1_3     |     1|
-|18    |LUT1          |    35|
-|19    |LUT2          |   185|
-|20    |LUT3          |    79|
-|21    |LUT4          |   271|
-|22    |LUT5          |    60|
-|23    |LUT6          |   163|
-|24    |MMCME2_ADV    |     1|
-|25    |SRLC32E       |    14|
-|26    |FDRE          |   730|
-|27    |FDSE          |    17|
-|28    |IBUF          |    31|
-|29    |OBUF          |    37|
-|30    |OBUFT         |    17|
+|4     |div_16__6     |     1|
+|5     |div_16__7     |     1|
+|6     |div_16__8     |     1|
+|7     |div_16__9     |     1|
+|8     |divider32     |     1|
+|9     |divider32__3  |     1|
+|10    |divider32__4  |     1|
+|11    |sqrt          |     1|
+|12    |BUFG          |     4|
+|13    |CARRY4        |   158|
+|14    |DSP48E1_1     |     3|
+|15    |LUT1          |    89|
+|16    |LUT2          |   170|
+|17    |LUT3          |   120|
+|18    |LUT4          |   178|
+|19    |LUT5          |    35|
+|20    |LUT6          |   155|
+|21    |MMCME2_ADV    |     1|
+|22    |SRLC32E       |    10|
+|23    |FDRE          |   488|
+|24    |FDSE          |    13|
+|25    |IBUF          |    33|
+|26    |OBUF          |    48|
+|27    |OBUFT         |     6|
 +------+--------------+------+
 
 Report Instance Areas: 
-+------+-------------+-------------------+------+
-|      |Instance     |Module             |Cells |
-+------+-------------+-------------------+------+
-|1     |top          |                   |  2285|
-|2     |  clkdivider |clk_wiz_lab3       |     4|
-|3     |  display    |display_8hex       |   105|
-|4     |  goal_px    |rgb2hsv__xdcDup__1 |   181|
-|5     |  my_camera  |camera_read        |    89|
-|6     |    xx       |rgb2hsv            |    67|
-|7     |  numbeer1   |tracker            |  1566|
-|8     |    goal_px  |rgb2hsv__xdcDup__3 |   532|
-|9     |    x        |rgb2hsv__xdcDup__2 |   399|
-|10    |  xvga1      |xvga               |   116|
-+------+-------------+-------------------+------+
++------+---------------+-------------------+------+
+|      |Instance       |Module             |Cells |
++------+---------------+-------------------+------+
+|1     |top            |                   |  1945|
+|2     |  clkdivider   |clk_wiz_lab3       |     4|
+|3     |  db1          |debounce           |    44|
+|4     |  display      |display_8hex       |   105|
+|5     |  initializer  |initialize         |   413|
+|6     |    box_gen    |box                |    20|
+|7     |    cursor_gen |cursor             |     2|
+|8     |    db1        |debounce_0         |    36|
+|9     |    db2        |debounce_1         |    47|
+|10    |    db3        |debounce_2         |    34|
+|11    |    db4        |debounce_3         |    55|
+|12    |    db5        |debounce_4         |    35|
+|13    |    db6        |debounce_5         |    36|
+|14    |  my_camera    |camera_read        |    89|
+|15    |    xx         |rgb2hsv__xdcDup__1 |    67|
+|16    |  my_tracker   |tracker            |  1080|
+|17    |    goal_px    |rgb2hsv            |   289|
+|18    |    x          |rgb2hsv__xdcDup__2 |   401|
++------+---------------+-------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 1001.156 ; gain = 450.246
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 979.332 ; gain = 428.633
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 26 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:25 ; elapsed = 00:00:30 . Memory (MB): peak = 1001.156 ; gain = 298.598
-Synthesis Optimization Complete : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 1001.156 ; gain = 450.246
+Synthesis finished with 0 errors, 0 critical warnings and 37 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:33 ; elapsed = 00:00:40 . Memory (MB): peak = 979.332 ; gain = 276.219
+Synthesis Optimization Complete : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 979.332 ; gain = 428.633
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 143 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 162 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1001.156 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 998.824 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-277 Infos, 108 Warnings, 0 Critical Warnings and 0 Errors encountered.
+328 Infos, 127 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 1001.156 ; gain = 706.430
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1001.156 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:47 ; elapsed = 00:00:49 . Memory (MB): peak = 998.824 ; gain = 704.070
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 998.824 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/synth_1/top_level.dcp' has been generated.
-INFO: [runtcl-4] Executing : report_utilization -file top_level_utilization_synth.rpt -pb top_level_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sun Dec  1 21:34:18 2019...
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/synth_1/track_init_control.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file track_init_control_utilization_synth.rpt -pb track_init_control_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sat Dec  7 19:53:43 2019...

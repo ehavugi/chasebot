@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Thu Nov 21 17:34:44 2019
+# Process ID: 10392
+# Current directory: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/divider32_synth_1
+# Command line: vivado.exe -log divider32.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source divider32.tcl
+# Log file: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/divider32_synth_1/divider32.vds
+# Journal file: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/divider32_synth_1\vivado.jou
+#-----------------------------------------------------------
+source divider32.tcl -notrace
