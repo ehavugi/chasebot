@@ -63,7 +63,7 @@ module track_init_control(
     wire hsync, vsync, blank;
     wire [11:0] pixel;
     reg [11:0] rgb;    
- parameter DELAY_SIZE=23;
+    parameter DELAY_SIZE=23;
     reg[10:0] hcount_delay  [DELAY_SIZE:0];
     reg [9:0] vcount_delay  [DELAY_SIZE:0];
     reg [11:0] pixel_out_delay [DELAY_SIZE:0];
@@ -71,7 +71,7 @@ module track_init_control(
     reg hsync_delay [DELAY_SIZE:0];
     reg blank_delay [DELAY_SIZE:0];
     reg [4:0] i;
-    parameter SEL_D=221;
+    parameter SEL_D=22;
 
     always@(posedge clk_65mhz) begin
     //delay the hcount and vcount signals 18 times
@@ -95,6 +95,7 @@ module track_init_control(
 	    end
     
     end
+    
 //    xvga xvga1(.vclock_in(clk_65mhz),.hcount_out(hcount_delay[20]),.vcount_out(vcount_delay[20]),
 //          .hsync_out(hsync_de\\\\lay[20]),.vsync_out(vsync_delay[20]),.blank_out(blank_delay[20]));
 
@@ -115,6 +116,7 @@ module track_init_control(
     logic[7:0] pixel_buff, pixel_in;
     
     logic [11:0] cam;
+    //logic [3:0] red,green,blue;
     logic [11:0] frame_buff_out;
     logic [15:0] output_pixels;     //pixel from camera             
     logic [12:0] processed_pixels;  //stored inside bram
@@ -161,7 +163,7 @@ module track_init_control(
     
     assign pixel_addr_out = scale?((hcount>>1)+(vcount>>1)*32'd320):hcount+vcount*32'd320;
     assign cam = scale&&((hcount<640) &&  (vcount<480))?frame_buff_out:~scale&&((hcount<320) &&  (vcount<240))?frame_buff_out:12'h000;
-    assign {red,green,blue}=cam;
+    //assign {red,green,blue}=cam;
 
                                       
    camera_read  my_camera(.p_clock_in(pclk_in),
@@ -177,15 +179,18 @@ module track_init_control(
     logic [23:0] radius;
     logic [31:0] x_center,y_center;
     logic [11:0] thres;
-    logic [11:0] pixel_out,goal_pixel,goal_rad;
+    logic [11:0] pixel_out,goal_pixel;
+    logic [6:0] goal_rad;
     logic [7:0] h_t,s_t,v_t;
     logic show_thres,use_rgb;
-    
+    logic[3:0] h_cut;
+    logic [2:0] v_cut,s_cut;
     rgb2hsv  goal_px(.clock(clk_65mhz),.reset(reset),.r({goal_pixel[11:8],4'h0}),.g({goal_pixel[7:4],4'h0}), .b({goal_pixel[3:0],4'h0}), .h(h_t), .s(s_t), .v(v_t));
 
     tracker my_tracker(
     .clk(clk_65mhz),
-    .use_rgb(use_rgb), 
+    .rst_in(reset),
+    .params({h_cut,s_cut,v_cut}), 
     .cam(cam),
     .hcount(hcount),
     .vcount(vcount),
@@ -258,9 +263,14 @@ module track_init_control(
     logic [6:0] rad;
     assign params = mode[1]?{Kps,Kds,Kpt,Kdt,mode}:{speed1_in,speed2_in,mode};
     
-    assign x = &x_center?9'd160:x_center[8:0];
     assign y = y_center[8:0];
-    assign rad = (radius<7'd10)?goal_rad:radius;
+    xr_process my_processor(.clk(clk_65mhz),
+                            .rst(reset),
+                            .pre_x(x_center[8:0]),
+                            .pre_rad(radius),
+                            .goal_rad(goal_rad),
+                            .x(x),
+                            .rad(rad));
     
     control my_control( .clk_in(clk_65mhz),
                         .rst_in(reset),
@@ -325,13 +335,14 @@ module track_init_control(
         case(state)
             INITIALIZE: begin
                 seg_display <= sw[14:13];
-                use_rgb <= sw[12];
+                {h_cut,s_cut,v_cut} = sw[11:2];
                 show_thres <= sw[15];
                 end
             SELECTED: begin
                 seg_display <= sw[14:13];
-                use_rgb <= sw[12];
+                {h_cut,s_cut,v_cut} = sw[11:2];
                 show_thres <= sw[15];
+                
                 //calibration related stuff too
                 end
             CONFIRMED: begin
