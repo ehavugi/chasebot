@@ -220,14 +220,20 @@ module track_init_control(
     logic [2:0] Kds,Kdt;
     logic [1:0] mode;
     logic [15:0] params;
+    logic [8:0] x,y;
+    logic [6:0] rad;
     assign params = mode[1]?{Kps,Kds,Kpt,Kdt,mode}:{speed1_in,speed2_in,mode};
+    
+    assign x = &x_center?9'd160:x_center[8:0];
+    assign y = y_center[8:0];
+    assign rad = (radius<7'd10)?goal_rad:radius;
     
     control my_control( .clk_in(clk_65mhz),
                         .rst_in(reset),
                         .ready_in(frame_done_out),
-                        .cur_pos_x(x_center[8:0]),
-                        .cur_pos_y(y_center[8:0]),
-                        .cur_rad(radius),
+                        .cur_pos_x(x),
+                        .cur_pos_y(y),
+                        .cur_rad(rad),
                         .goal_rad(goal_rad),
                         .params({Kps,Kds,Kpt,Kdt,mode}),
                         .speed(speed),
@@ -269,10 +275,10 @@ module track_init_control(
     always_ff @(posedge clk_65mhz) begin
         case (seg_display)  
             2'b00: data <= {7'b0,speed1,7'b0,speed2};   // xxx(center)xxxx(size)x(switch)
-            2'b01: data <= {x_center[15:0],y_center[11:0], sw[3:0]};   // display 0123456 + sw[3:0]
+            2'b01: data <= {7'b0,x,3'b0,y, {1'b0,state}};   // display 0123456 + sw[3:0]
             2'b10: data <= {{2'b0,goal_rad},{5'b0,state}}; 
-            2'b11: data <= {radius,sw[3:0]};
-            default: data <= {x_center[15:0],y_center[11:0], sw[3:0]};
+            2'b11: data <= {rad,{1'b0,state}};
+            default: data <= {x_center[15:0],y_center[11:0], {1'b0,state}};
         endcase;
      end
      
