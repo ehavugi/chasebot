@@ -140,15 +140,37 @@ always_comb begin
     else threshold=(h<h_t+5)&&(s>s_t-20)&&(v>v_t-20);
  end
  
+    parameter DELAY_SIZE=23;
+    reg[10:0] hcount_delay  [DELAY_SIZE:0];
+    reg [9:0] vcount_delay  [DELAY_SIZE:0];
+    reg vsync_delay  [DELAY_SIZE:0];
+    reg [4:0] i;
+    parameter SEL_D=22;
+
+    always@(posedge clk_65mhz) begin
+    //delay the hcount and vcount signals 18 times
+    hcount_delay[0]<=hcount;
+    vcount_delay[0]<=vcount;
+    vsync_delay[0]<=vsync;
+    
+    
+//    pixel_out_delay<=pixel_out;
+	for(i=1; i<DELAY_SIZE; i=i+1) begin
+		  hcount_delay[i] <= hcount_delay[i-1];
+		  vcount_delay[i] <= vcount_delay[i-1];
+		  vsync_delay[i] <= vsync_delay[i-1];  
+	    end    
+    end
+    
 always @(posedge clk_65mhz) begin
     if (threshold) begin
         thres<=cam;
         size<=size+1;
-        pos_x<=pos_x+hcount;
-        pos_y<=pos_y+vcount;
+        pos_x<=pos_x+hcount_delay[SEL_D]; // to use the right values of hcount and vcoun given delay of rgb2hsv
+        pos_y<=pos_y+vcount_delay[SEL_D];
        end
     else begin thres=12'b0;end
-    if (vsync) begin 
+    if (vsync_delay[SEL_D]) begin 
             size_d<=size;
             pos_x_d<=pos_x;
             pos_y_d<=pos_y;
