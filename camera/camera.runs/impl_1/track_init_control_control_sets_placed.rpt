@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Sat Dec  7 19:55:47 2019
+| Date         : Sun Dec  8 11:52:23 2019
 | Host         : DESKTOP-5DFT9M2 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file track_init_control_control_sets_placed.rpt
 | Design       : track_init_control
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |    32 |
-|    Minimum number of control sets                        |    32 |
+| Total control sets                                       |    48 |
+|    Minimum number of control sets                        |    48 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |   150 |
+| Unused register locations in slices containing registers |   199 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,15 +39,15 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |    32 |
+| Total control sets |    48 |
 | >= 0 to < 4        |    10 |
-| >= 4 to < 6        |     5 |
-| >= 6 to < 8        |     3 |
+| >= 4 to < 6        |     7 |
+| >= 6 to < 8        |     4 |
 | >= 8 to < 10       |     1 |
-| >= 10 to < 12      |     2 |
-| >= 12 to < 14      |     0 |
-| >= 14 to < 16      |     0 |
-| >= 16              |    11 |
+| >= 10 to < 12      |     4 |
+| >= 12 to < 14      |     6 |
+| >= 14 to < 16      |     1 |
+| >= 16              |    15 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
 
@@ -58,53 +58,69 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |            6924 |         1647 |
+| No           | No                    | No                     |           11016 |         2176 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              56 |           24 |
-| Yes          | No                    | No                     |              36 |           28 |
+| No           | Yes                   | No                     |              86 |           39 |
+| Yes          | No                    | No                     |             167 |           58 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |             170 |           47 |
+| Yes          | Yes                   | No                     |             340 |          104 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+----------------------+----------------------------------------------------------------------------+-----------------------------------------------+------------------+----------------+
-|     Clock Signal     |                                Enable Signal                               |                Set/Reset Signal               | Slice Load Count | Bel Load Count |
-+----------------------+----------------------------------------------------------------------------+-----------------------------------------------+------------------+----------------+
-|  clkdivider/clk_out1 |                                                                            | display/strobe_out[0]_i_1_n_0                 |                1 |              1 |
-|  clkdivider/clk_out1 |                                                                            | display/p_0_in[0]                             |                1 |              1 |
-|  clkdivider/clk_out1 | db1/clean_out_reg_4                                                        |                                               |                1 |              1 |
-|  clkdivider/clk_out1 | db1/clean_out_reg_5                                                        |                                               |                1 |              1 |
-|  clkdivider/clk_out1 | db1/clean_out_reg_2                                                        |                                               |                1 |              1 |
-|  clkdivider/clk_out1 | db1/new_input_i_1__5_n_0                                                   |                                               |                1 |              1 |
-|  clkdivider/clk_out1 | db1/clean_out_reg_1                                                        |                                               |                1 |              1 |
-|  clkdivider/clk_out1 | db1/clean_out_reg_3                                                        |                                               |                1 |              1 |
-|  clkdivider/clk_out1 | db1/clean_out_reg_0                                                        |                                               |                1 |              1 |
-|  clkdivider/clk_out1 |                                                                            | display/p_0_in[2]                             |                1 |              2 |
-|  pclk_in_BUFG        |                                                                            |                                               |                1 |              4 |
-|  clkdivider/clk_out1 |                                                                            | data[31]_i_1_n_0                              |                2 |              4 |
-|  clkdivider/clk_out1 |                                                                            | display/p_0_in[1]                             |                2 |              4 |
-|  pclk_in_BUFG        | my_camera/pixel_data_out[7]_i_1_n_0                                        |                                               |                5 |              5 |
-|  clkdivider/clk_out1 |                                                                            | my_tracker/x/s_bottom0[0]                     |                3 |              5 |
-|  frame_done_out_BUFG | initializer/db1/clean_out_reg_1                                            | db1/reset                                     |                3 |              6 |
-|  pclk_in_BUFG        | my_camera/pixel_data_out[15]_i_1_n_0                                       |                                               |                7 |              7 |
-|  frame_done_out_BUFG | initializer/db4/clean_out_reg_2                                            | db1/reset                                     |                4 |              7 |
-|  frame_done_out_BUFG |                                                                            |                                               |                6 |              8 |
-|  clkdivider/clk_out1 |                                                                            | my_tracker/x/p_0_out_inferred__4/i__n_0       |                3 |             10 |
-|  clkdivider/clk_out1 |                                                                            | my_tracker/goal_px/p_0_out_inferred__4/i__n_0 |                4 |             10 |
-|  pclk_in_BUFG        | my_camera/valid_pixel                                                      | frame_done_out_BUFG                           |                5 |             17 |
-|  clkdivider/clk_out1 | my_tracker/uut/U0/i_synth/i_synth/gen_sqrt.square_root/gen_rdy_int/rdy_int |                                               |                9 |             17 |
-|  clkdivider/clk_out1 |                                                                            | db1/reset                                     |                7 |             19 |
-|  clkdivider/clk_out1 | initializer/db6/count                                                      | db1/clean_out_reg_5                           |                5 |             20 |
-|  clkdivider/clk_out1 | initializer/db1/count                                                      | db1/clean_out_reg_0                           |                5 |             20 |
-|  clkdivider/clk_out1 | initializer/db2/count                                                      | db1/clean_out_reg_1                           |                5 |             20 |
-|  clkdivider/clk_out1 | initializer/db3/count                                                      | db1/clean_out_reg_2                           |                5 |             20 |
-|  clkdivider/clk_out1 | initializer/db4/count                                                      | db1/clean_out_reg_3                           |                5 |             20 |
-|  clkdivider/clk_out1 | initializer/db5/count                                                      | db1/clean_out_reg_4                           |                5 |             20 |
-|  clkdivider/clk_out1 | db1/count                                                                  | db1/new_input_i_1__5_n_0                      |                5 |             20 |
-|  clkdivider/clk_out1 |                                                                            |                                               |             1640 |           6948 |
-+----------------------+----------------------------------------------------------------------------+-----------------------------------------------+------------------+----------------+
++----------------------+----------------------------------------------------------------------------+--------------------------------------------+------------------+----------------+
+|     Clock Signal     |                                Enable Signal                               |              Set/Reset Signal              | Slice Load Count | Bel Load Count |
++----------------------+----------------------------------------------------------------------------+--------------------------------------------+------------------+----------------+
+|  clkdivider/clk_out1 |                                                                            | display/strobe_out[0]_i_1_n_0              |                1 |              1 |
+|  clkdivider/clk_out1 |                                                                            | display/p_0_in[0]                          |                1 |              1 |
+|  clkdivider/clk_out1 | db1/clean_out_reg_2                                                        |                                            |                1 |              1 |
+|  clkdivider/clk_out1 | db1/clean_out_reg_0                                                        |                                            |                1 |              1 |
+|  clkdivider/clk_out1 | db1/new_input_i_1__5_n_0                                                   |                                            |                1 |              1 |
+|  clkdivider/clk_out1 | db1/clean_out_reg_1                                                        |                                            |                1 |              1 |
+|  clkdivider/clk_out1 | db1/clean_out_reg_4                                                        |                                            |                1 |              1 |
+|  clkdivider/clk_out1 | db1/clean_out_reg_3                                                        |                                            |                1 |              1 |
+|  clkdivider/clk_out1 | db1/clean_out_reg_5                                                        |                                            |                1 |              1 |
+|  clkdivider/clk_out1 |                                                                            | display/p_0_in[2]                          |                1 |              2 |
+|  clkdivider/clk_out1 |                                                                            | display/p_0_in[1]                          |                3 |              4 |
+|  clkdivider/clk_out1 | initializer/FSM_onehot_state_reg[2]_8[0]                                   |                                            |                2 |              4 |
+|  pclk_in_BUFG        |                                                                            |                                            |                1 |              4 |
+|  clkdivider/clk_out1 |                                                                            | my_tracker/goal_px/s_bottom0[0]            |                2 |              5 |
+|  clkdivider/clk_out1 |                                                                            | my_tracker/x__0/s_bottom0[0]               |                2 |              5 |
+|  clkdivider/clk_out1 | initializer/db5/E[0]                                                       | db1/reset                                  |                1 |              5 |
+|  pclk_in_BUFG        | my_camera/pixel_data_out[7]_i_1_n_0                                        |                                            |                1 |              5 |
+|  frame_done_out_BUFG | initializer/db1/clean_out_reg_1                                            | db1/reset                                  |                3 |              6 |
+|  clkdivider/clk_out1 | initializer/confirmed                                                      | db1/reset                                  |                2 |              7 |
+|  frame_done_out_BUFG | initializer/db4/clean_out_reg_7                                            | db1/reset                                  |                4 |              7 |
+|  pclk_in_BUFG        | my_camera/pixel_data_out[15]_i_1_n_0                                       |                                            |                1 |              7 |
+|  frame_done_out_BUFG |                                                                            |                                            |                6 |              8 |
+|  clkdivider/clk_out1 |                                                                            | goal_px/SR[0]                              |                4 |             10 |
+|  clkdivider/clk_out1 |                                                                            | my_tracker/x__0/p_0_out_inferred__4/i__n_0 |                4 |             10 |
+|  clkdivider/clk_out1 | xvga1/hreset                                                               | xvga1/SR[0]                                |                6 |             10 |
+|  clkdivider/clk_out1 |                                                                            | xvga1/hreset                               |                4 |             11 |
+|  clkdivider/clk_out1 | initializer/selected                                                       | db1/reset                                  |                5 |             12 |
+|  clkdivider/clk_out1 |                                                                            | my_tracker/goal_px/use_rgb_reg             |                6 |             12 |
+|  clkdivider/clk_out1 |                                                                            | xvga1/hcount_out_reg[10]_0                 |                5 |             12 |
+|  clkdivider/clk_out1 | initializer/selected_buff0                                                 | db1/reset                                  |                5 |             12 |
+|  clkdivider/clk_out1 | initializer/pixel_out[11]_i_1_n_0                                          | db1/reset                                  |                8 |             12 |
+|  clkdivider/clk_out1 |                                                                            | db1/reset                                  |                6 |             13 |
+|  clkdivider/clk_out1 | initializer/E[0]                                                           |                                            |                9 |             14 |
+|  clkdivider/clk_out1 | frame_done_out_BUFG                                                        | db1/reset                                  |                6 |             16 |
+|  clkdivider/clk_out1 | my_tracker/uut/U0/i_synth/i_synth/gen_sqrt.square_root/gen_rdy_int/rdy_int |                                            |               10 |             17 |
+|  clkdivider/clk_out1 | my_camera/E[0]                                                             |                                            |                5 |             17 |
+|  pclk_in_BUFG        | my_camera/valid_pixel                                                      | frame_done_out_BUFG                        |                5 |             17 |
+|  clkdivider/clk_out1 | initializer/db5/count                                                      | db1/clean_out_reg_4                        |                5 |             20 |
+|  clkdivider/clk_out1 | initializer/db2/count                                                      | db1/clean_out_reg_1                        |                5 |             20 |
+|  clkdivider/clk_out1 | initializer/db1/count                                                      | db1/clean_out_reg_0                        |                5 |             20 |
+|  clkdivider/clk_out1 | initializer/db6/count                                                      | db1/clean_out_reg_5                        |                5 |             20 |
+|  clkdivider/clk_out1 | initializer/db3/count                                                      | db1/clean_out_reg_2                        |                5 |             20 |
+|  clkdivider/clk_out1 | initializer/db4/count                                                      | db1/clean_out_reg_3                        |                5 |             20 |
+|  clkdivider/clk_out1 | db1/count                                                                  | db1/new_input_i_1__5_n_0                   |                5 |             20 |
+|  clkdivider/clk_out1 | my_tracker/goal_px/threshold                                               | my_tracker/clear                           |               24 |             96 |
+|  clkdivider/clk_out1 | vsync_delay_reg[22]__0                                                     |                                            |               23 |             96 |
+| ~vsync_BUFG          |                                                                            |                                            |               32 |             96 |
+|  clkdivider/clk_out1 |                                                                            |                                            |             2137 |          10972 |
++----------------------+----------------------------------------------------------------------------+--------------------------------------------+------------------+----------------+
 
 

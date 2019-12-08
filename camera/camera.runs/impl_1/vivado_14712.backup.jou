@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Sun Dec  8 10:03:50 2019
+# Process ID: 14712
+# Current directory: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/impl_1
+# Command line: vivado.exe -log track_init_control.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source track_init_control.tcl -notrace
+# Log file: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/impl_1/track_init_control.vdi
+# Journal file: C:/Users/Owner/OneDrive/pic/Documents/GitHub/chasebot/camera/camera.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source track_init_control.tcl -notrace
