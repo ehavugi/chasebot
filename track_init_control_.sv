@@ -63,7 +63,7 @@ module track_init_control(
     wire hsync, vsync, blank;
     wire [11:0] pixel;
     reg [11:0] rgb;    
-    parameter DELAY_SIZE=23;
+ parameter DELAY_SIZE=23;
     reg[10:0] hcount_delay  [DELAY_SIZE:0];
     reg [9:0] vcount_delay  [DELAY_SIZE:0];
     reg [11:0] pixel_out_delay [DELAY_SIZE:0];
@@ -71,7 +71,7 @@ module track_init_control(
     reg hsync_delay [DELAY_SIZE:0];
     reg blank_delay [DELAY_SIZE:0];
     reg [4:0] i;
-    parameter SEL_D=22;
+    parameter SEL_D=221;
 
     always@(posedge clk_65mhz) begin
     //delay the hcount and vcount signals 18 times
@@ -179,8 +179,7 @@ module track_init_control(
     logic [23:0] radius;
     logic [31:0] x_center,y_center;
     logic [11:0] thres;
-    logic [11:0] pixel_out,goal_pixel;
-    logic [6:0] goal_rad;
+    logic [11:0] pixel_out,goal_pixel,goal_rad;
     logic [7:0] h_t,s_t,v_t;
     logic show_thres,use_rgb;
     logic[3:0] h_cut;
@@ -263,14 +262,9 @@ module track_init_control(
     logic [6:0] rad;
     assign params = mode[1]?{Kps,Kds,Kpt,Kdt,mode}:{speed1_in,speed2_in,mode};
     
+    assign x = &x_center?9'd160:x_center[8:0];
     assign y = y_center[8:0];
-    xr_process my_processor(.clk(clk_65mhz),
-                            .rst(reset),
-                            .pre_x(x_center[8:0]),
-                            .pre_rad(radius),
-                            .goal_rad(goal_rad),
-                            .x(x),
-                            .rad(rad));
+    assign rad = (radius<7'd10)?goal_rad:radius;
     
     control my_control( .clk_in(clk_65mhz),
                         .rst_in(reset),
